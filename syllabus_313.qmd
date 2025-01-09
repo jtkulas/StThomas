@@ -1,0 +1,141 @@
+---
+title: "PSYC 313: Psychology of Testing and Assessment"
+author: "Syllabus Spring 2025"
+format: 
+  pdf:
+    bibliography: bib.bib
+    csl: apa-cv.csl
+    suppress-bibliography: true
+    link-citations: false
+    citations-hover: false
+    pdf-engine: lualatex        ## for emoji package
+    include-in-header: 
+      - text: 
+          \usepackage{multicol}
+          \usepackage{emoji}
+          \usepackage{geometry}
+geometry:               ## https://cameronpatrick.com/post/2023/07/quarto-thesis-formatting/
+  - inner=3cm          # left
+  - outer=4cm          # right
+  - top=2cm
+  - bottom=2cm
+  - headsep=10pt        #22pt
+  - headheight=5pt      #11pt
+  - footskip=33pt
+  - ignorehead
+  - ignorefoot
+  - heightrounded  
+---
+
+```{r emoji}
+#| echo: false
+#| warning: false
+#| message: false
+
+## https://ctan.math.washington.edu/tex-archive/macros/luatex/latex/emoji/emoji-doc.pdf
+
+library(stringr)
+
+emoji <- function(x) {
+  if (knitr::is_latex_output()) {
+ stringr::str_c("\\emoji{", str_replace_all(x, "_", "-"), "}")
+  } else if (knitr::is_html_output()) {
+ stringr::str_c(":", x, ":")
+  } else x
+}
+```
+
+|                     |                                                                      |
+|-----------------------------------|-------------------------------------|
+| Lectures:           | Tuesdays & Thursdays                              |
+| Labs:               | Thursdays                                         |
+| Rooms:              | Not sure                                                             |
+| Professor:          | John Kulas ([jtkulas\@ergreports.com](mailto:%20jtkulas@ergreports)) |
+| Office Hours:       | by Appointment                                                       |
+
+: {tbl-colwidths="\[25,75\]"}
+
+## Required text:
+
+@kaplan2018saccuzzo
+
+## Supplementary material:
+
+@american2014standards
+
+::: callout-important
+If you have any disability or special language needs, either permanent or temporary, that may affect your ability to perform in this class, please inform either me or the [Disability Resources Office](http://www.stthomas.edu/enhancementprog) (651-962-6315) of your disability or need at the beginning of the semester. Adaptation of methods, materials, or testing may be made as required to provide for equitable participation.
+:::
+
+::: {.column-margin}
+Muchas gracias to Dr. Bock, who's PSYC 313 syllabus was pillaged assunder to provide most of the content and structure contained within this class `r emoji("pirate_flag")``r emoji("pirate_flag")`
+:::
+## Course objectives:
+
+This course provides an introduction to fundamental concepts in psychological and educational assessment (aka psychometrics). We will focus on underlying individual and group-administered tests in such areas as intelligence, aptitude, achievement, interests, personality, neuropsychological and educational tests. We will also address the statistical underpinnings of measurement, although this is very intentionally **NOT** a statistics course -- think of your instructor as a statistical consultant (rather than you being expecting to develop deep statistical skill). **Prerequisite: PSYC 212**
+ 
+ You will be building two parallel skill and knowledge sets: 1) KNOWLEDGE OF PSYCHOLOGICAL MEASUREMENT, and 2) SKILL WITH R AS A TOOL TO IMPLEMENT PSYCHOMETRIC INVESTIGATION. As an outcome of completing this course, students are expected to:
+
++ Gaining a basic understanding of psychological testing (e.g., factual knowledge, methods, principles, theories)
++ Learning to apply course concepts to situations involving psychological and educational testing
++ Learning to analyze and critically evaluate ideas, arguments, and points of view related to psychological and educational testing
+
+## Instructional methods:
+
+Lecture, small-group discussion, small project completion and participation, cumulative project completion and presentation, class assignments, texts/e-resources.
+
+## Grading:
+
+Final grade will be based on the following scale with 500 points max:
+
+| Grade   | Percent | Class Points  |
+|---------|---------|---------------|
+| A | 90 \rightarrow \hspace{.1pc} 100% | 450 \rightarrow \hspace{.1pc} 500   |
+| B | 80 \rightarrow \hspace{.1pc} 89.99% | 400 \rightarrow \hspace{.1pc} 449 |
+| C | 70 \rightarrow \hspace{.1pc} 79.99% | 350 \rightarrow \hspace{.1pc} 399 |
+| D | 60 \rightarrow \hspace{.1pc} 69.99% | 300 \rightarrow \hspace{.1pc} 349 |
+| F | \hspace{1.17pc} \< 60%  | `r emoji("see-no-evil")` \hspace{.05pc}  \rightarrow  \hspace{.1pc} `r emoji("speak-no-evil")`  |
+
+: {tbl-colwidths="\[10,20,15\]"}
+
+## Evaluation Criteria
+
+### Kulas Exams
+
+In-class exams (3) will be non-cumulative, covering material from the text and lectures. These will consist of multiple-choice questions, short-answer, and maybe a few true/false questions. 
+
+::: callout-note
+All students are expected to complete assignments and exams at the scheduled time. There will be NO make-up exams given. Exceptions are illness with a doctor’s excuse, or a University – approved campus absence.
+:::
+
+### Student Exam
+
+### Project  
+
+Each student is required to complete one industrial psychology project – you may do these in teams of 2 or 3. The purpose of this project is to provide you with an opportunity to actively experience industrial psychology and to apply what you learn in class. Project presentations are due the last week of class (there will also be an in-class exam on that date).
+
+### Participation
+
+Attendance is expected. Significant learning occurs through student participation in class lecture-discussion, class activities, and group discussion. Failure to attend class regularly may result in the lowering of the course grade through my administration of “pop” quizzes. These quizzes count toward the final point total (if you’re going to be absent, let me know ahead of time – pop quizzes will not be re-administered). 
+
+::: callout-note
+Reading between the lines on my attendance/test taking policy –- make sure to speak with me before you miss anything. I will attempt to be accommodating with advanced notice but stubborn and unsympathetic without advanced notice of an absence.
+:::
+
+# Class Schedule:
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+library(knitr)
+library(kableExtra)
+library(tidyverse)
+
+sked <- read.csv("sched.csv")
+kable(sked, booktabs=TRUE) %>%
+  kable_styling(latex_options = c("striped", "HOLD_position")) %>%
+  pack_rows(index=c("Principles"=4,"Applications"=7, "Issues"=4))
+```
+

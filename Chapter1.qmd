@@ -1,0 +1,59 @@
+---
+title: "Ψlogical<br>Testing" 
+author: "Chapter 1...<br>[...Introducktion]{.crossmethod}" 
+title-slide-attributes: 
+  data-background-image: https://img.freepik.com/premium-photo/duck-desk-office-duck-tablethe-goose-is-writing-letter_1016228-2581.jpg 
+  data-background-opacity: ".7"
+format:
+  revealjs:
+    slide-tone: false
+    navigation-mode: vertical
+#    transition: convex
+    transition-speed: slow
+    controls-layout: bottom-right
+    controls-tutorial: true
+    slide-number: h.v
+    mermaid:
+      theme: forest
+#    output-location: slide           ## column-fragment; inserts blank 2nd slide
+    code-overflow: wrap              ## instead of horizontal scroll
+    theme: [league, weekly.scss]       ## night & league
+    mouse-wheel: true                ## yes enables mouse
+    preview-links: false             ## true brings up iframe window instead of "site"
+    code-annotations: hover 
+    html-math-method: 
+      method: mathjax        ## LaTeX in code annotations
+      url: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML"
+engine: knitr                        ## not picking up inline codes
+#bibliography: temp.bib
+#lightbox: true                     ## interferes with .absolute placement
+---
+
+```{r, warning=FALSE, message=FALSE}
+#devtools::install_github("hadley/emo")        ## if anyone else wants to render
+library(fontawesome)
+```
+
+## Office keeping `r emo::ji("briefcase")`
+
++ Class Structure
+  + Read chapters prior to class
+  + Bring questions to me <br>(and broader class)
++ Syllabus
+  + Textbook
+  
+![](https://m.media-amazon.com/images/I/51hHqXpGbrL._SX342_SY445_.jpg){.absolute right="30" height="400" top="100"}
+
+![](https://www.freeiconspng.com/uploads/sweeping-png-15.png){.absolute bottom="50" left="310" height="350" .mirror}
+
+# Recap of Session #48: 
+
+## [Shiny]{.shiny2} AI bot `r emo::ji("robot")`
+
+![](https://i.etsystatic.com/9945731/r/il/332b14/5390592460/il_fullxfull.5390592460_ducy.jpg){.absolute right="0"}
+
+# Today: 
+
+## Terminology (once now, again at end-of-semester):
+
+[![](https://designtlc.com/wp-content/uploads/2018/07/terminology.jpg)](https://www.youtube.com/watch?v=yU8HF64S92U)
