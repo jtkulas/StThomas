@@ -166,8 +166,9 @@ library(kableExtra)
 library(tidyverse)
 
 sked <- read.csv("labsched.csv.csv")
-kable(sked, booktabs=TRUE, format="markdown") %>%
-  kable_styling(latex_options = c("striped", "HOLD_position")) 
+kbl(sked, booktabs=TRUE) %>%                      ##, format="markdown"
+  row_spec(c(2,5,11,15), bold=T, color="white", background="black") %>%
+  row_spec(c(4,8), background="#bebebe")
 ```
 
 # Class Project
