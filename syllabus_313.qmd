@@ -72,17 +72,17 @@ Muchas gracias to Dr. Bock, who's PSYC 313 syllabus was pillaged assunder to pro
 :::
 ## Course objectives:
 
-This course provides an introduction to fundamental concepts in psychological and educational assessment (aka psychometrics). We will focus on underlying individual and group-administered tests in such areas as intelligence, aptitude, achievement, interests, personality, neuropsychological and educational tests. We will also address the statistical underpinnings of measurement, although this is very intentionally **NOT** a statistics course -- think of your instructor as a statistical consultant (rather than you being expecting to develop deep statistical skill). **Prerequisite: PSYC 212** This class "counts" toward fulfilling the Psychology major lab course requirement. `r emoji("microscope")`
+This course provides an introduction to fundamental concepts in psychological and educational assessment. We will focus on underlying individual and group-administered tests within topical areas such as intelligence, aptitude, achievement, interests, personality, neuropsychology and education. We will also address the statistical underpinnings of measurement, although this is very intentionally **NOT** a statistics course -- think of your instructor as a statistical consultant (rather than you being expected to develop deep statistical skill). **Prerequisite: PSYC 212** This class "counts" toward fulfilling the Psychology major lab course requirement. `r emoji("microscope")`
  
  You will be building two parallel skill and knowledge sets: 1) *knowledge of psychological and educational measurement*, and 2) *skill with tools to implement psychometric investigation and evaluation*. As an outcome of completing this course, students are expected to:
 
-+ Gaining a basic understanding of psychological testing (e.g., factual knowledge, methods, principles, theories)
-+ Learning to apply course concepts to situations involving psychological and educational testing
-+ Learning to analyze and critically evaluate ideas, arguments, and points of view related to psychological and educational testing
++ Gain a basic understanding of psychological testing (e.g., factual knowledge, methods, principles, theories)
++ Learn to apply course concepts to situations involving psychological and educational testing
++ Learn to analyze and critically evaluate ideas, arguments, and points of view related to psychological and educational testing
 
 ## Instructional methods:
 
-Lecture, small-group discussion, small project completion and participation, cumulative project completion and presentation, class assignments, texts/e-resources. It is likely that you have learned some of the material before, but in different contexts (e.g., a statistics course, research methods course). Active participation in this class *is essential*.
+Lecture, small-group discussion, small project completion and participation, cumulative project completion and presentation, class assignments, texts/e-resources. It is likely that you have learned some of the material before, but in different contexts (e.g., a statistics course, research methods course). Active participation in this class ***is essential***.
 
 ## Evaluation Criteria
 
@@ -91,7 +91,7 @@ Lecture, small-group discussion, small project completion and participation, cum
 In-class exams (3) will be non-cumulative, covering material from the text and lectures. These will consist of multiple-choice questions, short-answer, and maybe even a few true/false questions. 
 
 ::: callout-note
-All students are expected to complete assignments and exams at the scheduled time. There will be NO make-up exams given. Exceptions are illness with a doctor’s excuse, or a University – approved campus absence.
+All students are expected to complete assignments and exams at the scheduled time. There will be NO make-up exams given. Exceptions are illness with a doctor’s excuse, or a University-–approved campus absence.
 :::
 
 ### Project (**225 points**) 
@@ -100,9 +100,16 @@ Each student is required to participate in one semester-long assessment project 
 
 ### Class presentation on an existing assessment (**50 points**)
 
-You and your team members will research an ***existing*** psychological assessment. We will work collaboratively to find an assessment that is interesting to your team members during early lab periods. 
+You and your team members will research an ***existing*** psychological assessment. We will work collaboratively to find an assessment that is at least mildly interesting to your team members during early lab periods. 
 
-Your team will present to the rest of our class a description and evaluation of your assigned, existing psychological test. Your team will research and present on the test developers; the history of the test's  development; the test’s use, theoretical foundation, and structure; and an evaluation of the reliability and validity evidence of the most recent version of the test. Your team presentation should be about 15 minuteslong. Kulas can act as a consultant and guide for your team in planning your class presentation if you'd like. 
+Your team will present to the rest of our class a description and evaluation of your assigned, existing psychological test. Your team will research and present information on:  
+
++ the test developers
++ the history of the test's development
++ the test’s use, theoretical foundation, and structure 
++ the reliability and validity evidence of the most recent version of the test 
+
+Your team presentation should be about ***15 minutes*** long. Kulas can act as a consultant and guide for your team in planning your class presentation if you'd like. 
 
 ::: {.callout-note}
 The topic and content of the existing psychological test that your group is assigned is **completely independent** of the unique psychological assessment that you and your team members will construct and analyze for your psychological assessment project
@@ -183,7 +190,7 @@ This is a semester-long project that you will do in teams of three or four. Your
 
 ### Assignment #1:  Project Overview (**25 points**)		\rightline{Due 2/13}	   
 
-This is a somewhat informal assignment that can be finalized during the lab session itslef (e.g., you don't need to *finish* this prior to lab); its purpose is to ensure that you are moving along in the planning stages of your measurement project:
+This is a somewhat informal assignment that can be finalized during the lab session itself (e.g., you don't need to *finish* this prior to lab); its purpose is to ensure that you are moving along in the planning stages of your measurement project:
 
 1. State and briefly describe the construct for which you are intending to develop a measure (what is the conceptual definition of the construct – is it multidimensional or unidimensional)?
 
@@ -193,7 +200,7 @@ This is a somewhat informal assignment that can be finalized during the lab sess
 
 ### Assignment #2:  Initial Item Review (**25 points**) 			\rightline{Due 2/27}	      
 
-This assignment will actually take place during the class period, but you will need to do a little preparation in advance.  I will be grouping you into a few small groups – each team will be paired with members of other teams.  You will come to class with the following:
+This assignment will actually take place during the class period, but you will need to do a little preparation in advance.  I will be grouping you into a few small groups -– each team will be paired with members of other teams.  You will come to class with the following:
 
 + A summary of Hinkin (yes, actually outline and/or summarize – take notes and bring them to class)
 

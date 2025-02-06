@@ -8,16 +8,17 @@ format:
   revealjs:
     slide-tone: false
     navigation-mode: vertical
-#    transition: convex
+    transition: convex
     transition-speed: slow
+    controls: true
     controls-layout: bottom-right
-    controls-tutorial: true
+#    controls-tutorial: false
     slide-number: h.v
     mermaid:
       theme: forest
 #    output-location: slide           ## column-fragment; inserts blank 2nd slide
     code-overflow: wrap              ## instead of horizontal scroll
-    theme: [league, weekly.scss]       ## night & league
+    theme: [league, tommies.scss]    ## night & league
     mouse-wheel: true                ## yes enables mouse
     preview-links: false             ## true brings up iframe window instead of "site"
     code-annotations: hover 
@@ -46,14 +47,67 @@ library(fontawesome)
 
 ![](https://www.freeiconspng.com/uploads/sweeping-png-15.png){.absolute bottom="50" left="310" height="350" .mirror}
 
-# Recap of Session #48: 
+## Context
 
-## [Shiny]{.shiny2} AI bot `r emo::ji("robot")`
+## Importance of Individual Differences
 
-![](https://i.etsystatic.com/9945731/r/il/332b14/5390592460/il_fullxfull.5390592460_ducy.jpg){.absolute right="0"}
+:::: {.columns}
+::: {.column width="30%"}
+:::
 
-# Today: 
+::: {.column width="70%"}
++ Measurement depends on the ability to [detect]{.bluescript} and [quantify]{.bluescript} psychological differences
++ Do differences in test scores [truly reflect]{.greenscript} psychological differences?
++ So critically important that some Psychologists (including me) grossly define Psychology as the “study of individual differences”
+:::
+::::
 
-## Terminology (once now, again at end-of-semester):
+![](https://co-geeking.com/wp-content/uploads/2020/03/twitter-land-of-cuteness-exact-opposites-cats.jpg?w=636){.absolute left="-150" bottom="130" height="400"}
+
+## Importance of Individual Differences (II)
+
+[Testing]{.pinkscript} is the most commonly used method for psychologists to measure inter- and intra-individual differences:
+
+:::: {.columns}
+::: {.column width="50%"}
+
++ [Inter]{.pinkscript}: Homer smarter than Bart
++ [Intra]{.pinkscript}: Persephone nicer *now* than she used to be
+:::
+
+::: {.column width="50%"}
+:::
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjAwazFuemZ3em53MnBmOWZndThzZnkzdnB2NHFlNjl3ZzBmMXN1NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/eMu0803X2zkWY/giphy.gif){.absolute right="-50" bottom="100" height="300"}
+::::
+
+## Measurement Terminology 
 
 [![](https://designtlc.com/wp-content/uploads/2018/07/terminology.jpg)](https://www.youtube.com/watch?v=yU8HF64S92U)
+
+## Let's take a "test"!!!
+
+:::: {.columns}
+::: {.column width="30%"}
+<br>
+
+### Before:
++ 120-item fine
++ gender & age
++ `r fontawesome::fa("square-check", fill="#4287f5")` the `keep the form with your answers` option
+:::
+
+::: {.column width="50%"}
+<br>
+<br>
+
+[![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmM4cTJ4cTU2NmNuZmc1MjV2YXozeXMxZWxnM2x0Z3cxMTlhZDkxZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/B6p3epsRMQWMU/giphy.gif)](https://psytests.org/big5/ineoAen.html)
+:::
+
+::: {.column width="20%"}
+<br>
+
+### After:
++ Expand "Form" and "Calculations" sections
++ Use `r fontawesome::fa("print", fill="#4287f5")` option to `save as PDF`
+:::
+::::

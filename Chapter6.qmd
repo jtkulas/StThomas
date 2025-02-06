@@ -1,0 +1,9 @@
+---
+title: "Chapter 6"
+format: revealjs
+---
+
+## Quarto
+
+![](https://larrycuban.wordpress.com/wp-content/uploads/2022/11/a5125d11411a547ce4efb803789ce310.jpg)
+

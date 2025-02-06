@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css?family=Dancing Script');
+@import url('https://fonts.googleapis.com/css?family=Fleur De Leah');
+@import url('https://fonts.googleapis.com/css?family=Protest Guerrilla');
+
+/*-- scss:defaults --*/
+
+$body-bg: #191919;
+$body-color: #fff;
+$link-color: #42affa;
+$code-color: hotpink;
+$presentation-title-slide-text-align: right;
+$presentation-title-slide-text-color: black;
+
+/*-- scss:rules --*/
+
+.reveal .slide blockquote {
+  border-left: 3px solid $text-muted;
+  padding-left: 0.5em;
+}
+
+.title {
+  color: 	#ffefdb !important;
+    text-shadow: 
+    5px 5px 5px black,
+    -5px -5px 5px black !important;
+}
+
+.quarto-title-author-name {
+  font-size: 65px;
+  color: 	white;
+  font-weight: bold;
+  font-family: 'Dancing Script';
+  text-shadow: 
+    2px 2px 2px black,
+    -3px -3px 3px black
+}
+
+/*-- supposedly helps with content overflow --*/
+.slides {
+    overflow-y: auto;
+}
+
+.crossmethod {
+  font-size: 80px;
+/*  text-decoration: underline; */
+  color: #c49102;
+  font-family: 'Protest Guerrilla';
+}
+
+.bluescript {
+  font-size: 1.5em;
+  color: #03c6fc;
+  font-family: 'Dancing Script';
+}
+
+.pinkscript {
+  font-size: 1.5em;
+  color: #ff99ff;
+  font-family: 'Dancing Script';
+}
+
+.greenscript {
+  font-size: 1.5em;
+  color: #34eba8;
+  font-family: 'Dancing Script';
+}
