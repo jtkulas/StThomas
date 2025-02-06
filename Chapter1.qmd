@@ -6,6 +6,7 @@ title-slide-attributes:
   data-background-opacity: ".7"
 format:
   revealjs:
+    multiplex: true
     slide-tone: false
     navigation-mode: vertical
     transition: convex
@@ -37,17 +38,187 @@ library(fontawesome)
 
 ## Office keeping `r emo::ji("briefcase")`
 
-+ Class Structure
++ Class Structure:
   + Read chapters prior to class
   + Bring questions to me <br>(and broader class)
-+ Syllabus
-  + Textbook
++ Materials:
+  + Syllabus
+  + Textbook*
+  + Slides
   
 ![](https://m.media-amazon.com/images/I/51hHqXpGbrL._SX342_SY445_.jpg){.absolute right="30" height="400" top="100"}
 
 ![](https://www.freeiconspng.com/uploads/sweeping-png-15.png){.absolute bottom="50" left="310" height="350" .mirror}
 
-## Context
+## Definitions:
+
+:::: {.columns}
+::: {.column width="48%"}
+
++ [[**test**]{.cornflower} -- measurement device]{.fragment .fade-in-then-semi-out}
++ [[**true test**]{.cornflower} -- exam (answers can be scored correct/ incorrect)]{.fragment .fade-in-then-semi-out}
++ [[**item**]{.cornflower} -- stimulus to which person responds]{.fragment .fade-in-then-semi-out}
++ [[**Ψ test**]{.cornflower} -- measurement device for human characteristics]{.fragment .fade-in-then-semi-out}
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="47%"}
+
++ [[**trait**]{.cornflower} -- relatively enduring Ψ characteristic]{.fragment .fade-in-then-semi-out}
++ [[**scale**]{.cornflower} -- summary score (across items)]{.fragment .fade-in-then-semi-out}
++ [[**norm**]{.cornflower} -- "normative distribution" *against which* scores are interpreted]{.fragment .fade-in-then-semi-out}
+:::
+::::
+
+## Test Features
+
++ tests involve *behavioral samples*
++ behavioral sampling is systematic
++ purpose is to detect psychological *differences*
++ book uses term “test” when more often actually referring to broader term, “Measure” ^[there is a lot of jingle-jangle in the realm of assessment]
+
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaHd4ejY5dnMwdGs2MmZ6cXNsaGRoOG9qdWw0czNtMjl0Z2E3MWIxdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/skkBgizUTDnYBLgqwN/giphy.gif){.absolute right="0" bottom="0" height="300"}
+
+## Untangle the Jangle I
+
+![](img/janglei.JPG)
+
+## Untangle the Jangle II
+
+![](img/jangleii.JPG)
+
+## Untangle the Jangle III
+
+![](img/jangleiii.JPG)
+
+## Consequences of testing
+
+:::: {.columns}
+::: {.column width="60%"}
+### High Stakes (`r emo::ji("cut_of_meat")``r emo::ji("cut_of_meat")``r emo::ji("cut_of_meat")``r emo::ji("cut_of_meat")``r emo::ji("cut_of_meat")`)
+
++ Adoption
++ Admission
++ Hiring
++ `One-shot`
+
+:::
+
+::: {.column width="40%" .fragment}
+### Low Stakes (`r emo::ji("cut_of_meat")`)
+
++ Dating
++ Self-awareness
++ Classroom
++ `Retakes permitted`
+:::
+::::
+
+## Terminology Recap
+
+[![](https://designtlc.com/wp-content/uploads/2018/07/terminology.jpg)](https://www.youtube.com/watch?v=yU8HF64S92U)
+
+# History of Ψ testing
+
+## Darwin & Individual Differences
+
+:::: {.columns}
+::: {.column width="80%"}
++ evolutionary theory partially informed by individual differences within species
++ $\frac{1}{2}$ cousins with Francis Galton (dob 1822)
+  + Hyper-focused on individual differences
+  + Controversial primarily for eugenics
+  + Galton Institute [rebranded in 2021](https://adelphigenetics.org/about/)
+:::
+::::
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Sir_Francis_Galton_by_Charles_Wellington_Furse.jpg/220px-Sir_Francis_Galton_by_Charles_Wellington_Furse.jpg){.absolute right="-70" bottom="100" height="300"}
+
+## Psychophysics
+
+:::: {.columns}
+
+::: {.column width="35%"}
+:::
+
+::: {.column width="65%"}
+
++ focused on measurement of ***human sensation/ perception*** 
++ concept of ***threshold*** important (minimum quantity needed to elicit reaction)
++ considered the genesis of `experimental psychology`
+  + testing should be treated like an experiment
+:::
+::::
+
+![](https://cards.algoreducation.com/_next/image?url=https%3A%2F%2Ffiles.algoreducation.com%2Fproduction-ts%2F__S3__5ca8d363-6840-4357-ba71-f1d06297c344&w=3840&q=75){.absolute left="-130" bottom="180" height="250"}
+
+## Public need
+
+:::: {.columns}
+::: {.column width="70%"}
++ French government wanted to identify mentally disadvantaged
++ Alfred Binet & Theodore Simon developed a ***test*** to help (1905)
+  + utilized `standardization` sample (aka norm)
+  + proposed IQ as metric (1908)
+  + today classified as "intelligence" test
+  + Terman revised as "Stanford-Binet" (1916)
+:::
+::::
+
+![](https://m.media-amazon.com/images/I/81UHL2vzFlL._AC_UF894,1000_QL80_.jpg){.absolute right="-70" bottom="100" height="400"}
+
+## World War I
+
+:::: {.columns}
+::: {.column width="35%"}
+:::
+
+::: {.column width="65%"}
+
++ Yerkes and Terman recruited to help US army process recruits
++ developed intelligence test, but intelligent individuals were failing
+  + ***group*** testing developed as administration option
+  + [Army Alpha and Army Beta](https://www.officialasvab.com/researchers/army-samples/)
+  + Most believe Army didn't use, but others took notice...
+:::
+::::
+
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXEwY3l4NmRxa2dhYjk4aXFudzd4aGQzdXl4eGh0eWg0bnZudGZncyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/R98cFjunTyfpS/giphy.gif){.absolute left="-130" bottom="200" height="250"}
+
+## Interwar period (1918--1941)
+
+:::: {.columns}
+::: {.column width="70%"}
+
++ Standardized "achievement" tests proliferate (education and industry)
+  + easy to administer
+  + first Wechsler test published (1939)
+    + several subscales (not just "overall IQ")
++ Personality "tests" also briefly become popular
+  + Woodworth Personal Data Sheet (1917)
+
+:::
+::::
+
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbHcyZ2J1ZTgxNGIyY2tpcGF6djBtNGtpMzJqbXJrbTZmcGh4YzBmcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oEduK0kW69xoX5Apq/giphy.gif){.absolute right="-130" bottom="180" height="300"}
+
+## World War II & after
+
+:::: {.columns}
+::: {.column width="70%"}
+
++ Testing now more well established 
++ Army recruits and uses tests
++ Clinical and Industrial sub-disciplines develop
+  + both rely on testing to inform decisions
++ [Standards](https://www.apa.org/science/programs/testing/standards) published (pre-1^st^ edition)
+
+:::
+::::
+
+![](https://images.bwbcovers.com/091/Standards-for-Educational-Psychological-Testing-American-Educational-9780912704951.jpg){.absolute right="-100" bottom="100"}
 
 ## Importance of Individual Differences
 
@@ -79,10 +250,6 @@ library(fontawesome)
 :::
 ![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjAwazFuemZ3em53MnBmOWZndThzZnkzdnB2NHFlNjl3ZzBmMXN1NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/eMu0803X2zkWY/giphy.gif){.absolute right="-50" bottom="100" height="300"}
 ::::
-
-## Measurement Terminology 
-
-[![](https://designtlc.com/wp-content/uploads/2018/07/terminology.jpg)](https://www.youtube.com/watch?v=yU8HF64S92U)
 
 ## Let's take a "test"!!!
 
