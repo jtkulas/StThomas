@@ -36,14 +36,22 @@ $presentation-title-slide-text-color: black;
 }
 
 /*-- supposedly helps with content overflow --*/
+.smaller {
+  font-size: .7em;
+}
+
 .slides {
-    overflow-y: auto;
+  overflow-y: auto;
+}
+
+.mirror {
+  transform: rotateY(180deg);
 }
 
 .crossmethod {
   font-size: 80px;
 /*  text-decoration: underline; */
-  color: #c49102;
+  color: #6495ed;
   font-family: 'Protest Guerrilla';
 }
 

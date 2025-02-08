@@ -1,0 +1,363 @@
+---
+title: "Ψlogical<br>Testing" 
+author: "Chapter 2...<br>[...Norms &<br>Basic Stats]{.crossmethod}" 
+title-slide-attributes: 
+  data-background-image: https://doctorkeppel.com/wp-content/uploads/2022/11/natural-family-health-care-doctor-keppel-blog-what-is-normall.jpg
+  data-background-opacity: ".5"
+format:
+  revealjs:
+#    multiplex: true
+    chalkboard: true
+    slide-tone: false
+    navigation-mode: linear
+    transition: convex
+    transition-speed: slow
+    controls: true
+    controls-layout: edges
+#    controls-tutorial: false
+    slide-number: c
+    mermaid:
+      theme: neutral
+#    output-location: slide           ## column-fragment; inserts blank 2nd slide
+    code-overflow: wrap              ## instead of horizontal scroll
+    theme: [league, tommies.scss]    ## night & league
+    mouse-wheel: true                ## yes enables mouse
+    preview-links: false             ## true brings up iframe window instead of "site"
+    code-annotations: hover 
+    html-math-method: 
+      method: mathjax        ## LaTeX in code annotations
+      url: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML"
+engine: knitr                        ## not picking up inline codes
+#bibliography: temp.bib
+#lightbox: true                     ## interferes with .absolute placement
+#revealjs-plugins:                  ## cursor disappearing
+#  - spotlight
+---
+
+```{r, warning=FALSE, message=FALSE}
+#devtools::install_github("hadley/emo")        ## if anyone else wants to render
+library(fontawesome)
+```
+
+## Office keeping `r emo::ji("briefcase")`
+
++ Project:
+  + Settle on construct (name)<br>within group
+  + Find 2-3 empirical articles<br>(each team member) 
+  + Complete Assignment #1<br>in Lab Thursday
+    + Construct complexity<br>(beyond simple label)
+
+![](https://www.freeiconspng.com/uploads/sweeping-png-15.png){.absolute top="-15" left="440" height="200" .mirror}
+
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZW05dDlpbDRoZml4bHY3djJ0MjJreGUybG9meGY1NjFiOTk2aXlnaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/iIAYEKtLy0yG7TacbC/giphy.gif){.absolute right="-100" bottom="60"}
+
+# A primary function of tests...
+
+...is to translate [observations]{.pinkscript} into [numbers]{.bluescript}
+
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNzF0Z3VzamlnYjR4MjJqMGsydmx6Z2J3bmQwazhwOXhnZGRmZHlhayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/4JVTF9zR9BicshFAb7/giphy.gif){.absolute bottom="-180" right="-120" height="250"}
+
+## How we do this:
+
+:::: {.columns}
+::: {.column width="50%"}
+***Measurement*** -- assignment of [numbers]{.greenscript} to [objects]{.greenscript} according to [rules]{.greenscript}
+
+::: {.callout-note}
+The terms `measurement` and `scaling` are widely considered synonymous, however, we’re mostly going to try to reserve use of the term `scale` to refer to item aggregations
+:::
+
+::: 
+::::
+
+![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJFPqta28yD3MFttvi7GHzkkX9cLWlbeb3f9N1-e4nTNVO65OeWf93wZZhXdS3QZXstRs&usqp=CAU){.absolute right="-60" bottom="200" height="300"}
+
+## Use of numbers...
+
+:::: {.columns}
+::: {.column width="25%"}
+:::
+
+::: {.column width="75%"}
+...is typically accomplished via statistical manipulation
+
+:::{.panel-tabset}
+### Descriptive
+
+:::{.smaller}
+**[Summaries]{.bluescript}**, typically contrasting:
+
+::: {.columns}
+
+::: {.column width="60%"}
++ one group of numbers relative to another group
++ one number relative to a larger group of numbers
+:::
+
+::: {.column width="40%"}
++ common descriptives:
+  + mean, median, mode
+  + standard deviation, variance
+  + z-score
+:::
+:::
+:::
+
+### Inferential
+
+::: {.smaller}
+
+**[Logical deductions]{.bluescript}** about broader group(s):
+
+::: {.columns}
+
+::: {.column width="60%"}
++ do sample differences imply population differences?
++ are sample associations reflective of population effects?
++ realm of p-values (e.g., *p* < .05)
+:::
+
+::: {.column width="40%"}
++ common inferentials:
+  + t-test
+  + ANOVA
+  + Regression
+:::
+:::
+
+::: 
+
+:::
+:::
+::::
+
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExd3ZrenpveWFudWYyN3hoeGc3dXNmemZ3bHNjejVwcHQ4NTcxM2gxbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/JdFEeta1hLNnO/giphy.gif){.absolute left="-100" top="110" height="300"}
+
+## Scales of measurement
+
+:::: {.columns}
+::: {.column width="48%"}
+
++ [[**test**]{.cornflower} -- measurement device]{.fragment .fade-in-then-semi-out}
++ [[**true test**]{.cornflower} -- exam (answers can be scored correct/ incorrect)]{.fragment .fade-in-then-semi-out}
++ [[**item**]{.cornflower} -- stimulus to which person responds]{.fragment .fade-in-then-semi-out}
++ [[**Ψ test**]{.cornflower} -- measurement device for human characteristics]{.fragment .fade-in-then-semi-out}
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="47%"}
+
++ [[**trait**]{.cornflower} -- relatively enduring Ψ characteristic]{.fragment .fade-in-then-semi-out}
++ [[**scale**]{.cornflower} -- summary score (across items)]{.fragment .fade-in-then-semi-out}
++ [[**norm**]{.cornflower} -- "normative distribution" *against which* scores are interpreted]{.fragment .fade-in-then-semi-out}
+:::
+::::
+
+## Test Features
+
++ tests involve *behavioral samples*
++ behavioral sampling is systematic
++ purpose is to detect psychological *differences*
++ book uses term “test” when more often actually referring to broader term, “Measure” ^[there is a lot of jingle-jangle in the realm of assessment]
+
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaHd4ejY5dnMwdGs2MmZ6cXNsaGRoOG9qdWw0czNtMjl0Z2E3MWIxdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/skkBgizUTDnYBLgqwN/giphy.gif){.absolute right="0" bottom="0" height="300"}
+
+## Untangle the Jangle I
+
+![](img/janglei.JPG)
+
+## Untangle the Jangle II
+
+![](img/jangleii.JPG)
+
+## Untangle the Jangle III
+
+![](img/jangleiii.JPG)
+
+## Consequences of testing
+
+:::: {.columns}
+::: {.column width="60%"}
+### High Stakes (`r emo::ji("cut_of_meat")``r emo::ji("cut_of_meat")``r emo::ji("cut_of_meat")``r emo::ji("cut_of_meat")``r emo::ji("cut_of_meat")`)
+
++ Adoption
++ Admission
++ Hiring
++ `One-shot`
+
+:::
+
+::: {.column width="40%" .fragment}
+### Low Stakes (`r emo::ji("cut_of_meat")`)
+
++ Dating
++ Self-awareness
++ Classroom
++ `Retakes permitted`
+:::
+::::
+
+## Terminology Recap
+
+[![](https://designtlc.com/wp-content/uploads/2018/07/terminology.jpg)](https://www.youtube.com/watch?v=yU8HF64S92U)
+
+# History of Ψ testing
+
+## Darwin & Individual Differences
+
+:::: {.columns}
+::: {.column width="80%"}
++ evolutionary theory partially informed by individual differences within species
++ $\frac{1}{2}$ cousins with Francis Galton (dob 1822)
+  + Hyper-focused on individual differences
+  + Controversial primarily for eugenics
+  + Galton Institute [rebranded in 2021](https://adelphigenetics.org/about/)
+:::
+::::
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Sir_Francis_Galton_by_Charles_Wellington_Furse.jpg/220px-Sir_Francis_Galton_by_Charles_Wellington_Furse.jpg){.absolute right="-70" bottom="100" height="300"}
+
+## Psychophysics
+
+:::: {.columns}
+
+::: {.column width="35%"}
+:::
+
+::: {.column width="65%"}
+
++ focused on measurement of ***human sensation/ perception*** 
++ concept of ***threshold*** important (minimum quantity needed to elicit reaction)
++ considered the genesis of `experimental psychology`
+  + testing should be treated like an experiment
+:::
+::::
+
+![](https://cards.algoreducation.com/_next/image?url=https%3A%2F%2Ffiles.algoreducation.com%2Fproduction-ts%2F__S3__5ca8d363-6840-4357-ba71-f1d06297c344&w=3840&q=75){.absolute left="-130" bottom="180" height="250"}
+
+## Public need
+
+:::: {.columns}
+::: {.column width="70%"}
++ French government wanted to identify mentally disadvantaged
++ Alfred Binet & Theodore Simon developed a ***test*** to help (1905)
+  + utilized `standardization` sample (aka norm)
+  + proposed IQ as metric (1908)
+  + today classified as "intelligence" test
+  + Terman revised as "Stanford-Binet" (1916)
+:::
+::::
+
+![](https://m.media-amazon.com/images/I/81UHL2vzFlL._AC_UF894,1000_QL80_.jpg){.absolute right="-70" bottom="100" height="400"}
+
+## World War I
+
+:::: {.columns}
+::: {.column width="35%"}
+:::
+
+::: {.column width="65%"}
+
++ Yerkes and Terman recruited to help US army process recruits
++ developed intelligence test, but intelligent individuals were failing
+  + ***group*** testing developed as administration option
+  + [Army Alpha and Army Beta](https://www.officialasvab.com/researchers/army-samples/)
+  + Most believe Army didn't use, but others took notice...
+:::
+::::
+
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXEwY3l4NmRxa2dhYjk4aXFudzd4aGQzdXl4eGh0eWg0bnZudGZncyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/R98cFjunTyfpS/giphy.gif){.absolute left="-130" bottom="200" height="250"}
+
+## Interwar period (1918--1941)
+
+:::: {.columns}
+::: {.column width="70%"}
+
++ Standardized "achievement" tests proliferate (education and industry)
+  + easy to administer
+  + first Wechsler test published (1939)
+    + several subscales (not just "overall IQ")
++ Personality "tests" also briefly become popular
+  + Woodworth Personal Data Sheet (1917)
+
+:::
+::::
+
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbHcyZ2J1ZTgxNGIyY2tpcGF6djBtNGtpMzJqbXJrbTZmcGh4YzBmcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oEduK0kW69xoX5Apq/giphy.gif){.absolute right="-130" bottom="180" height="300"}
+
+## World War II & after
+
+:::: {.columns}
+::: {.column width="70%"}
+
++ Testing now more well established 
++ Army recruits and uses tests
++ Clinical and Industrial sub-disciplines develop
+  + both rely on testing to inform decisions
++ [Standards](https://www.apa.org/science/programs/testing/standards) published (pre-1^st^ edition)
+
+:::
+::::
+
+![](https://images.bwbcovers.com/091/Standards-for-Educational-Psychological-Testing-American-Educational-9780912704951.jpg){.absolute right="-100" bottom="100"}
+
+## Importance of Individual Differences
+
+:::: {.columns}
+::: {.column width="30%"}
+:::
+
+::: {.column width="70%"}
++ Measurement depends on the ability to [detect]{.bluescript} and [quantify]{.bluescript} psychological differences
++ Do differences in test scores [truly reflect]{.greenscript} psychological differences?
++ So critically important that some Psychologists (including me) grossly define Psychology as the “study of individual differences”
+:::
+::::
+
+![](https://co-geeking.com/wp-content/uploads/2020/03/twitter-land-of-cuteness-exact-opposites-cats.jpg?w=636){.absolute left="-150" bottom="130" height="400"}
+
+## Importance of Individual Differences (II)
+
+[Testing]{.pinkscript} is the most commonly used method for psychologists to measure inter- and intra-individual differences:
+
+:::: {.columns}
+::: {.column width="50%"}
+
++ [Inter]{.pinkscript}: Homer smarter than Bart
++ [Intra]{.pinkscript}: Persephone nicer *now* than she used to be
+:::
+
+::: {.column width="50%"}
+:::
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjAwazFuemZ3em53MnBmOWZndThzZnkzdnB2NHFlNjl3ZzBmMXN1NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/eMu0803X2zkWY/giphy.gif){.absolute right="-50" bottom="100" height="300"}
+::::
+
+## Let's take a "test"!!!
+
+:::: {.columns}
+::: {.column width="30%"}
+<br>
+
+### Before:
++ 120-item fine
++ gender & age
++ `r fontawesome::fa("square-check", fill="#4287f5")` the `keep the form with your answers` option
+:::
+
+::: {.column width="50%"}
+<br>
+<br>
+
+[![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmM4cTJ4cTU2NmNuZmc1MjV2YXozeXMxZWxnM2x0Z3cxMTlhZDkxZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/B6p3epsRMQWMU/giphy.gif)](https://psytests.org/big5/ineoAen.html)
+:::
+
+::: {.column width="20%"}
+<br>
+
+### After:
++ Expand "Form" and "Calculations" sections
++ Use `r fontawesome::fa("print", fill="#4287f5")` option to `save as PDF`
+:::
+::::
