@@ -133,6 +133,47 @@ The terms `measurement` and `scaling` are widely considered synonymous, however,
 
 ![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExd3ZrenpveWFudWYyN3hoeGc3dXNmemZ3bHNjejVwcHQ4NTcxM2gxbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/JdFEeta1hLNnO/giphy.gif){.absolute left="-100" top="110" height="300"}
 
+## Fundamental properties of numbers
+
++ Numbers are used to represent an individual’s level of standing along a psychological attribute 
+  + HOWEVER - Not all numbers retain their CARDINAL PROPERTIES with Psychological measurement
+
++ Different rules of assignment collectively define different scales of measurement
+  + Stevens’ (1946; NOIR) 
+
+:::{.callout-note}
+**how** we assign numbers to objects is very important, because if the numbers do not retain their inherent cardinal properties, then perhaps it’s not appropriate to perform mathematical/statistical operations on those numbers...
+:::
+
+## Property I
+
+Numbers can reflect “sameness versus differentness” 
+Numbers here are merely labels 
+Differences in kind/sort/ilk, not in amount
+Restrictions:
+People in a category (i.e., with same number) are identical in terms of the relevant feature
+Categories must be mutually exclusive
+Categories must be exhaustive
+
+## Property II
+
+Numbers can also reflect relative amounts of an attribute
+Numbers here are again used as labels, but sequence is also being reflected
+
+## Property III
+
+Numbers more typically are used to reflect magnitude of differences between things (for example, a Psychological attribute)
+“How much”?
+Continuous and “quantitative”
+Scores on most psychological tests are usually treated as having the property of quantity
+
+## Property IV
+
+Zero can mean at least two things
+Absolute zero--an attribute of an object/event has no existence (e.g., no length)
+Arbitrary zero--zero doesn’t necessarily mean “no level of the attribute”
+If zero is absolute, can compare scores in terms of ratios (e.g., twice as long)
+
 ## Scales of measurement
 
 :::: {.columns}
@@ -155,14 +196,14 @@ The terms `measurement` and `scaling` are widely considered synonymous, however,
 :::
 ::::
 
-## Test Features
+## Units of measurement
 
-+ tests involve *behavioral samples*
-+ behavioral sampling is systematic
-+ purpose is to detect psychological *differences*
-+ book uses term “test” when more often actually referring to broader term, “Measure” ^[there is a lot of jingle-jangle in the realm of assessment]
+To measure something, we must acknowledge units of measurement (e.g., weight: # of lbs; temp = Fº)
+Question for class: What is the unit of measurement in psychology? 
 
-![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaHd4ejY5dnMwdGs2MmZ6cXNsaGRoOG9qdWw0czNtMjl0Z2E3MWIxdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/skkBgizUTDnYBLgqwN/giphy.gif){.absolute right="0" bottom="0" height="300"}
+Each test has its own “unit” of measurement (one “point” on an IQ test is not same as one “point” on a math test)
+Most often for us, the unit of measurement is a statistical index called the standard deviation:
+
 
 ## Untangle the Jangle I
 
