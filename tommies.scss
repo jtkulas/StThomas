@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Dancing Script');
 @import url('https://fonts.googleapis.com/css?family=Fleur De Leah');
 @import url('https://fonts.googleapis.com/css?family=Protest Guerrilla');
+@import url('https://fonts.googleapis.com/css?family=Delicious Handrawn');
 
 /*-- scss:defaults --*/
 
@@ -40,6 +41,10 @@ $presentation-title-slide-text-color: black;
   font-size: .7em;
 }
 
+.ninety {
+  font-size: .9em;
+}
+
 .slides {
   overflow-y: auto;
 }
@@ -71,6 +76,11 @@ $presentation-title-slide-text-color: black;
   font-size: 1.5em;
   color: #34eba8;
   font-family: 'Dancing Script';
+}
+
+.definition {
+  color: #ff99ff;
+  font-family: 'Delicious Handrawn';
 }
 
 .cornflower {

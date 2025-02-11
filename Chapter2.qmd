@@ -6,7 +6,7 @@ title-slide-attributes:
   data-background-opacity: ".5"
 format:
   revealjs:
-#    multiplex: true
+    multiplex: true
     chalkboard: true
     slide-tone: false
     navigation-mode: linear
@@ -28,7 +28,8 @@ format:
       method: mathjax        ## LaTeX in code annotations
       url: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML"
 engine: knitr                        ## not picking up inline codes
-#bibliography: temp.bib
+bibliography: bib.bib
+csl: apa7.csl
 #lightbox: true                     ## interferes with .absolute placement
 #revealjs-plugins:                  ## cursor disappearing
 #  - spotlight
@@ -64,7 +65,7 @@ library(fontawesome)
 ***Measurement*** -- assignment of [numbers]{.greenscript} to [objects]{.greenscript} according to [rules]{.greenscript}
 
 ::: {.callout-note}
-The terms `measurement` and `scaling` are widely considered synonymous, however, we’re mostly going to try to reserve use of the term `scale` to refer to item aggregations
+The terms `measurement` and `scaling` are widely considered synonymous, however, we’re mostly going to ***try*** to reserve use of the term `scale` to refer to item aggregations
 :::
 
 ::: 
@@ -135,270 +136,314 @@ The terms `measurement` and `scaling` are widely considered synonymous, however,
 
 ## Fundamental properties of numbers
 
+::: {.columns}
+::: {.column width="70%"}
 + Numbers are used to represent an individual’s level of standing along a psychological attribute 
-  + HOWEVER - Not all numbers retain their CARDINAL PROPERTIES with Psychological measurement
+  + [However]{.pinkscript} -- Not all numbers retain their inherent characteristics with Psychological measurement
 
-+ Different rules of assignment collectively define different scales of measurement
-  + Stevens’ (1946; NOIR) 
++ Different rules of assignment collectively define different "scales of measurement"
+  + NOIR [@stevens1946theory]
+:::
+
+::: {.column width="30%"}
 
 :::{.callout-note}
-**how** we assign numbers to objects is very important, because if the numbers do not retain their inherent cardinal properties, then perhaps it’s not appropriate to perform mathematical/statistical operations on those numbers...
+**HOW** we assign numbers to objects is very important, because if the numbers do not retain their inherent properties, then perhaps it’s not appropriate to perform mathematical/ statistical operations on those numbers...
 :::
+
+:::
+::::
+
+## Property Zero^[Book doesn't explicitly mention but important for understanding @stevens1946theory]
+
+::: {.columns}
+::: {.column width="25%"}
+:::
+
+::: {.column width="75%"}
+
+### Numbers can reflect [sameness versus differentness]{.definition}
++ Numbers here are merely *labels* 
++ Differences in kind / sort / ilk, not in amount
++ Things within a category (i.e., with same number) are identical in terms of the relevant feature
+
+:::
+::::
+
+![](https://images.squarespace-cdn.com/content/v1/5aba1e6b70e802e5fd3b93ff/12011b42-a21c-45cb-8e8b-0769250ca8ba/goose-down-vs-duck-down-02.jpg){.absolute left="-70" bottom="200" height="200"}
 
 ## Property I
 
-Numbers can reflect “sameness versus differentness” 
-Numbers here are merely labels 
-Differences in kind/sort/ilk, not in amount
-Restrictions:
-People in a category (i.e., with same number) are identical in terms of the relevant feature
-Categories must be mutually exclusive
-Categories must be exhaustive
+::: {.columns}
+::: {.column width="75%"}
+### Numbers can reflect [magnitude of differences]{.definition} between things 
+
++ Numbers here are again used as labels, but sequence is also being reflected
++ “How much”?
+:::
+:::
+
+![](https://www.mathsisfun.com/numbers/images/sage-greater-than.svg){.absolute right="-150" bottom="0" height="350"}
 
 ## Property II
 
-Numbers can also reflect relative amounts of an attribute
-Numbers here are again used as labels, but sequence is also being reflected
+::: {.columns}
+::: {.column width="25%"}
+:::
+
+::: {.column width="75%"}
+### Differences between numbers hold [equal intervals]{.definition} 
+
++ moving from "4" to "7" has the ***same meaning*** as moving from "10" to "13"
++ numbering doesn't "increase" until underlying Psychological trait "moves" the same distance
+:::
+:::
+
+![](https://cdn.britannica.com/96/151896-004-5A5C10BD.jpg){.absolute height="500" bottom="50" left="-40"}
 
 ## Property III
 
-Numbers more typically are used to reflect magnitude of differences between things (for example, a Psychological attribute)
-“How much”?
-Continuous and “quantitative”
-Scores on most psychological tests are usually treated as having the property of quantity
+::: {.columns}
+::: {.column width="40%"}
+### [Zero]{.definition} reserved for only very special scenario
 
-## Property IV
-
-Zero can mean at least two things
-Absolute zero--an attribute of an object/event has no existence (e.g., no length)
-Arbitrary zero--zero doesn’t necessarily mean “no level of the attribute”
-If zero is absolute, can compare scores in terms of ratios (e.g., twice as long)
-
-## Scales of measurement
-
-:::: {.columns}
-::: {.column width="48%"}
-
-+ [[**test**]{.cornflower} -- measurement device]{.fragment .fade-in-then-semi-out}
-+ [[**true test**]{.cornflower} -- exam (answers can be scored correct/ incorrect)]{.fragment .fade-in-then-semi-out}
-+ [[**item**]{.cornflower} -- stimulus to which person responds]{.fragment .fade-in-then-semi-out}
-+ [[**Ψ test**]{.cornflower} -- measurement device for human characteristics]{.fragment .fade-in-then-semi-out}
++ complete absence of the attribute
++ If zero is absolute, then we can compare scores in terms of ratios (e.g., twice as long)
+:::
 :::
 
-::: {.column width="5%"}
+![](https://media.istockphoto.com/id/465382081/photo/growing-up-taller-than-a-dinosaur.jpg?s=612x612&w=0&k=20&c=Flb4zjbKbQZPk3rkKPrZuEd6YRKZPIroTfajI-9BLX4=){.absolute right="-100" bottom="0"}
+
+## Scales of measurement [@stevens1946theory]
+
+::: {.columns}
+::: {.column width="35%"}
 :::
 
-::: {.column width="47%"}
+::: {.column width="65%"}
 
-+ [[**trait**]{.cornflower} -- relatively enduring Ψ characteristic]{.fragment .fade-in-then-semi-out}
-+ [[**scale**]{.cornflower} -- summary score (across items)]{.fragment .fade-in-then-semi-out}
-+ [[**norm**]{.cornflower} -- "normative distribution" *against which* scores are interpreted]{.fragment .fade-in-then-semi-out}
++ [N]{.crossmethod}ominal
++ [O]{.crossmethod}rdinal
++ [I]{.crossmethod}nterval
++ [R]{.crossmethod}atio
 :::
-::::
+:::
 
-## Units of measurement
+![](https://feminema.wordpress.com/wp-content/uploads/2011/02/500laura6.jpg){.absolute height="500" left="-100" bottom="50"}
 
+![](https://biodiversity.com.pt/wp-content/uploads/2022/05/header_taxonomia_600x960.jpg){.absolute right="0" bottom="0" height="600" .fragment .fade-in-then-out}
+![](https://media.istockphoto.com/id/1307693227/vector/usa-army-enlisted-ranks-chevrons-with-insignia.jpg?s=612x612&w=0&k=20&c=VM0xKuRzwSZ2tHAlb_SvvFAzYvQdGgG2pLMxzrALkiY=){.absolute right="-150" bottom="0" height="600" .fragment .fade-in-then-out}
+
+![](https://cdn1.byjus.com/wp-content/uploads/2019/03/relation-between-celsius-and-fahrenheit.png){.absolute right="-150" bottom="100" height="450" .fragment .fade-in-then-out}
+
+![](https://www.shutterstock.com/image-vector/temperature-scales-showing-differences-between-600nw-2080891831.jpg){.absolute right="-150" bottom="150" height="350" .fragment .fade-in-then-out}
+
+:::{.notes} 
 To measure something, we must acknowledge units of measurement (e.g., weight: # of lbs; temp = Fº)
+
 Question for class: What is the unit of measurement in psychology? 
 
 Each test has its own “unit” of measurement (one “point” on an IQ test is not same as one “point” on a math test)
-Most often for us, the unit of measurement is a statistical index called the standard deviation:
 
+Most often for us, the unit of measurement is a statistical index called the standard deviation
+:::
 
-## Untangle the Jangle I
+# Stats stuff!!
 
-![](img/janglei.JPG)
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExdzUxdXk3eHE2MWZoNDN3YnF1dzRjOWtydmtlaWgwMDA3azl4ZDRmNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3ohc15hpGuLpSTx960/giphy.gif)
 
-## Untangle the Jangle II
+## Frequency distributions
 
-![](img/jangleii.JPG)
+:::{.columns}
+:::{.column width="35%"}
+Tell us:
 
-## Untangle the Jangle III
+1. [location]{.definition} of scores
+2. [spread]{.definition} of scores
 
-![](img/jangleiii.JPG)
+Formally, how frequently is each value encountered within a [sample]{.definition}
+:::
+:::
 
-## Consequences of testing
+![](https://media.geeksforgeeks.org/wp-content/uploads/20230726175644/Frequency-Distribution-Curve-1.png){.absolute right="-100" bottom="0"}
+
+## Location & Spread
+
+:::: {.columns}
+::: {.column width="50%"}
+### Location:
+
++ [Mean]{.pinkscript}
++ Median
++ Mode
+
+:::
+
+::: {.column width="50%"}
+
+### Spread:
+
++ Range
++ [Standard deviation]{.pinkscript}
++ Variance
+:::
+
+::::
+
+![](https://getnave.com/blog/wp-content/uploads/2018/04/Histogram-data-visualisation.png){.absolute left="-20" bottom="-20" height="300"}
+
+![](https://miro.medium.com/v2/resize:fit:815/1*ihqINXkVS65zn1NDpmy2TQ.png){.absolute right="-100" bottom="-20" height="300"}
+
+## In-class data collection:
+
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmVsMHE1MGY2YmNvbnkzbnVoN2o0NHoyejFyeXhuMnNmb2p5YmFjciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/mUYtAsf6G3i4wQDDCC/giphy.gif){.absolute right="200"}
+
+:::{.notes}
+Collect data (number of pets?) and demonstrate:
+
+1. data
+2. dataset
+3. frequency distribution
+4. location
+5. spread
+:::
+
+## Importance of frequency distributions
+
+:::: {.columns}
+::: {.column width="50%"}
+
++ We use “distributional” information (location and spread) to generate [relative]{.definition} scores
+  + Relative to [other scorers]{.definition} in the distribution
+  + Commonly expressed as either [%^ile^]{.definition} or [standard score]{.definition}
+
+:::
+::::
+
+![](img/percentiles.JPG){.absolute right="-70" bottom="100"}
+
+## Percentiles
+
+:::: {.columns}
+
+::: {.column width="45%"}
++ percent of distribution that scores [*at or below*]{.definition} a raw score value
+:::
+
+::: {.column width="55%"}
++ proceed from low (e.g., 1) to high (e.g., 99) as travel from [left to right]{.definition} within distribution
+:::
+::::
+
+![](https://acutecaretesting.org/-/media/acutecaretesting/articles/fig-2-example.jpg?h=402&w=750){.absolute left="130" bottom="0"}
+
+:::{.notes}
+Book makes an odd distinction between "percentile rank" and "percentiles" -- this is unnecessarily confusing. Treat them as equivalent (e.g., both "percentile rank" and "percentile" should be interpreted as referring to the same thing).
+:::
+
+## Standard Scores
+
+:::: {.columns}
+::: {.column width="45%"}
+:::
+
+::: {.column width="55%"}
+
++ Most commonly [rescaled z-scores]{.definition}
++ z-score: how many [standard deviations]{.definition} away from the [mean]{.definition} a [raw score]{.definition} is
++ trick to understanding z-scores:
+  + [raw]{.definition} score ($X$)
+  + [relative]{.definition} score ($Z$)
+:::
+::::
+
+![](https://static.thenounproject.com/png/223187-200.png){.absolute right="515" bottom="105" height="110"}
+
+![](https://pressbooks.bccampus.ca/statspsych/wp-content/uploads/sites/1469/2021/07/Fig-3.4-1024x637.png){.absolute left="-135" bottom="160" height="350"}
+
+## Z as reported score
+
+:::: {.columns}
+::: {.column width="30%"}
+:::
+
+::: {.column width="70%"}
+::: {.ninety}
++ $Z$ scores below distribution's [median]{.definition} always negative
++ If delivering feedback, probably not wise to keep that scale
++ $Z$'s therefore typically [transformed]{.definition} (p. 49)
+  + IQ score of 100 is actually a $Z$ of 0
+  + $Z$ of 0 is ACT score of 20
+:::
+
+:::{.callout-tip}
+Percentiles are never rescaled (probably less confusing)
+:::
+
+:::
+::::
+
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjlsdGRwc242eWFsMDAwanYybGdyM3Z3anNzdXRnc2ZoYTF6eTNvdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/PZAqhZ5qEH2YDlVWRT/giphy.gif){.absolute left="-150" bottom="130" height="400"}
+
+## Standard Normal Distribution
 
 :::: {.columns}
 ::: {.column width="60%"}
-### High Stakes (`r emo::ji("cut_of_meat")``r emo::ji("cut_of_meat")``r emo::ji("cut_of_meat")``r emo::ji("cut_of_meat")``r emo::ji("cut_of_meat")`)
 
-+ Adoption
-+ Admission
-+ Hiring
-+ `One-shot`
++ Defined by mathematical formula
++ ***Nothing*** distributed "normally"
+  + ***very many*** things distributed "approximately normally"
++ Tells us relationship between z-score and percentiles [within this mathematically ideal distribution]{.definition}
 
+:::{.callout-note}
+"Relationship" detailed in book's Appendix I
 :::
-
-::: {.column width="40%" .fragment}
-### Low Stakes (`r emo::ji("cut_of_meat")`)
-
-+ Dating
-+ Self-awareness
-+ Classroom
-+ `Retakes permitted`
-:::
-::::
-
-## Terminology Recap
-
-[![](https://designtlc.com/wp-content/uploads/2018/07/terminology.jpg)](https://www.youtube.com/watch?v=yU8HF64S92U)
-
-# History of Ψ testing
-
-## Darwin & Individual Differences
-
-:::: {.columns}
-::: {.column width="80%"}
-+ evolutionary theory partially informed by individual differences within species
-+ $\frac{1}{2}$ cousins with Francis Galton (dob 1822)
-  + Hyper-focused on individual differences
-  + Controversial primarily for eugenics
-  + Galton Institute [rebranded in 2021](https://adelphigenetics.org/about/)
-:::
-::::
-
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Sir_Francis_Galton_by_Charles_Wellington_Furse.jpg/220px-Sir_Francis_Galton_by_Charles_Wellington_Furse.jpg){.absolute right="-70" bottom="100" height="300"}
-
-## Psychophysics
-
-:::: {.columns}
-
-::: {.column width="35%"}
-:::
-
-::: {.column width="65%"}
-
-+ focused on measurement of ***human sensation/ perception*** 
-+ concept of ***threshold*** important (minimum quantity needed to elicit reaction)
-+ considered the genesis of `experimental psychology`
-  + testing should be treated like an experiment
-:::
-::::
-
-![](https://cards.algoreducation.com/_next/image?url=https%3A%2F%2Ffiles.algoreducation.com%2Fproduction-ts%2F__S3__5ca8d363-6840-4357-ba71-f1d06297c344&w=3840&q=75){.absolute left="-130" bottom="180" height="250"}
-
-## Public need
-
-:::: {.columns}
-::: {.column width="70%"}
-+ French government wanted to identify mentally disadvantaged
-+ Alfred Binet & Theodore Simon developed a ***test*** to help (1905)
-  + utilized `standardization` sample (aka norm)
-  + proposed IQ as metric (1908)
-  + today classified as "intelligence" test
-  + Terman revised as "Stanford-Binet" (1916)
-:::
-::::
-
-![](https://m.media-amazon.com/images/I/81UHL2vzFlL._AC_UF894,1000_QL80_.jpg){.absolute right="-70" bottom="100" height="400"}
-
-## World War I
-
-:::: {.columns}
-::: {.column width="35%"}
-:::
-
-::: {.column width="65%"}
-
-+ Yerkes and Terman recruited to help US army process recruits
-+ developed intelligence test, but intelligent individuals were failing
-  + ***group*** testing developed as administration option
-  + [Army Alpha and Army Beta](https://www.officialasvab.com/researchers/army-samples/)
-  + Most believe Army didn't use, but others took notice...
-:::
-::::
-
-![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXEwY3l4NmRxa2dhYjk4aXFudzd4aGQzdXl4eGh0eWg0bnZudGZncyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/R98cFjunTyfpS/giphy.gif){.absolute left="-130" bottom="200" height="250"}
-
-## Interwar period (1918--1941)
-
-:::: {.columns}
-::: {.column width="70%"}
-
-+ Standardized "achievement" tests proliferate (education and industry)
-  + easy to administer
-  + first Wechsler test published (1939)
-    + several subscales (not just "overall IQ")
-+ Personality "tests" also briefly become popular
-  + Woodworth Personal Data Sheet (1917)
 
 :::
 ::::
 
-![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbHcyZ2J1ZTgxNGIyY2tpcGF6djBtNGtpMzJqbXJrbTZmcGh4YzBmcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oEduK0kW69xoX5Apq/giphy.gif){.absolute right="-130" bottom="180" height="300"}
+![](https://media.geeksforgeeks.org/wp-content/uploads/20230811122554/Probability-Density-for-Normal-Distribution.png){.absolute right="-130" top="0" height="300"}
 
-## World War II & after
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Standard_Normal_Distribution.png/1024px-Standard_Normal_Distribution.png){.absolute right="-130" bottom="0" height="300"}
 
-:::: {.columns}
-::: {.column width="70%"}
+![](https://p9n2c8y2.delivery.rocketcdn.me/wp-content/uploads/2021/05/7.png.webp){.absolute height="100" top="75" right="300"}
+![](https://p9n2c8y2.delivery.rocketcdn.me/wp-content/uploads/2021/05/7.png.webp){.absolute height="200" bottom="80" right="300"}
 
-+ Testing now more well established 
-+ Army recruits and uses tests
-+ Clinical and Industrial sub-disciplines develop
-  + both rely on testing to inform decisions
-+ [Standards](https://www.apa.org/science/programs/testing/standards) published (pre-1^st^ edition)
-
-:::
-::::
-
-![](https://images.bwbcovers.com/091/Standards-for-Educational-Psychological-Testing-American-Educational-9780912704951.jpg){.absolute right="-100" bottom="100"}
-
-## Importance of Individual Differences
-
-:::: {.columns}
-::: {.column width="30%"}
-:::
-
-::: {.column width="70%"}
-+ Measurement depends on the ability to [detect]{.bluescript} and [quantify]{.bluescript} psychological differences
-+ Do differences in test scores [truly reflect]{.greenscript} psychological differences?
-+ So critically important that some Psychologists (including me) grossly define Psychology as the “study of individual differences”
-:::
-::::
-
-![](https://co-geeking.com/wp-content/uploads/2020/03/twitter-land-of-cuteness-exact-opposites-cats.jpg?w=636){.absolute left="-150" bottom="130" height="400"}
-
-## Importance of Individual Differences (II)
-
-[Testing]{.pinkscript} is the most commonly used method for psychologists to measure inter- and intra-individual differences:
+## Norms
 
 :::: {.columns}
 ::: {.column width="50%"}
 
-+ [Inter]{.pinkscript}: Homer smarter than Bart
-+ [Intra]{.pinkscript}: Persephone nicer *now* than she used to be
+Can refer to: 
+
++ frequency distribution itself (aka [normative]{.definition} group), or
++ common values within that distribution
+  + [raw score]{.definition} at 50^th^ percentile
+  
+More generally, [***the sample retained for obtaining relative scores***]{.definition}
 :::
 
 ::: {.column width="50%"}
 :::
-![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjAwazFuemZ3em53MnBmOWZndThzZnkzdnB2NHFlNjl3ZzBmMXN1NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/eMu0803X2zkWY/giphy.gif){.absolute right="-50" bottom="100" height="300"}
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjBwaGJnc3E3Y2lycnhnYnkzeG1jYWRwY3Ywd2d1eXdjMzhxc3BiMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/D0rCUqtbamX2Rmr8aq/giphy.gif){.absolute right="-50" bottom="100" height="500"}
 ::::
 
-## Let's take a "test"!!!
+## Two types of tests
 
 :::: {.columns}
-::: {.column width="30%"}
-<br>
+::: {.column width="50%"}
 
-### Before:
-+ 120-item fine
-+ gender & age
-+ `r fontawesome::fa("square-check", fill="#4287f5")` the `keep the form with your answers` option
+### Norm-referenced:
++ How the test-taker performs relative to the comparison group (e.g., [norm]{.definition})
++ Feedback most typically [percentile]{.definition} and [scale score]{.definition} (transformed $Z$)
 :::
 
 ::: {.column width="50%"}
-<br>
-<br>
 
-[![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmM4cTJ4cTU2NmNuZmc1MjV2YXozeXMxZWxnM2x0Z3cxMTlhZDkxZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/B6p3epsRMQWMU/giphy.gif)](https://psytests.org/big5/ineoAen.html)
-:::
-
-::: {.column width="20%"}
-<br>
-
-### After:
-+ Expand "Form" and "Calculations" sections
-+ Use `r fontawesome::fa("print", fill="#4287f5")` option to `save as PDF`
+### Criterion-referenced:
++ How the test-taker performs relative to an objective standard
++ Feedback often [raw scores]{.definition} and might also include [pass]{.definition} or [fail]{.definition} designation
 :::
 ::::
+
+## References
