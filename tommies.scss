@@ -9,7 +9,7 @@ $body-bg: #191919;
 $body-color: #fff;
 $link-color: #42affa;
 $code-color: hotpink;
-$presentation-title-slide-text-align: right;
+$presentation-title-slide-text-align: left;
 $presentation-title-slide-text-color: black;
 
 /*-- scss:rules --*/
@@ -56,7 +56,7 @@ $presentation-title-slide-text-color: black;
 .crossmethod {
   font-size: 80px;
 /*  text-decoration: underline; */
-  color: #6495ed;
+  color: #c49f39;
   font-family: 'Protest Guerrilla';
 }
 
