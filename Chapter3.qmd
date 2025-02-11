@@ -45,7 +45,7 @@ library(fontawesome)
 + Not tested on formulas
   + [Concepts]{.definition} are fair game
 + Project:
-  + Confirm construct name
+  + [Citi training](https://www.stthomas.edu/academics/research/institutional-review-board/researcher/)
   + Share 2-3 empirical articles<br>(intragroup) 
   + Discuss construct <br>(intergroup)
   

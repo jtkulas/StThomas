@@ -369,7 +369,7 @@ Book makes an odd distinction between "percentile rank" and "percentiles" -- thi
 
 ::: {.column width="70%"}
 ::: {.ninety}
-+ $Z$ scores below distribution's [median]{.definition} always negative
++ $Z$ scores below distribution's [mean]{.definition} always negative
 + If delivering feedback, probably not wise to keep that scale
 + $Z$'s therefore typically [transformed]{.definition} (p. 49)
   + IQ score of 100 is actually a $Z$ of 0
