@@ -29,27 +29,7 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for citations */
-    div.csl-bib-body { }
-    div.csl-entry {
-      clear: both;
-      margin-bottom: 0em;
-    }
-    .hanging-indent div.csl-entry {
-      margin-left:2em;
-      text-indent:-2em;
-    }
-    div.csl-left-margin {
-      min-width:2em;
-      float:left;
-    }
-    div.csl-right-inline {
-      margin-left:2em;
-      padding-left:1em;
-    }
-    div.csl-indent {
-      margin-left: 2em;
-    }  </style>
+  </style>
   <link rel="stylesheet" href="Chapter3_files/libs/revealjs/dist/theme/quarto.css">
   <link href="Chapter3_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="Chapter3_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -386,7 +366,7 @@ Chapter 3…<br><span class="crossmethod">…Correlation<br>&amp; Regression</sp
 <ul>
 <li><a href="https://www.stthomas.edu/academics/research/institutional-review-board/researcher/">Citi training</a></li>
 <li>Share 2-3 empirical articles<br>(intragroup)</li>
-<li>Discuss construct <br>(intergroup)</li>
+<li>Discuss construct <br>(intragroup)</li>
 </ul></li>
 </ul>
 <p><img data-src="https://www.freeiconspng.com/uploads/sweeping-png-15.png" class="absolute" style="bottom: -40px; right: -130px; height: 150px; "></p>
@@ -460,368 +440,162 @@ Chapter 3…<br><span class="crossmethod">…Correlation<br>&amp; Regression</sp
 </div><div class="column" style="width:50%;">
 <div class="cell">
 <div class="cell-output-display">
-<div class="plotly html-widget html-fill-item" id="htmlwidget-556da73606be6d4462e1" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-556da73606be6d4462e1">{"x":{"visdat":{"53cc39a3122":["function () ","plotlyVisDat"]},"cur_data":"53cc39a3122","attrs":{"53cc39a3122":{"x":{},"y":{},"z":{},"mode":"markers","marker":{"size":6},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter3d"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"scene":{"xaxis":{"title":"Sepal.Length"},"yaxis":{"title":"Petal.Width"},"zaxis":{"title":"Petal.Length"}},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[5.0999999999999996,4.9000000000000004,4.7000000000000002,4.5999999999999996,5,5.4000000000000004,4.5999999999999996,5,4.4000000000000004,4.9000000000000004,5.4000000000000004,4.7999999999999998,4.7999999999999998,4.2999999999999998,5.7999999999999998,5.7000000000000002,5.4000000000000004,5.0999999999999996,5.7000000000000002,5.0999999999999996,5.4000000000000004,5.0999999999999996,4.5999999999999996,5.0999999999999996,4.7999999999999998,5,5,5.2000000000000002,5.2000000000000002,4.7000000000000002,4.7999999999999998,5.4000000000000004,5.2000000000000002,5.5,4.9000000000000004,5,5.5,4.9000000000000004,4.4000000000000004,5.0999999999999996,5,4.5,4.4000000000000004,5,5.0999999999999996,4.7999999999999998,5.0999999999999996,4.5999999999999996,5.2999999999999998,5,7,6.4000000000000004,6.9000000000000004,5.5,6.5,5.7000000000000002,6.2999999999999998,4.9000000000000004,6.5999999999999996,5.2000000000000002,5,5.9000000000000004,6,6.0999999999999996,5.5999999999999996,6.7000000000000002,5.5999999999999996,5.7999999999999998,6.2000000000000002,5.5999999999999996,5.9000000000000004,6.0999999999999996,6.2999999999999998,6.0999999999999996,6.4000000000000004,6.5999999999999996,6.7999999999999998,6.7000000000000002,6,5.7000000000000002,5.5,5.5,5.7999999999999998,6,5.4000000000000004,6,6.7000000000000002,6.2999999999999998,5.5999999999999996,5.5,5.5,6.0999999999999996,5.7999999999999998,5,5.5999999999999996,5.7000000000000002,5.7000000000000002,6.2000000000000002,5.0999999999999996,5.7000000000000002,6.2999999999999998,5.7999999999999998,7.0999999999999996,6.2999999999999998,6.5,7.5999999999999996,4.9000000000000004,7.2999999999999998,6.7000000000000002,7.2000000000000002,6.5,6.4000000000000004,6.7999999999999998,5.7000000000000002,5.7999999999999998,6.4000000000000004,6.5,7.7000000000000002,7.7000000000000002,6,6.9000000000000004,5.5999999999999996,7.7000000000000002,6.2999999999999998,6.7000000000000002,7.2000000000000002,6.2000000000000002,6.0999999999999996,6.4000000000000004,7.2000000000000002,7.4000000000000004,7.9000000000000004,6.4000000000000004,6.2999999999999998,6.0999999999999996,7.7000000000000002,6.2999999999999998,6.4000000000000004,6,6.9000000000000004,6.7000000000000002,6.9000000000000004,5.7999999999999998,6.7999999999999998,6.7000000000000002,6.7000000000000002,6.2999999999999998,6.5,6.2000000000000002,5.9000000000000004],"y":[0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.40000000000000002,0.29999999999999999,0.20000000000000001,0.20000000000000001,0.10000000000000001,0.20000000000000001,0.20000000000000001,0.10000000000000001,0.10000000000000001,0.20000000000000001,0.40000000000000002,0.40000000000000002,0.29999999999999999,0.29999999999999999,0.29999999999999999,0.20000000000000001,0.40000000000000002,0.20000000000000001,0.5,0.20000000000000001,0.20000000000000001,0.40000000000000002,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.40000000000000002,0.10000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.10000000000000001,0.20000000000000001,0.20000000000000001,0.29999999999999999,0.29999999999999999,0.20000000000000001,0.59999999999999998,0.40000000000000002,0.29999999999999999,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,1.3999999999999999,1.5,1.5,1.3,1.5,1.3,1.6000000000000001,1,1.3,1.3999999999999999,1,1.5,1,1.3999999999999999,1.3,1.3999999999999999,1.5,1,1.5,1.1000000000000001,1.8,1.3,1.5,1.2,1.3,1.3999999999999999,1.3999999999999999,1.7,1.5,1,1.1000000000000001,1,1.2,1.6000000000000001,1.5,1.6000000000000001,1.5,1.3,1.3,1.3,1.2,1.3999999999999999,1.2,1,1.3,1.2,1.3,1.3,1.1000000000000001,1.3,2.5,1.8999999999999999,2.1000000000000001,1.8,2.2000000000000002,2.1000000000000001,1.7,1.8,1.8,2.5,2,1.8999999999999999,2.1000000000000001,2,2.3999999999999999,2.2999999999999998,1.8,2.2000000000000002,2.2999999999999998,1.5,2.2999999999999998,2,2,1.8,2.1000000000000001,1.8,1.8,1.8,2.1000000000000001,1.6000000000000001,1.8999999999999999,2,2.2000000000000002,1.5,1.3999999999999999,2.2999999999999998,2.3999999999999999,1.8,1.8,2.1000000000000001,2.3999999999999999,2.2999999999999998,1.8999999999999999,2.2999999999999998,2.5,2.2999999999999998,1.8999999999999999,2,2.2999999999999998,1.8],"z":[1.3999999999999999,1.3999999999999999,1.3,1.5,1.3999999999999999,1.7,1.3999999999999999,1.5,1.3999999999999999,1.5,1.5,1.6000000000000001,1.3999999999999999,1.1000000000000001,1.2,1.5,1.3,1.3999999999999999,1.7,1.5,1.7,1.5,1,1.7,1.8999999999999999,1.6000000000000001,1.6000000000000001,1.5,1.3999999999999999,1.6000000000000001,1.6000000000000001,1.5,1.5,1.3999999999999999,1.5,1.2,1.3,1.3999999999999999,1.3,1.5,1.3,1.3,1.3,1.6000000000000001,1.8999999999999999,1.3999999999999999,1.6000000000000001,1.3999999999999999,1.5,1.3999999999999999,4.7000000000000002,4.5,4.9000000000000004,4,4.5999999999999996,4.5,4.7000000000000002,3.2999999999999998,4.5999999999999996,3.8999999999999999,3.5,4.2000000000000002,4,4.7000000000000002,3.6000000000000001,4.4000000000000004,4.5,4.0999999999999996,4.5,3.8999999999999999,4.7999999999999998,4,4.9000000000000004,4.7000000000000002,4.2999999999999998,4.4000000000000004,4.7999999999999998,5,4.5,3.5,3.7999999999999998,3.7000000000000002,3.8999999999999999,5.0999999999999996,4.5,4.5,4.7000000000000002,4.4000000000000004,4.0999999999999996,4,4.4000000000000004,4.5999999999999996,4,3.2999999999999998,4.2000000000000002,4.2000000000000002,4.2000000000000002,4.2999999999999998,3,4.0999999999999996,6,5.0999999999999996,5.9000000000000004,5.5999999999999996,5.7999999999999998,6.5999999999999996,4.5,6.2999999999999998,5.7999999999999998,6.0999999999999996,5.0999999999999996,5.2999999999999998,5.5,5,5.0999999999999996,5.2999999999999998,5.5,6.7000000000000002,6.9000000000000004,5,5.7000000000000002,4.9000000000000004,6.7000000000000002,4.9000000000000004,5.7000000000000002,6,4.7999999999999998,4.9000000000000004,5.5999999999999996,5.7999999999999998,6.0999999999999996,6.4000000000000004,5.5999999999999996,5.0999999999999996,5.5999999999999996,6.0999999999999996,5.5999999999999996,5.5,4.7999999999999998,5.4000000000000004,5.5999999999999996,5.0999999999999996,5.0999999999999996,5.9000000000000004,5.7000000000000002,5.2000000000000002,5,5.2000000000000002,5.4000000000000004,5.0999999999999996],"mode":"markers","marker":{"color":"rgba(31,119,180,1)","size":6,"line":{"color":"rgba(31,119,180,1)"}},"type":"scatter3d","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item" id="htmlwidget-4cf435aa71961351b7a6" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-4cf435aa71961351b7a6">{"x":{"visdat":{"4a9016675ab7":["function () ","plotlyVisDat"]},"cur_data":"4a9016675ab7","attrs":{"4a9016675ab7":{"x":{},"y":{},"z":{},"mode":"markers","marker":{"size":6},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter3d"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"scene":{"xaxis":{"title":"Sepal.Length"},"yaxis":{"title":"Petal.Width"},"zaxis":{"title":"Petal.Length"}},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[5.0999999999999996,4.9000000000000004,4.7000000000000002,4.5999999999999996,5,5.4000000000000004,4.5999999999999996,5,4.4000000000000004,4.9000000000000004,5.4000000000000004,4.7999999999999998,4.7999999999999998,4.2999999999999998,5.7999999999999998,5.7000000000000002,5.4000000000000004,5.0999999999999996,5.7000000000000002,5.0999999999999996,5.4000000000000004,5.0999999999999996,4.5999999999999996,5.0999999999999996,4.7999999999999998,5,5,5.2000000000000002,5.2000000000000002,4.7000000000000002,4.7999999999999998,5.4000000000000004,5.2000000000000002,5.5,4.9000000000000004,5,5.5,4.9000000000000004,4.4000000000000004,5.0999999999999996,5,4.5,4.4000000000000004,5,5.0999999999999996,4.7999999999999998,5.0999999999999996,4.5999999999999996,5.2999999999999998,5,7,6.4000000000000004,6.9000000000000004,5.5,6.5,5.7000000000000002,6.2999999999999998,4.9000000000000004,6.5999999999999996,5.2000000000000002,5,5.9000000000000004,6,6.0999999999999996,5.5999999999999996,6.7000000000000002,5.5999999999999996,5.7999999999999998,6.2000000000000002,5.5999999999999996,5.9000000000000004,6.0999999999999996,6.2999999999999998,6.0999999999999996,6.4000000000000004,6.5999999999999996,6.7999999999999998,6.7000000000000002,6,5.7000000000000002,5.5,5.5,5.7999999999999998,6,5.4000000000000004,6,6.7000000000000002,6.2999999999999998,5.5999999999999996,5.5,5.5,6.0999999999999996,5.7999999999999998,5,5.5999999999999996,5.7000000000000002,5.7000000000000002,6.2000000000000002,5.0999999999999996,5.7000000000000002,6.2999999999999998,5.7999999999999998,7.0999999999999996,6.2999999999999998,6.5,7.5999999999999996,4.9000000000000004,7.2999999999999998,6.7000000000000002,7.2000000000000002,6.5,6.4000000000000004,6.7999999999999998,5.7000000000000002,5.7999999999999998,6.4000000000000004,6.5,7.7000000000000002,7.7000000000000002,6,6.9000000000000004,5.5999999999999996,7.7000000000000002,6.2999999999999998,6.7000000000000002,7.2000000000000002,6.2000000000000002,6.0999999999999996,6.4000000000000004,7.2000000000000002,7.4000000000000004,7.9000000000000004,6.4000000000000004,6.2999999999999998,6.0999999999999996,7.7000000000000002,6.2999999999999998,6.4000000000000004,6,6.9000000000000004,6.7000000000000002,6.9000000000000004,5.7999999999999998,6.7999999999999998,6.7000000000000002,6.7000000000000002,6.2999999999999998,6.5,6.2000000000000002,5.9000000000000004],"y":[0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.40000000000000002,0.29999999999999999,0.20000000000000001,0.20000000000000001,0.10000000000000001,0.20000000000000001,0.20000000000000001,0.10000000000000001,0.10000000000000001,0.20000000000000001,0.40000000000000002,0.40000000000000002,0.29999999999999999,0.29999999999999999,0.29999999999999999,0.20000000000000001,0.40000000000000002,0.20000000000000001,0.5,0.20000000000000001,0.20000000000000001,0.40000000000000002,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.40000000000000002,0.10000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.10000000000000001,0.20000000000000001,0.20000000000000001,0.29999999999999999,0.29999999999999999,0.20000000000000001,0.59999999999999998,0.40000000000000002,0.29999999999999999,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,1.3999999999999999,1.5,1.5,1.3,1.5,1.3,1.6000000000000001,1,1.3,1.3999999999999999,1,1.5,1,1.3999999999999999,1.3,1.3999999999999999,1.5,1,1.5,1.1000000000000001,1.8,1.3,1.5,1.2,1.3,1.3999999999999999,1.3999999999999999,1.7,1.5,1,1.1000000000000001,1,1.2,1.6000000000000001,1.5,1.6000000000000001,1.5,1.3,1.3,1.3,1.2,1.3999999999999999,1.2,1,1.3,1.2,1.3,1.3,1.1000000000000001,1.3,2.5,1.8999999999999999,2.1000000000000001,1.8,2.2000000000000002,2.1000000000000001,1.7,1.8,1.8,2.5,2,1.8999999999999999,2.1000000000000001,2,2.3999999999999999,2.2999999999999998,1.8,2.2000000000000002,2.2999999999999998,1.5,2.2999999999999998,2,2,1.8,2.1000000000000001,1.8,1.8,1.8,2.1000000000000001,1.6000000000000001,1.8999999999999999,2,2.2000000000000002,1.5,1.3999999999999999,2.2999999999999998,2.3999999999999999,1.8,1.8,2.1000000000000001,2.3999999999999999,2.2999999999999998,1.8999999999999999,2.2999999999999998,2.5,2.2999999999999998,1.8999999999999999,2,2.2999999999999998,1.8],"z":[1.3999999999999999,1.3999999999999999,1.3,1.5,1.3999999999999999,1.7,1.3999999999999999,1.5,1.3999999999999999,1.5,1.5,1.6000000000000001,1.3999999999999999,1.1000000000000001,1.2,1.5,1.3,1.3999999999999999,1.7,1.5,1.7,1.5,1,1.7,1.8999999999999999,1.6000000000000001,1.6000000000000001,1.5,1.3999999999999999,1.6000000000000001,1.6000000000000001,1.5,1.5,1.3999999999999999,1.5,1.2,1.3,1.3999999999999999,1.3,1.5,1.3,1.3,1.3,1.6000000000000001,1.8999999999999999,1.3999999999999999,1.6000000000000001,1.3999999999999999,1.5,1.3999999999999999,4.7000000000000002,4.5,4.9000000000000004,4,4.5999999999999996,4.5,4.7000000000000002,3.2999999999999998,4.5999999999999996,3.8999999999999999,3.5,4.2000000000000002,4,4.7000000000000002,3.6000000000000001,4.4000000000000004,4.5,4.0999999999999996,4.5,3.8999999999999999,4.7999999999999998,4,4.9000000000000004,4.7000000000000002,4.2999999999999998,4.4000000000000004,4.7999999999999998,5,4.5,3.5,3.7999999999999998,3.7000000000000002,3.8999999999999999,5.0999999999999996,4.5,4.5,4.7000000000000002,4.4000000000000004,4.0999999999999996,4,4.4000000000000004,4.5999999999999996,4,3.2999999999999998,4.2000000000000002,4.2000000000000002,4.2000000000000002,4.2999999999999998,3,4.0999999999999996,6,5.0999999999999996,5.9000000000000004,5.5999999999999996,5.7999999999999998,6.5999999999999996,4.5,6.2999999999999998,5.7999999999999998,6.0999999999999996,5.0999999999999996,5.2999999999999998,5.5,5,5.0999999999999996,5.2999999999999998,5.5,6.7000000000000002,6.9000000000000004,5,5.7000000000000002,4.9000000000000004,6.7000000000000002,4.9000000000000004,5.7000000000000002,6,4.7999999999999998,4.9000000000000004,5.5999999999999996,5.7999999999999998,6.0999999999999996,6.4000000000000004,5.5999999999999996,5.0999999999999996,5.5999999999999996,6.0999999999999996,5.5999999999999996,5.5,4.7999999999999998,5.4000000000000004,5.5999999999999996,5.0999999999999996,5.0999999999999996,5.9000000000000004,5.7000000000000002,5.2000000000000002,5,5.2000000000000002,5.4000000000000004,5.0999999999999996],"mode":"markers","marker":{"color":"rgba(31,119,180,1)","size":6,"line":{"color":"rgba(31,119,180,1)"}},"type":"scatter3d","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div></div>
 <p><img data-src="https://www.researchgate.net/publication/366849054/figure/fig24/AS:11431281110951871@1672824232108/2-Petal-and-Sepal-of-Iris-flowers-As-input-data-the-network-should-be-provided-a-dataset.png" class="absolute" style="top: -20px; right: -130px; height: 250px; "></p>
 </section>
-<section id="use-of-numbers" class="slide level2">
-<h2>Use of numbers…</h2>
-</section>
-<section id="fundamental-properties-of-numbers" class="slide level2">
-<h2>Fundamental properties of numbers</h2>
-<div class="columns">
-<div class="column" style="width:70%;">
-<ul>
-<li>Numbers are used to represent an individual’s level of standing along a psychological attribute
-<ul>
-<li><span class="pinkscript">However</span> – Not all numbers retain their inherent characteristics with Psychological measurement</li>
-</ul></li>
-<li>Different rules of assignment collectively define different “scales of measurement”
-<ul>
-<li>NOIR <span class="citation" data-cites="stevens1946theory">(<a href="#/references" role="doc-biblioref" onclick="">Stevens, 1946</a>)</span></li>
-</ul></li>
-</ul>
-</div><div class="column" style="width:30%;">
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Note</strong></p>
-</div>
-<div class="callout-content">
-<p><strong>HOW</strong> we assign numbers to objects is very important, because if the numbers do not retain their inherent properties, then perhaps it’s not appropriate to perform mathematical/ statistical operations on those numbers…</p>
-</div>
-</div>
-</div>
-</div></div>
-</section>
-<section id="property-zero" class="slide level2">
-<h2>Property Zero<sup>1</sup></h2>
-<div class="columns">
-<div class="column" style="width:25%;">
-
-</div><div class="column" style="width:75%;">
-<h3 id="numbers-can-reflect-sameness-versus-differentness">Numbers can reflect <span class="definition">sameness versus differentness</span></h3>
-<ul>
-<li>Numbers here are merely <em>labels</em></li>
-<li>Differences in kind / sort / ilk, not in amount</li>
-<li>Things within a category (i.e., with same number) are identical in terms of the relevant feature</li>
-</ul>
-</div></div>
-<p><img data-src="https://images.squarespace-cdn.com/content/v1/5aba1e6b70e802e5fd3b93ff/12011b42-a21c-45cb-8e8b-0769250ca8ba/goose-down-vs-duck-down-02.jpg" class="absolute" style="left: -70px; bottom: 200px; height: 200px; "></p>
-<aside><ol class="aside-footnotes"><li id="fn1"><p>Book doesn’t explicitly mention but important for understanding <span class="citation" data-cites="stevens1946theory">Stevens (<a href="#/references" role="doc-biblioref" onclick="">1946</a>)</span></p></li></ol></aside></section>
-<section id="property-i" class="slide level2">
-<h2>Property I</h2>
-<div class="columns">
-<div class="column" style="width:75%;">
-<h3 id="numbers-can-reflect-magnitude-of-differences-between-things">Numbers can reflect <span class="definition">magnitude of differences</span> between things</h3>
-<ul>
-<li>Numbers here are again used as labels, but sequence is also being reflected</li>
-<li>“How much”?</li>
-</ul>
-</div></div>
-<p><img data-src="https://www.mathsisfun.com/numbers/images/sage-greater-than.svg" class="absolute" style="bottom: 0px; right: -150px; height: 350px; "></p>
-</section>
-<section id="property-ii" class="slide level2">
-<h2>Property II</h2>
-<div class="columns">
-<div class="column" style="width:25%;">
-
-</div><div class="column" style="width:75%;">
-<h3 id="differences-between-numbers-hold-equal-intervals">Differences between numbers hold <span class="definition">equal intervals</span></h3>
-<ul>
-<li>moving from “4” to “7” has the <strong><em>same meaning</em></strong> as moving from “10” to “13”</li>
-<li>numbering doesn’t “increase” until underlying Psychological trait “moves” the same distance</li>
-</ul>
-</div></div>
-<p><img data-src="https://cdn.britannica.com/96/151896-004-5A5C10BD.jpg" class="absolute" style="left: -40px; bottom: 50px; height: 500px; "></p>
-</section>
-<section id="property-iii" class="slide level2">
-<h2>Property III</h2>
-<div class="columns">
-<div class="column" style="width:40%;">
-<h3 id="zero-reserved-for-only-very-special-scenario"><span class="definition">Zero</span> reserved for only very special scenario</h3>
-<ul>
-<li>complete absence of the attribute</li>
-<li>If zero is absolute, then we can compare scores in terms of ratios (e.g., twice as long)</li>
-</ul>
-</div></div>
-<p><img data-src="https://media.istockphoto.com/id/465382081/photo/growing-up-taller-than-a-dinosaur.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=Flb4zjbKbQZPk3rkKPrZuEd6YRKZPIroTfajI-9BLX4=" class="absolute" style="bottom: 0px; right: -100px; "></p>
-</section>
-<section id="scales-of-measurement-stevens1946theory" class="slide level2">
-<h2>Scales of measurement <span class="citation" data-cites="stevens1946theory">(<a href="#/references" role="doc-biblioref" onclick="">Stevens, 1946</a>)</span></h2>
-<div class="columns">
-<div class="column" style="width:35%;">
-
-</div><div class="column" style="width:65%;">
-<ul>
-<li><span class="crossmethod">N</span>ominal</li>
-<li><span class="crossmethod">O</span>rdinal</li>
-<li><span class="crossmethod">I</span>nterval</li>
-<li><span class="crossmethod">R</span>atio</li>
-</ul>
-</div></div>
-<p><img data-src="https://feminema.wordpress.com/wp-content/uploads/2011/02/500laura6.jpg" class="absolute" style="left: -100px; bottom: 50px; height: 500px; "></p>
-<p><img data-src="https://biodiversity.com.pt/wp-content/uploads/2022/05/header_taxonomia_600x960.jpg" class="absolute fragment fade-in-then-out" style="bottom: 0px; right: 0px; height: 600px; "> <img data-src="https://media.istockphoto.com/id/1307693227/vector/usa-army-enlisted-ranks-chevrons-with-insignia.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=VM0xKuRzwSZ2tHAlb_SvvFAzYvQdGgG2pLMxzrALkiY=" class="absolute fragment fade-in-then-out" style="bottom: 0px; right: -150px; height: 600px; "></p>
-<p><img data-src="https://cdn1.byjus.com/wp-content/uploads/2019/03/relation-between-celsius-and-fahrenheit.png" class="absolute fragment fade-in-then-out" style="bottom: 100px; right: -150px; height: 450px; "></p>
-<p><img data-src="https://www.shutterstock.com/image-vector/temperature-scales-showing-differences-between-600nw-2080891831.jpg" class="absolute fragment fade-in-then-out" style="bottom: 150px; right: -150px; height: 350px; "></p>
-<aside class="notes">
-<p>To measure something, we must acknowledge units of measurement (e.g., weight: # of lbs; temp = Fº)</p>
-<p>Question for class: What is the unit of measurement in psychology?</p>
-<p>Each test has its own “unit” of measurement (one “point” on an IQ test is not same as one “point” on a math test)</p>
-<p>Most often for us, the unit of measurement is a statistical index called the standard deviation</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section>
-<section id="stats-stuff" class="title-slide slide level1 center">
-<h1>Stats stuff!!</h1>
-
-<img data-src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExdzUxdXk3eHE2MWZoNDN3YnF1dzRjOWtydmtlaWgwMDA3azl4ZDRmNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3ohc15hpGuLpSTx960/giphy.gif" class="r-stretch"></section>
-<section id="frequency-distributions" class="slide level2">
-<h2>Frequency distributions</h2>
-<div class="columns">
-<div class="column" style="width:35%;">
-<p>Tell us:</p>
-<ol type="1">
-<li><span class="definition">location</span> of scores</li>
-<li><span class="definition">spread</span> of scores</li>
-</ol>
-<p>Formally, how frequently is each value encountered within a <span class="definition">sample</span></p>
-</div></div>
-<p><img data-src="https://media.geeksforgeeks.org/wp-content/uploads/20230726175644/Frequency-Distribution-Curve-1.png" class="absolute" style="bottom: 0px; right: -100px; "></p>
-</section>
-<section id="location-spread" class="slide level2">
-<h2>Location &amp; Spread</h2>
+<section id="scatterplot" class="slide level2">
+<h2>Scatterplot…</h2>
+<p>aka <span class="definition">Scatter Diagram</span> typically focused on <span class="definition">bivariate</span> distribution</p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<h3 id="location">Location:</h3>
-<ul>
-<li><span class="pinkscript">Mean</span></li>
-<li>Median</li>
-<li>Mode</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<h3 id="spread">Spread:</h3>
-<ul>
-<li>Range</li>
-<li><span class="pinkscript">Standard deviation</span></li>
-<li>Variance</li>
-</ul>
-</div></div>
-<p><img data-src="https://getnave.com/blog/wp-content/uploads/2018/04/Histogram-data-visualisation.png" class="absolute" style="left: -20px; bottom: -20px; height: 300px; "></p>
-<p><img data-src="https://miro.medium.com/v2/resize:fit:815/1*ihqINXkVS65zn1NDpmy2TQ.png" class="absolute" style="bottom: -20px; right: -100px; height: 300px; "></p>
-</section>
-<section id="in-class-data-collection" class="slide level2">
-<h2>In-class data collection:</h2>
-<p><img data-src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmVsMHE1MGY2YmNvbnkzbnVoN2o0NHoyejFyeXhuMnNmb2p5YmFjciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/mUYtAsf6G3i4wQDDCC/giphy.gif" class="absolute" style="right: 200px; "></p>
-<aside class="notes">
-<p>Collect data (number of pets?) and demonstrate:</p>
-<ol type="1">
-<li>data</li>
-<li>dataset</li>
-<li>frequency distribution</li>
-<li>location</li>
-<li>spread</li>
-</ol>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="importance-of-frequency-distributions" class="slide level2">
-<h2>Importance of frequency distributions</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<ul>
-<li>We use “distributional” information (location and spread) to generate <span class="definition">relative</span> scores
-<ul>
-<li>Relative to <span class="definition">other scorers</span> in the distribution</li>
-<li>Commonly expressed as either <span class="definition">%<sup>ile</sup></span> or <span class="definition">standard score</span></li>
-</ul></li>
-</ul>
-</div></div>
-<p><img data-src="img/percentiles.JPG" class="absolute" style="bottom: 100px; right: -70px; "></p>
-</section>
-<section id="percentiles" class="slide level2">
-<h2>Percentiles</h2>
-<div class="columns">
-<div class="column" style="width:45%;">
-<ul>
-<li>percent of distribution that scores <span class="definition"><em>at or below</em></span> a raw score value</li>
-</ul>
-</div><div class="column" style="width:55%;">
-<ul>
-<li>proceed from low (e.g., 1) to high (e.g., 99) as travel from <span class="definition">left to right</span> within distribution</li>
-</ul>
-</div></div>
-<p><img data-src="https://acutecaretesting.org/-/media/acutecaretesting/articles/fig-2-example.jpg?h=402&amp;w=750" class="absolute" style="left: 130px; bottom: 0px; "></p>
-<aside class="notes">
-<p>Book makes an odd distinction between “percentile rank” and “percentiles” – this is unnecessarily confusing. Treat them as equivalent (e.g., both “percentile rank” and “percentile” should be interpreted as referring to the same thing).</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="standard-scores" class="slide level2">
-<h2>Standard Scores</h2>
-<div class="columns">
-<div class="column" style="width:45%;">
-
-</div><div class="column" style="width:55%;">
-<ul>
-<li>Most commonly <span class="definition">rescaled z-scores</span></li>
-<li>z-score: how many <span class="definition">standard deviations</span> away from the <span class="definition">mean</span> a <span class="definition">raw score</span> is</li>
-<li>trick to understanding z-scores:
-<ul>
-<li><span class="definition">raw</span> score (<span class="math inline">\(X\)</span>)</li>
-<li><span class="definition">relative</span> score (<span class="math inline">\(Z\)</span>)</li>
-</ul></li>
-</ul>
-</div></div>
-<p><img data-src="https://static.thenounproject.com/png/223187-200.png" class="absolute" style="bottom: 105px; right: 515px; height: 110px; "></p>
-<p><img data-src="https://pressbooks.bccampus.ca/statspsych/wp-content/uploads/sites/1469/2021/07/Fig-3.4-1024x637.png" class="absolute" style="left: -135px; bottom: 160px; height: 350px; "></p>
-</section>
-<section id="z-as-reported-score" class="slide level2">
-<h2>Z as reported score</h2>
-<div class="columns">
-<div class="column" style="width:30%;">
-
-</div><div class="column" style="width:70%;">
 <div class="ninety">
 <ul>
-<li><span class="math inline">\(Z\)</span> scores below distribution’s <span class="definition">median</span> always negative</li>
-<li>If delivering feedback, probably not wise to keep that scale</li>
-<li><span class="math inline">\(Z\)</span>’s therefore typically <span class="definition">transformed</span> (p.&nbsp;49)
+<li>Histograms &amp; Polygons focus on <span class="definition">univariate</span> distribution
 <ul>
-<li>IQ score of 100 is actually a <span class="math inline">\(Z\)</span> of 0</li>
-<li><span class="math inline">\(Z\)</span> of 0 is ACT score of 20</li>
+<li>simply refers to:
+<ul>
+<li><strong><em>one thing at a time</em></strong>, or</li>
+<li><strong><em>two things simultaneously</em></strong></li>
 </ul></li>
+</ul></li>
+<li>Sometimes individual histograms also included in visual</li>
 </ul>
 </div>
-<div class="callout callout-tip callout-titled callout-style-default">
+</div></div>
+<p><img data-src="https://media.geeksforgeeks.org/wp-content/uploads/20230524143328/ing.png" class="absolute" style="bottom: 50px; right: -130px; "></p>
+<p><img data-src="https://freepngimg.com/thumb/arrow/80242-angle-area-icons-computer-arrow-art-thumb.png" class="absolute tilt fragment" style="left: 525px; bottom: 100px; height: 300px; "></p>
+</section>
+<section id="forms-of-association" class="slide level2">
+<h2><span class="bluescript2">Forms</span> of association</h2>
+<p><img data-src="https://www.quanthub.com/wp-content/uploads/scatterplot_association_suite.png" class="absolute" style="left: -100px; height: 500px; "></p>
+<p><img data-src="https://wac-cdn.atlassian.com/dam/jcr:6a10e325-fdfb-41a2-96da-a66e29b99847/scatter-plot-example-2.png?cdnVersion=2554" class="absolute" style="right: -100px; height: 500px; "></p>
+</section>
+<section id="scatterplot-and-correlation" class="slide level2">
+<h2>Scatterplot and correlation</h2>
+<p><img data-src="https://cqeacademy.com/wp-content/uploads/2018/06/Scatter-Plots-and-Correlation-Examples.png" class="absolute" style="bottom: -20px; "></p>
+<p><img data-src="https://www.quanthub.com/wp-content/uploads/scatterplot_correlation_suite.png" class="absolute" style="top: 5px; right: -120px; height: 370px; "></p>
+<p><img data-src="https://s3-us-west-2.amazonaws.com/courses-images-archive-read-only/wp-content/uploads/sites/924/2015/11/25201206/CNX_Precalc_Figure_02_04_0072.jpg" class="absolute" style="top: 75px; left: -110px; height: 300px; "></p>
+</section>
+<section>
+<section id="lets-construct-one" class="title-slide slide level1 center">
+<h1>Let’s construct one!</h1>
+
+<img data-src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExajZsYWF1cnU3aDR3b3Nid2pocm1sa3pvbjU2c2hrcDhkc3Nla2xmcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Mah9dFWo1WZX0WM62Q/giphy.gif" class="r-stretch"></section>
+<section id="regression" class="slide level2">
+<h2>Regression</h2>
+<p>Line of <span class="definition">best fit</span> through scatterplot</p>
+<div class="columns">
+<div class="column" style="width:47%;">
+<ul>
+<li>Useful for <span class="definition">prediction</span></li>
+<li>Can have one or more <span class="definition">predictor</span> variables
+<ul>
+<li>1 = <span class="definition">simple</span> regression</li>
+<li><span class="math inline">\(&gt;\)</span> 1 = <span class="definition">multiple</span> regression</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:53%;">
+<p><br> <br> <br> <br> <br> <br> <br></p>
+<div class="callout callout-warning callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Tip</strong></p>
+<p><strong>Warning</strong></p>
 </div>
 <div class="callout-content">
-<p>Percentiles are never rescaled (probably less confusing)</p>
+<p>Figure 3.4 has an error (p.&nbsp;68)</p>
 </div>
 </div>
 </div>
 </div></div>
-<p><img data-src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjlsdGRwc242eWFsMDAwanYybGdyM3Z3anNzdXRnc2ZoYTF6eTNvdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/PZAqhZ5qEH2YDlVWRT/giphy.gif" class="absolute" style="left: -150px; bottom: 130px; height: 400px; "></p>
+<p><img data-src="https://rotel.pressbooks.pub/app/uploads/sites/77/2024/07/Regression-equation-without-error-term-In-this-study-a-learner-was-defined-as-any.jpg" class="absolute" style="bottom: 160px; right: -153px; height: 350px; "></p>
 </section>
-<section id="standard-normal-distribution" class="slide level2">
-<h2>Standard Normal Distribution</h2>
+<section id="explore-simple-regression" class="slide level2">
+<h2>Explore Simple Regression</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="different-datasets"><span class="definition">Different</span> datasets:</h3>
+<p><a href="https://istats.shinyapps.io/LinearRegression/"><img data-src="img/regression.JPG"></a></p>
+</div><div class="column" style="width:50%;">
+<h3 id="try-to-beat-the-statistic">Try to <span class="definition">beat the statistic</span>:</h3>
+<p><a href="https://www.statcrunch.com/applets/type2&amp;regbyeye"><img data-src="img/regressioneye.JPG"></a></p>
+</div></div>
+</section>
+<section id="predicted-scores" class="slide level2">
+<h2>Predicted scores</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
-<ul>
-<li>Defined by mathematical formula</li>
-<li><strong><em>Nothing</em></strong> distributed “normally”
-<ul>
-<li><strong><em>very many</em></strong> things distributed “approximately normally”</li>
-</ul></li>
-<li>Tells us relationship between z-score and percentiles <span class="definition">within this mathematically ideal distribution</span></li>
-</ul>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Note</strong></p>
-</div>
-<div class="callout-content">
-<p>“Relationship” detailed in book’s Appendix I</p>
-</div>
-</div>
-</div>
-</div></div>
-<p><img data-src="https://media.geeksforgeeks.org/wp-content/uploads/20230811122554/Probability-Density-for-Normal-Distribution.png" class="absolute" style="top: 0px; right: -130px; height: 300px; "></p>
-<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Standard_Normal_Distribution.png/1024px-Standard_Normal_Distribution.png" class="absolute" style="bottom: 0px; right: -130px; height: 300px; "></p>
-<p><img data-src="https://p9n2c8y2.delivery.rocketcdn.me/wp-content/uploads/2021/05/7.png.webp" class="absolute" style="top: 75px; right: 300px; height: 100px; "> <img data-src="https://p9n2c8y2.delivery.rocketcdn.me/wp-content/uploads/2021/05/7.png.webp" class="absolute" style="bottom: 80px; right: 300px; height: 200px; "></p>
-</section>
-<section id="norms" class="slide level2">
-<h2>Norms</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>Can refer to:</p>
-<ul>
-<li>frequency distribution itself (aka <span class="definition">normative</span> group), or</li>
-<li>common values within that distribution
-<ul>
-<li><span class="definition">raw score</span> at 50<sup>th</sup> percentile</li>
-</ul></li>
-</ul>
-<p>More generally, <span class="definition"><strong><em>the sample retained for obtaining relative scores</em></strong></span></p>
-</div><div class="column" style="width:50%;">
 
-</div><p><img data-src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjBwaGJnc3E3Y2lycnhnYnkzeG1jYWRwY3Ywd2d1eXdjMzhxc3BiMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/D0rCUqtbamX2Rmr8aq/giphy.gif" class="absolute" style="bottom: 100px; right: -50px; height: 500px; "></p>
-</div>
-</section>
-<section id="two-types-of-tests" class="slide level2">
-<h2>Two types of tests</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<h3 id="norm-referenced">Norm-referenced:</h3>
+</div><div class="column" style="width:40%;">
 <ul>
-<li>How the test-taker performs relative to the comparison group (e.g., <span class="definition">norm</span>)</li>
-<li>Feedback most typically <span class="definition">percentile</span> and <span class="definition">scale score</span> (transformed <span class="math inline">\(Z\)</span>)</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<h3 id="criterion-referenced">Criterion-referenced:</h3>
+<li>Typically designated <span class="math inline">\(\hat{Y}\)</span> or <span class="math inline">\(Y^{\prime}\)</span>
 <ul>
-<li>How the test-taker performs relative to an objective standard</li>
-<li>Feedback often <span class="definition">raw scores</span> and might also include <span class="definition">pass</span> or <span class="definition">fail</span> designation</li>
+<li><span class="definition">Predicted</span> “Criterion” score</li>
+<li>“Criterion” = DV</li>
+</ul></li>
+<li>Select predictor score, then use <span class="definition">line of best fit</span> to identify likely <span class="math inline">\(Y^{\prime}\)</span></li>
 </ul>
 </div></div>
+<p><img data-src="https://media.geeksforgeeks.org/wp-content/uploads/20231129130431/11111111.png" class="absolute" style="left: -80px; bottom: 120px; height: 400px; "></p>
 </section>
-<section id="references" class="slide level2 smaller scrollable">
-<h2>References</h2>
+<section id="other-indices-of-association" class="slide level2">
+<h2>Other indices of association…</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<p>…exist as alternatives to the “typical” correlation coefficient (Pearson’s <em>r</em>)</p>
+<ul>
+<li>Based primarily on
+<ul>
+<li>level of measurement
+<ul>
+<li>NOIR</li>
+</ul></li>
+<li>end-purpose</li>
+</ul></li>
+</ul>
+</div></div>
+<p><img data-src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdXo1YjhnMnp3c2ZodThwZjMyeGN2MTV6NG8yMXVhY3k4aWhjYml1YSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l4FGjhtxlrxuLBgkw/giphy.gif" class="absolute" style="bottom: 110px; right: -20px; "></p>
+</section>
+<section id="cross-validation" class="slide level2">
+<h2>Cross-validation</h2>
+<p>Always a good idea – check to see if association / prediction still good with different sample or scenario</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+
+</div><div class="column" style="width:50%;">
+<ul>
+<li><span class="bluescript">Shrinkage</span> – decrease in predictive accuracy when regression estimated in <span class="definition">Sample A</span> is later applied to <span class="definition">Sample B</span></li>
+</ul>
+</div></div>
+<p><img data-src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXN2a294MW00d2J5M3htZHVxMWMxcnMyMG5ob3BpY2J6N2N6Y2Q4cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8rEBpBPIfrGtvewmBd/giphy.gif" class="absolute" style="left: -60px; bottom: 50px; height: 300px; "></p>
+</section>
+<section id="factor-analysis" class="slide level2">
+<h2>Factor analysis</h2>
+<p>Important <span class="definition">data-reduction</span> analytical procedure for measurement specialists</p>
+<div class="columns">
+<div class="column" style="width:65%;">
+<ul>
+<li>Provides us with statistical justification to group <span class="definition">item responses</span> into aggregate <span class="definition">scale scores</span></li>
+<li>Helps confirm:
+<ul>
+<li>appropriate <span class="definition">number</span> of scale scores</li>
+<li>items to <span class="definition">retain</span> or <span class="definition">delete</span> from larger measure</li>
+</ul></li>
+</ul>
+</div></div>
+<p><img data-src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDF0aXNtOThlNjAzYjFoN291MDdhc3JzZHhtZm5ubDVtN3pkcTRnZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7ILa7CZLxE0Ew/giphy.gif" class="absolute" style="bottom: 250px; right: -100px; "></p>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
 </div>
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
-<div id="ref-stevens1946theory" class="csl-entry" role="listitem">
-Stevens, S. S. (1946). On the theory of scales of measurement. <em>Science</em>, <em>103</em>(2684), 677–680.
-</div>
-</div>
 </section></section>
-
     </div>
   </div>
 

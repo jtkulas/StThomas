@@ -9,7 +9,7 @@ $body-bg: #191919;
 $body-color: #fff;
 $link-color: #42affa;
 $code-color: hotpink;
-$presentation-title-slide-text-align: right;
+$presentation-title-slide-text-align: left;
 $presentation-title-slide-text-color: black;
 
 /*-- scss:rules --*/
@@ -53,10 +53,14 @@ $presentation-title-slide-text-color: black;
   transform: rotateY(180deg);
 }
 
+.tilt {
+  transform: rotate(-70deg);
+}
+
 .crossmethod {
   font-size: 80px;
-/*  text-decoration: underline; #c49f39*/
-  color: #6495ed;
+/*  text-decoration: underline; #6495ed  */
+  color: #c49f39;
   font-family: 'Protest Guerrilla';
 }
 
@@ -75,6 +79,11 @@ $presentation-title-slide-text-color: black;
 .greenscript {
   font-size: 1.5em;
   color: #34eba8;
+  font-family: 'Dancing Script';
+}
+
+.bluescript2 {
+  color: #03c6fc;
   font-family: 'Dancing Script';
 }
 

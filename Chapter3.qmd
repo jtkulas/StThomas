@@ -47,7 +47,7 @@ library(fontawesome)
 + Project:
   + [Citi training](https://www.stthomas.edu/academics/research/institutional-review-board/researcher/)
   + Share 2-3 empirical articles<br>(intragroup) 
-  + Discuss construct <br>(intergroup)
+  + Discuss construct <br>(intragroup)
   
 ![](https://www.freeiconspng.com/uploads/sweeping-png-15.png){.absolute bottom="-40" right="-130" height="150"}
 
@@ -88,7 +88,7 @@ library(fontawesome)
 #| fig-height: 8
 library(ggplot2)
 ggplot(iris)+
-  geom_point(aes(Petal.Width,Sepal.Length, size=2), show.legend=FALSE)
+  geom_point(aes(Petal.Width,Sepal.Length, size=2), show.legend=FALSE) + theme_grey(base_size = 26)
 
 ```
 
@@ -98,7 +98,7 @@ ggplot(iris)+
 #| echo: false
 #| fig-height: 8
 ggplot(iris)+
-  geom_point(aes(Petal.Length,Sepal.Length, size=2), show.legend=FALSE)
+  geom_point(aes(Petal.Length,Sepal.Length, size=2), show.legend=FALSE) + theme_grey(base_size = 26)
 
 ```
 
@@ -109,7 +109,7 @@ ggplot(iris)+
 #| fig-height: 8
 
 ggplot(iris)+
-  geom_point(aes(Petal.Width,Petal.Length, size=2), show.legend=FALSE)
+  geom_point(aes(Petal.Width,Petal.Length, size=2), show.legend=FALSE) + theme_grey(base_size = 26)
 ```
 
 :::
@@ -139,318 +139,160 @@ plot_ly(
 
 ![](https://www.researchgate.net/publication/366849054/figure/fig24/AS:11431281110951871@1672824232108/2-Petal-and-Sepal-of-Iris-flowers-As-input-data-the-network-should-be-provided-a-dataset.png){.absolute top="-20" right="-130" height="250"}
 
-## Use of numbers...
+## Scatterplot...
 
-## Fundamental properties of numbers
-
-::: {.columns}
-::: {.column width="70%"}
-+ Numbers are used to represent an individual’s level of standing along a psychological attribute 
-  + [However]{.pinkscript} -- Not all numbers retain their inherent characteristics with Psychological measurement
-
-+ Different rules of assignment collectively define different "scales of measurement"
-  + NOIR [@stevens1946theory]
-:::
-
-::: {.column width="30%"}
-
-:::{.callout-note}
-**HOW** we assign numbers to objects is very important, because if the numbers do not retain their inherent properties, then perhaps it’s not appropriate to perform mathematical/ statistical operations on those numbers...
-:::
-
-:::
-::::
-
-## Property Zero^[Book doesn't explicitly mention but important for understanding @stevens1946theory]
+aka [Scatter Diagram]{.definition} typically focused on [bivariate]{.definition} distribution
 
 ::: {.columns}
-::: {.column width="25%"}
-:::
-
-::: {.column width="75%"}
-
-### Numbers can reflect [sameness versus differentness]{.definition}
-+ Numbers here are merely *labels* 
-+ Differences in kind / sort / ilk, not in amount
-+ Things within a category (i.e., with same number) are identical in terms of the relevant feature
-
-:::
-::::
-
-![](https://images.squarespace-cdn.com/content/v1/5aba1e6b70e802e5fd3b93ff/12011b42-a21c-45cb-8e8b-0769250ca8ba/goose-down-vs-duck-down-02.jpg){.absolute left="-70" bottom="200" height="200"}
-
-## Property I
-
-::: {.columns}
-::: {.column width="75%"}
-### Numbers can reflect [magnitude of differences]{.definition} between things 
-
-+ Numbers here are again used as labels, but sequence is also being reflected
-+ “How much”?
-:::
-:::
-
-![](https://www.mathsisfun.com/numbers/images/sage-greater-than.svg){.absolute right="-150" bottom="0" height="350"}
-
-## Property II
-
-::: {.columns}
-::: {.column width="25%"}
-:::
-
-::: {.column width="75%"}
-### Differences between numbers hold [equal intervals]{.definition} 
-
-+ moving from "4" to "7" has the ***same meaning*** as moving from "10" to "13"
-+ numbering doesn't "increase" until underlying Psychological trait "moves" the same distance
-:::
-:::
-
-![](https://cdn.britannica.com/96/151896-004-5A5C10BD.jpg){.absolute height="500" bottom="50" left="-40"}
-
-## Property III
-
-::: {.columns}
-::: {.column width="40%"}
-### [Zero]{.definition} reserved for only very special scenario
-
-+ complete absence of the attribute
-+ If zero is absolute, then we can compare scores in terms of ratios (e.g., twice as long)
-:::
-:::
-
-![](https://media.istockphoto.com/id/465382081/photo/growing-up-taller-than-a-dinosaur.jpg?s=612x612&w=0&k=20&c=Flb4zjbKbQZPk3rkKPrZuEd6YRKZPIroTfajI-9BLX4=){.absolute right="-100" bottom="0"}
-
-## Scales of measurement [@stevens1946theory]
-
-::: {.columns}
-::: {.column width="35%"}
-:::
-
-::: {.column width="65%"}
-
-+ [N]{.crossmethod}ominal
-+ [O]{.crossmethod}rdinal
-+ [I]{.crossmethod}nterval
-+ [R]{.crossmethod}atio
-:::
-:::
-
-![](https://feminema.wordpress.com/wp-content/uploads/2011/02/500laura6.jpg){.absolute height="500" left="-100" bottom="50"}
-
-![](https://biodiversity.com.pt/wp-content/uploads/2022/05/header_taxonomia_600x960.jpg){.absolute right="0" bottom="0" height="600" .fragment .fade-in-then-out}
-![](https://media.istockphoto.com/id/1307693227/vector/usa-army-enlisted-ranks-chevrons-with-insignia.jpg?s=612x612&w=0&k=20&c=VM0xKuRzwSZ2tHAlb_SvvFAzYvQdGgG2pLMxzrALkiY=){.absolute right="-150" bottom="0" height="600" .fragment .fade-in-then-out}
-
-![](https://cdn1.byjus.com/wp-content/uploads/2019/03/relation-between-celsius-and-fahrenheit.png){.absolute right="-150" bottom="100" height="450" .fragment .fade-in-then-out}
-
-![](https://www.shutterstock.com/image-vector/temperature-scales-showing-differences-between-600nw-2080891831.jpg){.absolute right="-150" bottom="150" height="350" .fragment .fade-in-then-out}
-
-:::{.notes} 
-To measure something, we must acknowledge units of measurement (e.g., weight: # of lbs; temp = Fº)
-
-Question for class: What is the unit of measurement in psychology? 
-
-Each test has its own “unit” of measurement (one “point” on an IQ test is not same as one “point” on a math test)
-
-Most often for us, the unit of measurement is a statistical index called the standard deviation
-:::
-
-# Stats stuff!!
-
-![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExdzUxdXk3eHE2MWZoNDN3YnF1dzRjOWtydmtlaWgwMDA3azl4ZDRmNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3ohc15hpGuLpSTx960/giphy.gif)
-
-## Frequency distributions
-
-:::{.columns}
-:::{.column width="35%"}
-Tell us:
-
-1. [location]{.definition} of scores
-2. [spread]{.definition} of scores
-
-Formally, how frequently is each value encountered within a [sample]{.definition}
-:::
-:::
-
-![](https://media.geeksforgeeks.org/wp-content/uploads/20230726175644/Frequency-Distribution-Curve-1.png){.absolute right="-100" bottom="0"}
-
-## Location & Spread
-
-:::: {.columns}
 ::: {.column width="50%"}
-### Location:
-
-+ [Mean]{.pinkscript}
-+ Median
-+ Mode
-
-:::
-
-::: {.column width="50%"}
-
-### Spread:
-
-+ Range
-+ [Standard deviation]{.pinkscript}
-+ Variance
-:::
-
-::::
-
-![](https://getnave.com/blog/wp-content/uploads/2018/04/Histogram-data-visualisation.png){.absolute left="-20" bottom="-20" height="300"}
-
-![](https://miro.medium.com/v2/resize:fit:815/1*ihqINXkVS65zn1NDpmy2TQ.png){.absolute right="-100" bottom="-20" height="300"}
-
-## In-class data collection:
-
-![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmVsMHE1MGY2YmNvbnkzbnVoN2o0NHoyejFyeXhuMnNmb2p5YmFjciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/mUYtAsf6G3i4wQDDCC/giphy.gif){.absolute right="200"}
-
-:::{.notes}
-Collect data (number of pets?) and demonstrate:
-
-1. data
-2. dataset
-3. frequency distribution
-4. location
-5. spread
-:::
-
-## Importance of frequency distributions
-
-:::: {.columns}
-::: {.column width="50%"}
-
-+ We use “distributional” information (location and spread) to generate [relative]{.definition} scores
-  + Relative to [other scorers]{.definition} in the distribution
-  + Commonly expressed as either [%^ile^]{.definition} or [standard score]{.definition}
-
-:::
-::::
-
-![](img/percentiles.JPG){.absolute right="-70" bottom="100"}
-
-## Percentiles
-
-:::: {.columns}
-
-::: {.column width="45%"}
-+ percent of distribution that scores [*at or below*]{.definition} a raw score value
-:::
-
-::: {.column width="55%"}
-+ proceed from low (e.g., 1) to high (e.g., 99) as travel from [left to right]{.definition} within distribution
-:::
-::::
-
-![](https://acutecaretesting.org/-/media/acutecaretesting/articles/fig-2-example.jpg?h=402&w=750){.absolute left="130" bottom="0"}
-
-:::{.notes}
-Book makes an odd distinction between "percentile rank" and "percentiles" -- this is unnecessarily confusing. Treat them as equivalent (e.g., both "percentile rank" and "percentile" should be interpreted as referring to the same thing).
-:::
-
-## Standard Scores
-
-:::: {.columns}
-::: {.column width="45%"}
-:::
-
-::: {.column width="55%"}
-
-+ Most commonly [rescaled z-scores]{.definition}
-+ z-score: how many [standard deviations]{.definition} away from the [mean]{.definition} a [raw score]{.definition} is
-+ trick to understanding z-scores:
-  + [raw]{.definition} score ($X$)
-  + [relative]{.definition} score ($Z$)
-:::
-::::
-
-![](https://static.thenounproject.com/png/223187-200.png){.absolute right="515" bottom="105" height="110"}
-
-![](https://pressbooks.bccampus.ca/statspsych/wp-content/uploads/sites/1469/2021/07/Fig-3.4-1024x637.png){.absolute left="-135" bottom="160" height="350"}
-
-## Z as reported score
-
-:::: {.columns}
-::: {.column width="30%"}
-:::
-
-::: {.column width="70%"}
 ::: {.ninety}
-+ $Z$ scores below distribution's [median]{.definition} always negative
-+ If delivering feedback, probably not wise to keep that scale
-+ $Z$'s therefore typically [transformed]{.definition} (p. 49)
-  + IQ score of 100 is actually a $Z$ of 0
-  + $Z$ of 0 is ACT score of 20
+
++ Histograms & Polygons focus on [univariate]{.definition} distribution
+  + simply refers to:
+    + ***one thing at a time***, or
+    + ***two things simultaneously***
++ Sometimes individual histograms also included in visual
+
 :::
 
-:::{.callout-tip}
-Percentiles are never rescaled (probably less confusing)
+:::
 :::
 
+![](https://media.geeksforgeeks.org/wp-content/uploads/20230524143328/ing.png){.absolute right="-130" bottom="50"}
+
+![](https://freepngimg.com/thumb/arrow/80242-angle-area-icons-computer-arrow-art-thumb.png){.absolute bottom="100" left="525" height="300" .tilt .fragment}
+
+## [Forms]{.bluescript2} of association
+
+![](https://www.quanthub.com/wp-content/uploads/scatterplot_association_suite.png){.absolute left="-100" height="500"}
+
+![](https://wac-cdn.atlassian.com/dam/jcr:6a10e325-fdfb-41a2-96da-a66e29b99847/scatter-plot-example-2.png?cdnVersion=2554){.absolute right="-100" height="500"}
+
+## Scatterplot and correlation
+
+![](https://cqeacademy.com/wp-content/uploads/2018/06/Scatter-Plots-and-Correlation-Examples.png){.absolute bottom="-20"}
+
+![](https://www.quanthub.com/wp-content/uploads/scatterplot_correlation_suite.png){.absolute right="-120" top="5" height="370"}
+
+![](https://s3-us-west-2.amazonaws.com/courses-images-archive-read-only/wp-content/uploads/sites/924/2015/11/25201206/CNX_Precalc_Figure_02_04_0072.jpg){.absolute left="-110" top="75" height="300"}
+
+# Let's construct one!
+
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExajZsYWF1cnU3aDR3b3Nid2pocm1sa3pvbjU2c2hrcDhkc3Nla2xmcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Mah9dFWo1WZX0WM62Q/giphy.gif)
+
+## Regression
+
+Line of [best fit]{.definition} through scatterplot
+
+::: {.columns}
+::: {.column width="47%"}
+
++ Useful for [prediction]{.definition}
++ Can have one or more [predictor]{.definition} variables
+  + 1 = [simple]{.definition} regression
+  + $>$ 1 = [multiple]{.definition} regression
+
+:::
+
+::: {.column width="53%"}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+::: {.callout-warning}
+Figure 3.4 has an error (p. 68)
+:::
+
+:::
+:::
+
+![](https://rotel.pressbooks.pub/app/uploads/sites/77/2024/07/Regression-equation-without-error-term-In-this-study-a-learner-was-defined-as-any.jpg){.absolute right="-153" bottom="160" height="350"}
+
+## Explore Simple Regression
+
+:::: {.columns}
+::: {.column width="50%"}
+### [Different]{.definition} datasets: 
+
+[![](img/regression.JPG)](https://istats.shinyapps.io/LinearRegression/)
+:::
+
+::: {.column width="50%"}
+### Try to [beat the statistic]{.definition}:
+
+[![](img/regressioneye.JPG)](https://www.statcrunch.com/applets/type2&regbyeye)
 :::
 ::::
 
-![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjlsdGRwc242eWFsMDAwanYybGdyM3Z3anNzdXRnc2ZoYTF6eTNvdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/PZAqhZ5qEH2YDlVWRT/giphy.gif){.absolute left="-150" bottom="130" height="400"}
+## Predicted scores
 
-## Standard Normal Distribution
-
-:::: {.columns}
+::: {.columns}
 ::: {.column width="60%"}
 
-+ Defined by mathematical formula
-+ ***Nothing*** distributed "normally"
-  + ***very many*** things distributed "approximately normally"
-+ Tells us relationship between z-score and percentiles [within this mathematically ideal distribution]{.definition}
+:::
 
-:::{.callout-note}
-"Relationship" detailed in book's Appendix I
+::: {.column width="40%"}
+
++ Typically designated $\hat{Y}$ or $Y^{\prime}$
+  + [Predicted]{.definition} "Criterion" score 
+  + "Criterion" = DV
++ Select predictor score, then use [line of best fit]{.definition} to identify likely $Y^{\prime}$
+:::
+:::
+
+![](https://media.geeksforgeeks.org/wp-content/uploads/20231129130431/11111111.png){.absolute left="-80" bottom="120" height="400"}
+
+## Other indices of association...
+
+::: {.columns}
+::: {.column width="70%"}
+
+...exist as alternatives to the "typical" correlation coefficient (Pearson's *r*)
+
++ Based primarily on
+  + level of measurement
+    + NOIR
+  + end-purpose
+
 :::
 
 :::
-::::
 
-![](https://media.geeksforgeeks.org/wp-content/uploads/20230811122554/Probability-Density-for-Normal-Distribution.png){.absolute right="-130" top="0" height="300"}
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdXo1YjhnMnp3c2ZodThwZjMyeGN2MTV6NG8yMXVhY3k4aWhjYml1YSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l4FGjhtxlrxuLBgkw/giphy.gif){.absolute right="-20" bottom="110"}
 
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Standard_Normal_Distribution.png/1024px-Standard_Normal_Distribution.png){.absolute right="-130" bottom="0" height="300"}
+## Cross-validation
 
-![](https://p9n2c8y2.delivery.rocketcdn.me/wp-content/uploads/2021/05/7.png.webp){.absolute height="100" top="75" right="300"}
-![](https://p9n2c8y2.delivery.rocketcdn.me/wp-content/uploads/2021/05/7.png.webp){.absolute height="200" bottom="80" right="300"}
+Always a good idea -- check to see if association / prediction still good with different sample or scenario
 
-## Norms
+::: {.columns}
+::: {.column width="50%"}
+:::
+
+::: {.column width="50%"}
+
++ [Shrinkage]{.bluescript} -- decrease in predictive accuracy when regression estimated in [Sample A]{.definition} is later applied to [Sample B]{.definition}
+
+:::
+:::
+
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXN2a294MW00d2J5M3htZHVxMWMxcnMyMG5ob3BpY2J6N2N6Y2Q4cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8rEBpBPIfrGtvewmBd/giphy.gif){.absolute left="-60" bottom="50" height="300"}
+
+## Factor analysis
+
+Important [data-reduction]{.definition} analytical procedure for measurement specialists
 
 :::: {.columns}
-::: {.column width="50%"}
+::: {.column width="65%"}
 
-Can refer to: 
-
-+ frequency distribution itself (aka [normative]{.definition} group), or
-+ common values within that distribution
-  + [raw score]{.definition} at 50^th^ percentile
-  
-More generally, [***the sample retained for obtaining relative scores***]{.definition}
-:::
-
-::: {.column width="50%"}
-:::
-![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjBwaGJnc3E3Y2lycnhnYnkzeG1jYWRwY3Ywd2d1eXdjMzhxc3BiMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/D0rCUqtbamX2Rmr8aq/giphy.gif){.absolute right="-50" bottom="100" height="500"}
-::::
-
-## Two types of tests
-
-:::: {.columns}
-::: {.column width="50%"}
-
-### Norm-referenced:
-+ How the test-taker performs relative to the comparison group (e.g., [norm]{.definition})
-+ Feedback most typically [percentile]{.definition} and [scale score]{.definition} (transformed $Z$)
-:::
-
-::: {.column width="50%"}
-
-### Criterion-referenced:
-+ How the test-taker performs relative to an objective standard
-+ Feedback often [raw scores]{.definition} and might also include [pass]{.definition} or [fail]{.definition} designation
++ Provides us with statistical justification to group [item responses]{.definition} into aggregate [scale scores]{.definition}
++ Helps confirm:
+  + appropriate [number]{.definition} of scale scores
+  + items to [retain]{.definition} or [delete]{.definition} from larger measure
 :::
 ::::
 
-## References
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDF0aXNtOThlNjAzYjFoN291MDdhc3JzZHhtZm5ubDVtN3pkcTRnZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7ILa7CZLxE0Ew/giphy.gif){.absolute right="-100" bottom="250"}
