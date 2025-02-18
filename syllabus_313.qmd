@@ -59,9 +59,9 @@ emoji <- function(x) {
 
 @kaplan2018saccuzzo
 
-## Supplementary material:
+## Supplementary material: [`r fontawesome::fa("file-pdf", fill="#ff0000")`](https://www.testingstandards.net/open-access-files.html)
 
-@american2014standards
+@american2014standards 
 
 ::: callout-important
 If you have any disability or special language needs, either permanent or temporary, that may affect your ability to perform in this class, please inform either me or the [Disability Resources Office](http://www.stthomas.edu/enhancementprog) (651-962-6315) of your disability or need at the beginning of the semester. Adaptation of methods, materials, or testing may be made as required to provide for equitable participation.

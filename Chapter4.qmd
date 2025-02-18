@@ -1,0 +1,334 @@
+---
+title: "Ψlogical<br>Testing" 
+author: "Chapter 4...<br>[...Reliability]{.crossmethod}" 
+title-slide-attributes: 
+  data-background-image: https://nexxis.com.au/wp-content/uploads/2018/07/AdobeStock_102306349-e1532655732225.jpeg
+  data-background-opacity: ".5"
+format:
+  revealjs:
+    multiplex: true
+    chalkboard: true
+    slide-tone: false
+    navigation-mode: linear
+    transition: convex
+    transition-speed: slow
+    controls: true
+    controls-layout: edges
+#    controls-tutorial: false
+    slide-number: c
+    mermaid:
+      theme: neutral
+#    output-location: slide           ## column-fragment; inserts blank 2nd slide
+    code-overflow: wrap              ## instead of horizontal scroll
+    theme: [league, tommies.scss]    ## night & league
+    mouse-wheel: true                ## yes enables mouse
+    preview-links: false             ## true brings up iframe window instead of "site"
+    code-annotations: hover 
+engine: knitr                        ## not picking up inline codes
+bibliography: bib.bib
+csl: apa7.csl
+#lightbox: true                     ## interferes with .absolute placement
+#revealjs-plugins:                  ## cursor disappearing
+#  - spotlight
+---
+
+```{r, warning=FALSE, message=FALSE}
+#devtools::install_github("hadley/emo")        ## if anyone else wants to render
+library(fontawesome)
+```
+
+## House keeping `r emo::ji("broom")``r emo::ji("basket")`
+
+:::: {.columns}
+::: {.column width="55%"}
++ First exam 3/6 (Thurs)
+  + In class, but administered via Canvas (Ch 1 $\rightarrow$ 8)
+
++ Lab grade
+  + Poll incoming
+  
++ Project:
+  + [Citi training](https://www.stthomas.edu/academics/research/institutional-review-board/researcher/)
+  + Take a look at feedback (Thurs)
+
+:::
+::::
+
+![](https://www.freeiconspng.com/uploads/sweeping-png-15.png){.absolute bottom="-40" left="-130" height="150" .mirror}
+
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExbWdvMnZ2NGw2bzhoejZ6MWZsdGVrODZ0dzI5MzZ3YmJxdnhlNnd6ZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1imXktPlcuj9N8rBKN/giphy.gif){.absolute right="-70" top="180"}
+
+# Reliability is...
+
+...[freedom]{.bluescript} from error (within scores)
+
+![](https://media.istockphoto.com/id/1357145597/photo/canary-escapes-from-bird-cage-freedom-and-open-mind-concept-this-is-a-3d-render-illustration.jpg?s=612x612&w=0&k=20&c=dzdjhG1acnELasb72LwAc7mMAbLKSHV9Jxrjkr1AHcQ=)
+
+## Error as focus of measurement:
+
+:::: {.columns}
+::: {.column width="60%"}
+
+::: {.ninety}
++ The proof and measurement of association between two things [@spearmanproof1904]
+
++ An Introduction to the Theory of Mental and Social Measurements [@thorndiketheory1904]
+
++ The theory of the estimation of test reliability [@kudertheory1937]
+
++ Coefficient alpha and the internal structure of tests [@cronbach1951coefficient]
+:::
+:::
+::::
+
+![](https://ipt.images.tshiftcdn.com/206244/x/0/ultimate-guide-to-understanding-focus-in-photography-3.jpg?auto=compress%2Cformat&ch=Width%2CDPR&dpr=1&ixlib=php-3.3.0&w=883){.absolute height="330" right="-120" bottom="180"}
+
+## Role of error
+
+:::: {.columns}
+::: {.column width="40%"}
+
++ Classical Test Theory (CTT)
+  + aka True Score Theory (TST)
++ Relies on concept of [True]{.bluescript} score
++ $X=T+e_{r}$
+:::
+
+::::
+
+![](https://image1.slideserve.com/3569839/true-score-theory-l.jpg){.absolute height="500" right="-120" bottom="100"}
+
+## [True]{.bluescript} score...
+
+::: {.columns}
+::: {.column width="25%"}
+:::
+
+::: {.column width="75%"}
+
+...[theoretical]{.definition} average of scores obtained from the same person over multiple occasions
+
+:::
+:::
+
+![](https://www.researchgate.net/publication/324950945/figure/fig2/AS:11431281238963742@1714123065172/Graphical-representation-of-the-normal-distribution-of-observed-scores-centered-on-true.tif){.absolute left="-100"}
+
+## Standard error of measurement...
+
+...is the standard deviation of these theoretical distributions (here "dispersion" indicates [error]{.definition})
+
+![](https://i0.wp.com/statisticsbyjim.com/wp-content/uploads/2021/05/SEM_ex2.png?fit=576%2C384&ssl=1){.absolute left="-75"}
+
+![](https://www.6sigma.us/wp-content/uploads/2024/09/standard-error-vs-standard-deviation.webp){.absolute right="-100" height="500"}
+
+## Domain sampling
+
+A [universe]{.definition} of possible items exists, but we ***practically*** only [sample a subset]{.definition} from that vast universe
+
+::: {.columns}
+::: {.column width="50%"}
+
+
++ [defining construct]{.bluescript} 
+  + [populating]{.definition} the content domain
++ [writing items]{.bluescript} 
+  + [sampling from]{.definition} the content domain
+
+:::
+
+::: {.column width="50%"}
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+:::{.callout-tip}
+Content domain = what's ***inside your circle***
+:::
+
+:::
+:::
+
+![](https://media.springernature.com/lw685/springer-static/image/chp%3A10.1007%2F978-1-4614-7135-6_3/MediaObjects/91379_3_En_3_Fig3_HTML.gif){.absolute height="300" right="-100" bottom="220"}
+
+## Item Response Theory
+
+::: {.columns}
+::: {.column width="40%"}
+
++ Test adaptive to respondent's demonstrated [level of ability]{.bluescript}
+  + [GRE](https://www.ets.org/gre/test-takers/general-test/prepare/content.html) 
+
+
+:::{.callout-note}
+SAT and ACT are administered and scored [traditionally]{.definition}
+:::
+  
+:::
+:::
+
+![](https://apasseducation.com/wp-content/uploads/2017/06/screen_shot_2016-02-11_at_1.32.37_pm1e37.png){.absolute right="-130" bottom="100" height="500"}
+
+# Models of reliability 
+
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZG1vZ2c0MHNhMXNwcG1pejg2c3p3dWwyb2dtbmFjZGdpZTc4NGl0ayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ZS6daj0icfnD166eTc/giphy.gif)
+
+## Test-retest
+
+::: {.columns}
+::: {.column width="55%"}
++ same test, different occasion
++ do scores maintain same ordering (across people) over time?
+:::
+
+::: {.column width="45%"}
++ [carryover effect]{.definition} vs construct change
++ pre- post- design [without intervention]{.definition}
+
+:::
+:::
+
+
+![](https://i0.wp.com/conceptshacked.com/wp-content/uploads/2020/12/Test-retest-min.png?resize=896%2C339&ssl=1){.absolute bottom="0" left="75"}
+
+## Parallel forms
+
+::: {.columns}
+::: {.column width="55%"}
++ different test, same occasion^[typically but methodological choice]
++ aka [sampling from the same domain elements]{.definition}
+  + similarly representative of construct
++ items should be of same [difficulty level]{.definition}
+
+:::
+
+:::
+
+![](img/parallelforms.JPG){.absolute right="-120" bottom="200" height="300"}
+
+## Parallel forms? `r emo::ji("thinking_face")`
+
+...which are "parallel" to [**Form A**]{.cornflower} and<br>which are not?
+
+<br>
+<br>
+
+| Form   | Item 1 | Item 2  | Item 3  | Item 4  |
+|--------|--------|---------|---------|---------|
+| [A]{.cornflower}      |[$2+3=?$]{.cornflower}|[$9\div3=?$]{.cornflower}|[$4\times5=?$]{.cornflower}|[$4-1=?$]{.cornflower}|
+| B      |$1+4=?$|$6-3=?$|$2\times3=?$|$8\div4=?$|
+| C      |$-3+1.5=?$|$7\div13=?$|$.13\times\frac{5}{6}=?$|$-9-6=?$|
+| D      |$4+3=?$|$5+2=?$|$6+1=?$    |$2+4=?$|
+
+: {.striped hover bordered}
+
+![](img/parallelforms.JPG){.absolute right="-120" top="00" height="250"}
+
+## Split-half
+
+::: {.columns}
+::: {.column width="40%"}
+
+:::
+
+::: {.column width="60%"}
++ same test, same occasion
++ [treat]{.definition} as though [2 different tests]{.definition}
++ must apply correction because of [artificial halving]{.definition}
+  + Spearman-Brown prophecy formula
+  + what reliability [would have been]{.definition} if you hadn't chopped test in two
+
+:::
+:::
+
+![](https://thumbs.dreamstime.com/b/figure-split-half-red-background-46735069.jpg){.absolute left="-70" height="500" bottom="50"}
+
+## Split-half (II)
+
+::: {.columns}
+::: {.column width="60%"}
++ content needs to match 
+  + same as parallel forms
++ `r emo::ji("warning")``r emo::ji("stop_sign")`**DO NOT**`r emo::ji("stop_sign")``r emo::ji("warning")` simply take 1^st^ and 2^nd^ halves!!! 
+:::
+
+:::
+
+![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiYgwlT9NXDxh7k9lbSMxLAWwrX6xA-fDeIU7R4Xd0146Wuz1zpA0DjFEnHcygjoadQBdp60WI529ogtXMjlluckYAhrpOo916y3CmcPm5cRqZ3DFaWOyGw8SdF0iVbvL7vsDSw52ytvcXq/s1600/split+half1.png){.absolute right="-70" height="300" bottom="50"}
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Stop_hand.svg/768px-Stop_hand.svg.png){.absolute bottom="50" left="90" height="230"}
+
+![](img/parallelforms.JPG){.absolute right="-120" top="00" height="250"}
+
+## [$\alpha$]{.lowercase} and KR~20~
+
+::: {.columns}
+::: {.column width="30%"}
+ 
+:::
+
+::: {.column width="70%"}
+
++ same test, same occasion
++ both indices of [**internal consistency**]{.bluescript}
+  + cohesion of item response within [scale]{.definition}
+  + scale needs at least 3 items
++ KR~20~ used with [tests]{.definition}
++ $\alpha$ used with [inventories]{.definition}
+:::
+
+:::
+
+![](https://upload.wikimedia.org/wikipedia/en/e/e7/Alpha_and_Omega_poster.jpg){.absolute left="-100" bottom="50" height="500"}
+
+## Behavioral observations
+
+::: {.columns}
+::: {.column width="60%"}
+
++ aka [inter-rater]{.definition} reliability
++ do [judges]{.definition} tend to agree (e.g., who is [best]{.definition}, [worst]{.definition}, etc)
+  + sometimes uses correlation coefficient
+  + sometimes uses other index (e.g., ***Kappa***)
+:::
+
+:::
+
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExdms3ZGJycjI0eGdubXQ2c2tuemRnNDFpbGJhYjdtbTk5cXllOGFnYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/rzYzG31xTBFSELyGof/giphy.gif){.absolute right="-80" bottom="100" height="400"}
+
+## Reliability indices
+
+::: {.columns}
+::: {.column width="60%"}
+
++ For [**MOST**]{.bluescript2}, index expressed as [correlation]{.definition}
++ For [**ALL**]{.bluescript2}:
+  + larger = greater reliability
+  + capped at value of 1.0
+  + typically^[usually indicates "something is wrong" with $\alpha$ or *Kappa* data `r emo::ji("anxious_face_with_sweat")`] never expressed as negative value
+ 
+:::
+:::
+
+![](https://o.quizlet.com/i/6jaGejPbYQR_8LXSQNhTUw.jpg){.absolute right="-100" bottom="180"}
+
+## [Using]{.underline} reliability
+
+::: {.columns}
+::: {.column width="40%"}
+:::
+
+::: {.column width="60%"}
+
++ Standard error of measurement
+  + used to construct [score bands]{.definition}
+  + same concept as within political polling
+    + [True]{.bluescript2} value thought to be within band (with, e.g., 95% certainty)
+:::
+:::
+
+![](https://www.muhlenberg.edu/media/contentassets/pdf/about/polling/surveys/pennsylvania/MCIPO_Graphics_Poll_Spring2024-03-460x460.png){.absolute left="-100" bottom="100"}
+
+## References

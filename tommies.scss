@@ -9,7 +9,7 @@ $body-bg: #191919;
 $body-color: #fff;
 $link-color: #42affa;
 $code-color: hotpink;
-$presentation-title-slide-text-align: left;
+$presentation-title-slide-text-align: right;
 $presentation-title-slide-text-color: black;
 
 /*-- scss:rules --*/
@@ -60,7 +60,7 @@ $presentation-title-slide-text-color: black;
 .crossmethod {
   font-size: 80px;
 /*  text-decoration: underline; #6495ed  */
-  color: #c49f39;
+  color: #bce0db;
   font-family: 'Protest Guerrilla';
 }
 
@@ -94,4 +94,12 @@ $presentation-title-slide-text-color: black;
 
 .cornflower {
   color: #6495ed;
+}
+
+.lowercase {
+  text-transform: lowercase !important;
+}
+
+.underline {
+  text-decoration: underline !important;
 }
