@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Fleur De Leah');
 @import url('https://fonts.googleapis.com/css?family=Protest Guerrilla');
 @import url('https://fonts.googleapis.com/css?family=Delicious Handrawn');
+@import url('https://fonts.googleapis.com/css?family=Nosifer');
 
 /*-- scss:defaults --*/
 
@@ -43,6 +44,10 @@ $presentation-title-slide-text-color: black;
 
 .ninety {
   font-size: .9em;
+}
+
+.small {
+  font-size: .5em;
 }
 
 .slides {
@@ -94,6 +99,12 @@ $presentation-title-slide-text-color: black;
 
 .cornflower {
   color: #6495ed;
+}
+
+.bleeding {
+  font-family: 'Nosifer';
+  color: #880808;
+  font-size: 1.3em;
 }
 
 .lowercase {
