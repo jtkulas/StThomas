@@ -6,7 +6,7 @@ title-slide-attributes:
   data-background-opacity: "1"
 format:
   revealjs:
-#    multiplex: true
+    multiplex: true
     chalkboard: true
     slide-tone: false
     navigation-mode: linear
@@ -25,6 +25,7 @@ format:
     preview-links: false             ## true brings up iframe window instead of "site"
     code-annotations: hover 
     quiz:
+      shuffleKey: 'p'                ## moving away from "f"
       defaultCorrect: "Pride of St Thomas Woot Woot!!!"
       defaultIncorrect: "Tsk tsk tsk - I thought you were a good note-taker!!!"
       includeScore: true
@@ -55,6 +56,7 @@ library(fontawesome)
   
 + Project:
   + Feedback delivery & revision
+  + @hinkin2005scale
 
 :::
 ::::
@@ -80,11 +82,13 @@ library(magrittr)
 Date <- c("12/27/24", 
           "02/11/25", 
           "02/14/25", 
-          "02/19/25")
+          "02/19/25",
+          "02/20/25")
 destruction <- c(1.1, 
                 2.4, 
                 2.6, 
-                3.1)
+                3.1,
+                1.5)
 
 responses <- as.data.frame(cbind(Date,destruction))
 
@@ -136,7 +140,7 @@ dygraph(responses) %>%
 ### Validity [is]{.bluescript}...
 
 + ...the interpretation of [test scores]{.definition} in terms of a specific psychological construct 
-+ ...a matter of [degree]{.definition} 
++ ...a matter of [degree]{.definition}^[like [reliability]{.definition}, typically expressed as a [correlation coefficient]{.definition}] 
 <br>
 <br>
 + ...based on [empirical evidence]{.definition} and [theory]{.definition}
@@ -154,7 +158,7 @@ dygraph(responses) %>%
 <br>
 <br>
 
-+ ...an "all-or-none" issue^[like [reliability]{.definition}, typically expressed as a [correlation coefficient]{.definition}]
++ ...an "all-or-none" issue
 <br>
 <br>
 + ...frivilously determined 
@@ -408,10 +412,15 @@ The primary difference between [content]{.definition} validity and [face]{.defin
 
 ::: {.columns}
 ::: {.column width="60%"}
-
++ reliability is 1^st^ necessary
++ cannot have [validity]{.definition} without [reliability]{.definition}
++ you [can]{.bluescript} have [reliability]{.definition} without [validity]{.definition}
++ reliability "***puts a cap on***" validity
 
 :::
 :::
+
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExeXgybmdieDc4N2ljNDNscTdwanJwN2c4M3gwNWJtMXQ2OHRja3U0aSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/OvgrJo0tL3Ebrx6uNC/giphy.gif){.absolute right="-20" bottom="150"}
 
 ## Which of the following is possible? {.quiz-question}
 
@@ -435,14 +444,14 @@ The primary difference between [content]{.definition} validity and [face]{.defin
 - validity
 - scores
 
-## Methodologically, a "criterion" used for validation can also be called a/an... {.quiz-question}
+## Methodologically, a [criterion]{.definition} used for validation can also be called a/an... {.quiz-question}
 
 - [DV]{.correct}
 - IV
 - Moderator
 - Confound
 
-## Another name for the test being validated is a/an... {.quiz-question}
+## Another name for [the test being validated]{.definition} is a/an... {.quiz-question}
 
 - [predictor]{.correct}
 - criterion

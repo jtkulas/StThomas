@@ -10,7 +10,7 @@
 <link href="Chapter5_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.57">
 
-  <meta name="author" content="Chapter 5… …Vladitity">
+  <meta name="author" content="Chapter 5… …Vladidity">
   <title>Ψlogical Testing</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -56,6 +56,7 @@
   <link href="Chapter5_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
   <link href="Chapter5_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
   <link href="Chapter5_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="Chapter5_files/libs/revealjs/plugin/reveal-quiz/quiz.css" rel="stylesheet">
   <link href="Chapter5_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
@@ -342,25 +343,43 @@
       margin-right: 0; 
     }
   </style>
+  <script src="Chapter5_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+  <script src="Chapter5_files/libs/jquery-1.11.1/jquery.min.js"></script>
+
+  <link href="Chapter5_files/libs/dygraphs-1.1.1/dygraph.css" rel="stylesheet">
+
+  <script src="Chapter5_files/libs/dygraphs-1.1.1/dygraph-combined.js"></script>
+
+  <script src="Chapter5_files/libs/dygraphs-1.1.1/shapes.js"></script>
+
+  <script src="Chapter5_files/libs/moment-2.8.4/moment.js"></script>
+
+  <script src="Chapter5_files/libs/moment-timezone-0.2.5/moment-timezone-with-data.js"></script>
+
+  <script src="Chapter5_files/libs/moment-fquarter-1.0.0/moment-fquarter.min.js"></script>
+
+  <script src="Chapter5_files/libs/dygraphs-binding-1.1.1.6/dygraphs.js"></script>
+
 </head>
 <body class="quarto-dark">
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-image="https://ovp.itv.com/v2/images/programme/zh6kkvf/itv_hub/01_Hero_DesktopCTV/16x9?distributionPartner=itv_hub&amp;fallback=standard&amp;w=767&amp;q=65&amp;blur=0&amp;bg=false" data-background-opacity=".5" class="quarto-title-block center">
+<section id="title-slide" data-background-image="img/vladidity.png" data-background-opacity="1" class="quarto-title-block center">
   <h1 class="title">Ψlogical<br>Testing</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Chapter 5…<br><span class="crossmethod">…Vladitity</span> 
+Chapter 5…<br><span class="bleeding">…Vladidity</span> 
 </div>
 </div>
 </div>
 
 </section>
 <section id="house-keeping" class="slide level2">
-<h2>House keeping 🧹🧺</h2>
+<h2>House keeping 🧹🗑</h2>
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
@@ -374,83 +393,300 @@ Chapter 5…<br><span class="crossmethod">…Vladitity</span>
 </ul></li>
 <li>Project:
 <ul>
-<li><a href="https://www.stthomas.edu/academics/research/institutional-review-board/researcher/">Citi training</a></li>
-<li>Take a look at feedback (Thurs)</li>
+<li>Feedback delivery &amp; revision</li>
+<li><span class="citation" data-cites="hinkin2005scale">Hinkin (<a href="#/references" role="doc-biblioref" onclick="">2005</a>)</span></li>
 </ul></li>
 </ul>
 </div></div>
-<p><img data-src="https://www.freeiconspng.com/uploads/sweeping-png-15.png" class="absolute mirror" style="left: -130px; bottom: -40px; height: 150px; "></p>
-<p><img data-src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExbWdvMnZ2NGw2bzhoejZ6MWZsdGVrODZ0dzI5MzZ3YmJxdnhlNnd6ZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1imXktPlcuj9N8rBKN/giphy.gif" class="absolute" style="top: 180px; right: -70px; "></p>
+<p><img data-src="https://www.freeiconspng.com/uploads/sweeping-png-15.png" class="absolute" style="top: 35px; right: 260px; height: 150px; "></p>
+<p><img data-src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMWtkYzNnNG5mNmVvc2V2d3A1dHBncnRtdDh0ZmFzd3V4ODVjb3NjcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/5t1YusAYxmRn474Sid/giphy.gif" class="absolute" style="top: 180px; right: -70px; "></p>
 </section>
-<section>
-<section id="reliability-is" class="title-slide slide level1 center">
-<h1>Reliability is…</h1>
-<p>…<span class="bluescript">freedom</span> from error (within scores)</p>
-
-<img data-src="https://media.istockphoto.com/id/1357145597/photo/canary-escapes-from-bird-cage-freedom-and-open-mind-concept-this-is-a-3d-render-illustration.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=dzdjhG1acnELasb72LwAc7mMAbLKSHV9Jxrjkr1AHcQ=" class="r-stretch"></section>
-<section id="error-as-focus-of-measurement" class="slide level2">
-<h2>Error as focus of measurement:</h2>
+<section id="asteroid-yr4-panic-meter" class="slide level2">
+<h2>🔭🌠ASTEROID <span class="greenscript">YR4</span> PANIC METER!!!🌌💥</h2>
 <div class="columns">
-<div class="column" style="width:60%;">
-<div class="ninety">
-<ul>
-<li><p>The proof and measurement of association between two things <span class="citation" data-cites="spearmanproof1904">(<a href="#/references" role="doc-biblioref" onclick="">Spearman, 1904</a>)</span></p></li>
-<li><p>An Introduction to the Theory of Mental and Social Measurements <span class="citation" data-cites="thorndiketheory1904">(<a href="#/references" role="doc-biblioref" onclick="">Thorndike, 1904</a>)</span></p></li>
-<li><p>The theory of the estimation of test reliability <span class="citation" data-cites="kudertheory1937">(<a href="#/references" role="doc-biblioref" onclick="">Kuder &amp; Richardson, 1937</a>)</span></p></li>
-<li><p>Coefficient alpha and the internal structure of tests <span class="citation" data-cites="cronbach1951coefficient">(<a href="#/references" role="doc-biblioref" onclick="">Cronbach, 1951</a>)</span></p></li>
-</ul>
+<div class="column" style="width:10%;">
+
+</div><div class="column" style="width:80%;">
+<div class="cell" title="Impending Global Apocolypse">
+<div class="cell-output-display">
+<div class="dygraphs html-widget html-fill-item" id="htmlwidget-248199c01eb3f2718aac" style="width:768px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-248199c01eb3f2718aac">{"x":{"attrs":{"axes":{"x":{"pixelsPerLabel":60,"drawGrid":false,"drawAxis":true},"y":{"drawAxis":true}},"labels":["week","destruction"],"legend":"auto","retainDateWindow":false,"ylabel":"Odds of Doom (%)","stackedGraph":false,"fillGraph":true,"fillAlpha":0.4,"stepPlot":false,"drawPoints":false,"pointSize":1,"drawGapEdgePoints":false,"connectSeparatedPoints":false,"strokeWidth":1,"strokeBorderColor":"white","colorValue":0.5,"colorSaturation":1,"includeZero":false,"drawAxesAtZero":false,"logscale":false,"axisTickSize":3,"axisLineColor":"black","axisLineWidth":0.3,"axisLabelColor":"black","axisLabelFontSize":14,"axisLabelWidth":60,"drawGrid":true,"gridLineWidth":0.3,"rightGap":5,"digitsAfterDecimal":2,"labelsKMB":false,"labelsKMG2":false,"labelsUTC":false,"maxNumberWidth":6,"animatedZooms":false,"mobileDisableYTouch":true,"disableZoom":false,"showRangeSelector":true,"rangeSelectorHeight":40,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"weekly","annotations":[],"shadings":[],"events":[],"format":"date","data":[["2024-12-27T00:00:00.000Z","2025-02-11T00:00:00.000Z","2025-02-14T00:00:00.000Z","2025-02-19T00:00:00.000Z","2025-02-20T00:00:00.000Z"],["1.1","2.4","2.6","3.1","1.5"]],"fixedtz":false,"tzone":"UTC"},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
+</div>
 </div>
 </div></div>
-<p><img data-src="https://ipt.images.tshiftcdn.com/206244/x/0/ultimate-guide-to-understanding-focus-in-photography-3.jpg?auto=compress%2Cformat&amp;ch=Width%2CDPR&amp;dpr=1&amp;ixlib=php-3.3.0&amp;w=883" class="absolute" style="bottom: 180px; right: -120px; height: 330px; "></p>
+<p><img data-src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcWd4eXBzcHo1MDExdWp6eTdvY3BxaTF2NzNobXJsaTF1NDk2MjVsdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/HUkOv6BNWc1HO/giphy.gif" class="absolute" style="left: -130px; bottom: 25px; height: 200px; "></p>
+<p><img data-src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3M1MjB2b3FwaWg5Y2NiOXlnMTdtNnM2ZTA5bmhhamJ1Nmw4cmtmdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/joV1k1sNOT5xC/giphy.gif" class="absolute" style="bottom: 200px; right: -130px; height: 250px; "></p>
 </section>
-<section id="role-of-error" class="slide level2">
-<h2>Role of error</h2>
+<section>
+<section id="validity-is" class="title-slide slide level1 center">
+<h1>Validity is…</h1>
+<p>…propriety of <span class="bluescript">inferences</span> (from test <span class="bluescript">scores</span>)</p>
+
+<img data-src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/73416707-d9fc-4dd4-8dae-d5d367f1dac1/Accuracy_and_reliability_O-2.png?t=1717623207" class="r-stretch"></section>
+<section id="psychometric-validity" class="slide level2">
+<h2>“Psychometric” Validity</h2>
 <div class="columns">
-<div class="column" style="width:40%;">
+<div class="column" style="width:60%;">
 <ul>
-<li>Classical Test Theory (CTT)
+<li>aka <span class="bluescript">test</span> validity</li>
+<li>aka <span class="bluescript">construct</span> validity</li>
+<li>different from other uses of the term
 <ul>
-<li>aka True Score Theory (TST)</li>
+<li>for example:
+<ul>
+<li><span class="definition">internal</span> validity</li>
+<li><span class="definition">external</span> validity</li>
 </ul></li>
-<li>Relies on concept of <span class="bluescript">True</span> score</li>
-<li><span class="math inline">\(X=T+e_{r}\)</span></li>
+</ul></li>
 </ul>
 </div></div>
-<p><img data-src="https://image1.slideserve.com/3569839/true-score-theory-l.jpg" class="absolute" style="bottom: 100px; right: -120px; height: 500px; "></p>
+<p><img data-src="https://i0.wp.com/thebilaterals.wordpress.com/wp-content/uploads/2017/09/emoji_u1f4dd-svg.png?ssl=1" class="absolute" style="bottom: 150px; right: -30px; height: 400px; "></p>
 </section>
-<section id="true-score" class="slide level2">
-<h2><span class="bluescript">True</span> score…</h2>
-<div class="columns">
-<div class="column" style="width:25%;">
-
-</div><div class="column" style="width:75%;">
-<p>…<span class="definition">theoretical</span> average of scores obtained from the same person over multiple occasions</p>
-</div></div>
-<p><img data-src="https://www.researchgate.net/publication/324950945/figure/fig2/AS:11431281238963742@1714123065172/Graphical-representation-of-the-normal-distribution-of-observed-scores-centered-on-true.tif" class="absolute" style="left: -100px; "></p>
-</section>
-<section id="standard-error-of-measurement" class="slide level2">
-<h2>Standard error of measurement…</h2>
-<p>…is the standard deviation of these theoretical distributions (here “dispersion” indicates <span class="definition">error</span>)</p>
-<p><img data-src="https://i0.wp.com/statisticsbyjim.com/wp-content/uploads/2021/05/SEM_ex2.png?fit=576%2C384&amp;ssl=1" class="absolute" style="left: -75px; "></p>
-<p><img data-src="https://www.6sigma.us/wp-content/uploads/2024/09/standard-error-vs-standard-deviation.webp" class="absolute" style="right: -100px; height: 500px; "></p>
-</section>
-<section id="domain-sampling" class="slide level2">
-<h2>Domain sampling</h2>
-<p>A <span class="definition">universe</span> of possible items exists, but we <strong><em>practically</em></strong> only <span class="definition">sample a subset</span> from that vast universe</p>
+<section id="section" class="slide level2">
+<h2></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
+<h3 id="validity-is-1">Validity <span class="bluescript">is</span>…</h3>
 <ul>
-<li><span class="bluescript">defining construct</span>
+<li>…the interpretation of <span class="definition">test scores</span> in terms of a specific psychological construct</li>
+<li>…a matter of <span class="definition">degree</span><sup>1</sup> <br> <br></li>
+<li>…based on <span class="definition">empirical evidence</span> and <span class="definition">theory</span></li>
+</ul>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:45%;">
+<h3 id="validity-is-not">Validity <span class="bluescript">is NOT</span>…</h3>
 <ul>
-<li><span class="definition">populating</span> the content domain</li>
-</ul></li>
-<li><span class="bluescript">writing items</span>
+<li><p>…a property of the <span class="definition">test</span> itself <br> <br></p></li>
+<li><p>…an “all-or-none” issue <br> <br></p></li>
+<li><p>…frivilously determined</p></li>
+</ul>
+</div></div>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>like <span class="definition">reliability</span>, typically expressed as a <span class="definition">correlation coefficient</span></p></li></ol></aside></section>
+<section id="practical-meaning" class="slide level2">
+<h2><u>Practical</u> meaning</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+
+</div><div class="column" style="width:60%;">
 <ul>
-<li><span class="definition">sampling from</span> the content domain</li>
+<li>is the <span class="definition">name</span> we give to scores appropriate?</li>
+<li>Scores from Form A should be labeled:
+<ul>
+<li>Math Ability?</li>
+<li>Weight?</li>
+<li>Attitude?</li>
 </ul></li>
 </ul>
-</div><div class="column" style="width:50%;">
-<p><br> <br> <br> <br> <br></p>
+</div></div>
+<p><img data-src="img/parallelforms.jpg" class="absolute" style="left: -120px; bottom: 225px; height: 250px; "></p>
+<p><img data-src="https://i1.sndcdn.com/artworks-000607839175-spypqx-t500x500.jpg" class="absolute" style="bottom: 50px; right: -50px; height: 300px; "></p>
+</section>
+<section id="where-does-this-come-from" class="slide level2">
+<h2>Where does this come from?</h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+
+</div><div class="column" style="width:70%;">
+<ul>
+<li>the <strong><em>Standards</em></strong></li>
+<li>published by:
+<ul>
+<li>American Educational Research Association</li>
+<li>American Psychological Association</li>
+<li>National Council on Measurement in Education</li>
+</ul></li>
+</ul>
+</div></div>
+<p><img data-src="https://www.apa.org/images/standards-book_tcm7-230312_w1024_n.jpg" class="absolute" style="left: -70px; bottom: 100px; "></p>
+</section>
+<section id="the-standards-history" class="slide level2">
+<h2>The Standards (History)</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<ul>
+<li>1966, 1974, 1985, 1999, and 2014 (5<sup>th</sup> ed)</li>
+<li>2014 revision focused on:
+<ol type="1">
+<li>technological advances</li>
+<li>increased use for <span class="definition">accountability</span> and <span class="definition">policy-setting</span></li>
+<li>access for all</li>
+<li>workplace testing</li>
+</ol></li>
+</ul>
+</div></div>
+<p><img data-src="https://www.aera.net/portals/38/images/Highlights/May%202018/Standards_Spanish_WEb.jpg" class="absolute" style="bottom: 100px; right: -70px; height: 450px; "></p>
+</section>
+<section id="validity-study-aka-validation" class="slide level2">
+<h2>Validity study (<span class="lowercase">aka</span> Validation)</h2>
+<p>…systematic procedure to gather validity evidence</p>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><span class="bluescript">Typically…</span></p>
+<ul>
+<li>investigate <span class="definition">item content</span></li>
+<li>determine association with <span class="definition">meaningful outcome</span></li>
+<li>demonstrate association with other measures of <span class="definition">same (or similar) construct</span></li>
+</ul>
+</div></div>
+<p><img data-src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2VueW5qdXYwNzRlNjIwYjAyejVpMHFpbDZ4cWtjcTl2Mmh0MWE1cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/wgLctUglOfHkcNUZOC/giphy.gif" class="absolute" style="bottom: 180px; right: -120px; height: 330px; "></p>
+</section>
+<section id="content-validation" class="slide level2">
+<h2>Content validation</h2>
+<p><span class="bluescript">Question:</span> is the test an adequate representation of the construct domain?</p>
+<div class="columns">
+<div class="column" style="width:70%;">
+<h3 id="primary-concerns">Primary concerns:</h3>
+<ul>
+<li>Deficiency
+<ul>
+<li>aka <span class="definition">construct underrepresentation</span></li>
+</ul></li>
+<li>Contamination
+<ul>
+<li>aka <span class="definition">construct-irrelevant variance</span></li>
+</ul></li>
+</ul>
+</div></div>
+<p><img data-src="img/deficiency.jpg" class="absolute" style="bottom: 250px; right: -20px; height: 200px; "> <img data-src="img/contamination.jpg" class="absolute" style="bottom: 0px; right: -20px; height: 200px; "></p>
+</section>
+<section id="content-validation-ii" class="slide level2">
+<h2>Content validation (II)</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li><span class="definition">Ratings</span> usually collected via <span class="definition">Subject Matter Experts</span> (aka <span class="definition">SMEs</span>)</li>
+<li><span class="citation" data-cites="lawshe1975quantitative">Lawshe (<a href="#/references" role="doc-biblioref" onclick="">1975</a>)</span> Content Validity Ratio
+<ul>
+<li>Essential</li>
+<li>Useful</li>
+<li>Not necessary</li>
+</ul></li>
+</ul>
+</div></div>
+<p><img data-src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmhpMWI1M2lha3diMGtseHk3NjNtNnp4YTNycjcyMjRzaDdiNWluMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l2JdYkTPVG9gRbvhK/giphy.gif" class="absolute" style="bottom: 100px; right: -100px; "></p>
+</section>
+<section id="criterion-validation" class="slide level2">
+<h2>Criterion validation</h2>
+<p><span class="bluescript">Question:</span> do test scores relate to anything of <span class="definition">real life</span> consequence?</p>
+<div class="columns">
+<div class="column" style="width:40%;">
+
+</div><div class="column" style="width:60%;">
+<h3 id="outcome-variables-aka-criteria">Outcome variables (aka <span class="definition">Criteria</span>)…</h3>
+<ul>
+<li>…are collected <span class="definition">at the same time</span> as your IV
+<ul>
+<li>Concurrent validation</li>
+</ul></li>
+<li>…are collected <span class="definition">at a later time</span> than your IV
+<ul>
+<li>Predictive validation</li>
+</ul></li>
+</ul>
+</div></div>
+<p><img data-src="https://i.namu.wiki/i/8KApJf7hpA70DP5tL7Ju5XAg59JFAQXHzSIyAX4Res-JS3m9hE04YTOZFvZm-vGSQyjJ28v0t8I1Q3xAMIQPMg.webp" class="absolute" style="left: -120px; bottom: 200px; height: 150px; "></p>
+</section>
+<section id="criterion-validation-ii" class="slide level2">
+<h2>Criterion validation (II)</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<h3 id="common-designs">Common designs:</h3>
+<ul>
+<li><span class="bluescript2">SAT</span> <span class="math inline">\(\rightarrow\)</span> College GPA?</li>
+<li><span class="bluescript2">Beck’s Depression Inventory</span> <span class="math inline">\(\rightarrow\)</span> Suicidal Ideation?</li>
+<li><span class="bluescript2">MMPI</span> <span class="math inline">\(\rightarrow\)</span> Psychopathology?</li>
+<li><span class="bluescript2">NEO</span> <span class="math inline">\(\rightarrow\)</span> Good Co-Worker?</li>
+</ul>
+</div></div>
+<p><img data-src="https://evalf20.classes.andrewheiss.com/example/regression_files/figure-html/plot-sat-gpa-correlation-1.png" class="absolute" style="bottom: 150px; right: -100px; height: 350px; "></p>
+</section>
+<section id="construct-validation" class="slide level2">
+<h2>Construct validation</h2>
+<p><span class="bluescript">Question:</span> does the test function similarly as other purported tests of the same construct?</p>
+<div class="columns">
+<div class="column" style="width:60%;">
+<h3 id="two-lenses">Two lenses:</h3>
+<ul>
+<li>Convergence
+<ul>
+<li>…with other measures of <span class="definition">similar things</span></li>
+</ul></li>
+<li>Discrimination
+<ul>
+<li>…from measures of <span class="definition">theoretically distinct things</span></li>
+</ul></li>
+</ul>
+</div></div>
+<p><img data-src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHZzYnNqb2E5Y2JvcnY3YzUxcXdyOTR2M2gwMW5wdm83a2cwb3VoZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/6G48V62YlbZj1W6fso/giphy.gif" class="absolute" style="bottom: 120px; right: -100px; "></p>
+</section></section>
+<section>
+<section id="activity" class="title-slide slide level1 center">
+<h1>Activity</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ol type="1">
+<li>Get in project groups</li>
+<li>Find 2 existing <strong><em>measures of construct</em></strong> (or <em>close</em> to construct)</li>
+<li>Find 1 existing measure of an <strong><em>unrelated</em></strong> construct</li>
+</ol>
+</div><div class="column" style="width:40%;">
+<p><img data-src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHhrdnBlNWE2ZnB6bWFicHk5dmJpdHE5a2N0YXV1M2FzYnZqNDduOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fsbKeqwwkmE6LodM3T/giphy.gif"></p>
+</div></div>
+</section>
+<section id="validity-coefficient" class="slide level2">
+<h2>Validity coefficient</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>typically the <span class="definition">focus</span> of a validation study</li>
+<li><strong><em>usually</em></strong> a correlation coefficient
+<ul>
+<li>like reliability coefficients, range from 0 <span class="math inline">\(\rightarrow\)</span> 1</li>
+<li>to what extent <span class="definition">are inferences appropriate?</span></li>
+<li>sometimes <span class="definition">squared</span></li>
+</ul></li>
+</ul>
+</div></div>
+<p><img data-src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaW53NnE5OXVrZHJ1bmdhYWN5ZDlkZ2FibHhpN2JkaXlndWFhNm1yaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/t5rGuvfDHC38A/giphy.gif" class="absolute" style="bottom: 0px; right: -80px; "></p>
+</section>
+<section id="coefficient-quality" class="slide level2">
+<h2>Coefficient “quality”</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+
+</div><div class="column" style="width:60%;">
+<ul>
+<li>Ask for <span class="definition">technical report</span> from test provider</li>
+<li>“More” is better
+<ul>
+<li>larger coefficient</li>
+<li>number of studies</li>
+</ul></li>
+<li>focus on sampled <span class="definition">population(s)</span>
+<ul>
+<li>constituency &amp; size</li>
+</ul></li>
+<li><span class="definition">validity generalization</span> evidence?</li>
+</ul>
+</div></div>
+<p><img data-src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExY28xZmNvdmhsNDZrcDJzczNjdGk5M3RpZXppYXZvenV2MGMzc3MwMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Od0QRnzwRBYmDU3eEO/giphy.gif" class="absolute" style="left: -70px; bottom: 150px; height: 400px; "></p>
+</section>
+<section id="face-validity" class="slide level2">
+<h2><u>Face</u> validity</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>Do the test items appear to be relevant for the testing context?🤨</li>
+<li>Different contexts matter:
+<ul>
+<li>context = purpose</li>
+<li>Applying for a job</li>
+</ul></li>
+<li>Tradeoff may exist between <span class="definition">relevant</span> and <span class="definition">more easily fakable</span></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<p><img data-src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmRuOGxmcHZ6enpyZjZiM2dqOGI4bXNjNHZ1NWQ2azc0Y2ltd2c3ZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/aVytG2ds8e0tG/giphy.gif"></p>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -460,231 +696,69 @@ Chapter 5…<br><span class="crossmethod">…Vladitity</span>
 <p><strong>Tip</strong></p>
 </div>
 <div class="callout-content">
-<p>Content domain = what’s <strong><em>inside your circle</em></strong></p>
+<p>The primary difference between <span class="definition">content</span> validity and <span class="definition">face</span> validity is who provides estimates: <span class="definition">subject matter experts</span> or <span class="definition">test-takers</span></p>
 </div>
 </div>
 </div>
 </div></div>
-<p><img data-src="https://media.springernature.com/lw685/springer-static/image/chp%3A10.1007%2F978-1-4614-7135-6_3/MediaObjects/91379_3_En_3_Fig3_HTML.gif" class="absolute" style="bottom: 220px; right: -100px; height: 300px; "></p>
 </section>
-<section id="item-response-theory" class="slide level2">
-<h2>Item Response Theory</h2>
-<div class="columns">
-<div class="column" style="width:40%;">
-<ul>
-<li>Test adaptive to respondent’s demonstrated <span class="bluescript">level of ability</span>
-<ul>
-<li><a href="https://www.ets.org/gre/test-takers/general-test/prepare/content.html">GRE</a></li>
-</ul></li>
-</ul>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Note</strong></p>
-</div>
-<div class="callout-content">
-<p>SAT and ACT are administered and scored <span class="definition">traditionally</span></p>
-</div>
-</div>
-</div>
-</div></div>
-<p><img data-src="https://apasseducation.com/wp-content/uploads/2017/06/screen_shot_2016-02-11_at_1.32.37_pm1e37.png" class="absolute" style="bottom: 100px; right: -130px; height: 500px; "></p>
-</section></section>
-<section>
-<section id="models-of-reliability" class="title-slide slide level1 center">
-<h1>Models of reliability</h1>
-
-<img data-src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZG1vZ2c0MHNhMXNwcG1pejg2c3p3dWwyb2dtbmFjZGdpZTc4NGl0ayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ZS6daj0icfnD166eTc/giphy.gif" class="r-stretch"></section>
-<section id="test-retest" class="slide level2">
-<h2>Test-retest</h2>
-<div class="columns">
-<div class="column" style="width:55%;">
-<ul>
-<li>same test, different occasion</li>
-<li>do scores maintain same ordering (across people) over time?</li>
-</ul>
-</div><div class="column" style="width:45%;">
-<ul>
-<li><span class="definition">carryover effect</span> vs construct change</li>
-<li>pre- post- design <span class="definition">without intervention</span></li>
-</ul>
-</div></div>
-<p><img data-src="https://i0.wp.com/conceptshacked.com/wp-content/uploads/2020/12/Test-retest-min.png?resize=896%2C339&amp;ssl=1" class="absolute" style="left: 75px; bottom: 0px; "></p>
-</section>
-<section id="parallel-forms" class="slide level2">
-<h2>Parallel forms</h2>
-<div class="columns">
-<div class="column" style="width:55%;">
-<ul>
-<li>different test, same occasion<sup>1</sup></li>
-<li>aka <span class="definition">sampling from the same domain elements</span>
-<ul>
-<li>similarly representative of construct</li>
-</ul></li>
-<li>items should be of same <span class="definition">difficulty level</span></li>
-</ul>
-</div></div>
-<p><img data-src="img/parallelforms.JPG" class="absolute" style="bottom: 200px; right: -120px; height: 300px; "></p>
-<aside><ol class="aside-footnotes"><li id="fn1"><p>typically but methodological choice</p></li></ol></aside></section>
-<section id="parallel-forms-1" class="slide level2">
-<h2>Parallel forms? 🤔</h2>
-<p>…which are “parallel” to <span class="cornflower"><strong>Form A</strong></span> and<br>which are not?</p>
-<p><br> <br></p>
-<table class="caption-top">
-<colgroup>
-<col style="width: 18%">
-<col style="width: 18%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Form</th>
-<th>Item 1</th>
-<th>Item 2</th>
-<th>Item 3</th>
-<th>Item 4</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span class="cornflower">A</span></td>
-<td><span class="cornflower"><span class="math inline">\(2+3=?\)</span></span></td>
-<td><span class="cornflower"><span class="math inline">\(9\div3=?\)</span></span></td>
-<td><span class="cornflower"><span class="math inline">\(4\times5=?\)</span></span></td>
-<td><span class="cornflower"><span class="math inline">\(4-1=?\)</span></span></td>
-</tr>
-<tr class="even">
-<td>B</td>
-<td><span class="math inline">\(1+4=?\)</span></td>
-<td><span class="math inline">\(6-3=?\)</span></td>
-<td><span class="math inline">\(2\times3=?\)</span></td>
-<td><span class="math inline">\(8\div4=?\)</span></td>
-</tr>
-<tr class="odd">
-<td>C</td>
-<td><span class="math inline">\(-3+1.5=?\)</span></td>
-<td><span class="math inline">\(7\div13=?\)</span></td>
-<td><span class="math inline">\(.13\times\frac{5}{6}=?\)</span></td>
-<td><span class="math inline">\(-9-6=?\)</span></td>
-</tr>
-<tr class="even">
-<td>D</td>
-<td><span class="math inline">\(4+3=?\)</span></td>
-<td><span class="math inline">\(5+2=?\)</span></td>
-<td><span class="math inline">\(6+1=?\)</span></td>
-<td><span class="math inline">\(2+4=?\)</span></td>
-</tr>
-</tbody>
-</table>
-<p><img data-src="img/parallelforms.JPG" class="absolute" style="top: 0px; right: -120px; height: 250px; "></p>
-</section>
-<section id="split-half" class="slide level2">
-<h2>Split-half</h2>
-<div class="columns">
-<div class="column" style="width:40%;">
-
-</div><div class="column" style="width:60%;">
-<ul>
-<li>same test, same occasion</li>
-<li><span class="definition">treat</span> as though <span class="definition">2 different tests</span></li>
-<li>must apply correction because of <span class="definition">artificial halving</span>
-<ul>
-<li>Spearman-Brown prophecy formula</li>
-<li>what reliability <span class="definition">would have been</span> if you hadn’t chopped test in two</li>
-</ul></li>
-</ul>
-</div></div>
-<p><img data-src="https://thumbs.dreamstime.com/b/figure-split-half-red-background-46735069.jpg" class="absolute" style="left: -70px; bottom: 50px; height: 500px; "></p>
-</section>
-<section id="split-half-ii" class="slide level2">
-<h2>Split-half (II)</h2>
+<section id="validity-reliability" class="slide level2">
+<h2>Validity &amp; Reliability</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
 <ul>
-<li>content needs to match
-<ul>
-<li>same as parallel forms</li>
-</ul></li>
-<li>⚠️🛑<strong>DO NOT</strong>🛑⚠️ simply take 1<sup>st</sup> and 2<sup>nd</sup> halves!!!</li>
+<li>reliability is 1<sup>st</sup> necessary</li>
+<li>cannot have <span class="definition">validity</span> without <span class="definition">reliability</span></li>
+<li>you <span class="bluescript">can</span> have <span class="definition">reliability</span> without <span class="definition">validity</span></li>
+<li>reliability “<strong><em>puts a cap on</em></strong>” validity</li>
 </ul>
 </div></div>
-<p><img data-src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiYgwlT9NXDxh7k9lbSMxLAWwrX6xA-fDeIU7R4Xd0146Wuz1zpA0DjFEnHcygjoadQBdp60WI529ogtXMjlluckYAhrpOo916y3CmcPm5cRqZ3DFaWOyGw8SdF0iVbvL7vsDSw52ytvcXq/s1600/split+half1.png" class="absolute" style="bottom: 50px; right: -70px; height: 300px; "></p>
-<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Stop_hand.svg/768px-Stop_hand.svg.png" class="absolute" style="left: 90px; bottom: 50px; height: 230px; "></p>
-<p><img data-src="img/parallelforms.JPG" class="absolute" style="top: 0px; right: -120px; height: 250px; "></p>
+<p><img data-src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExeXgybmdieDc4N2ljNDNscTdwanJwN2c4M3gwNWJtMXQ2OHRja3U0aSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/OvgrJo0tL3Ebrx6uNC/giphy.gif" class="absolute" style="bottom: 150px; right: -20px; "></p>
 </section>
-<section id="alpha-and-kr20" class="slide level2">
-<h2><span class="lowercase"><span class="math inline">\(\alpha\)</span></span> and KR<sub>20</sub></h2>
-<div class="columns">
-<div class="column" style="width:30%;">
-
-</div><div class="column" style="width:70%;">
+<section id="which-of-the-following-is-possible" class="slide level2 quiz-question">
+<h2>Which of the following is possible?</h2>
 <ul>
-<li>same test, same occasion</li>
-<li>both indices of <span class="bluescript"><strong>internal consistency</strong></span>
-<ul>
-<li>cohesion of item response within <span class="definition">scale</span></li>
-<li>scale needs at least 3 items</li>
-</ul></li>
-<li>KR<sub>20</sub> used with <span class="definition">tests</span></li>
-<li><span class="math inline">\(\alpha\)</span> used with <span class="definition">inventories</span></li>
+<li>high validity, low reliability</li>
+<li><span class="correct">low validity, high reliability</span></li>
+<li>high fidelity, low validity</li>
+<li>low fidelity, high validity</li>
 </ul>
-</div></div>
-<p><img data-src="https://upload.wikimedia.org/wikipedia/en/e/e7/Alpha_and_Omega_poster.jpg" class="absolute" style="left: -100px; bottom: 50px; height: 500px; "></p>
 </section>
-<section id="behavioral-observations" class="slide level2">
-<h2>Behavioral observations</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
+<section id="correlating-an-employment-application-with-ratings-of-job-performance-collected-after-a-3-month-probation-would-give-evidence-of-the-applications" class="slide level2 quiz-question">
+<h2><span class="small">Correlating an employment application with ratings of job performance (collected after a 3 month probation) would give evidence of the application’s…</span></h2>
 <ul>
-<li>aka <span class="definition">inter-rater</span> reliability</li>
-<li>do <span class="definition">judges</span> tend to agree (e.g., who is <span class="definition">best</span>, <span class="definition">worst</span>, etc)
-<ul>
-<li>sometimes uses correlation coefficient</li>
-<li>sometimes uses other index (e.g., <strong><em>Kappa</em></strong>)</li>
-</ul></li>
+<li><span class="correct">Predictive validity</span></li>
+<li>Concurrent validity</li>
+<li>Content validity</li>
+<li>Construct validity</li>
 </ul>
-</div></div>
-<p><img data-src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExdms3ZGJycjI0eGdubXQ2c2tuemRnNDFpbGJhYjdtbTk5cXllOGFnYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/rzYzG31xTBFSELyGof/giphy.gif" class="absolute" style="bottom: 100px; right: -80px; height: 400px; "></p>
 </section>
-<section id="reliability-indices" class="slide level2">
-<h2>Reliability indices</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
+<section id="reliability-is-freedom-from" class="slide level2 quiz-question">
+<h2>Reliability is freedom from…</h2>
 <ul>
-<li>For <span class="bluescript2"><strong>MOST</strong></span>, index expressed as <span class="definition">correlation</span></li>
-<li>For <span class="bluescript2"><strong>ALL</strong></span>:
-<ul>
-<li>larger = greater reliability</li>
-<li>capped at value of 1.0</li>
-<li>typically<sup>1</sup> never expressed as negative value</li>
-</ul></li>
+<li><span class="correct">error</span></li>
+<li>taxes</li>
+<li>validity</li>
+<li>scores</li>
 </ul>
-</div></div>
-<p><img data-src="https://o.quizlet.com/i/6jaGejPbYQR_8LXSQNhTUw.jpg" class="absolute" style="bottom: 180px; right: -100px; "></p>
-<aside><ol class="aside-footnotes"><li id="fn2"><p>usually indicates “something is wrong” with <span class="math inline">\(\alpha\)</span> or <em>Kappa</em> data 😰</p></li></ol></aside></section>
-<section id="using-reliability" class="slide level2">
-<h2><u>Using</u> reliability</h2>
-<div class="columns">
-<div class="column" style="width:40%;">
-
-</div><div class="column" style="width:60%;">
+</section>
+<section id="methodologically-a-criterion-used-for-validation-can-also-be-called-aan" class="slide level2 quiz-question">
+<h2>Methodologically, a <span class="definition">criterion</span> used for validation can also be called a/an…</h2>
 <ul>
-<li>Standard error of measurement
-<ul>
-<li>used to construct <span class="definition">score bands</span></li>
-<li>same concept as within political polling
-<ul>
-<li><span class="bluescript2">True</span> value thought to be within band (with, e.g., 95% certainty)</li>
-</ul></li>
-</ul></li>
+<li><span class="correct">DV</span></li>
+<li>IV</li>
+<li>Moderator</li>
+<li>Confound</li>
 </ul>
-</div></div>
-<p><img data-src="https://www.muhlenberg.edu/media/contentassets/pdf/about/polling/surveys/pennsylvania/MCIPO_Graphics_Poll_Spring2024-03-460x460.png" class="absolute" style="left: -100px; bottom: 100px; "></p>
+</section>
+<section id="another-name-for-the-test-being-validated-is-aan" class="slide level2 quiz-question">
+<h2>Another name for <span class="definition">the test being validated</span> is a/an…</h2>
+<ul>
+<li><span class="correct">predictor</span></li>
+<li>criterion</li>
+<li>moderator</li>
+<li>confound</li>
+</ul>
 </section>
 <section id="references" class="slide level2 smaller scrollable">
 <h2>References</h2>
@@ -694,17 +768,11 @@ Chapter 5…<br><span class="crossmethod">…Vladitity</span>
 </div>
 </div>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
-<div id="ref-cronbach1951coefficient" class="csl-entry" role="listitem">
-Cronbach, L. J. (1951). Coefficient alpha and the internal structure of tests. <em>Psychometrika</em>, <em>16</em>(3), 297–334.
+<div id="ref-hinkin2005scale" class="csl-entry" role="listitem">
+Hinkin, T. R. (2005). <em>Research in organizations: Foundations and methods of inquiry</em> (R. A. Swanson &amp; E. F. Holton III, Eds.; pp. 161–179). Berrett-Koehler Publishers.
 </div>
-<div id="ref-kudertheory1937" class="csl-entry" role="listitem">
-Kuder, G. F., &amp; Richardson, M. W. (1937). The theory of the estimation of test reliability. <em>Psychometrika</em>, <em>2</em>(3), 151–160.
-</div>
-<div id="ref-spearmanproof1904" class="csl-entry" role="listitem">
-Spearman, C. (1904). The proof and measurement of association between two things. <em>The American Journal of Psychology</em>, <em>15</em>(1), 72–101.
-</div>
-<div id="ref-thorndiketheory1904" class="csl-entry" role="listitem">
-Thorndike, E. L. (1904). <em>Theory of mental and social measurements</em>. The Science Press.
+<div id="ref-lawshe1975quantitative" class="csl-entry" role="listitem">
+Lawshe, C. (1975). A quantitative approach to content validity. <em>Personnel Psychology</em>, <em>28</em>, 563–575.
 </div>
 </div>
 </section></section>
@@ -722,6 +790,7 @@ Thorndike, E. L. (1904). <em>Theory of mental and social measurements</em>. The 
   <script src="Chapter5_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
   <script src="Chapter5_files/libs/revealjs/plugin/multiplex/socket.io.js"></script>
   <script src="Chapter5_files/libs/revealjs/plugin/multiplex/multiplex.js"></script>
+  <script src="Chapter5_files/libs/revealjs/plugin/reveal-quiz/quiz.js"></script>
   <script src="Chapter5_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -745,6 +814,7 @@ Thorndike, E. L. (1904). <em>Theory of mental and social measurements</em>. The 
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'chalkboard': {"buttons":true},
 'multiplex': {"secret":"17399035639958439370","id":"aa4b72ab54e30db4","url":"https://reveal-multiplex.glitch.me/"},
+'quiz': {"checkKey":"c","resetKey":"q","shuffleKey":"p","allowNumberKeys":true,"disableOnCheck":true,"shuffleOptions":true,"defaultCorrect":"Pride of St Thomas Woot Woot!!!","defaultIncorrect":"Tsk tsk tsk - I thought you were a good note-taker!!!","includeScore":true,"disableReset":false},
 'smaller': false,
  
         // Display controls in the bottom right corner
@@ -915,7 +985,7 @@ Thorndike, E. L. (1904). <em>Theory of mental and social measurements</em>. The 
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, RevealQuiz, QuartoSupport,
 
           RevealMath,
           RevealNotes,
