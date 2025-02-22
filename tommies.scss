@@ -3,6 +3,8 @@
 @import url('https://fonts.googleapis.com/css?family=Protest Guerrilla');
 @import url('https://fonts.googleapis.com/css?family=Delicious Handrawn');
 @import url('https://fonts.googleapis.com/css?family=Nosifer');
+@import url('https://fonts.googleapis.com/css?family=Rock Salt');
+@import url('https://fonts.googleapis.com/css?family=Permanent Marker');
 
 /*-- scss:defaults --*/
 
@@ -10,7 +12,7 @@ $body-bg: #191919;
 $body-color: #fff;
 $link-color: #42affa;
 $code-color: hotpink;
-$presentation-title-slide-text-align: right;
+$presentation-title-slide-text-align: left;
 $presentation-title-slide-text-color: black;
 
 /*-- scss:rules --*/
@@ -65,8 +67,8 @@ $presentation-title-slide-text-color: black;
 .crossmethod {
   font-size: 80px;
 /*  text-decoration: underline; #6495ed  */
-  color: #bce0db;
-  font-family: 'Protest Guerrilla';
+  color: #a89b32;
+  font-family: 'Rock Salt';
 }
 
 .bluescript {
@@ -94,7 +96,7 @@ $presentation-title-slide-text-color: black;
 
 .definition {
   color: #ff99ff;
-  font-family: 'Delicious Handrawn';
+  font-family: 'Permanent Marker';
 }
 
 .cornflower {
@@ -114,3 +116,4 @@ $presentation-title-slide-text-color: black;
 .underline {
   text-decoration: underline !important;
 }
+

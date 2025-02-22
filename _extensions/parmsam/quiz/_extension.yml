@@ -13,7 +13,7 @@ contributes:
         quiz:
           checkKey: "c"
           resetKey: "q"
-          shuffleKey: "t"
+#          shuffleKey: "t"
           allowNumberKeys: true
           disableOnCheck: false
           shuffleOptions: true

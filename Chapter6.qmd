@@ -1,9 +1,546 @@
 ---
-title: "Chapter 6"
-format: revealjs
+title: "Ψlogical<br>Testing" 
+author: "Chapter 6<br>[Item writing & Evaluation]{.crossmethod}" 
+title-slide-attributes: 
+  data-background-image: https://www.postalconnections101.com/app/uploads/2021/04/quill-pen.jpg
+  data-background-opacity: "1"
+format:
+  revealjs:
+#    multiplex: true
+    chalkboard: true
+    slide-tone: false
+    navigation-mode: linear
+    transition: convex
+    transition-speed: slow
+    controls: true
+    controls-layout: edges
+#    controls-tutorial: false
+    slide-number: c
+    mermaid:
+      theme: neutral
+#    output-location: slide           ## column-fragment; inserts blank 2nd slide
+    code-overflow: wrap              ## instead of horizontal scroll
+    theme: [league, tommies.scss]    ## night & league
+    mouse-wheel: true                ## yes enables mouse
+    preview-links: false             ## true brings up iframe window instead of "site"
+    code-annotations: hover 
+    quiz:
+      shuffleKey: "p"
+      defaultCorrect: "Pride of St Thomas Woot Woot!!!"
+      defaultIncorrect: "Pffft - Whazzamatta UUUUuuu?!?!"
+      includeScore: true
+      disableOnCheck: true
+engine: knitr                        ## not picking up inline codes
+bibliography: bib.bib
+csl: apa7.csl
+#lightbox: true                     ## interferes with .absolute placement
+revealjs-plugins:                  
+  - quiz
+#  - spotlight                      ## cursor disappearing
 ---
 
-## Quarto
+```{r, warning=FALSE, message=FALSE}
+#devtools::install_github("hadley/emo")        ## if anyone else wants to render
+library(fontawesome)
+```
 
-![](https://larrycuban.wordpress.com/wp-content/uploads/2022/11/a5125d11411a547ce4efb803789ce310.jpg)
+## House keeping `r emo::ji("broom")``r emo::ji("wastebasket")`
 
+:::: {.columns}
+::: {.column width="55%"}
++ First exam 3/6 (Thurs)
+  + In class, but administered via Canvas (Ch 1 $\rightarrow$ 8)
+
++ Project:
+  + keep revising
+  + @hinkin2005scale
+  + item writing
+
+:::
+::::
+
+![](https://www.freeiconspng.com/uploads/sweeping-png-15.png){.absolute top="385" left="290" height="150" .mirror}
+
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYncwNGNqZ3ZudjZmdDBrOTd6cGVyOXR3cTFtdWQ2ajVlcTk0Y3lrciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/6fZqrIClEOWTfLArgA/giphy.gif){.absolute right="-70" top="150"}
+
+## `r emo::ji("telescope")``r emo::ji("shooting_star")`[ASTEROID [YR4]{.greenscript}](https://www.livescience.com/space/asteroids/asteroid-yr4-impact-odds-plummet-as-nasa-changes-threat-level-of-city-killer) PANIC METER!!!`r emo::ji("milky_way")``r emo::ji("collision")`
+
+::: {.columns}
+::: {.column width="10%"}
+:::
+
+::: {.column width="80%"}
+```{r}
+#| title: Impending Global Apocolypse
+#| fig-width: 8
+
+library(dygraphs)
+library(magrittr)
+
+Date <- c("12/27/24",
+          "1/29/25",
+          "02/7/25",
+          "02/11/25", 
+          "02/14/25", 
+          "02/18/25",
+          "02/19/25",
+          "02/20/25")
+destruction <- c(1.2, 
+                1.3,
+                2.2,
+                2.4, 
+                2.6, 
+                3.1,
+                1.5,
+                .28)
+
+responses <- as.data.frame(cbind(Date,destruction))
+
+responses$Date <- as.Date(responses$Date, format="%m/%d/%y")
+
+plotresp <- ts(responses)
+dygraph(responses) %>%
+  dyAxis("x", drawGrid = FALSE) %>%
+  dyAxis("y", label="Odds of Doom (%)") %>%
+  dyOptions(fillGraph=TRUE, fillAlpha=0.4) %>%
+  dyRangeSelector()
+```
+:::
+:::
+
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcWd4eXBzcHo1MDExdWp6eTdvY3BxaTF2NzNobXJsaTF1NDk2MjVsdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/HUkOv6BNWc1HO/giphy.gif){.absolute right="-130" bottom="25" height="200"}
+
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTA1YzJheGFnamJ0aGZyODFmbmxkZ2JkcXZrb21jNTU2YTYyNXgzZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l46CvyAn1oBTOZtZK/giphy.gif){.absolute left="-150" top="120" height="200"}
+
+# Item writing!!
+
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTc3aHI0d3BncnB1djBrcjh1cDZranJhOGp6cGhzbGllMmNsazd5YyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/H9GdRg90WerxC/giphy.gif)
+
+## Item "Types"
+
+::: {.columns}
+
+::: {.column width="60%"}
+
+[Dichotomous]{.definition} vs [Polytomous]{.definition} not very common or helpful distinction -- we're not going to use it
+
+  + How many [response categories]{.definition} are offered
+  + Has implications, but not good differentiator of [different types]{.bluescript} of items
+
+:::
+:::
+
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcWJva3l2M3o5ajB5b2F5d2poYmRkMWw3cjJmcjhyeDY3d3M3amxyeCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/BPUFuLhIZ82bGvwcEQ/giphy.gif){.absolute right="-120" bottom="120"}
+
+## Common types
+
+::: {.columns}
+
+::: {.column width="55%"}
+:::
+
+::: {.column width="45%"}
+
+::: {.ninety}
++ `r emo::ji("smiling_face_with_halo")`true--false`r emo::ji("lying_face")`
++ forced choice
++ multiple choice
++ Likert-type
++ categories
++ checklists
+:::
+
+::: {.callout-note}
+Items may also require scoring rubrics -- for example, [essay]{.definition}, [short-answer]{.definition}, and [fill-in-the-blank]{.definition} item types
+:::
+
+:::
+:::
+
+![](https://larrycuban.wordpress.com/wp-content/uploads/2022/11/a5125d11411a547ce4efb803789ce310.jpg){.absolute left="-30" bottom="70" height="500"}
+
+## True--false
+
+:::: {.columns}
+::: {.column width="60%"}
+
++ sometimes [yes--no]{.definition} 
++ [50% chance]{.definition} of "***getting correct***" regardless of construct standing
++ familiar
++ easy to [score]{.definition}
+  + aka [recoding]{.definition}
+
+:::
+::::
+
+![](https://www.oreilly.com/api/v2/epubs/9780471356141/files/9780471356141_select_the_right_type_of_question_image01.png){.absolute right="-100" bottom="100"}
+
+## Forced choice^[Some also use this term to refer to multiple choice-type items]
+
+:::: {.columns}
+::: {.column width="45%"}
+
+:::
+
+::: {.column width="55%"}
+
++ aka [paired comparisons]{.definition}
++ scoring may be ipsative
++ typically [multidimensional]{.definition} construct(s)
++ elaborate scoring key
+  + response option--aggregate scale associations
+
+:::
+::::
+
+![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP-5nLl-mAQDFQdktRFkfcSkAPhRiydsHqXA&s){.absolute bottom="200" height="300" left="-70"}
+
+## Multiple choice
+:::: {.columns}
+::: {.column width="40%"}
+:::
+
+::: {.column width="60%"}
+:::
+::::
+
+## Likert-type
+:::: {.columns}
+::: {.column width="40%"}
+:::
+
+::: {.column width="60%"}
+:::
+::::
+
+## Categories
+:::: {.columns}
+::: {.column width="40%"}
+:::
+
+::: {.column width="60%"}
+:::
+::::
+
+## Checklists
+:::: {.columns}
+::: {.column width="40%"}
+:::
+
+::: {.column width="60%"}
+:::
+::::
+
+## "Other"
+:::: {.columns}
+::: {.column width="40%"}
+:::
+
+::: {.column width="60%"}
+:::
+::::
+
+## Item Writing Guidelines
+
+:::: {.columns}
+::: {.column width="50%"}
+
+1. Define construct
+2. Sample^[rule of thumb is [3]{.definition} or [4 times]{.definition} the number you'd like to eventually keep] from content domain  
+   + [Shorter]{.definition} preferred
+   + Reading level??
+   + Double-barrelled??
+   + Phrasing [direction]{.definition}??
+
+:::
+::::
+
+![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR82aPbpsQLsFOFnlfjZ0ro2eb53SyNC8hu5A&s){.absolute right="0" height="500" bottom="100"}
+
+## [Practical]{.underline} meaning
+
+:::: {.columns}
+::: {.column width="40%"}
+:::
+
+::: {.column width="60%"}
+:::
+::::
+
+## Where does this come from?
+
+::: {.columns}
+::: {.column width="30%"}
+
+:::
+
+::: {.column width="70%"}
+
++ the ***Standards***
++ published by:
+  + American Educational Research Association
+  + American Psychological Association
+  + National Council on Measurement in Education
+  
+:::
+:::
+
+![](https://www.apa.org/images/standards-book_tcm7-230312_w1024_n.jpg){.absolute left="-70" bottom="100"}
+
+## The Standards (History)
+
+::: {.columns}
+::: {.column width="70%"}
+
++ 1966, 1974, 1985, 1999, and 2014 (5^th^ ed)
++ 2014 revision focused on:
+  1. technological advances 
+	2. increased use for [accountability]{.definition} and [policy-setting]{.definition}
+	3. access for all 
+	4. workplace testing
+
+:::
+:::
+
+![](https://www.aera.net/portals/38/images/Highlights/May%202018/Standards_Spanish_WEb.jpg){.absolute right="-70" bottom="100" height="450"}
+
+## Validity study ([aka]{.lowercase} Validation)
+
+...systematic procedure to gather validity evidence
+
+:::: {.columns}
+::: {.column width="60%"}
+
+[Typically...]{.bluescript}
+
++ investigate [item content]{.definition}
++ determine association with [meaningful outcome]{.definition}
++ demonstrate association with other measures of [same (or similar) construct]{.definition}
+
+:::
+::::
+
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2VueW5qdXYwNzRlNjIwYjAyejVpMHFpbDZ4cWtjcTl2Mmh0MWE1cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/wgLctUglOfHkcNUZOC/giphy.gif){.absolute height="330" right="-120" bottom="180"}
+
+## Content validation
+
+[Question:]{.bluescript} is the test an adequate representation of the construct domain? 
+
+::: {.columns}
+::: {.column width="70%"}
+
+### Primary concerns:
+
++ Deficiency
+  + aka [construct underrepresentation]{.definition}
++ Contamination
+  + aka [construct-irrelevant variance]{.definition}
+
+:::
+:::
+
+![](img/deficiency.jpg){.absolute height="200" right="-20" bottom="250"}
+![](img/contamination.jpg){.absolute height="200" right="-20" bottom="0"}
+
+## Content validation (II)
+
+::: {.columns}
+::: {.column width="60%"}
+
++ [Ratings]{.definition} usually collected via [Subject Matter Experts]{.definition} (aka [SMEs]{.definition})
++ @lawshe1975quantitative Content Validity Ratio
+  + Essential
+  + Useful
+  + Not necessary
+
+:::
+:::
+
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmhpMWI1M2lha3diMGtseHk3NjNtNnp4YTNycjcyMjRzaDdiNWluMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l2JdYkTPVG9gRbvhK/giphy.gif){.absolute right="-100" bottom="100"}
+
+## Criterion validation
+
+[Question:]{.bluescript} do test scores relate to anything of [real life]{.definition} consequence? 
+
+::: {.columns}
+::: {.column width="40%"}
+
+:::
+
+::: {.column width="60%"}
+### Outcome variables (aka [Criteria]{.definition})...
+
++ ...are collected [at the same time]{.definition} as your IV
+  + Concurrent validation
++ ...are collected [at a later time]{.definition} than your IV
+  + Predictive validation
+
+:::
+::: 
+
+![](https://i.namu.wiki/i/8KApJf7hpA70DP5tL7Ju5XAg59JFAQXHzSIyAX4Res-JS3m9hE04YTOZFvZm-vGSQyjJ28v0t8I1Q3xAMIQPMg.webp){.absolute left="-120" bottom="200" height="150"}
+
+## Criterion validation (II)
+
+::: {.columns}
+::: {.column width="60%"}
+### Common designs:
+
++ [SAT]{.bluescript2} $\rightarrow$ College GPA?
++ [Beck's Depression Inventory]{.bluescript2} $\rightarrow$ Suicidal Ideation?
++ [MMPI]{.bluescript2} $\rightarrow$ Psychopathology?
++ [NEO]{.bluescript2} $\rightarrow$ Good Co-Worker?
+:::
+:::
+
+![](https://evalf20.classes.andrewheiss.com/example/regression_files/figure-html/plot-sat-gpa-correlation-1.png){.absolute right="-100" bottom="150" height="350"}
+
+## Construct validation
+
+[Question:]{.bluescript} does the test function similarly as other purported tests of the same construct? 
+
+::: {.columns}
+::: {.column width="60%"}
+
+### Two lenses:
+
++ Convergence
+  + ...with other measures of [similar things]{.definition}
++ Discrimination
+  + ...from measures of [theoretically distinct things]{.definition}
+
+:::
+:::
+
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHZzYnNqb2E5Y2JvcnY3YzUxcXdyOTR2M2gwMW5wdm83a2cwb3VoZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/6G48V62YlbZj1W6fso/giphy.gif){.absolute right="-100" bottom="120"}
+
+# Activity!!
+
+::: {.columns}
+::: {.column width="60%"}
+Name the capital of...
+
+1. Maine [[Augusta]{.definition}]{.fragment fragment-index=1 .fade-up}
+2. Mexico [[Mexico City]{.definition}]{.fragment fragment-index=2 .fade-up}
+3. Missouri [[Jefferson City]{.definition}]{.fragment fragment-index=3 .fade-up}
+4. Mongolia [[Ulaan Baatar]{.definition}]{.fragment fragment-index=4 .fade-up}
+5. Uruguay [[Montevideo]{.definition}]{.fragment fragment-index=5 .fade-up}
+
+:::
+
+::: {.column width="40%"}
+[![](https://sheetcast.com/media/dcwhmwb3/281-image1.jpg)](https://docs.google.com/spreadsheets/d/1BQ37Fnbyy2T7Ino9AQ35QAcvPyS0wnlY306ts-oFqVE/edit?usp=sharing)
+
+[![](https://media.sproutsocial.com/uploads/2023/10/Data-Visualization-Final.jpg)](https://diegofigueiras.shinyapps.io/TestItemCharacteristics)
+:::
+:::
+
+## Validity coefficient
+
+::: {.columns}
+::: {.column width="60%"}
+
++ typically the [focus]{.definition} of a validation study
++ ***usually*** a correlation coefficient
+  + like reliability coefficients, range from 0 $\rightarrow$ 1
+  + to what extent [are inferences appropriate?]{.definition}
+  + sometimes [squared]{.definition}
+
+:::
+:::
+
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaW53NnE5OXVrZHJ1bmdhYWN5ZDlkZ2FibHhpN2JkaXlndWFhNm1yaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/t5rGuvfDHC38A/giphy.gif){.absolute bottom="0" right="-80"}
+
+## Coefficient "quality"
+
+::: {.columns}
+::: {.column width="40%"}
+:::
+
+::: {.column width="60%"}
+
++ Ask for [technical report]{.definition} from test provider
++ "More" is better
+  + larger coefficient
+  + number of studies
++ focus on sampled [population(s)]{.definition}
+  + constituency & size
++ [validity generalization]{.definition} evidence?
+:::
+
+:::
+
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExY28xZmNvdmhsNDZrcDJzczNjdGk5M3RpZXppYXZvenV2MGMzc3MwMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Od0QRnzwRBYmDU3eEO/giphy.gif){.absolute left="-70" bottom="150" height="400"}
+
+## [Face]{.underline} validity
+
+::: {.columns}
+::: {.column width="60%"}
+
++ Do the test items appear to be relevant for the testing context?`r emo::ji("face_with_raised_eyebrow")`
++ Different contexts matter:
+  + context = purpose
+  + Applying for a job
++ Tradeoff may exist between [relevant]{.definition} and [more easily fakable]{.definition}
+
+:::
+
+::: {.column width="40%"}
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmRuOGxmcHZ6enpyZjZiM2dqOGI4bXNjNHZ1NWQ2azc0Y2ltd2c3ZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/aVytG2ds8e0tG/giphy.gif)
+
+::: {.callout-tip}
+The primary difference between [content]{.definition} validity and [face]{.definition} validity is who provides estimates: [subject matter experts]{.definition} or [test-takers]{.definition}
+:::
+
+:::
+:::
+
+## Item Characteristic Curves
+
+::: {.columns}
+::: {.column width="60%"}
++ reliability is 1^st^ necessary
++ cannot have [validity]{.definition} without [reliability]{.definition}
++ you [can]{.bluescript} have [reliability]{.definition} without [validity]{.definition}
++ reliability "***puts a cap on***" validity
+
+:::
+:::
+
+## Which of the following is possible? {.quiz-question}
+
+- high validity, low reliability
+- [low validity, high reliability]{.correct} 
+- high fidelity, low validity
+- low fidelity, high validity
+
+
+## [Correlating an employment application with ratings of job performance (collected after a 3 month probation) would give evidence of the application's...]{.small} {.quiz-question}
+
+- [Predictive validity]{.correct}
+- Concurrent validity
+- Content validity
+- Construct validity
+
+## Reliability is freedom from... {.quiz-question}
+
+- [error]{.correct}
+- taxes
+- validity
+- scores
+
+## Methodologically, a [criterion]{.definition} used for validation can also be called a/an... {.quiz-question}
+
+- [DV]{.correct}
+- IV
+- Moderator
+- Confound
+
+## What's the capital of Mongolia? {.quiz-question}
+
+- [Ulaan Baatar]{.correct}
+- Umaami Baaktari
+- Unaan Baaltam
+- Utaashi Baaltari
+
+## References
