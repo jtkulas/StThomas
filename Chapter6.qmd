@@ -26,8 +26,8 @@ format:
     code-annotations: hover 
     quiz:
       shuffleKey: "p"
-      defaultCorrect: "Pride of St Thomas Woot Woot!!!"
-      defaultIncorrect: "Pffft - Whazzamatta UUUUuuu?!?!"
+      defaultCorrect: "Pride of St Thomas -- Woot Woot!!!"
+      defaultIncorrect: "Pffft -- Whazzamatta UUUUuuu?!?!"
       includeScore: true
       disableOnCheck: true
 engine: knitr                        ## not picking up inline codes
@@ -84,7 +84,8 @@ Date <- c("12/27/24",
           "02/14/25", 
           "02/18/25",
           "02/19/25",
-          "02/20/25")
+          "02/20/25",
+          "02/24/25")
 destruction <- c(1.2, 
                 1.3,
                 2.2,
@@ -92,7 +93,8 @@ destruction <- c(1.2,
                 2.6, 
                 3.1,
                 1.5,
-                .28)
+                .28,
+                .005)
 
 responses <- as.data.frame(cbind(Date,destruction))
 
@@ -115,6 +117,21 @@ dygraph(responses) %>%
 # Item writing!!
 
 ![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTc3aHI0d3BncnB1djBrcjh1cDZranJhOGp6cGhzbGllMmNsazd5YyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/H9GdRg90WerxC/giphy.gif)
+
+## Terms used:
+
+::: {.columns}
+::: {.column width="60%"}
+
++ [Stem]{.bluescript} -- Stimulus (prompt)
++ [Option]{.bluescript} -- Response (reaction)
++ [Distractor]{.bluescript} -- Incorrect response option
++ [Key]{.bluescript} -- scoring algorithm
+
+:::
+:::
+
+![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrkgl4LrWRNuIOw0UBeNNEOPULRxED0LlJSw&s){.absolute right="-100" bottom="200" height="300"}
 
 ## Item "Types"
 
@@ -142,12 +159,12 @@ dygraph(responses) %>%
 ::: {.column width="45%"}
 
 ::: {.ninety}
-+ `r emo::ji("smiling_face_with_halo")`true--false`r emo::ji("lying_face")`
-+ forced choice
-+ multiple choice
-+ Likert-type
-+ categories
-+ checklists
++ `r emo::ji("smiling_face_with_halo")`[true--false](#tf)`r emo::ji("lying_face")`
++ [forced choice](#fc)
++ [multiple choice](#mc)
++ [Likert-type](#lik)
++ [categories](#cat)
++ [checklists](#chk)
 :::
 
 ::: {.callout-note}
@@ -159,7 +176,7 @@ Items may also require scoring rubrics -- for example, [essay]{.definition}, [sh
 
 ![](https://larrycuban.wordpress.com/wp-content/uploads/2022/11/a5125d11411a547ce4efb803789ce310.jpg){.absolute left="-30" bottom="70" height="500"}
 
-## True--false
+## True--false {#tf}
 
 :::: {.columns}
 ::: {.column width="60%"}
@@ -175,7 +192,7 @@ Items may also require scoring rubrics -- for example, [essay]{.definition}, [sh
 
 ![](https://www.oreilly.com/api/v2/epubs/9780471356141/files/9780471356141_select_the_right_type_of_question_image01.png){.absolute right="-100" bottom="100"}
 
-## Forced choice^[Some also use this term to refer to multiple choice-type items]
+## Forced choice^[Some also use this term to refer to multiple choice-type items (with [more than 2]{.definition} alternative response options)] {#fc}
 
 :::: {.columns}
 ::: {.column width="45%"}
@@ -195,50 +212,90 @@ Items may also require scoring rubrics -- for example, [essay]{.definition}, [sh
 
 ![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP-5nLl-mAQDFQdktRFkfcSkAPhRiydsHqXA&s){.absolute bottom="200" height="300" left="-70"}
 
-## Multiple choice
+## Multiple choice {#mc}
+:::: {.columns}
+::: {.column width="45%"}
+
++ [20--25% chance]{.definition}^[technically "1" $\div$ [number of response options]{.definition}] of "***getting correct***" regardless of construct standing
++ familiar
++ easy to score
++ poor distractors can be [response cues]{.definition}
+:::
+
+::::
+
+![](https://martech.org/wp-content/uploads/2015/01/example-multiple-choice-question.png){.absolute right="-120" height="250" bottom="250"}
+
+## Likert-type {#lik}
+:::: {.columns}
+::: {.column width="50%"}
+:::
+
+::: {.column width="50%"}
+
++ options progress along a [response continuum]{.definition}
++ most common item type in [inventories]{.definition}
+  + both [unidimensional]{.definition} and [multidimensional]{.definition}
++ familiar
++ elaborate scoring key
+  + partially due to [reverse scoring]{.definition}
+:::
+::::
+
+![](https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/2293/2017/08/01160745/CNX_Psych_11_09_Lickert.jpg){.absolute left="-120" height="300" bottom="200"}
+
+## "Categories" {#cat}
+:::: {.columns}
+::: {.column width="50%"}
+
++ for example, [standard 10-point]{.definition}
++ not common in Psych assessment
+
+:::
+
+::: {.column width="50%"}
+
++ familiar
++ non-psychometricians tend to like `r emo::ji("smiling_face_with_heart_eyes")`
+
+:::
+
+::::
+
+![](https://i0.wp.com/simplewordsoffaith.com/wp-content/uploads/2020/08/scale.png?fit=338%2C149&ssl=1){.absolute left="180" height="300" bottom="0"}
+
+## Checklists {#chk} 
 :::: {.columns}
 ::: {.column width="40%"}
 :::
 
 ::: {.column width="60%"}
+
++ aka [multiple response]{.definition}
+  + [adjective checklist]{.definition} historically popular
++ choose as many descriptors as desire
++ more common in demographic than [substantive trait]{.definition} measurement
++ (likely) complex scoring algorithm
+
 :::
 ::::
 
-## Likert-type
-:::: {.columns}
-::: {.column width="40%"}
-:::
-
-::: {.column width="60%"}
-:::
-::::
-
-## Categories
-:::: {.columns}
-::: {.column width="40%"}
-:::
-
-::: {.column width="60%"}
-:::
-::::
-
-## Checklists
-:::: {.columns}
-::: {.column width="40%"}
-:::
-
-::: {.column width="60%"}
-:::
-::::
+![](https://www.predictiveprep.com/wp-content/uploads/2024/09/checklist-1024x1024.jpg){.absolute left="-100" bottom="100" height="450"}
 
 ## "Other"
-:::: {.columns}
-::: {.column width="40%"}
-:::
 
-::: {.column width="60%"}
+:::: {.columns}
+::: {.column width="55%"}
+
++ [your]{.bluescript} choice ***should not*** be tied to any of these formats
+  + methods others have already tried
++ choice of item type is a [research decision]{.bluescript}
+  + maximize the likelihood of [accurately reflecting]{.definition} the intended construct
+
 :::
 ::::
+
+![](https://media.giphy.com/media/xT5LMO6dI303spXlfi/giphy.gif?cid=790b7611bqe6mb5tv90vh2fec149hxl5zwmniyxi4c1udjvp&ep=v1_gifs_search&rid=giphy.gif&ct=g){.absolute right="-80" bottom="150"}
 
 ## Item Writing Guidelines
 
@@ -257,162 +314,80 @@ Items may also require scoring rubrics -- for example, [essay]{.definition}, [sh
 
 ![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR82aPbpsQLsFOFnlfjZ0ro2eb53SyNC8hu5A&s){.absolute right="0" height="500" bottom="100"}
 
-## [Practical]{.underline} meaning
+# Item analysis
 
-:::: {.columns}
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExOW51c3JhYzZpeDFnam0xNHByb3JrOXgwbGlkZjk4anp4NGo1dTNpdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/6y6fyAD9OIE6NvhJEu/giphy.gif)
+
+## Item characteristics
+
+::: {.columns}
+::: {.column width="60%"}
+
++ difficulty (aka [extremity]{.definition})
+  + average response 
++ discrimination (aka [discriminability]{.definition})
+  + differentiation across trait levels
+  + item ***functioning*** with someone high vs low on trait
+
+:::
+:::
+
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExd291cWMwYXg5YXRmaG1iaWl5dnJqb3o4OXNncXludzVkanozMmd1MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o6MbiiiwymgJ81n7q/giphy.gif){.absolute bottom="200" right="-80"}
+
+## Difficulty & Discrimination indices
+
+### Several common options exist:
+
+::: {.columns}
 ::: {.column width="40%"}
+
 :::
 
 ::: {.column width="60%"}
-:::
-::::
 
-## Where does this come from?
+1. p-value (% correct)
+   + [true tests]{.definition} only  
+2. corrected item-total correlation
+   + aka "***point biserial method***"
+3. visual plot ([ICCs](#icc))
+
+:::
+
+:::
+
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3RwdDJnMGpkcHdobDh6ZWlhZGtoNTZ5dDRva3R5aGYzcTF2Z2hvdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/WPoER9DdlE95G92M2l/giphy.gif){.absolute left="-80" bottom="100" height="400"}
+
+## Item response theory
 
 ::: {.columns}
-::: {.column width="30%"}
+
+::: {.column width="55%"}
+
++ Popular [alternative]{.definition} to [CTT](https://images.ctfassets.net/vztl6s0hp3ro/1wdD5gSfuK1iLWdxAkyPfL/911f684333a64828b6be4e2e0127dfa9/The-underlying-principle-of-classical-test-theory__2_.jpg)
++ Scale score estimation [more complex]{.definition}
++ Item characteristics permit targetted administrations
+  + `r emo::ji("cat")`[Computerized Adaptive Testing]{.definition}`r emo::ji("lion")`
 
 :::
+:::
 
-::: {.column width="70%"}
+![](https://media.wiley.com/product_data/coverImage300/83/11197166/1119716683.jpg){.absolute right="00" bottom="100"}
 
-+ the ***Standards***
-+ published by:
-  + American Educational Research Association
-  + American Psychological Association
-  + National Council on Measurement in Education
+## Item Characteristic Curves {#icc}
+
+::: {.columns}
+
+::: {.column width="50%"}
+
++ more common with [true test]{.definition} items
++ always a good idea to supplement numerical indices
++ several different strategies
+  + most focus on (at least) [difficulty]{.definition} & [discrimination]{.definition}
   
 :::
 :::
 
-![](https://www.apa.org/images/standards-book_tcm7-230312_w1024_n.jpg){.absolute left="-70" bottom="100"}
-
-## The Standards (History)
-
-::: {.columns}
-::: {.column width="70%"}
-
-+ 1966, 1974, 1985, 1999, and 2014 (5^th^ ed)
-+ 2014 revision focused on:
-  1. technological advances 
-	2. increased use for [accountability]{.definition} and [policy-setting]{.definition}
-	3. access for all 
-	4. workplace testing
-
-:::
-:::
-
-![](https://www.aera.net/portals/38/images/Highlights/May%202018/Standards_Spanish_WEb.jpg){.absolute right="-70" bottom="100" height="450"}
-
-## Validity study ([aka]{.lowercase} Validation)
-
-...systematic procedure to gather validity evidence
-
-:::: {.columns}
-::: {.column width="60%"}
-
-[Typically...]{.bluescript}
-
-+ investigate [item content]{.definition}
-+ determine association with [meaningful outcome]{.definition}
-+ demonstrate association with other measures of [same (or similar) construct]{.definition}
-
-:::
-::::
-
-![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2VueW5qdXYwNzRlNjIwYjAyejVpMHFpbDZ4cWtjcTl2Mmh0MWE1cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/wgLctUglOfHkcNUZOC/giphy.gif){.absolute height="330" right="-120" bottom="180"}
-
-## Content validation
-
-[Question:]{.bluescript} is the test an adequate representation of the construct domain? 
-
-::: {.columns}
-::: {.column width="70%"}
-
-### Primary concerns:
-
-+ Deficiency
-  + aka [construct underrepresentation]{.definition}
-+ Contamination
-  + aka [construct-irrelevant variance]{.definition}
-
-:::
-:::
-
-![](img/deficiency.jpg){.absolute height="200" right="-20" bottom="250"}
-![](img/contamination.jpg){.absolute height="200" right="-20" bottom="0"}
-
-## Content validation (II)
-
-::: {.columns}
-::: {.column width="60%"}
-
-+ [Ratings]{.definition} usually collected via [Subject Matter Experts]{.definition} (aka [SMEs]{.definition})
-+ @lawshe1975quantitative Content Validity Ratio
-  + Essential
-  + Useful
-  + Not necessary
-
-:::
-:::
-
-![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmhpMWI1M2lha3diMGtseHk3NjNtNnp4YTNycjcyMjRzaDdiNWluMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l2JdYkTPVG9gRbvhK/giphy.gif){.absolute right="-100" bottom="100"}
-
-## Criterion validation
-
-[Question:]{.bluescript} do test scores relate to anything of [real life]{.definition} consequence? 
-
-::: {.columns}
-::: {.column width="40%"}
-
-:::
-
-::: {.column width="60%"}
-### Outcome variables (aka [Criteria]{.definition})...
-
-+ ...are collected [at the same time]{.definition} as your IV
-  + Concurrent validation
-+ ...are collected [at a later time]{.definition} than your IV
-  + Predictive validation
-
-:::
-::: 
-
-![](https://i.namu.wiki/i/8KApJf7hpA70DP5tL7Ju5XAg59JFAQXHzSIyAX4Res-JS3m9hE04YTOZFvZm-vGSQyjJ28v0t8I1Q3xAMIQPMg.webp){.absolute left="-120" bottom="200" height="150"}
-
-## Criterion validation (II)
-
-::: {.columns}
-::: {.column width="60%"}
-### Common designs:
-
-+ [SAT]{.bluescript2} $\rightarrow$ College GPA?
-+ [Beck's Depression Inventory]{.bluescript2} $\rightarrow$ Suicidal Ideation?
-+ [MMPI]{.bluescript2} $\rightarrow$ Psychopathology?
-+ [NEO]{.bluescript2} $\rightarrow$ Good Co-Worker?
-:::
-:::
-
-![](https://evalf20.classes.andrewheiss.com/example/regression_files/figure-html/plot-sat-gpa-correlation-1.png){.absolute right="-100" bottom="150" height="350"}
-
-## Construct validation
-
-[Question:]{.bluescript} does the test function similarly as other purported tests of the same construct? 
-
-::: {.columns}
-::: {.column width="60%"}
-
-### Two lenses:
-
-+ Convergence
-  + ...with other measures of [similar things]{.definition}
-+ Discrimination
-  + ...from measures of [theoretically distinct things]{.definition}
-
-:::
-:::
-
-![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHZzYnNqb2E5Y2JvcnY3YzUxcXdyOTR2M2gwMW5wdm83a2cwb3VoZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/6G48V62YlbZj1W6fso/giphy.gif){.absolute right="-100" bottom="120"}
+![](https://www.researchgate.net/publication/220249772/figure/fig2/AS:669644113334294@1536667006954/The-goal-of-item-response-theory-IRT-is-to-predict-the-probability-that-an-examinee.png){.absolute right="-120" bottom="140" height="350"}
 
 # Activity!!
 
@@ -435,106 +410,34 @@ Name the capital of...
 :::
 :::
 
-## Validity coefficient
+## These distractors are... {.quiz-question}
 
-::: {.columns}
-::: {.column width="60%"}
-
-+ typically the [focus]{.definition} of a validation study
-+ ***usually*** a correlation coefficient
-  + like reliability coefficients, range from 0 $\rightarrow$ 1
-  + to what extent [are inferences appropriate?]{.definition}
-  + sometimes [squared]{.definition}
-
-:::
-:::
-
-![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaW53NnE5OXVrZHJ1bmdhYWN5ZDlkZ2FibHhpN2JkaXlndWFhNm1yaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/t5rGuvfDHC38A/giphy.gif){.absolute bottom="0" right="-80"}
-
-## Coefficient "quality"
-
-::: {.columns}
-::: {.column width="40%"}
-:::
-
-::: {.column width="60%"}
-
-+ Ask for [technical report]{.definition} from test provider
-+ "More" is better
-  + larger coefficient
-  + number of studies
-+ focus on sampled [population(s)]{.definition}
-  + constituency & size
-+ [validity generalization]{.definition} evidence?
-:::
-
-:::
-
-![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExY28xZmNvdmhsNDZrcDJzczNjdGk5M3RpZXppYXZvenV2MGMzc3MwMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Od0QRnzwRBYmDU3eEO/giphy.gif){.absolute left="-70" bottom="150" height="400"}
-
-## [Face]{.underline} validity
-
-::: {.columns}
-::: {.column width="60%"}
-
-+ Do the test items appear to be relevant for the testing context?`r emo::ji("face_with_raised_eyebrow")`
-+ Different contexts matter:
-  + context = purpose
-  + Applying for a job
-+ Tradeoff may exist between [relevant]{.definition} and [more easily fakable]{.definition}
-
-:::
-
-::: {.column width="40%"}
-![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmRuOGxmcHZ6enpyZjZiM2dqOGI4bXNjNHZ1NWQ2azc0Y2ltd2c3ZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/aVytG2ds8e0tG/giphy.gif)
-
-::: {.callout-tip}
-The primary difference between [content]{.definition} validity and [face]{.definition} validity is who provides estimates: [subject matter experts]{.definition} or [test-takers]{.definition}
-:::
-
-:::
-:::
-
-## Item Characteristic Curves
-
-::: {.columns}
-::: {.column width="60%"}
-+ reliability is 1^st^ necessary
-+ cannot have [validity]{.definition} without [reliability]{.definition}
-+ you [can]{.bluescript} have [reliability]{.definition} without [validity]{.definition}
-+ reliability "***puts a cap on***" validity
-
-:::
-:::
-
-## Which of the following is possible? {.quiz-question}
-
-- high validity, low reliability
-- [low validity, high reliability]{.correct} 
-- high fidelity, low validity
-- low fidelity, high validity
+- really great!! I love them!! Gimme more!!
+- [bad]{.correct} 
+- about as useful as a hippopotomous
+- better than some I've seen boy howdy
 
 
-## [Correlating an employment application with ratings of job performance (collected after a 3 month probation) would give evidence of the application's...]{.small} {.quiz-question}
+## With [inventory]{.definition} responses, item difficulty may also be referred to as item... {.quiz-question}
 
-- [Predictive validity]{.correct}
-- Concurrent validity
-- Content validity
-- Construct validity
+- [extremity]{.correct}
+- consistency
+- discrimination
+- equivocation
 
-## Reliability is freedom from... {.quiz-question}
+## A visual representation of difficulty and discrimination can be found in a/an... {.quiz-question}
 
-- [error]{.correct}
-- taxes
-- validity
-- scores
+- [ICC]{.correct}
+- ODD
+- IRT
+- CTT
 
-## Methodologically, a [criterion]{.definition} used for validation can also be called a/an... {.quiz-question}
+## This question type is most accurately described as... {.quiz-question}
 
-- [DV]{.correct}
-- IV
-- Moderator
-- Confound
+- [Multiple Choice]{.correct}
+- Forced Choice
+- Checklist
+- Categories
 
 ## What's the capital of Mongolia? {.quiz-question}
 
