@@ -1,0 +1,303 @@
+---
+title: "Ψlogical<br>Testing" 
+author: "Chapter 7<br>[Test Administration]{.crossmethod}" 
+title-slide-attributes: 
+  data-background-image: https://pst.edu.au/wp-content/uploads/2023/07/overcome-test-anxiety-1024x683.jpg
+  data-background-opacity: ".5"
+format:
+  revealjs:
+    multiplex: true
+    chalkboard: true
+    slide-tone: false
+    navigation-mode: linear
+    transition: convex
+    transition-speed: slow
+    controls: true
+    controls-layout: edges
+#    controls-tutorial: false
+    slide-number: c
+    mermaid:
+      theme: neutral
+#    output-location: slide           ## column-fragment; inserts blank 2nd slide
+    code-overflow: wrap              ## instead of horizontal scroll
+    theme: [league, tommies.scss]    ## night & league
+    mouse-wheel: true                ## yes enables mouse
+    preview-links: false             ## true brings up iframe window instead of "site"
+    code-annotations: hover 
+    quiz:
+      shuffleKey: "p"
+      defaultCorrect: "Good or Fine"
+      defaultIncorrect: "I thought you could do better than that"
+      includeScore: true
+      disableOnCheck: true
+engine: knitr                        ## not picking up inline codes
+bibliography: bib.bib
+csl: apa7.csl
+#lightbox: true                     ## interferes with .absolute placement
+revealjs-plugins:                  
+  - quiz
+#  - spotlight                      ## cursor disappearing
+---
+
+```{r, warning=FALSE, message=FALSE}
+#devtools::install_github("hadley/emo")        ## if anyone else wants to render
+library(fontawesome)
+```
+
+## House keeping `r emo::ji("broom")``r emo::ji("wastebasket")`
+
+:::: {.columns}
+::: {.column width="55%"}
++ First exam 3/6 (Thurs)
+  + In class, but administered via Canvas (Ch 1 $\rightarrow$ 8)
+
++ Project:
+  + keep revising
+  + @hinkin2005scale
+  + item writing
+
+:::
+::::
+
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdXB2YThocXBobXR1czh2aGNuczJucTRybDkwMDk5cHZjbXBuMnYxbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/v5V3XxJCV0pFu/giphy.gif){.absolute right="-70" top="150" height="400"}
+
+![](https://www.freeiconspng.com/uploads/sweeping-png-15.png){.absolute bottom="120" right="350" height="150"}
+
+## `r emo::ji("telescope")``r emo::ji("shooting_star")`[ASTEROID [YR4]{.greenscript}](https://www.livescience.com/space/asteroids/asteroid-yr4-impact-odds-plummet-as-nasa-changes-threat-level-of-city-killer) PANIC METER!!!`r emo::ji("milky_way")``r emo::ji("collision")`
+
+::: {.columns}
+::: {.column width="10%"}
+:::
+
+::: {.column width="80%"}
+```{r}
+#| title: Impending Global Apocolypse
+#| fig-width: 8
+
+library(dygraphs)
+library(magrittr)
+
+Date <- c("12/27/24",
+          "1/29/25",
+          "02/7/25",
+          "02/11/25", 
+          "02/14/25", 
+          "02/18/25",
+          "02/19/25",
+          "02/20/25",
+          "02/24/25",
+          "02/25/25")
+earth <- c(1.2, 
+                 1.3,
+                 2.2,
+                 2.4, 
+                 2.6, 
+                 3.1,
+                 1.5,
+                 .28,
+                 .005,
+                 .0027)
+
+moon <- c(NA, 
+          NA,
+          NA,
+          1, 
+          1, 
+          1,
+          0.8,
+          .8,
+          .8,
+          1.7)
+
+responses <- as.data.frame(cbind(Date,earth,moon))
+
+responses$Date <- as.Date(responses$Date, format="%m/%d/%y")
+
+plotresp <- ts(responses)
+dygraph(responses) %>%
+  dySeries("earth", label="Earth") %>%
+  dySeries("moon", label="Moon") %>%
+  dyAxis("y", label="Odds of Doom (%)") %>%
+  dyOptions(fillGraph=TRUE, fillAlpha=0.4) %>%
+  dyRangeSelector()
+```
+:::
+:::
+
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcWd4eXBzcHo1MDExdWp6eTdvY3BxaTF2NzNobXJsaTF1NDk2MjVsdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/HUkOv6BNWc1HO/giphy.gif){.absolute right="-130" bottom="25" height="200"}
+
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTA1YzJheGFnamJ0aGZyODFmbmxkZ2JkcXZrb21jNTU2YTYyNXgzZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l46CvyAn1oBTOZtZK/giphy.gif){.absolute left="-150" top="120" height="200"}
+
+# Test Administration!!
+
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcjlyNXpobnFnNmR6ZmIycmtvNm1tcnRhOWZnOW02YjJmZmxqc2E5MSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/9PwWfo79Bnlpq08UnM/giphy.gif)
+
+## Another [methodological]{.definition} Consideration
+
+::: {.columns}
+::: {.column width="60%"}
+
++ [Administration]{.bluescript} 
++ [Item type]{.bluescript} `r emo::ji("check")`
++ [Population]{.bluescript} (test takers) `r emo::ji("check")`
++ [Comparison]{.bluescript} (norms) `r emo::ji("check")`
+
+:::
+:::
+
+![](https://cmn-cdn-001.sagepub.com/books/titles/280088/cov_sb1_129181.jpg){.absolute right="0" bottom="50" height="500"}
+
+## Administrator
+
+::: {.columns}
+
+::: {.column width="50%"}
+
+aka [proctor]{.definition} or [tester]{.definition}/[examiner]{.definition}
+
+  + rapport 
+  + familiarity
+  + reinforcement
+    + expectancy
+  + nonverbals
+  + training
+
+:::
+:::
+
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnc0OXQ1bHowd3pvenZ5ZGg5YWFxZmR4aHl3enE1OWJ0c2duYjloayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/kc2jI1YcIyOAUqCyGP/giphy.gif){.absolute right="0" bottom="120"}
+
+## Stereotype threat
+
+::: {.columns}
+
+::: {.column width="50%"}
+:::
+
+::: {.column width="50%"}
+
++ [negative]{.definition} stereotype exists at group level
++ strain from internalized pressure to [disconfirm]{.definition} stereotype
++ [observed score]{.definition} suppression
+  + [X]{.definition} = T + e
+
+:::
+:::
+
+![](https://opn-web-afd-d3bfbkd5bcc5asbs.z02.azurefd.net/opn/media/images/articles/2013/1305/departments/reflections-img1.jpg?t=638452530617112999){.absolute left="-30" bottom="120" height="400"}
+
+## Minimizing Threat
+
+:::: {.columns}
+::: {.column width="60%"}
+
++ framing
++ remove cues when possible
++ minimize if can't remove:
+  + demographics at end
+
+:::
+::::
+
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2F1NGY0bGltaW1zdHIyN2xodnE3Z2huaDlpbWpwenE3NWI2NTJwOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l396Sok6H728brWlG/giphy.gif){.absolute right="-100" bottom="100"}
+
+## Language barriers
+
+:::: {.columns}
+::: {.column width="50%"}
+
+:::
+
+::: {.column width="50%"}
+
++ can be an obstacle for access to construct
++ [translations](https://www.lytho.com/blog/translation-fails-advertising/) costly & questionable [equivalence]{.definition}
+  + forward--back procedure
+  
+:::{.callout-tip}
+Not much research attention -- good candidate for novel contributions
+:::
+
+:::
+::::
+
+![](https://static.boredpanda.com/blog/wp-content/uploads/2017/09/funny-translation-fail-89-59b0f417dbdfb__605.jpg){.absolute bottom="140" height="400" left="-70"}
+
+## Administrator training
+:::: {.columns}
+::: {.column width="55%"}
+
++ administration manual can help
+  + [standardization]{.definition}
++ some test publishers require certification
+  + academic degree may or may not suffice
+  + [sometimes optional](https://www.themyersbriggs.com/en-US/Get-Certified/MBTI-Certification?utm_source=google&utm_medium=cpc&utm_campaign=brand_mbti_cert_computer&gad_source=1&gclid=CjwKCAiAt4C-BhBcEiwA8Kp0CaiAas3bMMXbdDLWl31RXBKyu_k3no3rPwCNNiRiA1GKKz1VqQBNnBoCaP4QAvD_BwE)
+
+:::
+
+::::
+
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTZrcDNtdm1hd21zOWgxMWN1aXNrdmVjbHFvOHVkMmFvb3ZiZHAxaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KDYB0cH4HW8xc3VIAx/giphy.gif){.absolute right="-120" height="300" bottom="150"}
+
+## Computer as administrator
+:::: {.columns}
+::: {.column width="50%"}
+:::
+
+::: {.column width="50%"}
+
++ very popular
++ avoids most administrator effects
+  + [standardization]{.definition}
++ facilitates recording of [response latency]{.definition}
++ immediate scoring 
+  + [scale]{.definition} score(s)
+
+:::
+::::
+
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWc1MWxjZHRpcW5qZGo2Mm41YWZyMXpheWVtcTRnd210azE3Z3FubSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ZrJcTENQacGhW/giphy.gif){.absolute left="-120" height="500" bottom="50"}
+
+## Test anxiety
+:::: {.columns}
+::: {.column width="50%"}
+
++ [very common](https://link.springer.com/article/10.1007/s12207-023-09494-0#:~:text=Base%20Rates%20of%20Test%20Anxiety%20Symptoms&text=Depending%20on%20the%20item%20(across,particular%20symptom%20at%20least%20sometimes.) (self--reported)
++ self--defeating
+  + worry
+  + emotionality
+  + self--confidence deficit
+
+:::
+
+::::
+
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ24zdGYwNmExNnhrMW5qbGE4bjZlaW1oenBzN2Qya251am9pMzBiZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/lvzdeWk12qjmM/giphy.gif){.absolute right="0" bottom="150"}
+
+## The forward--back procedure is applied to test... {.quiz-question}
+
+- [translations]{.correct}
+- takers
+- administrators
+- publishers
+
+## Non-verbal cues given by the administrator can introduce [error]{.definition} into observed scores {.quiz-question}
+
+- [True]{.correct}
+- False
+
+## The most recent odds of asteroid YR4 hitting the earth in 2032 are... {.quiz-question}
+
+- 1.5%
+- [.0027%]{.correct} 
+- .005%
+- .28%
+
+## Ensuring every test taker has a similar test experience is... {.quiz-question}
+
+- [standardization]{.correct}
+- weird
+- considerate
+- norming
+
+## References

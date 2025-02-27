@@ -12,7 +12,7 @@ $body-bg: #191919;
 $body-color: #fff;
 $link-color: #42affa;
 $code-color: hotpink;
-$presentation-title-slide-text-align: left;
+$presentation-title-slide-text-align: right;
 $presentation-title-slide-text-color: black;
 
 /*-- scss:rules --*/
@@ -67,7 +67,7 @@ $presentation-title-slide-text-color: black;
 .crossmethod {
   font-size: 80px;
 /*  text-decoration: underline; #6495ed  */
-  color: #a89b32;
+  color: #42affa;
   font-family: 'Rock Salt';
 }
 
