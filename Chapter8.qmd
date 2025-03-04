@@ -1,0 +1,366 @@
+---
+title: "Ψlogical<br>Testing" 
+author: "Chapter 8<br>[Interviewing Techniques]{.crossmethod}" 
+title-slide-attributes: 
+  data-background-image: interview.jpg
+  data-background-opacity: ".8"
+format:
+  revealjs:
+    multiplex: true
+    chalkboard: true
+    slide-tone: false
+    navigation-mode: linear
+    transition: convex
+    transition-speed: slow
+    controls: true
+    controls-layout: edges
+#    controls-tutorial: false
+    slide-number: c
+    mermaid:
+      theme: neutral
+#    output-location: slide           ## column-fragment; inserts blank 2nd slide
+    code-overflow: wrap              ## instead of horizontal scroll
+    theme: [league, tommies.scss]    ## night & league
+    mouse-wheel: true                ## yes enables mouse
+    preview-links: false             ## true brings up iframe window instead of "site"
+    code-annotations: hover 
+    quiz:
+      shuffleKey: "p"
+      defaultCorrect: "Always give 100%!!! ...unless you're donating blood"
+      defaultIncorrect: "The road to success is always under construction!!"
+      includeScore: true
+      disableOnCheck: true
+engine: knitr                        ## not picking up inline codes
+bibliography: bib.bib
+csl: apa7.csl
+#lightbox: true                     ## interferes with .absolute placement
+revealjs-plugins:                  
+  - quiz
+#  - spotlight                      ## cursor disappearing
+---
+
+```{r, warning=FALSE, message=FALSE}
+#devtools::install_github("hadley/emo")        ## if anyone else wants to render
+library(fontawesome)
+```
+
+## House keeping `r emo::ji("broom")``r emo::ji("wastebasket")`
+
+:::: {.columns}
+::: {.column width="55%"}
++ First exam 3/6 (Thurs)
+  + In class, but administered via Canvas (Ch 1 $\rightarrow$ 8)
+
++ Project:
+  + final revision
+  + item writing
+    + minimum of 5
+
+:::
+::::
+
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExY3hweXMxejF1cTVlOTlhOWxoODVpdHRrM2N6djFheGg2Y292OG52NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tJXZ51AOFBTGgZSY9y/giphy.gif){.absolute right="-70" top="100" height="500"}
+
+![](https://www.freeiconspng.com/uploads/sweeping-png-15.png){.absolute bottom="210" left="310" height="150" .mirror}
+
+## `r emo::ji("telescope")``r emo::ji("shooting_star")`[ASTEROID [YR4]{.greenscript}](https://www.livescience.com/space/asteroids/asteroid-yr4-impact-odds-plummet-as-nasa-changes-threat-level-of-city-killer) PANIC METER!!!`r emo::ji("milky_way")``r emo::ji("collision")`
+
+::: {.columns}
+::: {.column width="10%"}
+:::
+
+::: {.column width="80%"}
+```{r}
+#| title: Impending Global Apocolypse
+#| fig-width: 8
+
+library(dygraphs)
+library(magrittr)
+
+Date <- c("12/27/24",
+          "1/29/25",
+          "02/7/25",
+          "02/11/25", 
+          "02/14/25", 
+          "02/18/25",
+          "02/19/25",
+          "02/20/25",
+          "02/24/25",
+          "02/25/25")
+earth <- c(1.2, 
+                 1.3,
+                 2.2,
+                 2.4, 
+                 2.6, 
+                 3.1,
+                 1.5,
+                 .28,
+                 .005,
+                 .0027)
+
+moon <- c(NA, 
+          NA,
+          NA,
+          1, 
+          1, 
+          1,
+          0.8,
+          .8,
+          .8,
+          1.7)
+
+responses <- as.data.frame(cbind(Date,earth,moon))
+
+responses$Date <- as.Date(responses$Date, format="%m/%d/%y")
+
+plotresp <- ts(responses)
+dygraph(responses) %>%
+  dySeries("earth", label="Earth") %>%
+  dySeries("moon", label="Moon") %>%
+  dyAxis("y", label="Odds of Doom (%)") %>%
+  dyOptions(fillGraph=TRUE, fillAlpha=0.4) %>%
+  dyRangeSelector()
+```
+:::
+:::
+
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcWd4eXBzcHo1MDExdWp6eTdvY3BxaTF2NzNobXJsaTF1NDk2MjVsdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/HUkOv6BNWc1HO/giphy.gif){.absolute right="-130" bottom="25" height="200"}
+
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTA1YzJheGFnamJ0aGZyODFmbmxkZ2JkcXZrb21jNTU2YTYyNXgzZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l46CvyAn1oBTOZtZK/giphy.gif){.absolute left="-150" top="120" height="200"}
+
+# Interviewing!!!
+
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjZ2eHIzYzRpNzUwMG0xa28wa3FsOHZseXZpNWxmbWhyYnE2MWk3byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/6Q3M4BIK0lX44/giphy.gif)
+
+## Interview as a [test]{.definition} 
+
+aka  [an agenda-driven social exchange between strangers]{.bluescript}
+
+::: {.columns}
+::: {.column width="50%"}
+
++ reliability??? `r emo::ji("check")`
++ validity??? `r emo::ji("check")`
++ construct standing estimate??? `r emo::ji("check")`
+
+:::
+:::
+
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDg2cXdwOHppYWo4OG1xZHl3Njlma3lwZXlkNzB2b2k0N2ZuZG40OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l2Je7146Jr7VBeATu/giphy.gif){.absolute right="0" bottom="115" height="350"}
+
+## Interview contexts
+
+[Very]{.bluescript} pervasive...
+
+::: {.columns}
+
+::: {.column width="40%"}
+:::
+
+::: {.column width="60%"}
+
++ job selection
++ clinical psychiatry
++ general medicine & nursing
++ counseling
++ financial advising
+
+:::
+
+:::
+
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjJ4c200d3RuYTV5dXdleDR1c3dua3prN2p3eXlndzloMDk5cGVvZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/k5zlrQQEptX7BmNAlh/giphy.gif){.absolute left="0" bottom="00"}
+
+## Interview [Type]{.definition}:
+
+...[structured]{.bluescript} versus [unstructured]{.bluescript}
+
+::: {.columns}
+::: {.column width="70%"}
+
++ [standardization]{.definition} provides structure
+  + content & process
++ difference a matter of ***degrees***
+  + not [qualitatively]{.definition} different
++ most interviews have mix of both structured and unstructured elements
+
+:::
+:::
+
+![](https://media.newyorker.com/photos/5909660bc14b3c606c10683a/master/pass/130114_r23029_p886.jpg){.absolute right="-120" bottom="90" height="500"}
+
+## "Unique" aspects
+
+[Interpersonal]{.bluescript} dynamics at play...
+
+::: {.columns}
+
+::: {.column width="55%"}
+:::
+
+::: {.column width="45%"}
+
++ reinforcement
++ attraction
++ persuasion
+  + [mirroring]{.mirrortext}
++ social facilitation^[generally refers to "better" performance in the presence of others @triplett]
++ "back--and--forth"
+
+:::
+:::
+
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdnlva292djV3aDg1ZnR1bDYyYmpndHRjdnU2aHRoeG44dTRmMTNqOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xUNd9IWhAnmCfLqbJK/giphy.gif){.absolute left="-30" bottom="80" height="400" .mirror}
+
+## Principles of [effective]{.definition} interviewing
+
+:::: {.columns}
+::: {.column width="60%"}
+
++ proper attitude
+  + warm`r emo::ji("sparkling_heart")`
+  + honest`r emo::ji("smiling_face_with_halo")` 
+  + fair`r emo::ji("man_judge")`
++ avoid evaluative language
++ ask [open-ended]{.definition} questions
+
+:::
+::::
+
+![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSonY7zohlZ1imRgh3_5M9pe77l2uRC61a8Nw&s){.absolute right="-20" bottom="120" height="400"}
+
+## "Understanding" statements
+
+:::: {.columns}
+::: {.column width="40%"}
+
+:::
+
+::: {.column width="60%"}
+
+1. open-ended question 
+2. "understanding" statements
+    + capture [feeling]{.definition} & [meaning]{.definition}
+    + keep interview moving
+  
+:::{.callout-warning}
+These also require [training]{.bluescript} and [experience]{.bluescript} -- interjecting ***how the interviewee feels*** could also result in [experimenter effects]{.definition}
+:::
+
+:::
+::::
+
+![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0TR2obWFxWhsR7uoto0h1BxxMjOR0sB7MrDuhRHUYk195MT5eWS8rQjwI_DBrCI4NT3E&usqp=CAU){.absolute bottom="60" height="500" left="00"}
+
+## Measuring "understanding"
+
+:::: {.columns}
+::: {.column width="55%"}
+
++ 5--point scoring system
++ Ranges from `r emo::ji("woozy_face")` to `r emo::ji("pensive_face")`
++ Levels 1 and 2 not appropriate for interviewing
+
+  
+::: {.callout-note}
+...the construct confusion here -- not sure whether to refer to this as [understanding]{.bluescript} or [empathy]{.bluescript} (p. 215)
+:::
+
+:::
+
+::::
+
+![](https://www.open.edu/openlearn/pluginfile.php/1634304/mod_oucontent/oucontent/92407/82c2a0ba/842ac480/k832_1_s2_f4-01.tif.small.jpg){.absolute right="-120" height="550" bottom="50"}
+
+# Activity!!
+
+::: {.columns}
+::: {.column width="60%"}
+1. 5 [life problems]{.definition}
+2. [Taboo]{.definition} words for interviewee
+3. 5 levels of ~~interviewer "understanding"~~ interviewee response ([number of words]{.definition})
+4. 5 EC points ([if identify problem in 2 minutes]{.bluescript})
+:::
+
+::: {.column width="40%"}
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExazNtYTR6ZTRqMmlwNHZncmpoOGh4am1kOXNtNTc1dHFzYjhtdnBoZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/14qIliCMe87BwA/giphy.gif){.absolute height="300"}
+:::
+:::
+
+## Sources of Error 
+
+:::: {.columns}
+::: {.column width="45%"}
+:::
+
+::: {.column width="55%"}
+
+::: {.ninety}
++ first impressions
+  + [primacy]{.definition} effect
+  + [anchoring]{.definition} effect
++ halo effect
+  + [positive overall glow]{.definition} from few impressions
+:::
+
+::: {.callout-note}
+...also all of the previously covered [***administrator*** effects](https://bookdown.org/jtkulas/chapter7/Chapter7.html#/administrator) -- recommended solution to all is [greater structure]{.definition}
+:::
+
+:::
+::::
+
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWllaThja2R5MDFtMGtzOXgwNTNmdjl3eHB0cDJ1Z2NwMzdkNmFoNiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LS2UnugUzF6kE/giphy.gif){.absolute left="-120" height="400" bottom="120"}
+
+## Reliability
+
+:::: {.columns}
+::: {.column width="50%"}
+
++ tends to be poor for [unstructured]{.definition} interviews
++ [best explanation](https://bookdown.org/jtkulas/chapter5/Chapter5.html#/validity-reliability) for low validities
++ [scoring rubric]{.definition} one key feature of structured interviews
+  + greater agreement
+
+:::
+
+::::
+
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZHh0ZTN5cW0wc3pia3JmbHF0ZTN6dnpnN2xhNzAzeW5yZHoxNHp1ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1i6uIju50q9cSKejza/giphy.gif){.absolute right="-40" bottom="100"}
+
+## With interviews, the [greater the standardization]{.definition}, the more... {.quiz-question}
+
+- [structure]{.correct}
+- stability
+- sustainability
+- substence
+
+## The tendency to form a [final]{.definition} evaluation that is very close to your initial is... {.quiz-question}
+
+- [anchor effect]{.correct}
+- primacy effect
+- halo effect
+- recency effect
+
+## The tendency to assume your friend is "[good at everything]{.definition}" because they are great at sports is... {.quiz-question .ninety}
+
+- primacy effect
+- [halo effect]{.correct} 
+- recency effect
+- anchoring effect
+
+## The best type of interview question is... {.quiz-question}
+
+- [open ended]{.correct}
+- closed ended
+- leading
+- interesting
+
+## To minimize error in the interview,... {.quiz-question}
+
+- [build more structure]{.correct}
+- allow for greater time
+- record the interaction
+- dress appropriately
+
+## References

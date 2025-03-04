@@ -60,6 +60,11 @@ $presentation-title-slide-text-color: black;
   transform: rotateY(180deg);
 }
 
+.mirrortext {
+  display: flex;
+  transform: scaleX(-1);
+}
+
 .tilt {
   transform: rotate(-70deg);
 }
@@ -116,4 +121,5 @@ $presentation-title-slide-text-color: black;
 .underline {
   text-decoration: underline !important;
 }
+
 

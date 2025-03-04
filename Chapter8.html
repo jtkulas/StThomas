@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="Chapter7_files/libs/clipboard/clipboard.min.js"></script>
-<script src="Chapter7_files/libs/quarto-html/tabby.min.js"></script>
-<script src="Chapter7_files/libs/quarto-html/popper.min.js"></script>
-<script src="Chapter7_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="Chapter7_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="Chapter7_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="Chapter7_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="Chapter7_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="Chapter8_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Chapter8_files/libs/quarto-html/tabby.min.js"></script>
+<script src="Chapter8_files/libs/quarto-html/popper.min.js"></script>
+<script src="Chapter8_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="Chapter8_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Chapter8_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="Chapter8_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="Chapter8_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.57">
 
-  <meta name="author" content="Chapter 7 Test Administration">
+  <meta name="author" content="Chapter 8 Interviewing Techniques">
   <title>Ψlogical Testing</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="Chapter7_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="Chapter7_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="Chapter8_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="Chapter8_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -50,14 +50,14 @@
     div.csl-indent {
       margin-left: 2em;
     }  </style>
-  <link rel="stylesheet" href="Chapter7_files/libs/revealjs/dist/theme/quarto.css">
-  <link href="Chapter7_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="Chapter7_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="Chapter7_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="Chapter7_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
-  <link href="Chapter7_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
-  <link href="Chapter7_files/libs/revealjs/plugin/reveal-quiz/quiz.css" rel="stylesheet">
-  <link href="Chapter7_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="Chapter8_files/libs/revealjs/dist/theme/quarto.css">
+  <link href="Chapter8_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="Chapter8_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="Chapter8_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="Chapter8_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="Chapter8_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="Chapter8_files/libs/revealjs/plugin/reveal-quiz/quiz.css" rel="stylesheet">
+  <link href="Chapter8_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -343,36 +343,36 @@
       margin-right: 0; 
     }
   </style>
-  <script src="Chapter7_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+  <script src="Chapter8_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
 
-  <script src="Chapter7_files/libs/jquery-1.11.1/jquery.min.js"></script>
+  <script src="Chapter8_files/libs/jquery-1.11.1/jquery.min.js"></script>
 
-  <link href="Chapter7_files/libs/dygraphs-1.1.1/dygraph.css" rel="stylesheet">
+  <link href="Chapter8_files/libs/dygraphs-1.1.1/dygraph.css" rel="stylesheet">
 
-  <script src="Chapter7_files/libs/dygraphs-1.1.1/dygraph-combined.js"></script>
+  <script src="Chapter8_files/libs/dygraphs-1.1.1/dygraph-combined.js"></script>
 
-  <script src="Chapter7_files/libs/dygraphs-1.1.1/shapes.js"></script>
+  <script src="Chapter8_files/libs/dygraphs-1.1.1/shapes.js"></script>
 
-  <script src="Chapter7_files/libs/moment-2.8.4/moment.js"></script>
+  <script src="Chapter8_files/libs/moment-2.8.4/moment.js"></script>
 
-  <script src="Chapter7_files/libs/moment-timezone-0.2.5/moment-timezone-with-data.js"></script>
+  <script src="Chapter8_files/libs/moment-timezone-0.2.5/moment-timezone-with-data.js"></script>
 
-  <script src="Chapter7_files/libs/moment-fquarter-1.0.0/moment-fquarter.min.js"></script>
+  <script src="Chapter8_files/libs/moment-fquarter-1.0.0/moment-fquarter.min.js"></script>
 
-  <script src="Chapter7_files/libs/dygraphs-binding-1.1.1.6/dygraphs.js"></script>
+  <script src="Chapter8_files/libs/dygraphs-binding-1.1.1.6/dygraphs.js"></script>
 
 </head>
 <body class="quarto-dark">
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-image="https://pst.edu.au/wp-content/uploads/2023/07/overcome-test-anxiety-1024x683.jpg" data-background-opacity=".5" class="quarto-title-block center">
+<section id="title-slide" data-background-image="interview.jpg" data-background-opacity=".8" class="quarto-title-block center">
   <h1 class="title">Ψlogical<br>Testing</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Chapter 7<br><span class="crossmethod">Test Administration</span> 
+Chapter 8<br><span class="crossmethod">Interviewing Techniques</span> 
 </div>
 </div>
 </div>
@@ -389,14 +389,16 @@ Chapter 7<br><span class="crossmethod">Test Administration</span>
 </ul></li>
 <li>Project:
 <ul>
-<li>keep revising</li>
-<li><span class="citation" data-cites="hinkin2005scale">Hinkin (<a href="#/references" role="doc-biblioref" onclick="">2005</a>)</span></li>
-<li>item writing</li>
+<li>final revision</li>
+<li>item writing
+<ul>
+<li>minimum of 5</li>
+</ul></li>
 </ul></li>
 </ul>
 </div></div>
-<p><img data-src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdXB2YThocXBobXR1czh2aGNuczJucTRybDkwMDk5cHZjbXBuMnYxbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/v5V3XxJCV0pFu/giphy.gif" class="absolute" style="top: 150px; right: -70px; height: 400px; "></p>
-<p><img data-src="https://www.freeiconspng.com/uploads/sweeping-png-15.png" class="absolute" style="bottom: 120px; right: 350px; height: 150px; "></p>
+<p><img data-src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExY3hweXMxejF1cTVlOTlhOWxoODVpdHRrM2N6djFheGg2Y292OG52NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tJXZ51AOFBTGgZSY9y/giphy.gif" class="absolute" style="top: 100px; right: -70px; height: 500px; "></p>
+<p><img data-src="https://www.freeiconspng.com/uploads/sweeping-png-15.png" class="absolute mirror" style="left: 310px; bottom: 210px; height: 150px; "></p>
 </section>
 <section id="asteroid-yr4-panic-meter" class="slide level2">
 <h2>🔭🌠<a href="https://www.livescience.com/space/asteroids/asteroid-yr4-impact-odds-plummet-as-nasa-changes-threat-level-of-city-killer">ASTEROID <span class="greenscript">YR4</span></a> PANIC METER!!!🌌💥</h2>
@@ -406,8 +408,8 @@ Chapter 7<br><span class="crossmethod">Test Administration</span>
 </div><div class="column" style="width:80%;">
 <div class="cell" title="Impending Global Apocolypse">
 <div class="cell-output-display">
-<div class="dygraphs html-widget html-fill-item" id="htmlwidget-12fc7d4f80fc85abc4cb" style="width:768px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-12fc7d4f80fc85abc4cb">{"x":{"attrs":{"axes":{"x":{"pixelsPerLabel":60,"drawAxis":true},"y":{"drawAxis":true}},"series":{"Earth":{"axis":"y"},"Moon":{"axis":"y"}},"labels":["week","Earth","Moon"],"legend":"auto","retainDateWindow":false,"ylabel":"Odds of Doom (%)","stackedGraph":false,"fillGraph":true,"fillAlpha":0.4,"stepPlot":false,"drawPoints":false,"pointSize":1,"drawGapEdgePoints":false,"connectSeparatedPoints":false,"strokeWidth":1,"strokeBorderColor":"white","colorValue":0.5,"colorSaturation":1,"includeZero":false,"drawAxesAtZero":false,"logscale":false,"axisTickSize":3,"axisLineColor":"black","axisLineWidth":0.3,"axisLabelColor":"black","axisLabelFontSize":14,"axisLabelWidth":60,"drawGrid":true,"gridLineWidth":0.3,"rightGap":5,"digitsAfterDecimal":2,"labelsKMB":false,"labelsKMG2":false,"labelsUTC":false,"maxNumberWidth":6,"animatedZooms":false,"mobileDisableYTouch":true,"disableZoom":false,"showRangeSelector":true,"rangeSelectorHeight":40,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"weekly","annotations":[],"shadings":[],"events":[],"format":"date","data":[["2024-12-27T00:00:00.000Z","2025-01-29T00:00:00.000Z","2025-02-07T00:00:00.000Z","2025-02-11T00:00:00.000Z","2025-02-14T00:00:00.000Z","2025-02-18T00:00:00.000Z","2025-02-19T00:00:00.000Z","2025-02-20T00:00:00.000Z","2025-02-24T00:00:00.000Z","2025-02-25T00:00:00.000Z"],["1.2","1.3","2.2","2.4","2.6","3.1","1.5","0.28","0.005","0.0027"],[null,null,null,"1","1","1","0.8","0.8","0.8","1.7"]],"fixedtz":false,"tzone":"UTC"},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
+<div class="dygraphs html-widget html-fill-item" id="htmlwidget-a457cd6b9fdcb3c24605" style="width:768px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-a457cd6b9fdcb3c24605">{"x":{"attrs":{"axes":{"x":{"pixelsPerLabel":60,"drawAxis":true},"y":{"drawAxis":true}},"series":{"Earth":{"axis":"y"},"Moon":{"axis":"y"}},"labels":["week","Earth","Moon"],"legend":"auto","retainDateWindow":false,"ylabel":"Odds of Doom (%)","stackedGraph":false,"fillGraph":true,"fillAlpha":0.4,"stepPlot":false,"drawPoints":false,"pointSize":1,"drawGapEdgePoints":false,"connectSeparatedPoints":false,"strokeWidth":1,"strokeBorderColor":"white","colorValue":0.5,"colorSaturation":1,"includeZero":false,"drawAxesAtZero":false,"logscale":false,"axisTickSize":3,"axisLineColor":"black","axisLineWidth":0.3,"axisLabelColor":"black","axisLabelFontSize":14,"axisLabelWidth":60,"drawGrid":true,"gridLineWidth":0.3,"rightGap":5,"digitsAfterDecimal":2,"labelsKMB":false,"labelsKMG2":false,"labelsUTC":false,"maxNumberWidth":6,"animatedZooms":false,"mobileDisableYTouch":true,"disableZoom":false,"showRangeSelector":true,"rangeSelectorHeight":40,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"weekly","annotations":[],"shadings":[],"events":[],"format":"date","data":[["2024-12-27T00:00:00.000Z","2025-01-29T00:00:00.000Z","2025-02-07T00:00:00.000Z","2025-02-11T00:00:00.000Z","2025-02-14T00:00:00.000Z","2025-02-18T00:00:00.000Z","2025-02-19T00:00:00.000Z","2025-02-20T00:00:00.000Z","2025-02-24T00:00:00.000Z","2025-02-25T00:00:00.000Z"],["1.2","1.3","2.2","2.4","2.6","3.1","1.5","0.28","0.005","0.0027"],[null,null,null,"1","1","1","0.8","0.8","0.8","1.7"]],"fixedtz":false,"tzone":"UTC"},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
 </div>
 </div>
 </div></div>
@@ -415,189 +417,259 @@ Chapter 7<br><span class="crossmethod">Test Administration</span>
 <p><img data-src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTA1YzJheGFnamJ0aGZyODFmbmxkZ2JkcXZrb21jNTU2YTYyNXgzZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l46CvyAn1oBTOZtZK/giphy.gif" class="absolute" style="top: 120px; left: -150px; height: 200px; "></p>
 </section>
 <section>
-<section id="test-administration" class="title-slide slide level1 center">
-<h1>Test Administration!!</h1>
+<section id="interviewing" class="title-slide slide level1 center">
+<h1>Interviewing!!!</h1>
 
-<img data-src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcjlyNXpobnFnNmR6ZmIycmtvNm1tcnRhOWZnOW02YjJmZmxqc2E5MSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/9PwWfo79Bnlpq08UnM/giphy.gif" class="r-stretch"></section>
-<section id="another-methodological-consideration" class="slide level2">
-<h2>Another <span class="definition">methodological</span> Consideration</h2>
+<img data-src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjZ2eHIzYzRpNzUwMG0xa28wa3FsOHZseXZpNWxmbWhyYnE2MWk3byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/6Q3M4BIK0lX44/giphy.gif" class="r-stretch"></section>
+<section id="interview-as-a-test" class="slide level2">
+<h2>Interview as a <span class="definition">test</span></h2>
+<p>aka <span class="bluescript">an agenda-driven social exchange between strangers</span></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>reliability??? ✅</li>
+<li>validity??? ✅</li>
+<li>construct standing estimate??? ✅</li>
+</ul>
+</div></div>
+<p><img data-src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDg2cXdwOHppYWo4OG1xZHl3Njlma3lwZXlkNzB2b2k0N2ZuZG40OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l2Je7146Jr7VBeATu/giphy.gif" class="absolute" style="bottom: 115px; right: 0px; height: 350px; "></p>
+</section>
+<section id="interview-contexts" class="slide level2">
+<h2>Interview contexts</h2>
+<p><span class="bluescript">Very</span> pervasive…</p>
+<div class="columns">
+<div class="column" style="width:40%;">
+
+</div><div class="column" style="width:60%;">
+<ul>
+<li>job selection</li>
+<li>clinical psychiatry</li>
+<li>general medicine &amp; nursing</li>
+<li>counseling</li>
+<li>financial advising</li>
+</ul>
+</div></div>
+<p><img data-src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjJ4c200d3RuYTV5dXdleDR1c3dua3prN2p3eXlndzloMDk5cGVvZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/k5zlrQQEptX7BmNAlh/giphy.gif" class="absolute" style="left: 0px; bottom: 0px; "></p>
+</section>
+<section id="interview-type" class="slide level2">
+<h2>Interview <span class="definition">Type</span>:</h2>
+<p>…<span class="bluescript">structured</span> versus <span class="bluescript">unstructured</span></p>
+<div class="columns">
+<div class="column" style="width:70%;">
+<ul>
+<li><span class="definition">standardization</span> provides structure
+<ul>
+<li>content &amp; process</li>
+</ul></li>
+<li>difference a matter of <strong><em>degrees</em></strong>
+<ul>
+<li>not <span class="definition">qualitatively</span> different</li>
+</ul></li>
+<li>most interviews have mix of both structured and unstructured elements</li>
+</ul>
+</div></div>
+<p><img data-src="https://media.newyorker.com/photos/5909660bc14b3c606c10683a/master/pass/130114_r23029_p886.jpg" class="absolute" style="bottom: 90px; right: -120px; height: 500px; "></p>
+</section>
+<section id="unique-aspects" class="slide level2">
+<h2>“Unique” aspects</h2>
+<p><span class="bluescript">Interpersonal</span> dynamics at play…</p>
+<div class="columns">
+<div class="column" style="width:55%;">
+
+</div><div class="column" style="width:45%;">
+<ul>
+<li>reinforcement</li>
+<li>attraction</li>
+<li>persuasion
+<ul>
+<li><span class="mirrortext">mirroring</span></li>
+</ul></li>
+<li>social facilitation<sup>1</sup></li>
+<li>“back–and–forth”</li>
+</ul>
+</div></div>
+<p><img data-src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdnlva292djV3aDg1ZnR1bDYyYmpndHRjdnU2aHRoeG44dTRmMTNqOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xUNd9IWhAnmCfLqbJK/giphy.gif" class="absolute mirror" style="left: -30px; bottom: 80px; height: 400px; "></p>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>generally refers to “better” performance in the presence of others <span class="citation" data-cites="triplett">Triplett (<a href="#/references" role="doc-biblioref" onclick="">1898</a>)</span></p></li></ol></aside></section>
+<section id="principles-of-effective-interviewing" class="slide level2">
+<h2>Principles of <span class="definition">effective</span> interviewing</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
 <ul>
-<li><span class="bluescript">Administration</span></li>
-<li><span class="bluescript">Item type</span> ✅</li>
-<li><span class="bluescript">Population</span> (test takers) ✅</li>
-<li><span class="bluescript">Comparison</span> (norms) ✅</li>
-</ul>
-</div></div>
-<p><img data-src="https://cmn-cdn-001.sagepub.com/books/titles/280088/cov_sb1_129181.jpg" class="absolute" style="bottom: 50px; right: 0px; height: 500px; "></p>
-</section>
-<section id="administrator" class="slide level2">
-<h2>Administrator</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>aka <span class="definition">proctor</span> or <span class="definition">tester</span>/<span class="definition">examiner</span></p>
+<li>proper attitude
 <ul>
-<li>rapport</li>
-<li>familiarity</li>
-<li>reinforcement
-<ul>
-<li>expectancy</li>
+<li>warm💖</li>
+<li>honest😇</li>
+<li>fair👨‍⚖</li>
 </ul></li>
-<li>nonverbals</li>
-<li>training</li>
+<li>avoid evaluative language</li>
+<li>ask <span class="definition">open-ended</span> questions</li>
 </ul>
 </div></div>
-<p><img data-src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnc0OXQ1bHowd3pvenZ5ZGg5YWFxZmR4aHl3enE1OWJ0c2duYjloayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/kc2jI1YcIyOAUqCyGP/giphy.gif" class="absolute" style="bottom: 120px; right: 0px; "></p>
+<p><img data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSonY7zohlZ1imRgh3_5M9pe77l2uRC61a8Nw&amp;s.png" class="absolute" style="bottom: 120px; right: -20px; height: 400px; "></p>
 </section>
-<section id="stereotype-threat" class="slide level2">
-<h2>Stereotype threat</h2>
+<section id="understanding-statements" class="slide level2">
+<h2>“Understanding” statements</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:40%;">
 
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:60%;">
+<ol type="1">
+<li>open-ended question</li>
+<li>“understanding” statements
 <ul>
-<li><span class="definition">negative</span> stereotype exists at group level</li>
-<li>strain from internalized pressure to <span class="definition">disconfirm</span> stereotype</li>
-<li><span class="definition">observed score</span> suppression
-<ul>
-<li><span class="definition">X</span> = T + e</li>
+<li>capture <span class="definition">feeling</span> &amp; <span class="definition">meaning</span></li>
+<li>keep interview moving</li>
 </ul></li>
-</ul>
-</div></div>
-<p><img data-src="https://opn-web-afd-d3bfbkd5bcc5asbs.z02.azurefd.net/opn/media/images/articles/2013/1305/departments/reflections-img1.jpg?t=638452530617112999" class="absolute" style="left: -30px; bottom: 120px; height: 400px; "></p>
-</section>
-<section id="minimizing-threat" class="slide level2">
-<h2>Minimizing Threat</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
-<ul>
-<li>framing</li>
-<li>remove cues when possible</li>
-<li>minimize if can’t remove:
-<ul>
-<li>demographics at end</li>
-</ul></li>
-</ul>
-</div></div>
-<p><img data-src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2F1NGY0bGltaW1zdHIyN2xodnE3Z2huaDlpbWpwenE3NWI2NTJwOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l396Sok6H728brWlG/giphy.gif" class="absolute" style="bottom: 100px; right: -100px; "></p>
-</section>
-<section id="language-barriers" class="slide level2">
-<h2>Language barriers</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-
-</div><div class="column" style="width:50%;">
-<ul>
-<li>can be an obstacle for access to construct</li>
-<li><a href="https://www.lytho.com/blog/translation-fails-advertising/">translations</a> costly &amp; questionable <span class="definition">equivalence</span>
-<ul>
-<li>forward–back procedure</li>
-</ul></li>
-</ul>
-<div class="callout callout-tip callout-titled callout-style-default">
+</ol>
+<div class="callout callout-warning callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Tip</strong></p>
+<p><strong>Warning</strong></p>
 </div>
 <div class="callout-content">
-<p>Not much research attention – good candidate for novel contributions</p>
+<p>These also require <span class="bluescript">training</span> and <span class="bluescript">experience</span> – interjecting <strong><em>how the interviewee feels</em></strong> could also result in <span class="definition">experimenter effects</span></p>
 </div>
 </div>
 </div>
 </div></div>
-<p><img data-src="https://static.boredpanda.com/blog/wp-content/uploads/2017/09/funny-translation-fail-89-59b0f417dbdfb__605.jpg" class="absolute" style="left: -70px; bottom: 140px; height: 400px; "></p>
+<p><img data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0TR2obWFxWhsR7uoto0h1BxxMjOR0sB7MrDuhRHUYk195MT5eWS8rQjwI_DBrCI4NT3E&amp;usqp=CAU.png" class="absolute" style="left: 0px; bottom: 60px; height: 500px; "></p>
 </section>
-<section id="administrator-training" class="slide level2">
-<h2>Administrator training</h2>
+<section id="measuring-understanding" class="slide level2">
+<h2>Measuring “understanding”</h2>
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li>administration manual can help
-<ul>
-<li><span class="definition">standardization</span></li>
-</ul></li>
-<li>some test publishers require certification
-<ul>
-<li>academic degree may or may not suffice</li>
-<li><a href="https://www.themyersbriggs.com/en-US/Get-Certified/MBTI-Certification?utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=brand_mbti_cert_computer&amp;gad_source=1&amp;gclid=CjwKCAiAt4C-BhBcEiwA8Kp0CaiAas3bMMXbdDLWl31RXBKyu_k3no3rPwCNNiRiA1GKKz1VqQBNnBoCaP4QAvD_BwE">sometimes optional</a></li>
-</ul></li>
+<li>5–point scoring system</li>
+<li>Ranges from 🥴 to 😔</li>
+<li>Levels 1 and 2 not appropriate for interviewing</li>
 </ul>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>…the construct confusion here – not sure whether to refer to this as <span class="bluescript">understanding</span> or <span class="bluescript">empathy</span> (p.&nbsp;215)</p>
+</div>
+</div>
+</div>
 </div></div>
-<p><img data-src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTZrcDNtdm1hd21zOWgxMWN1aXNrdmVjbHFvOHVkMmFvb3ZiZHAxaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KDYB0cH4HW8xc3VIAx/giphy.gif" class="absolute" style="bottom: 150px; right: -120px; height: 300px; "></p>
-</section>
-<section id="computer-as-administrator" class="slide level2">
-<h2>Computer as administrator</h2>
+<p><img data-src="https://www.open.edu/openlearn/pluginfile.php/1634304/mod_oucontent/oucontent/92407/82c2a0ba/842ac480/k832_1_s2_f4-01.tif.small.jpg" class="absolute" style="bottom: 50px; right: -120px; height: 550px; "></p>
+</section></section>
+<section>
+<section id="activity" class="title-slide slide level1 center">
+<h1>Activity!!</h1>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:60%;">
+<ol type="1">
+<li>5 <span class="definition">life problems</span></li>
+<li><span class="definition">Taboo</span> words for interviewee</li>
+<li>5 levels of <del>interviewer “understanding”</del> interviewee response (<span class="definition">number of words</span>)</li>
+<li>5 EC points (<span class="bluescript">if identify problem in 2 minutes</span>)</li>
+</ol>
+</div><div class="column" style="width:40%;">
+<p><img data-src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExazNtYTR6ZTRqMmlwNHZncmpoOGh4am1kOXNtNTc1dHFzYjhtdnBoZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/14qIliCMe87BwA/giphy.gif" class="absolute" style="height: 300px; "></p>
+</div></div>
+</section>
+<section id="sources-of-error" class="slide level2">
+<h2>Sources of Error</h2>
+<div class="columns">
+<div class="column" style="width:45%;">
 
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:55%;">
+<div class="ninety">
 <ul>
-<li>very popular</li>
-<li>avoids most administrator effects
+<li>first impressions
 <ul>
-<li><span class="definition">standardization</span></li>
+<li><span class="definition">primacy</span> effect</li>
+<li><span class="definition">anchoring</span> effect</li>
 </ul></li>
-<li>facilitates recording of <span class="definition">response latency</span></li>
-<li>immediate scoring
+<li>halo effect
 <ul>
-<li><span class="definition">scale</span> score(s)</li>
+<li><span class="definition">positive overall glow</span> from few impressions</li>
 </ul></li>
 </ul>
+</div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>…also all of the previously covered <a href="https://bookdown.org/jtkulas/chapter7/Chapter7.html#/administrator"><strong><em>administrator</em></strong> effects</a> – recommended solution to all is <span class="definition">greater structure</span></p>
+</div>
+</div>
+</div>
 </div></div>
-<p><img data-src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWc1MWxjZHRpcW5qZGo2Mm41YWZyMXpheWVtcTRnd210azE3Z3FubSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ZrJcTENQacGhW/giphy.gif" class="absolute" style="left: -120px; bottom: 50px; height: 500px; "></p>
+<p><img data-src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWllaThja2R5MDFtMGtzOXgwNTNmdjl3eHB0cDJ1Z2NwMzdkNmFoNiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LS2UnugUzF6kE/giphy.gif" class="absolute" style="left: -120px; bottom: 120px; height: 400px; "></p>
 </section>
-<section id="test-anxiety" class="slide level2">
-<h2>Test anxiety</h2>
+<section id="reliability" class="slide level2">
+<h2>Reliability</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
-<li><a href="https://scholar.google.com/scholar?hl=en&amp;as_sdt=0%2C24&amp;q=Test+Anxiety+Symptoms+in+College+Students%3A+Base+Rates+and+Statistical+Deviance&amp;btnG=">very common</a> (self–reported)</li>
-<li>self–defeating
+<li>tends to be poor for <span class="definition">unstructured</span> interviews</li>
+<li><a href="https://bookdown.org/jtkulas/chapter5/Chapter5.html#/validity-reliability">best explanation</a> for low validities</li>
+<li><span class="definition">scoring rubric</span> one key feature of structured interviews
 <ul>
-<li>worry</li>
-<li>emotionality</li>
-<li>self–confidence deficit</li>
+<li>greater agreement</li>
 </ul></li>
 </ul>
 </div></div>
-<p><img data-src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ24zdGYwNmExNnhrMW5qbGE4bjZlaW1oenBzN2Qya251am9pMzBiZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/lvzdeWk12qjmM/giphy.gif" class="absolute" style="bottom: 150px; right: 0px; "></p>
+<p><img data-src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZHh0ZTN5cW0wc3pia3JmbHF0ZTN6dnpnN2xhNzAzeW5yZHoxNHp1ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1i6uIju50q9cSKejza/giphy.gif" class="absolute" style="bottom: 100px; right: -40px; "></p>
 </section>
-<section id="the-forwardback-procedure-is-applied-to-test" class="slide level2 quiz-question">
-<h2>The forward–back procedure is applied to test…</h2>
+<section id="with-interviews-the-greater-the-standardization-the-more" class="slide level2 quiz-question">
+<h2>With interviews, the <span class="definition">greater the standardization</span>, the more…</h2>
 <ul>
-<li><span class="correct">translations</span></li>
-<li>takers</li>
-<li>administrators</li>
-<li>publishers</li>
+<li><span class="correct">structure</span></li>
+<li>stability</li>
+<li>sustainability</li>
+<li>substence</li>
 </ul>
 </section>
-<section id="non-verbal-cues-given-by-the-administrator-can-introduce-error-into-observed-scores" class="slide level2 quiz-question">
-<h2>Non-verbal cues given by the administrator can introduce <span class="definition">error</span> into observed scores</h2>
+<section id="the-tendency-to-form-a-final-evaluation-that-is-very-close-to-your-initial-is" class="slide level2 quiz-question">
+<h2>The tendency to form a <span class="definition">final</span> evaluation that is very close to your initial is…</h2>
 <ul>
-<li><span class="correct">True</span></li>
-<li>False</li>
+<li><span class="correct">anchor effect</span></li>
+<li>primacy effect</li>
+<li>halo effect</li>
+<li>recency effect</li>
 </ul>
 </section>
-<section id="the-most-recent-odds-of-asteroid-yr4-hitting-the-earth-in-2032-are" class="slide level2 quiz-question">
-<h2>The most recent odds of asteroid YR4 hitting the earth in 2032 are…</h2>
+<section id="the-tendency-to-assume-your-friend-is-good-at-everything-because-they-are-great-at-sports-is" class="slide level2 quiz-question ninety">
+<h2>The tendency to assume your friend is “<span class="definition">good at everything</span>” because they are great at sports is…</h2>
 <ul>
-<li>1.5%</li>
-<li><span class="correct">.0027%</span></li>
-<li>.005%</li>
-<li>.28%</li>
+<li>primacy effect</li>
+<li><span class="correct">halo effect</span></li>
+<li>recency effect</li>
+<li>anchoring effect</li>
 </ul>
 </section>
-<section id="ensuring-every-test-taker-has-a-similar-test-experience-is" class="slide level2 quiz-question">
-<h2>Ensuring every test taker has a similar test experience is…</h2>
+<section id="the-best-type-of-interview-question-is" class="slide level2 quiz-question">
+<h2>The best type of interview question is…</h2>
 <ul>
-<li><span class="correct">standardization</span></li>
-<li>weird</li>
-<li>considerate</li>
-<li>norming</li>
+<li><span class="correct">open ended</span></li>
+<li>closed ended</li>
+<li>leading</li>
+<li>interesting</li>
+</ul>
+</section>
+<section id="to-minimize-error-in-the-interview" class="slide level2 quiz-question">
+<h2>To minimize error in the interview,…</h2>
+<ul>
+<li><span class="correct">build more structure</span></li>
+<li>allow for greater time</li>
+<li>record the interaction</li>
+<li>dress appropriately</li>
 </ul>
 </section>
 <section id="references" class="slide level2 smaller scrollable">
@@ -608,30 +680,33 @@ Chapter 7<br><span class="crossmethod">Test Administration</span>
 </div>
 </div>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
-<div id="ref-hinkin2005scale" class="csl-entry" role="listitem">
-Hinkin, T. R. (2005). <em>Research in organizations: Foundations and methods of inquiry</em> (R. A. Swanson &amp; E. F. Holton III, Eds.; pp. 161–179). Berrett-Koehler Publishers.
+<div id="ref-triplett" class="csl-entry" role="listitem">
+Triplett, N. (1898). The dymogenic factors in pacemaking and competition. <em>American Journal of Psychology</em>, <em>9</em>, 507–533.
 </div>
 </div>
 </section></section>
+
     </div>
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="Chapter7_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="Chapter8_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="Chapter7_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="Chapter7_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="Chapter7_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="Chapter7_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="Chapter7_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
-  <script src="Chapter7_files/libs/revealjs/plugin/reveal-quiz/quiz.js"></script>
-  <script src="Chapter7_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="Chapter8_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="Chapter8_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="Chapter8_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="Chapter8_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="Chapter8_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="Chapter8_files/libs/revealjs/plugin/multiplex/socket.io.js"></script>
+  <script src="Chapter8_files/libs/revealjs/plugin/multiplex/multiplex.js"></script>
+  <script src="Chapter8_files/libs/revealjs/plugin/reveal-quiz/quiz.js"></script>
+  <script src="Chapter8_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="Chapter7_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="Chapter7_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="Chapter7_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="Chapter7_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="Chapter8_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="Chapter8_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="Chapter8_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="Chapter8_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
@@ -647,7 +722,8 @@ Hinkin, T. R. (2005). <em>Research in organizations: Foundations and methods of 
 'autoAnimateUnmatched': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'chalkboard': {"buttons":true},
-'quiz': {"checkKey":"c","resetKey":"q","allowNumberKeys":true,"disableOnCheck":true,"shuffleOptions":true,"defaultCorrect":"Good or Fine","defaultIncorrect":"I thought you could do better than that","includeScore":true,"disableReset":false,"shuffleKey":"p"},
+'multiplex': {"secret":null,"id":"c2f9f5c3ca7b3cf2","url":"https://reveal-multiplex.glitch.me/"},
+'quiz': {"checkKey":"c","resetKey":"q","allowNumberKeys":true,"disableOnCheck":true,"shuffleOptions":true,"defaultCorrect":"Always give 100%!!! ...unless you're donating blood","defaultIncorrect":"The road to success is always under construction!!","includeScore":true,"disableReset":false,"shuffleKey":"p"},
 'smaller': false,
  
         // Display controls in the bottom right corner
@@ -821,7 +897,7 @@ Hinkin, T. R. (2005). <em>Research in organizations: Foundations and methods of 
         plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, RevealQuiz, QuartoSupport,
 
           RevealMath,
-          RevealNotes,
+          
           RevealSearch,
           RevealZoom
         ]
