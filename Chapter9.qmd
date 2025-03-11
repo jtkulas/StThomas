@@ -1,0 +1,387 @@
+---
+title: "Ψlogical<br>Testing" 
+author: "Chapter 9<br>[Intelligence]{.crossmethod}" 
+title-slide-attributes: 
+  data-background-image: https://miro.medium.com/v2/resize:fit:1024/1*0xH3l7lKvQGAV_e2Nfa98g.jpeg #https://cdn.hswstatic.com/gif/albert-einstein-invent.jpg
+  data-background-opacity: ".8"
+format:
+  revealjs:
+    multiplex: true
+    chalkboard: true
+    slide-tone: false
+    navigation-mode: linear
+    transition: convex
+    transition-speed: slow
+    controls: true
+    controls-layout: edges
+#    controls-tutorial: false
+    slide-number: c
+    mermaid:
+      theme: neutral
+#    output-location: slide           ## column-fragment; inserts blank 2nd slide
+    code-overflow: wrap              ## instead of horizontal scroll
+    theme: [league, tommies.scss]    ## night & league
+    mouse-wheel: true                ## yes enables mouse
+    preview-links: false             ## true brings up iframe window instead of "site"
+    code-annotations: hover 
+    quiz:
+      shuffleKey: "p"
+      defaultCorrect: "Hmmm... pretty good... I guess..."
+      defaultIncorrect: "No no no... TRY AGAIN!!"
+      includeScore: true
+      disableOnCheck: true
+engine: knitr                        ## not picking up inline codes
+bibliography: bib.bib
+csl: apa7.csl
+#lightbox: true                     ## interferes with .absolute placement
+revealjs-plugins:                  
+  - quiz
+#  - spotlight                      ## cursor disappearing
+---
+
+```{r, warning=FALSE, message=FALSE}
+#devtools::install_github("hadley/emo")        ## if anyone else wants to render
+library(fontawesome)
+```
+
+## House cleaning `r emo::ji("soap")``r emo::ji("shower")`
+
+:::: {.columns}
+::: {.column width="55%"}
++ Exam #1
+  + See me if you didn't do as well as hoped `r emo::ji("face_with_head_bandage")`
+
++ Project:
+  + First 5 items and construct description (Canvas)
+
+:::
+::::
+
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2J1cm43YTEyZHI0dXN6MXA5eWEzanNpaWppcjkyMXIzZ2p2enc4aiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/K2Lx9SyiloGgfb6Iki/giphy.gif){.absolute right="-70" top="100" height="500"}
+
+![](https://www.freeiconspng.com/uploads/sweeping-png-15.png){.absolute bottom="-50" left="-90" height="150" .mirror}
+
+# Intelligence!!!
+
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmE5czFjM29heWFwbWd6Y2JvM2NsaTRyeDMyY3k2eGEzdnQzb2h5NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/WQku0f67yGxeBQyMv9/giphy.gif)
+
+## Intelligence is...
+
+::: {.columns}
+::: {.column width="50%"}
+
++ ...tendency to [take]{.definition} & [maintain direction]{.definition} [@terman1916measurement]
++ ...[adjustment]{.definition}/[adaption]{.definition} to environment [@freeman1950theory]
++ ...ability to [resolve problems]{.definition} [@gardner2011frames]
+
+:::
+:::
+
+![](https://i0.wp.com/tshirtatlowprice.com/wp-content/uploads/2022/01/Intelligence-Is-The-Ability-To-Adapt-To-Change-Shirt-Stephen-Hawking.jpg?ssl=1){.absolute right="0" bottom="115" height="450"}
+
+## Genesis of intelligence testing 
+
+::: {.columns}
+
+::: {.column width="40%"}
+
+
+:::
+
+::: {.column width="60%"}
++ France early 1900's
+  + [intellectually limited]{.definition} children
+  + deliver special education
++ [Alfred Binet](https://www.britannica.com/biography/Alfred-Binet)
+  + judgement
+  + attention 
+  + reasoning
+
+
+:::
+
+:::
+
+![](https://www.ipnotecnica.it/wp-content/uploads/2022/09/Binet-Binetti-ipnotista.jpg){.absolute left="-50" bottom="140"}
+
+## Binet's decisions
+
+::: {.columns}
+::: {.column width="50%"}
+
+### [Age differentiation]{.bluescript2}
+
++ Intelligence parallels age (children)
++ what tasks can [most]{.definition} XX--year--olds complete?
+
+:::{.callout-note}
+Task completion (%) by age plots formed ogives ([same as ICCs](https://bookdown.org/jtkulas/chapter6/Chapter6.html#/icc))
+:::
+
+:::
+
+::: {.column width="50%"}
+
+### [General Mental Ability]{.bluescript2}
+
++ [overarching]{.definition} construct
++ current preferred conceptualization ("[g]{.bluescript .lowercase}")
+
+:::
+
+:::
+
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHBydTZ1YW1rMWRsbHEzNDBnZHJlMTNjOGg4dnhrNnoycHdsN2RkcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/iRjB2mfESqgec/giphy.gif){.absolute bottom="0" right="120"}
+
+![](https://www.nicepng.com/png/full/611-6111564_this-free-icons-png-design-of-lowercase-g.png){.absolute right="10" bottom="-10" height="220"}
+
+## "[g]{.lowercase}" 
+
+[Independently]{.bluescript} in Great Britain...
+
+::: {.columns}
+
+::: {.column width="50%"}
+:::
+
+::: {.column width="50%"}
+
++ @spearman1904 also proposed a [general mental ability factor]{.definition}
+
+
+:::
+:::
+
+![](https://intelligence1.weebly.com/uploads/2/6/0/9/26090838/2561377.jpg?324){.absolute right="-30" bottom="0" height="300"}
+![](https://psychopedia.in/wp-content/uploads/2024/08/sdfssfsdf.jpg){.absolute left="-50" height="400" bottom="50"}
+
+![](https://www.nicepng.com/png/full/611-6111564_this-free-icons-png-design-of-lowercase-g.png){.absolute right="220" bottom="220" height="70" .fragment}
+
+![](https://images.vexels.com/media/users/3/142317/isolated/preview/e6a7e6e1c960033adbcd05ceaeeca431-letterhead-red-neon-alphabet-s.png){.absolute bottom="80" height="120" right="400" .fragment}
+
+![](https://images.vexels.com/media/users/3/142317/isolated/preview/e6a7e6e1c960033adbcd05ceaeeca431-letterhead-red-neon-alphabet-s.png){.absolute bottom="80" height="120" right="260" .fragment}
+
+![](https://images.vexels.com/media/users/3/142317/isolated/preview/e6a7e6e1c960033adbcd05ceaeeca431-letterhead-red-neon-alphabet-s.png){.absolute bottom="80" height="120" right="110" .fragment}
+
+![](https://images.vexels.com/media/users/3/142317/isolated/preview/e6a7e6e1c960033adbcd05ceaeeca431-letterhead-red-neon-alphabet-s.png){.absolute bottom="80" height="120" right="-30" .fragment}
+
+## Fluid and Crystalized
+
+:::: {.columns}
+::: {.column width="60%"}
+
+...maybe [2]{.definition} "[g]{.bluescript}"'s instead of [1]{.definition}?
+
++ [fluid]{.bluescript} intelligence
+  + problem-solving in [unfamiliar situations]{.definition}
++ [crystallized]{.bluescript} intelligence
+  + applications of [learned]{.definition} knowledge, skill, experience
+
+:::
+
+::: {.column width="40%"}
+
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeTA5Mm9kOXpwZWR1d2FwaTU3b2prajlsbGI5aTk0YWpwNXM5amJtNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/JWF7fOo3XyLgA/giphy.gif)
+
+::: {.callout-note}
+The [terminology]{.definition} used here retains the historical "[intelligence]{.bluescript}" although the [notation]{.definition} specifies modern $g_f$ & $g_c$
+:::
+:::
+
+::::
+
+## Binet--Simon (1905)
+
+:::: {.columns}
+::: {.column width="40%"}
+
+:::
+
+::: {.column width="60%"}
+
++ 30 items
++ increasing "difficulty" 
++ considered 1^st^ modern intelligence test
++ [scoring]{.definition} was not optimal
+  + 50 children (norms)
+  + focused on deficiency [classification]{.definition} 
+
+:::
+::::
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Simon-Binet_Ugly_Face_Item_from_1911_journal.png/800px-Simon-Binet_Ugly_Face_Item_from_1911_journal.png){.absolute bottom="60" height="500" left="00"}
+
+## Binet--Simon (1908)
+
+:::: {.columns}
+::: {.column width="55%"}
+
++ (more) items now [grouped by]{.definition} age
++ concept of [mental age]{.bluescript} introduced
+  + performance relative to [average]{.definition}^[specified as ~70% of age group [being able to complete]{.definition}] XX--aged child
+  + larger normative group (n=203)
+
+:::
+
+::::
+
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMHVnd2Y2M2xxcG9ncTU2ZTcxamczd2VqeDIwdTIyNjh5dzlka3c0NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/w0Fy3hcQuZxxQgo0KR/giphy.gif){.absolute right="-80" height="550" bottom="70"}
+
+## Stanford-Binet (1916)
+
+:::: {.columns}
+::: {.column width="45%"}
+:::
+
+::: {.column width="55%"}
+
++ [Lewis Terman](https://www.britannica.com/biography/Lewis-Terman) now involved 
+  + [same guy](https://bookdown.org/jtkulas/chapter1/Chapter1.html#/world-war-i)
++ English--language adaptation
++ developed [intelligence quotient]{.definition} 
+  + $IQ = \frac{Age_{Mental}}{Age_{Chronological}} \times 100$
++ norm data maxxed--out at 19.5 ($Age_{Mental}$)
+
+:::
+::::
+
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmNkemNncjgydHFsMWowbGJ6Ym13eWhzampkOWQwYWkxMHdmaGIxZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Gr7vDneVqY7N5oBDFO/giphy.gif){.absolute left="-60" height="400" bottom="120"}
+
+# Activity!!
+
+::: {.columns}
+::: {.column width="60%"}
+...let's take another test!!
+
++ "[Wonderlic](https://beatthewonderlic.com/take-a-free-wonderlic-test-online/)"-ish
+  + timed (12-minutes)
+  + interface wonky
+    + error!! `r emo::ji("face_with_raised_eyebrow")`
+
+:::
+
+::: {.column width="40%"}
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXg5dnNhbzN4OGtybjg5NjE3djFxZ2NsdmlqZXhubWt1cXM3aDlubiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Jxoa0dMzFY60o/giphy.gif){.absolute height="500"}
+:::
+:::
+
+## Stanford--Binet (1937)
+
+:::: {.columns}
+::: {.column width="50%"}
+
+::: {.ninety}
++ normative ages extended to 2 $\rightarrow$ 22
+  + more representative (beyond CA)
++ improved [standardization]{.definition} 
+  + administration
+  + scoring
++ less literacy--dependent 
++ alternate ([parallel](https://bookdown.org/jtkulas/chapter4/Chapter4.html#/parallel-forms)) form
+
+:::
+
+:::
+
+::::
+
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmxvaHc2ZnU1NGx1ODlsYnJpanc3NHByOHl2NGwzMDd5c21pYW9rNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1iu8uG2cjYFZS6wTxv/giphy.gif){.absolute right="-40" bottom="100"}
+
+## Stanford--Binet (1960; SB-LM)
+
+:::: {.columns}
+::: {.column width="50%"}
+:::
+
+::: {.column width="50%"}
+
++ combine 1937 items into one "best" test
++ [deviation IQ]{.bluescript} new scale score
+  + z-score derivative
+    + $SS = \sigma(Z)+\mu$
+    + $IQ = 15(Z)+100$
+
+:::
+::::
+
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzN5Y214MTl1NGUyYmNvcmFoNWxldW05cWNna3J1YzQwOWh5dnFpeSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xUNd9G0fT7REJj0Euc/giphy.gif){.absolute left="-100" height="400" bottom="120"}
+
+## Stanford--Binet (Modern; 4^th^ edition 1986)
+
+:::: {.columns}
+::: {.column width="50%"}
+
+:::
+
+::: {.column width="50%"}
+
++ [content-based]{.definition} item groupings
+  + allowed for [separate mental abilities]{.definition} summary scales
+  + partially informed by [@thurstone1938primary]
+  
+:::
+::::
+
+![](https://flemingsintelligenceproject.weebly.com/uploads/1/1/3/7/113714447/gifted-students-16-638_orig.jpg){.absolute left="-120" height="350" bottom="200"}
+
+## Stanford--Binet (Modern; [5^th^ edition 2003](https://www.parinc.com/products/SB5))
+
+:::: {.columns}
+::: {.column width="60%"}
+
+:::{.ninety}
++ more theory refinement
+  + [hierarchical]{.definition} model of "[g]{.bluescript}"
+  + [CHC model](https://link.springer.com/referenceworkentry/10.1007/978-0-387-79948-3_1596) @carroll1993human
++ 5 primary abilities
+  + each measured by verbal & nonverbal tasks
++ Several different scale aggregations 
+  + including overall "[g]{.bluescript}"
++ norms include all ages
+
+:::
+:::
+
+::::
+
+![](https://shop.acer.org/media/catalog/product/cache/f22489588fb7b667069100356775ca7c/9/2/920573_1.jpg){.absolute right="-80" height="400" bottom="100"}
+
+
+## The letter associated with the traditional concept of [intelligence]{.definition} is... {.quiz-question}
+
+- [g]{.correct}
+- q
+- p
+- r
+
+## Alfred Binet started to measure intelligence upon request of the __________ government... {.quiz-question}
+
+- [French]{.correct}
+- American
+- German
+- Swiss
+
+## [IQ]{.definition} is _________ divided by ___________ (multiplied by 100) {.quiz-question .ninety}
+
+- chronological age; mental age
+- [mental age; chronological age]{.correct} 
+- scale score; raw score
+- raw score; scale score
+
+## Figuring out how to escape from a desert island would most likely be attributed to _________ intelligence {.quiz-question}
+
+- [fluid]{.correct}
+- crystallized
+- Gilligan
+- spatial
+
+## Figuring out who played Luke Skywalker in Star Wars would most likely be attributed to _________ intelligence {.quiz-question}
+
+- [crystallized]{.correct}
+- fluid
+- trivial
+- spatial
+
+## References
+
+[More "ability" tests](https://aptitude-test.com/)
