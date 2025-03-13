@@ -1,0 +1,338 @@
+---
+title: "Ψlogical<br>Testing" 
+author: "Chapter 9<br>[Intelligence (Part II)... <br>...the]{.crossmethod} [Wechsler]{.cross2} [Scales]{.crossmethod}" 
+title-slide-attributes: 
+  data-background-image: https://cdn.hswstatic.com/gif/albert-einstein-invent.jpg
+  data-background-opacity: ".8"
+format:
+  revealjs:
+    multiplex: true
+    chalkboard: true
+    slide-tone: false
+    navigation-mode: linear
+    transition: convex
+    transition-speed: slow
+    controls: true
+    controls-layout: edges
+#    controls-tutorial: false
+    slide-number: c
+    mermaid:
+      theme: neutral
+#    output-location: slide           ## column-fragment; inserts blank 2nd slide
+    code-overflow: wrap              ## instead of horizontal scroll
+    theme: [league, tommies.scss]    ## night & league
+    mouse-wheel: true                ## yes enables mouse
+    preview-links: false             ## true brings up iframe window instead of "site"
+    code-annotations: hover 
+    quiz:
+      shuffleKey: "p"
+      defaultCorrect: "I like it... I like it A LOT!!!"
+      defaultIncorrect: "Whatsamatta You?"
+      includeScore: true
+      disableOnCheck: true
+engine: knitr                        ## not picking up inline codes
+bibliography: bib.bib
+csl: apa7.csl
+#lightbox: true                     ## interferes with .absolute placement
+revealjs-plugins:                  
+  - quiz
+#  - spotlight                      ## cursor disappearing
+---
+
+```{r, warning=FALSE, message=FALSE}
+#devtools::install_github("hadley/emo")        ## if anyone else wants to render
+library(fontawesome)
+```
+
+## `r emo::ji("spider_web")` `r emo::ji("spider_web")` House keeping `r emo::ji("spider_web")` `r emo::ji("spider_web")`
+
+:::: {.columns}
+
+::: {.column width="55%"}
+:::
+
+::: {.column width="45%"}
++ Class Poll
+  + Exam
+  + Lab
+  + Feedback
+
+::: {.callout-note}
+Remember to [e-mail me](mailto:jtkulas@ergreports.com) if you'd like to discuss exam-taking strategy
+:::
+
+:::
+::::
+
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTJ6dWd2cDdoYXVvMXh6eXBvb2V1Mnk2aGg4ZHRucmJkbG03dGhxMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/10XKCjCMb5HuJa/giphy.gif){.absolute left="-70" top="100" height="500"}
+
+![](https://www.freeiconspng.com/uploads/sweeping-png-15.png){.absolute bottom="200" right="10" height="150"}
+
+# David Wechsler
+
+::: {.columns}
+::: {.column width="50%"}
+
+![](https://upload.wikimedia.org/wikipedia/commons/d/d9/Dr._David_Wechsler.jpg)
+:::
+
+::: {.column width="50%"}
+[Intelligence]{.bluescript} is...
+
+...the capacity to:  
+
++ [act]{.definition} purposefully
++ [think]{.definition} rationally
++ [deal effectively]{.definition} with one's environment
+
+:::
+
+:::
+## "Nonintellective" factors
+
+::: {.columns}
+::: {.column width="50%"}
+
++ factors **[other than]{.underline}** [intelligence]{.definition} that impact [intelligent behavior]{.definition}
+  + attitude
+  + motivation
+  + experience
+  + emotional functioning
+
+:::
+:::
+
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbTlnem45czdhd3Npd2pobHFmYXNndjY1eTFiMjV5NHZ5Nnlsb3k5ZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/YpZh61QjwuXq15FhV7/giphy.gif){.absolute right="0" bottom="115" height="450"}
+
+## Competitor to Binet--Simon
+
+::: {.columns}
+
+::: {.column width="45%"}
+
+:::
+
+::: {.column width="55%"}
++ Wechsler--Bellevue Intelligence Scale [@wbis1939]
+  + adult--appropriate
+  + **[TWO]{.underline}** aggregate scores
+    + nonverbal components (aka [performance]{.definition} scale)
+  + scoring (points per item)
+
+:::
+
+:::
+
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2l5bWx0YXRicjR0bHpsZG1keHlmdDZ6MzV4N3FwajNncDNxa2VuMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/qCRhaWtcExo9W/giphy.gif){.absolute left="-100" bottom="150"}
+
+## Wechsler Adult Intelligence Scale([s]{.lowercase})
+
+[Five]{.definition}^[[Four]{.definition} at the time of the textbook publishing] modern revisions to the 1939 original:
+
+::: {.columns}
+::: {.column width="60%"}
+
++ WAIS [@wais1955]
++ WAIS--R [@wais1981]
++ WAIS III [@wais1997]
++ WAIS IV [@wais2008]
++ [WAIS 5](https://www.pearsonassessments.com/professional-assessments/blog-webinars/blog/2024/04/whats-new-with-the-wais-5.html) [@wais2024]
+
+:::
+:::
+
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjEwdjlvbWRyMmJtc2V1ODcwZTNqc21iN2ZwOGhucThqYjB1OWFhMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/5zh1j8sUfLUJGI5T5d/giphy.gif){.absolute right="-70" bottom="50" height="450"}
+
+## The "Modern" WAIS 
+
+WAIS IV decided to measure [separate abilities]{.definition} instead of one or two "global" constructs 
+
+::: {.columns}
+
+::: {.column width="70%"}
+:::
+
+::: {.column width="30%"}
+
++ "[g]{.bluescript}" results from an [interplay]{.definition} of these specific abilities
+
+
+:::
+:::
+
+![](https://www.frontiersin.org/files/Articles/710929/fpsyg-12-710929-HTML/image_m/fpsyg-12-710929-g001.jpg){.absolute left="-120" height="400" bottom="50"}
+
+## WAIS terminology
+
+:::: {.columns}
+::: {.column width="50%"}
+
++ [index]{.bluescript}
+  + aggregation of subtests to [multidimensional scale]{.definition}
++ [subtest]{.bluescript} 
+  + item groupings focused on [unidimensional construct]{.definition}
+
+:::
+
+::: {.column width="40%"}
+:::
+
+::::
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Wechsler_Adult_Intelligence_Scale_subscores_and_subtests.png/640px-Wechsler_Adult_Intelligence_Scale_subscores_and_subtests.png){.absolute right="-120" bottom="80"}
+
+![](circle.png){.absolute width="700" height="180" bottom="170" right="-140" .fragment .fade-in-then-out}
+
+![](circle.png){.absolute width="700" height="180" bottom="60" right="-140" .fragment .fade-in-then-out}
+
+## Subscales (WAIS IV)
+
+:::: {.columns}
+::: {.column width="25%"}
+
++ [Vocabulary]{.fragment .highlight-current-blue fragment-index=1}
++ [Similarities]{.fragment .highlight-current-blue fragment-index=2}
++ [Information]{.fragment .highlight-current-blue fragment-index=3}
+:::
+
+::: {.column width="25%"}
+
++ [Picture completion]{.fragment .highlight-current-blue fragment-index=4}
++ [Block design]{.fragment .highlight-current-blue fragment-index=5}
++ [Matrix reasoning]{.fragment .highlight-current-blue fragment-index=6}
+:::
+
+::: {.column width="25%"}
+
++ [Arithmetic]{.fragment .highlight-current-blue fragment-index=7}
++ [Digit span]{.fragment .highlight-current-blue fragment-index=8}
++ [Letter--number sequencing]{.fragment .highlight-current-blue fragment-index=9}
+:::
+
+::: {.column width="25%"}
+
++ [Digit symbol--coding]{.fragment .highlight-current-blue fragment-index=10}
++ [Symbol search]{.fragment .highlight-current-blue fragment-index=11}
+:::
+
+::::
+
+![](vocab.JPG){.absolute bottom="75" .fragment .fade-in-then-out fragment-index=1}
+![](similarities.JPG){.absolute bottom="75" left="150" .fragment .fade-in-then-out fragment-index=2}
+![](information.JPG){.absolute bottom="75" left="150" .fragment .fade-in-then-out fragment-index=3}
+![](https://ed650wisciv.weebly.com/uploads/1/5/6/5/15655846/5795272_orig.jpg){.absolute right="-50" bottom="0" .fragment .fade-in-then-out fragment-index=4}
+![](https://media.springernature.com/lw685/springer-static/image/art%3A10.3758%2Fs13414-021-02396-w/MediaObjects/13414_2021_2396_Fig1_HTML.png){.absolute right="-150" bottom="130" height="450" .fragment .fade-in-then-out fragment-index=5}
+![](https://upload.wikimedia.org/wikipedia/commons/0/0b/Cubes_de_kohs_utilis%C3%A9s_dans_la_Wais_-_R_avec_un_exemple_de_figure_%C3%A0_4_cubes.jpg){.absolute left="-50" bottom="0" height="350" .fragment .fade-in-then-out fragment-index=5}
+![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThDfJXA-75enWCGXrXfglDzgx4X8kUYg-yYg&s){.absolute right="-80" bottom="150" height="450" .fragment .fade-in-then-out fragment-index=6}
+![](math.JPG){.absolute bottom="75" .fragment .fade-in-then-out fragment-index=7}
+![](https://image4.slideserve.com/338209/digit-span-test-l.jpg){.absolute bottom="0" left="-100" height="450" .fragment .fade-in-then-out fragment-index=8}
+![](https://figures.semanticscholar.org/fe7795d9206c2bac09e308f2e9853a163d47d9a7/6-Table2-1.png){.absolute bottom="-100" left="-120" height="350" .fragment .fade-in-then-out fragment-index=9}
+![](https://www.researchgate.net/publication/317597812/figure/fig1/AS:11431281253512618@1718885729221/Digit-Symbol-Substitution-Test-DSST-Wechsler-1997-the-DSST-consists-of-a-code-table.tif){.absolute bottom="-20" .fragment .fade-in-then-out fragment-index=10}
+![](https://m.media-amazon.com/images/S/aplus-media/kdp/72c6bdd6-2967-4a45-90b2-37c83b618954.__CR0,0,301,301_PT0_SX300_V1___.png){.absolute bottom="0" height="500" .fragment .fade-in-then-out fragment-index=11}
+
+# Activity!!
+
+::: {.columns}
+::: {.column width="60%"}
+...let's take [another test](https://aptitude-test.com/free-aptitude-test/mixed-aptitude-test/)!!
+
++ Mix of WAIS subtest item--types
+  + timed (12-minutes)
+  + more FUN!!! `r emo::ji("partying_face")`
+
+:::
+
+::: {.column width="40%"}
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExd3o5ODlsNTNiZ3Q0Y3g2YWRhbmliazdwbGd6bzJsb3N0ZGRuNGJnbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fsbKeqwwkmE6LodM3T/giphy.gif){.absolute height="500"}
+:::
+:::
+
+## Scoring
+
+:::: {.columns}
+::: {.column width="50%"}
+
++ raw [subtest]{.definition} scores [transformed to scale score](https://bookdown.org/jtkulas/chapter2/Chapter2.html#/z-as-reported-score) with $\mu$=10 & $\sigma$=3
++ [index]{.definition} scores are summaries of the subtest scale scores
+  + [scaled]{.bluescript} to the [typical $\mu$=100 & $\sigma$=15](https://bookdown.org/jtkulas/chapter9/Chapter9.html#/stanfordbinet-1960-sb-lm)
++ [FSIQ]{.definition} a summary of index scores
+
+:::
+
+::::
+
+![](https://upload.wikimedia.org/wikipedia/commons/7/7c/WAIS-IV_test_structure.png){.absolute right="-120" height="450" bottom="100"}
+
+## Pattern analysis
+
+:::: {.columns}
+::: {.column width="45%"}
+:::
+
+::: {.column width="55%"}
+
++ with multiple scales comes the opportunity to look for [patterns]{.definition} across subtests or indexes 
+  + unique combinations of [low]{.bluescript} and [high]{.bluescript} scores
+  + aka [profile]{.definition}
++ also very popular with MMPI & other [clinical]{.definition} tests
+
+
+:::
+::::
+
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExYjExaWcwNWtnamtndmxnbG9qdDhsNmJyamRhMHdxNGNqdDh2dnF2ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QNWc3RiTgbcvG04TEU/giphy.gif){.absolute left="-100" height="500" bottom="50"}
+
+## Extensions of WAIS
+
+:::: {.columns}
+::: {.column width="50%"}
+
++ Wechsler Intelligence Scale for Children 
+  + aka [WISC]{.definition} `r emo::ji("child")`
+  + 6--17 yo 
++ Wechsler Preschool and Primary Scale of Intelligence
+  + aka [WPPSI]{.definition} `r emo::ji("baby")`
+  + 2.5--8.5 yo 
+ 
+:::
+
+::::
+
+![](https://www.iapsa.org/601-large_default/wisc-V.jpg){.absolute right="-80" bottom="200" height="300"}
+
+## Factors [other than]{.definition} intelligence that impact intelligent behavior are called... {.quiz-question}
+
+- [nonintellective]{.correct}
+- unfortunate
+- troublesome
+- `r emo::ji("face_with_symbols_on_mouth")``r emo::ji("face_with_symbols_on_mouth")``r emo::ji("face_with_symbols_on_mouth")``r emo::ji("face_with_symbols_on_mouth")`
+
+## The most recent WAIS was published in... {.quiz-question}
+
+- [2024]{.correct}
+- 2014
+- 2004
+- 1994
+
+## Wechsler referred to his nonverbal aggregate as a/an ______________ scale {.quiz-question .ninety}
+
+- [performance]{.correct} 
+- behavior
+- action
+- personality
+
+## [Patterns]{.definition} of performance across intelligence subscales form a... {.quiz-question}
+
+- [profile]{.correct}
+- perspective
+- point--of--view
+- person
+
+## Which of these intelligence tests was historically focused on "[g]{.bluescript .lowercase}" as opposed to specific abilities? {.quiz-question}
+
+- [Stanford--Binet]{.correct}
+- WAIS
+- WAIS--R
+- WISC
+
+## References

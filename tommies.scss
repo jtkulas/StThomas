@@ -12,7 +12,7 @@ $body-bg: #191919;
 $body-color: #fff;
 $link-color: #42affa;
 $code-color: hotpink;
-$presentation-title-slide-text-align: right;
+$presentation-title-slide-text-align: left;
 $presentation-title-slide-text-color: black;
 
 /*-- scss:rules --*/
@@ -30,7 +30,7 @@ $presentation-title-slide-text-color: black;
 }
 
 .quarto-title-author-name {
-  font-size: 65px;
+  font-size: 65px;     
   color: 	white;
   font-weight: bold;
   font-family: 'Dancing Script';
@@ -70,10 +70,16 @@ $presentation-title-slide-text-color: black;
 }
 
 .crossmethod {
-  font-size: 80px;
+  font-size: 60px;
 /*  text-decoration: underline; #6495ed  */
   color: #42affa;
   font-family: 'Rock Salt';
+}
+
+.cross2 {
+  font-size: 90px;
+  color: #3458eb;
+  font-family: 'Protest Guerrilla';
 }
 
 .bluescript {
