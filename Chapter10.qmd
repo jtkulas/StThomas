@@ -1,6 +1,6 @@
 ---
 title: "Ψlogical<br>Testing" 
-author: "Chapter 9<br>[Intelligence (Part II)... <br>...the]{.crossmethod} [Wechsler]{.cross2} [Scales]{.crossmethod}" 
+author: "Chapter 10<br>[Intelligence (Part II)... <br>...the]{.crossmethod} [Wechsler]{.cross2} [Scales]{.crossmethod}" 
 title-slide-attributes: 
   data-background-image: https://cdn.hswstatic.com/gif/albert-einstein-invent.jpg
   data-background-opacity: ".8"
