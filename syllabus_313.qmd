@@ -151,6 +151,8 @@ Final grade will be based on the following scale with 500 points max:
 #| warning: false
 #| message: false
 
+## https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_pdf.pdf
+
 library(knitr)
 library(kableExtra)
 library(tidyverse)
@@ -158,7 +160,9 @@ library(tidyverse)
 sked <- read.csv("sched.csv")
 kable(sked, booktabs=TRUE) %>%
   kable_styling(latex_options = c("striped", "HOLD_position")) %>%
-  pack_rows(index=c("Principles"=4,"Applications"=7, "Issues"=4))
+  row_spec(8, bold=T, color="#8cd3ff", background="#ffcaec") %>%
+  pack_rows(index=c("Principles"=4,"Applications"=7, "Issues"=4)) %>%
+  footnote(general="Published Test presentations start April 4")
 ```
 
 # Class Schedule (Lab): `r emoji("microscope")`
@@ -175,7 +179,8 @@ library(tidyverse)
 sked <- read.csv("labsched.csv.csv")
 kbl(sked, booktabs=TRUE) %>%                      ##, format="markdown"
   row_spec(c(2,5,11,15), bold=T, color="white", background="black") %>%
-  row_spec(c(4,8), background="#bebebe")
+  row_spec(c(4,10), background="#bebebe") %>%
+  row_spec(8, bold=T, color="#8cd3ff", background="#ffcaec") 
 ```
 
 # Class Project

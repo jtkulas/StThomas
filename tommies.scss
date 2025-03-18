@@ -5,6 +5,7 @@
 @import url('https://fonts.googleapis.com/css?family=Nosifer');
 @import url('https://fonts.googleapis.com/css?family=Rock Salt');
 @import url('https://fonts.googleapis.com/css?family=Permanent Marker');
+@import url('https://fonts.googleapis.com/css?family=Ribeye');
 
 /*-- scss:defaults --*/
 
@@ -40,6 +41,20 @@ $presentation-title-slide-text-color: black;
 }
 
 /*-- supposedly helps with content overflow --*/
+
+.crossmethod {
+  font-size: 60px;
+/*  text-decoration: underline; #6495ed  */
+  color: hotpink;
+  font-family: 'Ribeye';
+}
+
+.cross2 {
+  font-size: 90px;
+  color: #3458eb;
+  font-family: 'Protest Guerrilla';
+}
+
 .smaller {
   font-size: .7em;
 }
@@ -69,17 +84,8 @@ $presentation-title-slide-text-color: black;
   transform: rotate(-70deg);
 }
 
-.crossmethod {
-  font-size: 60px;
-/*  text-decoration: underline; #6495ed  */
-  color: #42affa;
-  font-family: 'Rock Salt';
-}
-
-.cross2 {
-  font-size: 90px;
-  color: #3458eb;
-  font-family: 'Protest Guerrilla';
+.rightangle {
+  transform: rotate(90deg);
 }
 
 .bluescript {

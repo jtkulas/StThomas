@@ -1,0 +1,602 @@
+---
+title: "Ψlogical<br>Testing" 
+author: "Chapter 11...<br>[...infants & other special populations]{.crossmethod}" 
+title-slide-attributes: 
+  data-background-image: https://img.freepik.com/premium-vector/stork-with-baby-white-background_273525-400.jpg 
+  data-background-opacity: ".8"
+format:
+  revealjs:
+    multiplex: true
+    chalkboard: true
+    slide-tone: false
+    navigation-mode: linear
+    transition: convex
+    transition-speed: slow
+    controls: true
+    controls-layout: edges
+#    controls-tutorial: false
+    slide-number: c
+    mermaid:
+      theme: neutral
+#    output-location: slide           ## column-fragment; inserts blank 2nd slide
+    code-overflow: wrap              ## instead of horizontal scroll
+    theme: [league, tommies.scss]    ## night & league
+    mouse-wheel: true                ## yes enables mouse
+    preview-links: false             ## true brings up iframe window instead of "site"
+    code-annotations: hover 
+    quiz:
+      shuffleKey: "p"
+      defaultCorrect: "You sure know your Psychometrics!!"
+      defaultIncorrect: "having a bad day???"
+      includeScore: true
+      disableOnCheck: true
+engine: knitr                        ## not picking up inline codes
+bibliography: bib.bib
+csl: apa7.csl
+#lightbox: true                     ## interferes with .absolute placement
+revealjs-plugins:                  
+  - quiz
+#  - spotlight                      ## cursor disappearing
+---
+
+```{r, warning=FALSE, message=FALSE}
+#devtools::install_github("hadley/emo")        ## if anyone else wants to render
+library(fontawesome)
+```
+
+## `r emo::ji("paw_prints")``r emo::ji("paw_prints")``r emo::ji("bathtub")` cleaning up `r emo::ji("soap")``r emo::ji("paw_prints")``r emo::ji("paw_prints")`
+
+:::: {.columns}
+
+::: {.column width="50%"}
+:::
+
+::: {.column width="45%"}
+
++ corrected syllabus now in Canvas
+
+[Project]{.bluescript}: 
+
++ more items & platform decision 
+  + Qualtrics?
+  + special populations?
+
+:::
+::::
+
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZXA2OGNhczBzYnZyNWxweXJ0ODJ6cXBraGw3YWh5ZXFpc3hkemt5dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/s2bXg08nqOo9cBl4Im/giphy.gif){.absolute left="100" top="150" height="500"}
+
+![](https://www.freeiconspng.com/uploads/sweeping-png-15.png){.absolute bottom="15" left="300" height="150"}  
+
+## Class survey results `r emo::ji("chart_increasing")``r emo::ji("chart_decreasing")`
+
+::: {.panel-tabset}
+
+### Lab `r emo::ji("alembic")`
+
+```{r}
+#| fig-cap: "Class preference regarding lab grade"
+
+data <- read.csv("classpoll/responses_rows.csv")[,c(20:32)]
+
+students <- data[data$lecturesopen != 'kulas again', ]
+
+## https://towardsdatascience.com/5-ways-to-effectively-visualize-survey-data-using-r-89928bf08cb2/
+
+library(plotly)
+
+tab <- as.data.frame(descr::freq(students$lab, plot=FALSE))[-4,]
+tab$label <- c("Skipped Response", "Mirror", "Separate")
+
+
+
+fig <- plot_ly(tab, labels = ~label, values = ~Percent, type = 'pie')
+
+fig
+```
+
+![](classpoll/lab.JPG){.absolute right="-120" bottom="0" height="250"}
+
+### Exams `r emo::ji("memo")`
+
+```{r}
+data <- read.csv("classpoll/responses_rows.csv")[,c(20:32)]
+
+students <- data[data$lecturesopen != 'kulas again', ]
+
+## https://towardsdatascience.com/5-ways-to-effectively-visualize-survey-data-using-r-89928bf08cb2/
+
+library(likert)
+library(tidyverse)
+library(plyr)
+
+likert_recode <- function(x) {
+  y <- ifelse(x == "sd", "Strongly disagree",
+                     ifelse(x == "d", "Disagree",
+                            ifelse(x == "a", "Agree", 
+                                   ifelse(x == "sa", "Strongly agree",
+                                          ifelse(x == "n", "Neither", NA)))))
+  
+  y <- factor(y, levels = c("Strongly disagree", "Disagree", "Neither", "Agree", "Strongly agree"))
+  
+  return(y)
+}
+
+items <- students[,c(10,9)]
+names(items) <- c("The content of Exam 1 was appropriate","Canvas administration was appropriate")
+
+items_likert <- items %>%
+  mutate_all(likert_recode) %>%
+  likert()
+
+plot(items_likert, 
+     # Group the items alphabetically
+     group.order=names(items),
+     # Plot the percentages for each response category
+     plot.percents = TRUE,
+     # Plot the total percentage for negative responses
+     plot.percent.low = FALSE,
+     # Plot the total percentage for positive responses
+     plot.percent.high = FALSE,
+     # Whether response categories should be centered
+     # This is only helpful when there is a middle response
+     # option such as "neutral" or "neither agree nor disagree"
+     centered = FALSE,
+     # Wrap label text for item labels
+     wrap=20)
+
+```
+
+![](classpoll/exam1.JPG){.absolute right="-120" top="0" height="250"}
+
+### Lectures `r emo::ji("speech_balloon")`
+
+```{r}
+data <- read.csv("classpoll/responses_rows.csv")[,c(20:32)]
+
+students <- data[data$lecturesopen != 'kulas again', ]
+
+likert_recode <- function(x) {
+  y <- ifelse(x == "sd", "Strongly disagree",
+                     ifelse(x == "d", "Disagree",
+                            ifelse(x == "a", "Agree", 
+                                   ifelse(x == "sa", "Strongly agree",
+                                          ifelse(x == "n", "Neither", NA)))))
+  
+  y <- factor(y, levels = c("Strongly disagree", "Disagree", "Neither", "Agree", "Strongly agree"))
+  
+  return(y)
+}
+
+items <- students[,c(6,5,4,3)]
+names(items) <- c("The pace of lectures is appropriate","Lectures should include more small group activities", "Lecture slides are helpful", "Lecture material is clearly understood")
+
+items_likert <- items %>%
+  mutate_all(likert_recode) %>%
+  likert()
+
+plot(items_likert, 
+     # Plot the percentages for each response category
+     plot.percents = TRUE,
+     # Plot the total percentage for negative responses
+     plot.percent.low = FALSE,
+     # Plot the total percentage for positive responses
+     plot.percent.high = FALSE,
+     # Whether response categories should be centered
+     # This is only helpful when there is a middle response
+     # option such as "neutral" or "neither agree nor disagree"
+     centered = FALSE,
+     # Wrap label text for item labels
+     wrap=30)
+
+```
+
+![](classpoll/class.JPG){.absolute right="-120" top="0" height="350"}
+
+### Open--ended
+
+::: {.small}
+"I, and a few of my classmates, would rather we not take the 30 min break before lab and instead finish class 30 mins early because this is a late class."
+
+"There was much more crystalized knowledge than I expected (names, dates, acronyms) that usually don't show up on tests. I tend to feel that tests with applicable knowledge based questions (fluid) allow me to retain information better."
+
+"I can tolerate having exams on canvas (I know it makes the grading process easier), but I don't love it and having a paper option would be nice."
+
+"Lecture is too slow"
+
+"Hard to differentiate some times what material is related to exam items and what is unnecessary information, makes preparing for exams difficult."
+
+"It is difficult to know what we should be studying in prep for the exam. Could you provide a study guide or quizlet?"
+
+"I understand this takes more work on your part, but it would be nice to have a study guide/outline before exams if you are willing."
+:::
+
+:::
+
+## "[Alternative]{.definition}" ability measures
+
+...to the Binet & Wechsler tests
+
+::: {.columns}
+::: {.column width="50%"}
+
+:::{.ninety}
++ special [populations]{.definition} or [purposes]{.definition}
+  + age
+  + disability
+  + language
+  + content
+  
+:::
+::: {.callout-note}
+typically **[less dependent]{.underline}** on [literacy]{.definition} or reading ability
+:::
+
+:::
+:::
+
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcGRxeXVya216MWc1OTR0bDM0aDJocTFtbGJ2aWhtMWFvbXYxcnhuaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/redG2SZ9O7f7a/giphy.gif){.absolute right="-100" bottom="115" height="400"}
+
+## Early "nonverbal ability" tests (I)
+
+::: {.columns}
+
+::: {.column width="45%"}
+
+:::
+
+::: {.column width="55%"}
++ Seguin Form Board Test [@seguin1907idiocy]
+  + 1866 -- predates Binet
+  + [still commercially available](https://www.prasadpsycho.com/product/16-0038-KT)
+
+<br>
+
+::: {.callout-note}
+This test was an evaluation of **[mental retardation]{.underline}** -- not typically considered an [intelligence]{.definition} test
+:::
+
+:::
+
+:::
+
+![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoOWSd6dYV1-KJzbuawYJwzZ_RZSY7AWsK5g&s){.absolute left="-30" bottom="50" height="500"}
+
+## Early "nonverbal ability" Tests (II)
+
+::: {.columns}
+::: {.column width="40%"}
+
++ Healy--Fernald Test [@healyhealy]
+  + [criminality](https://psycnet.apa.org/doiLanding?doi=10.1037%2Ft00279-000)
+  + puzzle--based
+  + "adolescent delinquents"
+
+:::
+:::
+
+![](https://coimages.sciencemuseumgroup.org.uk/6/979/medium_2009_0035__0001_.jpg){.absolute right="-120" bottom="100" height="450"}
+
+## Early "nonverbal ability" Tests (III) 
+
+::: {.columns}
+
+::: {.column width="50%"}
+:::
+
+::: {.column width="50%"}
+
++ Knox Cube Imitation Test [@knox1914scale]
+  + Ellis Island
+  + cube test just one of several
+    + [battery]{.definition}
+  + [still available](https://stoeltingco.com/Psychological-Testing/Knox-Cube-Test-Revised--KCT-R~10120)
+
+:::
+:::
+
+![](https://ars.els-cdn.com/content/image/1-s2.0-S0278262605000941-gr1.gif){.absolute left="-20" height="500" bottom="50"}
+
+# Infants!!!
+
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExamQzY3c2anJ0am5sdDF5bzRyOXZrczZ0ZHpsM2IwcmZjdDc2ajVlciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2Qs2hKWMvEzdu/giphy.gif)
+
+## Why?!?
+
+:::: {.columns}
+::: {.column width="50%"}
+
++ developmental delays
++ concerning behavior
++ mental retardation
+
+<br>
+
+::: {.callout-warning}
+textbook authors' equivocation **[should not]{.underline}** implicate any of these as purported [intelligence]{.definition} tests 
+
+:::
+
+:::
+
+::: {.column width="40%"}
+:::
+
+::::
+
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdXhjaGh0NHo1MndoNGhuM2NlZGZya3RtZGU2dWN6eHEza3Rqc2NxZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/0Vv0Ne2CnOClIExIuL/giphy.gif){.absolute right="20" bottom="80" height="500"}
+
+## Brazelton Neonatal Assessment Scale ([BNAS](https://research.childrenshospital.org/research-units/brazelton-institute-research/nbas))
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
++ newborn response to new environment
++ 3 days $\rightarrow$ 4 weeks--old
++ ~50 "[scores](https://nidcap.org/wp-content/uploads/2013/12/Brazelton-1973-BNBAS.pdf)"
++ no [overall]{.definition} aggregate
+
+:::
+
+::: {.column width="60%"}
+
+::: {.panel-tabset}
+### Sample (`r emo::ji("spoon")`)
+
+![](https://figures.semanticscholar.org/3251675d62815d07e6bbd90a80929fe1002cfda0/2-Figure2-1.png)
+
+### Sample (`r emo::ji("fork_and_knife")`)
+
+![](https://figures.semanticscholar.org/3251675d62815d07e6bbd90a80929fe1002cfda0/3-Figure2-1.png)
+:::
+
+:::
+
+::::
+
+## Gesell Developmental Schedules ([GDS](https://medicine.yale.edu/childstudy/services/community-and-schools-programs/gesell/assessments/gdo-r/)) {#gds}
+
+:::: {.columns}
+::: {.column width="50%"}
+
++ several revisions since @gesell1925monthly
++ 2.3 months $\rightarrow$ 6.3 yo
++ norms of developmental stage attainment
++ "development quotient" similar to [Mental Age](https://bookdown.org/jtkulas/chapter9/Chapter9.html#/binetsimon-1908)
+
+:::
+
+::::
+
+![](https://coimages.sciencemuseumgroup.org.uk/400/630/medium_smg00158121.jpg){.absolute right="-80" height="450" bottom="100"}
+
+## Bayley Scales of Infant Development ([BSID](https://pearsonclinical.in/solutions/bayley-4/))
+
+:::: {.columns}
+
+::: {.column width="50%"}
+:::
+
+::: {.column width="50%"}
+
++ 1 $\rightarrow$ 42 months
++ several revisions since @bayley1969manual
++ normed ([like GDS](#gds)) but with larger stratified sample
+
+<br>
+
+::: {.callout-note}
+4^th^ edition actually most current (see [example feedback report](https://www.pearsonassessments.com/content/dam/school/global/clinical/us/assets/bayley-4/bayley-4-cognitive-language-motor-social-emotional-adaptive-behavior-scales-score.pdf))
+:::
+:::
+::::
+
+![](https://www.psicologia.io/sites/default/files/2023-10/73345830.Bayley_1000x1000.jpg){.absolute left="-50" height="500" bottom="50"}
+
+## Cattell Infant Intelligence Scale (CIIS)
+
+:::: {.columns}
+::: {.column width="50%"}
+
++ 2 $\rightarrow$ 30 months
++ **[DOES]{.underline}** purport to measure intelligence [@cattell1940measurement]
++ not available as of 2015
+ 
+::: {.callout-note}
+Psyche Cattell was the daughter of James Cattell but [unrelated]{.definition} to [Raymond B Cattell](https://psychology.fas.harvard.edu/people/raymond-cattell) of *g~f~* and *g~c~* fame
+:::
+ 
+:::
+
+::::
+
+![](https://utsic.utoronto.ca/wp-content/uploads/2012/11/1129-768x497.jpg){.absolute right="-120" bottom="100" height="400"}
+
+# Young Children
+
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExbm9ncnlxZXhuZDZwMTVldHkwdDhyNDhqdTYybTU1ZWRmemg3ejlkcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT5LMNZyLRrzHez8pG/giphy.gif)
+
+## M[c]{.lowercase}Carthy Scales of Children's Abilities (MSCA)
+
+:::: {.columns}
+
+::: {.column width="45%"}
+:::
+
+::: {.column width="50%"}
+
++ 2 $\rightarrow$ 8 yo
++ @mccarthy1972mccarthy
++ General Cognitive Index (GCI)
+  + akin to [g]{.bluescript}
++ not available as of 2015
+
+:::
+::::
+
+![](https://i.ebayimg.com/images/g/-A0AAOSwkytkWXXR/s-l1200.jpg){.absolute left="00" height="500" bottom="50"}
+
+## Kaufman Assessment Battery for Children ([KABC](https://www.pearsonclinical.co.uk/en-gb/Store/Professional-Assessments/Cognition-&-Neuro/Kaufman-Assessment-Battery-for-Children-%7C-Second-Edition-Normative-Update/p/P100009004?srsltid=AfmBOorMYqWgf2mxEcp_a_EoZa8JWBFnkJq6EKAN5Cw7LJ-JO9fOr925))
+
+:::: {.columns}
+::: {.column width="50%"}
+
++ 3 $\rightarrow$ 18 yo 
++ 18 subtests, 5 scales
++ [Sequential--simultaneous distinction]{.definition}
+  + serial vs. parallel problem--solving
++ original [@kabc1983] & 2004 revision (KABC-II)
+ 
+:::
+
+::::
+
+![](https://userscontent2.emaze.com/images/6c8c3fec-a45d-486b-b3ca-42a82f452cb7/a055f3ffa3d0ae65b67db5e1b87c300b.jpg){.absolute right="-120" bottom="100" height="400"}
+
+# Special Populations
+
+::: {.columns}
+::: {.column width="50%"}
+
++ Columbia Mental Maturity Scale (CMMS)
+  + cerebral palsy 3 $\rightarrow$ 12 yo
++ Peabody Picture Vocabulary Test (PPVT-IV)
+  + physical or language handicap 2 $\rightarrow$ 90 yo
+:::
+
+::: {.column width="50%"}
+
++ Leiter Internatinoal Performance Scale
+  + autistism or cognitive impaired 2 $\rightarrow$ 20 yo
++ Porteus Maze Test ([PMT](https://www.pearsonassessments.com/en-us/Store/Professional-Assessments/Academic-Learning/Porteus-Maze/p/100000039))
+  + planning & flexible problem--solving
+:::
+
+:::
+
+# Learning disabilities
+
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWZxamdmeWxsbzIyb3B6cWpmZW5qaG52NnRiY3N5cHN2Y21waDR0MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/K1o94Zmnkj29ZBhoY1/giphy.gif)
+
+## Illinois Test of Psycholinguistic Abilities ([ITPA](https://www.proedinc.com/Products/9475/itpa3-illinois-test-of-psycholinguistic-abilitiesthird-edition.aspx))
+
+:::: {.columns}
+
+::: {.column width="50%"}
+:::
+
+::: {.column width="50%"}
+
++ 5 $\rightarrow$ 12 yo
++ [input]{.definition} can be visual, auditory, or tactile
+  + 12 subtests measure ability to receive these inputs
++ 3 "[global]{.definition}" composites
+  + general, spoken, & written [language]{.definition}
+
+:::
+::::
+
+![](https://www.circlecasemanagement.com/image/picture1.png?size=600&constrain=null&quality=70){.absolute left="-100" height="350" bottom="130"}
+
+## [Woodcock--Johnson](https://www.pearsonclinical.asia/zh-sg/Store/Professional-Assessments/Developmental-Early-Childhood/Woodcock-Johnson-%7C-Fourth-Edition/p/P100078001?srsltid=AfmBOoqbXrnPscZQPEnn98jCgc4ssqzGoq0FU0HKmuONooWAVf1OeYGw)
+
+:::: {.columns}
+::: {.column width="60%"}
+
++ actually 3 different [batteries]{.definition}
+  + Tests of cognitive abilities
+  + Tests of achievement
+  + Tests of oral language
+ 
+::: {.callout-note}
+Can be used together or separately -- if together, discrepancy between [ability]{.definition} & [achievement]{.definition} might indicate a learning disability
+:::
+ 
+:::
+
+::::
+
+![](https://cdn-icons-png.freepik.com/512/9335/9335706.png){.absolute height="110" left="-70" top="170" .rightangle}
+
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmx6amRoajhieXNpcDV5emh3NWhjcDlieXE1bTBmam9tbzBxYW1sOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/jIhNUBuRD2SKA4TrrU/giphy.gif){.absolute right="-120" top="100" height="300"}
+
+
+## [Visiographic]{.definition} tests
+
+typically applied in contexts where [brain damage]{.definition} is suspected
+
+:::: {.columns}
+
+::: {.column width="40%"}
+:::
+
+::: {.column width="60%"}
+
++ Bender Visual Motor Gestalt Test ([BVMGT](https://www.cognitivecentre.com/assessment/bender-gestalt-ii-bender-visual-motor-gestalt-test-second-edition/))
++ Benton Visual Retention Test ([BVRT](https://thekingsleyclinic.com/resources/comprehensive-benton-visual-retention-test-guide-for-visual-memory/))
+  + reproduce [from memory]{.definition}
++ Memory--for--Designs (MFD)
+  + similar to BVRT, [from memory]{.definition}
+
+:::
+::::
+
+![](https://media.springernature.com/lw685/springer-static/image/art%3A10.1007%2Fs11042-024-18209-9/MediaObjects/11042_2024_18209_Fig13_HTML.png){.absolute left="-120" height="300" bottom="150"}
+
+## [creativity]{.definition} tests...
+
+...have historically been very tricky to develop
+
+:::: {.columns}
+::: {.column width="60%"}
+
+::: {.ninety}
++ Torrance Tests of Creative Thinking (TTCT)
+  + [fluency]{.definition} -- **number** of solutions
+  + [originality]{.definition} -- **novelty** of solutions 
+  + [flexibility]{.definition} -- try new approaches
++ original [@torrance1966] has been revised at least 5 times 
+
+:::
+
+:::
+
+::::
+
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2d6aTI4OG9xZm1uNXdkZzE4aWN5b3ptN3B0NmIwdThscGw5anRseiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Pj6TQs4cuQ7LAhebA5/giphy.gif){.absolute right="-80" bottom="100" height="400"}
+
+## Achievement and ability should be considered unique (e.g., meaningfully different) terms {.quiz-question}
+
+- [True]{.correct}
+- False
+
+## Several tests grouped together for purposes of "whole--person" assessment comprise a test __________ {.quiz-question .ninety}
+
+- [battery]{.correct} 
+- cluster
+- bunch
+- galaxy
+
+## "Ability" tests that ask respondents to manipulate physical objects are sometimes referred to as ____________ tests {.quiz-question}
+
+- [nonverbal]{.correct}
+- verbal
+- physical
+- physiological
+
+## ___________ [scales]{.definition} on ability tests may ask respondents to manipulate physical objects {.quiz-question}
+
+- [performance]{.correct}
+- scaled
+- standardized
+- raw score
+
+## These tests ask respondents to recreate drawn shapes... {.quiz-question}
+
+- [visiographic]{.correct}
+- pictographic
+- intelligraphic
+- isographic
+
+## References
