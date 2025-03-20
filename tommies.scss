@@ -6,6 +6,7 @@
 @import url('https://fonts.googleapis.com/css?family=Rock Salt');
 @import url('https://fonts.googleapis.com/css?family=Permanent Marker');
 @import url('https://fonts.googleapis.com/css?family=Ribeye');
+@import url('https://fonts.googleapis.com/css?family=Black Ops One');
 
 /*-- scss:defaults --*/
 
@@ -61,6 +62,10 @@ $presentation-title-slide-text-color: black;
 
 .ninety {
   font-size: .85em;
+}
+
+.eighty {
+  font-size: .7em;
 }
 
 .small {
@@ -132,6 +137,12 @@ $presentation-title-slide-text-color: black;
 
 .underline {
   text-decoration: underline !important;
+}
+
+.military {
+  font-family: 'Protest Guerrilla';
+  color: #929a68;
+  font-size: 1.3em;
 }
 
 

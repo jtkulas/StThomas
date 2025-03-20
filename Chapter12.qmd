@@ -1,0 +1,450 @@
+---
+title: "Ψlogical<br>Testing" 
+author: "Chapter 12...<br>[...Education, Civil Service & Military]{.military}" 
+title-slide-attributes: 
+  data-background-image: https://media.gettyimages.com/id/mr_00056453/video/1960-montage-children-taking-gce-test-in-classroom-united-kingdom.jpg?s=640x640&k=20&c=Zy4upy4whxZGRKODg81IiUbKP_jSHqVKQIE2ywe6hRc=
+  data-background-opacity: ".8"
+format:
+  revealjs:
+    multiplex: true
+    chalkboard: true
+    slide-tone: false
+    navigation-mode: linear
+    transition: convex
+    transition-speed: slow
+    controls: true
+    controls-layout: edges
+#    controls-tutorial: false
+    slide-number: c
+    mermaid:
+      theme: neutral
+#    output-location: slide           ## column-fragment; inserts blank 2nd slide
+    code-overflow: wrap              ## instead of horizontal scroll
+    theme: [league, tommies.scss]    ## night & league
+    mouse-wheel: true                ## yes enables mouse
+    preview-links: false             ## true brings up iframe window instead of "site"
+    code-annotations: hover 
+    quiz:
+      shuffleKey: "p"
+      defaultCorrect: "ROCK STAR!!!!"
+      defaultIncorrect: "try again, eh"
+      includeScore: true
+      disableOnCheck: true
+engine: knitr                        ## not picking up inline codes
+bibliography: bib.bib
+csl: apa7.csl
+#lightbox: true                     ## interferes with .absolute placement
+revealjs-plugins:                  
+  - quiz
+#  - spotlight                      ## cursor disappearing
+---
+
+```{r, warning=FALSE, message=FALSE}
+#devtools::install_github("hadley/emo")        ## if anyone else wants to render
+library(fontawesome)
+```
+
+## `r emo::ji("broom")`house keeping`r emo::ji("basket")`
+
+:::: {.columns}
+
+::: {.column width="50%"}
+:::
+
+::: {.column width="45%"}
+
++ more items & platform decision 
+  + Qualtrics?
+  + special populations?
+
+:::
+::::
+
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjZ0ZXUxcHd3Mjg3ZGtjemxtNmU5MTA1c2oxY3V3OGEwNTA4MXJjbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/GCZA2XPuNY0pPP9PrA/giphy.gif){.absolute left="-50" top="150" height="500"}
+
+![](https://www.freeiconspng.com/uploads/sweeping-png-15.png){.absolute top="15" right="0" height="150" .mirror}  
+
+# [`r emo::ji("globe")`Happy [Vernal Equinox](https://earthsky.org/astronomy-essentials/everything-you-need-to-know-vernal-or-spring-equinox/)!!`r emo::ji("sun")`]{.eighty}
+
+::: {.columns}
+::: {.column width="57%"}
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExemdzMWw4aW9lbXVvMWlwODUxOXY3NXFvYndvMnBnMjNxNmN4bWliNiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/X4M6homF66qFq/giphy.gif)
+:::
+::: {.column width="43%"}
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExdmd1MDh6MXJwNDIzemNwNnZwaXlhaWY5cG5tN3Mxd2VwYzdkajlldSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VGbUTteIsJG4QwCUen/giphy.gif)
+:::
+::: 
+
+# [Standardized [group]{.definition} tests]{.ninety}
+
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbHRyZ3FzbzQwMjdjZHJxN3g2NzJqcHdmMW83ZDRhOTZvcG9mMW9rbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LRzK37z3km2v6/giphy.gif)
+
+## "% of variance"
+
+Some popular educational tests (such as GRE and LSAT) are criticized for their lack of [predictive power]{.definition}, for example:
+
++ graduate school GPA
++ passing rate on state certification exams (such as "[the bar](https://ble.mn.gov/bar-exam/)")
+
+::: {.columns}
+::: {.column width="65%"}
+
+Predictive power generally expressed as the [squared validity coefficient]{.definition}
+
++ If the validity coefficient is [.4]{.underline}, [% variance explained]{.definition} is 16%
+
+:::
+
+::: {.column width="35%"}
+
+::: {.callout-note}
+Recall, a validity coefficient is [expressed as a correlation](https://bookdown.org/jtkulas/chapter5/Chapter5.html#/criterion-validation)
+:::
+
+:::
+
+:::
+
+## Group [vs.]{.lowercase} Individual Ability Tests
+
+::: {.columns}
+
+::: {.column width="53%"}
+### Individual Tests
+
++ [require a single examiner for a single test--taker]{.fragment .fade-in-then-semi-out fragment-index=1}
++ [examiner records (or takes note of)  verbatim responses]{.fragment .fade-in-then-semi-out fragment-index=2}
++ [examiner [evaluates]{.definition} and scores the response]{.fragment .fade-in-then-semi-out fragment-index=3}
++ [examiner [skill or training]{.definition} is very important]{.fragment .fade-in-then-semi-out fragment-index=4}
+:::
+
+::: {.column width="47%"}
+### Group Tests
+
++ [require a single examiner for [multiple]{.definition} test--takers]{.fragment .fade-in-then-semi-out fragment-index=1}
++ [test--takers record their own responses]{.fragment .fade-in-then-semi-out fragment-index=2}
++ [scoring determined by a [key]{.definition}]{.fragment .fade-in-then-semi-out fragment-index=3}
++ [examiner is a [proctor]{.definition} -- skill not particularly important]{.fragment .fade-in-then-semi-out fragment-index=4}
+
+:::
+
+:::
+
+![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPkJngavotUKloYM5RDM39JR74X-p_0vi5dQ&s){.absolute left="-150" bottom="250" height="130"}
+
+![](https://i0.wp.com/www.thesports.physio/wp-content/uploads/2019/06/untitled-31.jpg?fit=455%2C455&ssl=1){.absolute right="-150" bottom="250" height="130"}
+
+## Advantages
+
+::: {.columns}
+
+::: {.column width="53%"}
+### Individual Tests
+
++ [examiner can make adjustments if test--taker exhibits poor anxiety or mood or attitude `r fontawesome::fa("square-check", fill="#008000", prefer_type="solid")`]{.fragment .fade-in fragment-index=1}
+
+:::
+
+::: {.column width="47%"}
+### Group Tests
+
++ [cost effective -- minimize time needed for administration, scoring, and administrator training `r fontawesome::fa("square-check", fill="#008000", prefer_type="solid")`]{.fragment .fade-in fragment-index=2}
++ [scoring has greater [objectivity]{.definition} -- scores tend to exhibit greater reliability `r fontawesome::fa("square-check", fill="#008000", prefer_type="solid")`]{.fragment .fade-in fragment-index=3}
+
+:::
+:::
+
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzkwM2V0bmtybXhoamRheGhpanZ2aDdpbmJsdG02YXNuanZya3dhZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LMhbwQ27DaXCTbX1zo/giphy.gif){.absolute left="-10" bottom="-15"}
+
+## Group test characteristics
+
+Traditionally took the form of "[paper--and--pencil]{.definition}" (aka "booklet--and--pencil") tests  
+
+[Computer administration]{.bluescript} now more popular, but that term only refers to [mode of delivery]{.definition} of test content^[for example, a class exam delivered on "pencil--and--paper" vs. via Canvas]
+
+::: {.columns}
+
+::: {.column width="50%"}
+
++ usually multiple choice 
++ more common than individual administration
+
+
+:::
+
+::: {.column width="50%"}
+
++ some group item types **[together]{.underline}** -- usually then present subscale scores^[with [mixed]{.definition} item content you'll more likely recieve one overall score]
+
+:::
+:::
+
+## Group Tests in K--12 Schools
+
+[Achievement]{.definition} tests attempt to assess what a person **[has learned]{.underline}** following a specific course of instruction  
+
+[Aptitude]{.definition} tests attempt to evaluate a student's **[potential for learning]{.underline}** (usually within a specific domain -- e.g., math`r emo::ji("hundred_points")`, science`r emo::ji("microscope")`, music`r emo::ji("musical_notes")`)
+
+
++ for example, the [Stanford Achievement Test](https://homeschool.umn.edu/stanford-achievement-test) assesses achievement within [spelling]{.definition}, [reading comprehension]{.definition}, [word study and skills]{.definition}, [language arts]{.definition}, [social studies]{.definition}, [science]{.definition}, [math]{.definition}, & [listening comprehension]{.definition}
+
+## [Intelligence]{.definition} tests in K--12 Schools
+
+Some group--administered tests in schools can be classified as intelligence tests, such as:
+
+::: {.ninety}
+:::: {.columns}
+
+::: {.column width="50%"}
+
++ Kuhlmann--Anderson Test [@kuhlmann1927intelligence]; primarily **[non--verbal]{.underline}** content 
++ Henmon--Nelson Test [@henmon1932henmon]; aggregates to only **[one overall score]{.underline}** (e.g., "[g]{.bluescript}") 
+
+:::
+
+::: {.column width="50%"}
+
++ [Cognitive Abilities Test Form 7](https://www.setontesting.com/wpsetontesting/wp-content/uploads/2020/01/School-Info-File-CogAT.pdf) [@lohmancogat]; measures [fluid]{.definition} intelligence
+  + provides 3 separate scores -- verbal, quantitative, and nonverbal
+  + special attention paid to traditionally underadvantaged groups
+
+:::
+
+::::
+:::
+
+# [College Entrance Exams]{.ninety}
+
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3Mxd3NxYWRpcTQ2ejRodGNrMXJuc2locjV3ZGszeXg0ZGNyOWl2aiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/4gIhYShqaxMje/giphy.gif)
+
+## Scholastic Assessment Test (SAT)
+
+Used continuously since 1926, although 1941 norms used until 1995!!
+
+1995 revisions again updated in 2016 with focus on group differences & greater [academic achievement]{.definition} focus (as opposed to aptitude)
+
+:::: {.columns}
+::: {.column width="50%"}
+
++ 2016 possible scores range from 400 to 1600
++ [no penalty]{.definition} for guessing
+
+:::
+
+::: {.column width="50%"}
+::: {.callout-note}
+The [Digital SAT](https://blog.collegeboard.org/everything-you-need-know-about-digital-sat) is the most recent version (Spring 2024) & is [fully online]{.definition}, [shorter]{.definition} (2 hours 14 minutes), and [[computerized adaptive]{.definition}](https://bookdown.org/jtkulas/chapter4/Chapter4.html#/item-response-theory) [`r fontawesome::fa("youtube", fill="#FF0000")`](https://youtu.be/a7LUE8EQSLM)
+:::
+:::
+::::
+
+## American College Test (ACT)
+
+Similar to SAT, mandating online testing (starting September 2025) -- also [shorter]{.definition} (roughly 2 hours)
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
++ possible scores range from 1 to 36
++ correlations between SAT and ACT scores tend to be high (e.g., above *r* = .8)
+
+:::
+
+::: {.column width="50%"}
+
+[![](act.JPG)](https://www.act.org/content/act/en/students-and-parents/high-school-success/testing-advice-for-the-act/practice-questions/math-quiz-1.html)
+:::
+
+::::
+
+## Graduate Record Examination ([GRE](https://www.usnews.com/education/best-graduate-schools/articles/what-the-gre-test-is-and-how-to-prepare))
+
+...purported to measure [general scholastic ability]{.definition}
+
+Used by **[many]{.underline}** universities for graduate school selection (along with GPA, letters of recommendation, and other predictors)
+
+:::: {.columns}
+::: {.column width="50%"}
+
++ [subject]{.definition} tests exist for ~20 disciplines -- [Clinical Psychology]{.definition} programs are most likely to require this (within Ψ)
+ 
+:::
+
+::: {.column width="50%"}
+
++ [minimum screen]{.definition} $\leftarrow$ many programs use the GRE with a "cut--score" mentality (need to score above local threshold)^[textbook talks of **[local norms]{.underline}** -- these are the **[local norms]{.underline}**]
+
+:::
+
+::::
+
+## Miller Analogies Test
+
+...purported to measure [scholastic aptitudes for graduate studies]{.definition}, but only assesses **[verbal]{.underline}** aptitude
+
+STEM disciplines favor GRE, some humanities may require the Miller (for example, [Literature]{.definition}, [English]{.definition}, [History]{.definition}, [Philosophy]{.definition})
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
++ shorter duration than GRE (~1 hour vs ~4 hours)
++ different norms for different fields
+:::
+
+::: {.column width="50%"}
+
+[![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmo4enkzeGVpYnF1bzVyZTNnNDZsZnJoNmt4cXgzMjB3MjE3dGl2ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT1XGWGd90BrYwnTl6/giphy.gif)](https://www.studyguidezone.com/mat_practice1.htm)
+
+:::
+::::
+
+## Law School Admission Test (LSAT)
+
+...consists of three problem types: [reading comprehension]{.definition}, [logical reasoning]{.definition}, and [analytical reasoning]{.definition} 
+
+:::: {.columns}
+::: {.column width="50%"}
+5 (somewhat spammish) example questions:
+
+[![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMm0xaGc1OWZid3A5c2l6bXJsaHJoYTZka2Q1ZnVnZ3dibmFmc3AxMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/5fqN4ZZgJQQSI/giphy.gif)](https://www.kaptest.com/lsat/free/lsat-pop-quiz?srsltid=AfmBOoq1M-tzf4814BpS52IfqMctLHgqLi1YZ7i8NCTZNPqwLRSHsfhV)
+
+:::
+
+::: {.column width="50%"}
+
++ question [context]{.definition} may have legal flavor although no prior **[knowledge of law]{.underline}** is expected or required
++ law schools, by tradition, are more transparent with LSAT score expectations
+
+:::
+
+::::
+
+# [Nonverbal Group Ability Tests]{.eighty}
+
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWV1aG02ZDh4MGFpb3I4YXh3c3BqOTJkYmhzcDFwNTRnYm95eDNpaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/lgCvugdD94F6o/giphy.gif)
+
+## Raven Progressive Matrices
+
+very popular test of **[general intelligence]{.underline}** (e.g., "[g]{.bluescript}") used primarily in educational settings
+
+can be administered in groups or individually
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
++ age appropriate from 5 years $\rightarrow$ `r emo::ji("old_man")`
++ 60 matrices of progressive difficulty
+:::
+
+::: {.column width="50%"}
+
+![](https://www.talentlens.com/content/dam/school/global/Global-Talentlens/uk/Assessments/RavensAPM/Sample%20Ravens%20APM%20Item.png)
+:::
+::::
+
+## Goodenough--Harris Drawing Test
+
+similar to the Raven's, can be administered to groups or individually
+
+only requires a pencil and white, unlined paper as test materials
+
+scoring rubric ranges from 0 to 70 points based on generated images ([man]{.definition}, [woman]{.definition}, and [themselves]{.definition})
+
+:::: {.columns}
+::: {.column width="60%"}
+
++ intended for children up to 15 years old
++ standardized scores reported on the ubiquitous $\mu$=100, $\sigma$=15 scale
+
+:::
+
+::: {.column width="40%"}
+
+::: {.callout-note}
+Funny enough, the "quality of drawing" test was actually authored by [Florence Goodenough]{.definition} `r emo::ji("face_with_tears_of_joy")``r emo::ji("rolling_on_the_floor_laughing")`
+:::
+
+
+:::
+
+::::
+
+## Culture Fair Intelligence Test
+
+...was designed to provide an estimate of intelligence relatively free of [cultural]{.definition} and [language]{.definition} influences
+
+unique in targeted age ranges ([4--8]{.definition}; [8--12]{.definition}; [high--school]{.definition})
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
++ Raymond B Cattell involved in the development 
+  + $g_{c}$ & $g_{f}$ as well as personality
+  
+:::
+
+::: {.column width="50%"}
+
+![](https://image.slidesharecdn.com/culturefairtest-100727140916-phpapp01/95/culture-fair-test-1-728.jpg?cb=1280240414)
+:::
+::::
+
+## US Military & Civil Service
+
+:::: {.columns}
+::: {.column width="50%"}
+
+General Aptitude Test Battery (GATB) very historically popular measure of different abilities that measures aptitude for [several different government occupations](https://www.dol.gov/agencies/eta/employment-services)
+
+:::
+
+::: {.column width="50%"}
+
+Armed Services Vocational Aptitude Battery ([ASVAB](https://www.officialasvab.com/)) used for selection into the US military as well as aptitude for [different military jobs](https://www.goarmy.com/careers-and-jobs/browse-jobs)
+
+:::
+
+::::
+
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdXRwcDcxNmN6NXRrcG44engyZWZiZTB5bXJtaGdwZ2k0MHc4ZXh0dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26AHLNr8en8J3ovOo/giphy.gif){.absolute bottom="-10" left="240"}
+
+## The group--administered test used to select into [law school]{.definition} is the... {.quiz-question}
+
+- [LSAT]{.correct}
+- GRE
+- ACT
+- PSAT
+
+## __________ tests attempt to evaluate a student’s potential for learning {.quiz-question}
+
+- [aptitude]{.correct} 
+- achievement
+- personality
+- group
+
+## Psychology graduate programs are most likely to require the ____________ prior to admission {.quiz-question}
+
+- [GRE]{.correct}
+- SAT
+- ACT
+- LSAT
+
+## An [equinox]{.definition} happens when _____________ {.quiz-question}
+
+- [sun is over equator]{.correct}
+- Easter bunny appears`r emo::ji("rabbit_face")``r emo::ji("rabbit_face")`
+- tilt of earth inverts
+- Chevrolet gets creative
+
+## These tests attempt to assess what a person has learned following a specific course of instruction... {.quiz-question}
+
+- [achievement]{.correct}
+- aptitude
+- intelligence
+- ability
+
+## References
