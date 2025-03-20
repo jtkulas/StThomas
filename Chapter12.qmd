@@ -53,8 +53,11 @@ library(fontawesome)
 
 ::: {.column width="45%"}
 
-+ more items & platform decision 
++ assignment #3 will be [moved back]{.definition}
++ more items 
++ platform decision 
   + Qualtrics?
++ methodology
   + special populations?
 
 :::
@@ -62,7 +65,7 @@ library(fontawesome)
 
 ![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjZ0ZXUxcHd3Mjg3ZGtjemxtNmU5MTA1c2oxY3V3OGEwNTA4MXJjbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/GCZA2XPuNY0pPP9PrA/giphy.gif){.absolute left="-50" top="150" height="500"}
 
-![](https://www.freeiconspng.com/uploads/sweeping-png-15.png){.absolute top="15" right="0" height="150" .mirror}  
+![](https://www.freeiconspng.com/uploads/sweeping-png-15.png){.absolute top="15" right="-20" height="150" .mirror}  
 
 # [`r emo::ji("globe")`Happy [Vernal Equinox](https://earthsky.org/astronomy-essentials/everything-you-need-to-know-vernal-or-spring-equinox/)!!`r emo::ji("sun")`]{.eighty}
 
