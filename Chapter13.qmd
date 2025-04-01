@@ -1,0 +1,487 @@
+---
+title: "Ψlogical<br>Testing" 
+author: "Chapter 13...<br>[...Clinical & Counseling]{.clinical}" 
+title-slide-attributes: 
+  data-background-image: img/clinic.png
+  data-background-opacity: ".7"
+format:
+  revealjs:
+    multiplex: true
+    chalkboard: false
+    slide-tone: false
+    navigation-mode: linear
+    transition: convex
+    transition-speed: slow
+    controls: true
+    controls-layout: edges
+#    controls-tutorial: false
+    slide-number: c
+    mermaid:
+      theme: neutral
+#    output-location: slide           ## column-fragment; inserts blank 2nd slide
+    code-overflow: wrap              ## instead of horizontal scroll
+    theme: [league, tommies.scss]    ## night & league
+    mouse-wheel: true                ## yes enables mouse
+    preview-links: false             ## true brings up iframe window instead of "site"
+    code-annotations: hover 
+    quiz:
+      shuffleKey: "p"
+      defaultCorrect: "ROCK STAR!!!!"
+      defaultIncorrect: "try again, eh"
+      includeScore: true
+      disableOnCheck: true
+engine: knitr                        ## not picking up inline codes
+bibliography: bib.bib
+csl: apa7.csl
+#lightbox: true                     ## interferes with .absolute placement
+revealjs-plugins:                  
+  - quiz
+#  - spotlight                      ## cursor disappearing
+---
+
+```{r, warning=FALSE, message=FALSE}
+#devtools::install_github("hadley/emo")        ## if anyone else wants to render
+library(fontawesome)
+```
+
+## `r fontawesome::fa("cloud", fill="#9b7b78")``r emo::ji("broom")`house keeping `r fontawesome::fa("cloud", fill="#f9f6ee")``r emo::ji("broom")`
+
+:::: {.columns}
+
+::: {.column width="50%"}
+:::
+
+::: {.column width="50%"}
+
+Lectures: 
+
+:::{.ninety}
+
++ next exam 4/15
+  + Chapters 9--16
+  + [YOU]{.underline} will craft items
++ slides better? `r emo::ji("thinking_face")`
+
+:::
+
+Project:
+
+::: {.ninety}
+
++ launch on Thursday
++ have discriminant measure located prior to class
+
+:::
+
+:::
+::::
+
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHI0eDN5MHFrdTVhdDJ4bTc2eHcyYzZyZjg4OXFwODhyNm5odnFncyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/AhAysobj49aqQ/giphy.gif){.absolute left="-70" top="240" height="300"}
+
+![](https://www.freeiconspng.com/uploads/sweeping-png-15.png){.absolute top="100" left="-80" height="150"}  
+
+# [`r emo::ji("sun")` Welcome back!! `r emo::ji("snowflake")`]{.eighty}
+
+::: {.columns}
+::: {.column width="45%"}
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2F1eHAwcjU1cnBlZXk0YXYxd2I3dzJid2RzZ3U1YTJiODRjYmNwZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ohRqCx690yyUjjGavH/giphy.gif)
+:::
+::: {.column width="55%"}
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExeWRmMTc1YWhvZWNmOXczMWZ2aWh5dGlmb2ZxOTFna2ZtYmdzMDFiYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/d3mlmtNPoxNrt4Bi/giphy.gif){.absolute height="400"}
+:::
+::: 
+
+## Personality 
+
++ [Characteristics]{.bluescript} -- "nonintellecitve aspects of human behavior, typically distinguished from mental abilities"
++ [Traits]{.bluescript} -- "enduring dispositions -- tendencies to act, think, or feel in a certain manner"
++ [Types]{.bluescript} -- "general descriptions of people" $\leftarrow$ (categories)
++ [States]{.bluescript} -- "emotional reactions that vary from one situation to another"
+
+# [Applications in [Clinical & Counseling]{.underline} Settings]{.eighty}
+
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2l1ajA1YWRxMW53MzFlZHAwOHJ3d2JmYndkOTZhd241bTlkZHIzZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/lFeKAMNdm4DrVkRlUM/giphy.gif)
+
+## "Structured"^[asking subject to respond to a written statement (aka "objective" tests)] Test Construction Strategies
+
+::: {.columns}
+::: {.column width="50%"}
+
+### Deductive strategies:
+
+Define the [content domain]{.definition} (including the theoretical specification of the construct) and then sample items from that domain
+
+:::
+
+::: {.column width="50%"}
+
+### Empirical strategies:
+
+Collect data and leverage [statistical associations]{.definition} (typically via correlation and factor analysis) to determine test content (e.g., which items to retain)
+:::
+
+:::
+
+![](https://static.vecteezy.com/system/resources/previews/022/129/591/non_2x/speech-bubble-thought-bubble-comic-bubble-transparent-free-free-png.png){.absolute left="-150" bottom="10" height="300" .morerotate}
+
+![](https://www.freeiconspng.com/uploads/analytics-arrow-chart-graph-growth-report-statistics-icon-16.png){.absolute right="-100" bottom="20" height="300"}
+
+## Early Personality Tests^[assumed people were capable and willing to provide honest self--appraisals]
+
+::: {.columns}
+
+::: {.column width="47%"}
+
++ Woodworth Personal Data Sheet [@woodworth] -- purpose was to identify unfit military recruits
+  + 116 yes/no questions
+  + based on psychiatric interview questions
+  + [one]{.definition} overall score
+  
+:::
+
+::: {.column width="3%"}
+:::
+
+::: {.column width="50%"}
+
++ Bell Adjustment Inventory [@BAI]
+  + within different [life domains]{.definition} (e.g., work, home)
++ Bernreuter Personality Inventory [@bernreuter]
+  + 6 different [traits]{.definition} assessed 
+
+:::
+
+:::
+
+## The MMPI (overview)
+
+::: {.columns}
+
+::: {.column width="60%"}
+
++ identification of major disorders
++ true/false self--report
++ validity, clinical, & content scales
+
+::: {.callout-note}
+8 clinical scales, 2 content scales (masculinity--femininity & social--introversion), & 3 validity scales were the original focus of the MMPI. 
+
+:::
+
+:::
+
+::: {.column width="40%"}
+
+::: {.eighty}
++ [validity]{.bluescript} -- information about the person's approach to testing (e.g., did they try to [malinger]{.definition}) 
++ [clinical]{.bluescript} -- identification of psychological disorders (e.g., paranoia, schizophrenia) 
++ [content]{.bluescript} -- descriptive aspects of personality and emotional functioning (e.g., anxiety, anger) 
+
+:::
+
+:::
+:::
+
+## MMPI development
+
+Started with a [pool]{.definition} of 1000 items from case histories, psycholigcal reports, textbooks, & other tests. 
+
+::: {.columns}
+
+::: {.column width="65%"}
+
++ 550 items administered to psychiatric patients
+  + 8 different psychiatric diagnoses
+  + what items differentiated [psychiatric patients]{.definition} from [normal population]{.definition} respondents?
+
+:::
+
+::: {.column width="35%"}
+
+::: {.callout-note}
+The process of using a known sample to determine which items to retain or delete based on empirical associations is also known as [empirical keying]{.definition}
+
+:::
+
+:::
+:::
+
+## MMPI validity scales
+
+What was the test--taker's [attitude]{.definition} & were they [honest]{.definition} while responding?
+
+[L scale]{.bluescript} was designed to detect individuals who present themselves in an [overly favorable]{.definition} manner
+
+[K scale]{.bluescript} was [also]{.underline} designed to detect individuals who present themselves in an overly favorable manner but was [empirically keyed]{.definition}
+
+[F scale]{.bluescript} was designed to detect individuals who present themselves [disfavorably]{.definition} (aka malingering)
+
+## Interpretation
+
+Individual scales [did not]{.underline} do a fantastic job of identifying the 8 focal psychological disorders
+
+Clinicians started to look for [configural patterns]{.definition} [e.g., @meehl1960objective]
+
+::: {.ninety}
+:::: {.columns}
+
+::: {.column width="40%"}
+
+Patterns of high (and low) scores across the feedback report constitute a [profile]{.definition}
+
++ [Might]{.underline} provide more insight regarding presence of disorder
+
+:::
+
+::: {.column width="60%"}
+
+:::
+
+::::
+:::
+
+![](https://dailstrug.wordpress.com/wp-content/uploads/2022/02/7-8-mmpi-tues.png){.absolute right="-120" height="400" bottom="0"}
+
+## MMPI--2 [@mmpi2]
+
+Revised to update and expand norms ($n$=2,600), revise "out--of--date" items, create a separate form for adolescents, and broaden the item pool ($k$=567) as well as number of scales/ constructs
+
+:::: {.columns}
+::: {.column width="50%"}
+
++ 460 original items retained (however 68 edited for wording)
+  + 24 items added for [experimental]{.definition} purposes
+
+:::
+
+::: {.column width="50%"}
+::: {.callout-note}
+the [MMPI--3](https://www.upress.umn.edu/test-division/mmpi-3/) is actually the newest version [@mmpi3] -- computer administration of 335 items in ~30 minutes
+:::
+:::
+::::
+
+## California Psychological Inventory (CPI)
+
+Similar to the MMPI, created via empirical--keying and scored true/ false, [however]{.underline}, the intended population here is [normally adjusted individuals]{.definition}
+
+The 3^rd^ edition [is the most current version](https://shop.themyersbriggs.com/en/cpiitems.aspx?ic=1971&_gl=1*f10xa4*_gcl_au*MTAyMzUzMTkxLjE3NDM1MTY0MzA.) [originally created in 1950's @cpioriginal]
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
++ 36 total scales with hierarchical structure (some of these scales can be combined into [higher--order]{.definition} interpretations)
+
+:::
+
+::: {.column width="50%"}
+
++ Two versions available -- CPI 434 & CPI 260 (naming is based on the number of items on the inventory)
+:::
+
+::::
+
+## Factor Analysis 
+
+Analytical procedure that helps [discover]{.underline} or [confirm]{.underline} the [dimensionality]{.definition} of your measure (e.g., how many aggregate scales should be created from individual item responses?)
+
+
+
+:::: {.columns}
+
+::: {.column width="8%"}
+:::
+
+::: {.column width="30%"}
+
+Assumes that [underyling traits]{.definition} [drive responses]{.underline} to inventory items:
+ 
+:::
+
+::: {.column width="60%"}
+
+![](https://www.researchgate.net/publication/338434397/figure/fig1/AS:844756024311809@1578416939705/The-results-obtained-from-Confirmatory-Factor-Analysis-CAF-for-the-APQ-P-First.png){.absolute height="400"}
+
+:::
+
+::::
+
+## 16 PF^[no "item overlap" -- current favored strategy with multidimensional tests (MMPI & CPI [DO]{.underline} have item overlap and are therefore considered "complex")]
+
+::: {.ninety}
+Raymond B Cattell tried using factor analysis to help discover the major dimensions of personality (e.g., [how broad]{.definition} is it?) by administering an exhaustive list of 171 adjectives (aka person descriptors)
+:::
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
++ factor analysis revealed [16 different]{.definition} dimensions that accounted for agreeing or disaggreeing with the 171 items
+
+:::
+
+::: {.column width="50%"}
+
+![](https://www.dandebat.dk/images/1158p.jpg)
+
+:::
+::::
+
+## Edwards Personal Preference Schedule (EPPS)
+
+Example of a primarily "theoretically--derived"^[the textbook categorizations of "how a test is constructed" are not helpful or useful so we're focused on the resulting product (the test itself)] personality inventory that retains @murrayneeds's need system as a theoretical framework ([15]{.underline} specified in EPPS)
+
+:::: {.columns}
+::: {.column width="50%"}
+
+Concerned with [socially desirable]{.definition} responses, so paired items matched in desirability & asked respondents to select the most descriptive item!!
+
+
+
+:::
+
+::: {.column width="50%"}
+
+::: {.callout-warning}
+::: {.ninety}
+This strategy results in some peculiar scoring consequences -- every respondent has the same [total score]{.definition}, but relative allocation of scores is different (this is referred to as   [ipsative]{.definition} measurement)
+:::
+:::
+
+:::
+
+::::
+
+## NEO (origins)
+
+::: {.ninety}
+Some personality assessments are focused on manifestations of psychopathology (e.g., depression, anxiety, schizophrenia) -- an alternative looks for [resources an individual is endowed with]{.definition} that may help them successfully navigate the world 
+:::
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
++ NEO a very popular measure of "positive" personality characteristics
++ originally only assessed 3 traits (each with 6 [facets]{.definition} )
++ Likert--type response options (agreement)
+
+:::
+
+::: {.column width="40%"}
+
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExb2dwb2VqYmNvdmNncXVhZjBscTF6Z2Y0NW5jenBtcmc1N3pqbGw0NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/W9lzJDwciz6bS/giphy.gif){.absolute height="300"}
+:::
+::::
+
+## NEO (contemporary)
+
+Structured to assess dimensions (and facets) of the [five--factor model]{.definition} of personality
+
+:::: {.columns}
+::: {.column width="40%"}
+
++ Conscientiousness
++ Agreeableness
++ Neuroticism
++ Openness to Experience
++ Extraversion
+
+:::
+
+::: {.column width="60%"}
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+::: {.ninety}
+::: {.callout-note}
+Dimension (aka domain) names are reflective of only one [pole]{.definition} of construct continuum -- each has a corresponding opposing--pole alternative 
+
+:::
+:::
+
+:::
+
+::::
+
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGRjb3YxYmw3Y2ZwejF0a2sxa292Z212N29jOTNuamZqamhteTVuaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26xBtvzJcedxXIHVm/giphy.gif){.absolute height="300" right="-50" bottom="220"}
+
+## "Other" positive trait measures
+
+:::{.eighty}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
++ Rosenberg Self--Esteem Scale ($k$=10)
+  + global feelings of [self--worth]{.definition}
++ General Self--Efficacy Scale ($k$=10)
+  + belief in own abilities to succeed
++ Ego Resiliency Scale Revised ($k$=14)
+  + resilience and [emotional intelligence]{.definition}
++ Dispositional Resilience Scale (HARDY; $k$=45) 
+  + 3 subscales (communication, challenge, control)
++ Hope Scale ($k$=12)
+  + 2 scales (pathways, agency)
+
+:::
+
+::: {.column width="50%"}
+
++ Life Orientation Test--Revised ($k$=10)
+  + dispositional [optimisim]{.definition}
++ Satisfaction with Life Scale ($k$=5)
+  + overall satisfaction/ [global well--being]{.definition}
++ Positive and Negative Affect Schedule (PANAS; $k$=20)
+  + 2 orthogonal scales
++ Coping Intervention for Stressful Situations ($k$=48)
+  + 3 coping styles (task, emotion, avoidance)
++ Core Self--Evaluations `r emo::ji("unamused_face")`
+
+:::
+::::
+
+:::
+
+## A/An ________ is an enduring disposition -- a tendency to act, think, or feel in a certain manner {.quiz-question}
+
+- [trait]{.correct}
+- type
+- state
+- construct
+
+## Emotional reactions that can vary from one situation to another are referred to as ___________ {.quiz-question}
+
+- [states]{.correct} 
+- traits
+- constructs
+- domains
+
+## The analytical procedure used to determine "how many" scale aggregations are most appropriate is called ____________ {.quiz-question}
+
+- [Factor Analysis]{.correct}
+- Correlation
+- Regression
+- Principal Components Analysis
+
+## Considered the first personality test, the _____________ aimed to identify unfit military recruits {.quiz-question}
+
+- [Woodworth Personal Data Sheet]{.correct}
+- Bell Adjustment Inventory
+- Bernreuter Personality Inventory
+- Minnesota Multiphasic Personality Inventory
+
+## "Configural patterns" across an assessment feedback report are extracted from __________ {.quiz-question}
+
+- [profiles]{.correct}
+- protrusions
+- prominence
+- protraction
+
+## References
