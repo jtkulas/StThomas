@@ -635,6 +635,8 @@ Murray, H. A. (1938). <em>Explorations in personality</em>. Oxford University Pr
   <script src="Chapter14_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
   <script src="Chapter14_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="Chapter14_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="Chapter14_files/libs/revealjs/plugin/multiplex/socket.io.js"></script>
+  <script src="Chapter14_files/libs/revealjs/plugin/multiplex/multiplex.js"></script>
   <script src="Chapter14_files/libs/revealjs/plugin/reveal-quiz/quiz.js"></script>
   <script src="Chapter14_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
@@ -657,6 +659,7 @@ Murray, H. A. (1938). <em>Explorations in personality</em>. Oxford University Pr
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'multiplex': {"secret":null,"id":"53747f1a6dd84ba8","url":"https://reveal-multiplex.glitch.me/"},
 'quiz': {"checkKey":"c","resetKey":"q","allowNumberKeys":true,"disableOnCheck":true,"shuffleOptions":true,"defaultCorrect":"Inkblotastic!!","defaultIncorrect":"Inkbloterrible...","includeScore":true,"disableReset":false,"shuffleKey":"p"},
 'smaller': false,
  
@@ -831,7 +834,7 @@ Murray, H. A. (1938). <em>Explorations in personality</em>. Oxford University Pr
         plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealQuiz, QuartoSupport,
 
           RevealMath,
-          RevealNotes,
+          
           RevealSearch,
           RevealZoom
         ]

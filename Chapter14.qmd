@@ -6,7 +6,7 @@ title-slide-attributes:
   data-background-opacity: ".7"
 format:
   revealjs:
-#    multiplex: true
+    multiplex: true
     chalkboard: false
     slide-tone: false
     navigation-mode: linear
