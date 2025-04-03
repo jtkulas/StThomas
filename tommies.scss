@@ -8,6 +8,7 @@
 @import url('https://fonts.googleapis.com/css?family=Ribeye');
 @import url('https://fonts.googleapis.com/css?family=Black Ops One');
 @import url('https://fonts.googleapis.com/css?family=Boldonse');
+@import url('https://fonts.googleapis.com/css?family=Rubik Burned');
 
 /*-- scss:defaults --*/
 
@@ -55,6 +56,10 @@ $presentation-title-slide-text-color: black;
   font-size: 90px;
   color: #3458eb;
   font-family: 'Protest Guerrilla';
+}
+
+.larger {
+  font-size: 1.5em;
 }
 
 .smaller {
@@ -155,3 +160,7 @@ $presentation-title-slide-text-color: black;
   color: #03c6fc;
 }
 
+.projective {
+  font-family: 'Rubik Burned';
+  color: #e9c6b7;
+}

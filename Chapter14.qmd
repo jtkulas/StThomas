@@ -1,0 +1,313 @@
+---
+title: "Ψlogical<br>Testing" 
+author: "Chapter 14<br>[Projective<br>Personality Tests]{.projective}" 
+title-slide-attributes: 
+  data-background-image: https://img.atlasobscura.com/rEY48_0ZqzM-hTvQaeiZZtkDBlqTp1Mk3ei_FitDPf4/rt:fit/w:600/q:81/sm:1/scp:1/ar:1/aHR0cHM6Ly9hdGxh/cy1kZXYuczMuYW1h/em9uYXdzLmNvbS91/cGxvYWRzL2Fzc2V0/cy8yYjYzZTU4MWIy/MGE1YWFkOTRfU2Ny/ZWVuIFNob3QgMjAx/Ny0wNi0xMiBhdCAy/LjE0LjM3IFBNLnBu/Zw.png
+  data-background-opacity: ".7"
+format:
+  revealjs:
+#    multiplex: true
+    chalkboard: false
+    slide-tone: false
+    navigation-mode: linear
+    transition: convex
+    transition-speed: slow
+    controls: true
+    controls-layout: edges
+#    controls-tutorial: false
+    slide-number: c
+    mermaid:
+      theme: neutral
+#    output-location: slide           ## column-fragment; inserts blank 2nd slide
+    code-overflow: wrap              ## instead of horizontal scroll
+    theme: [league, tommies.scss]    ## night & league
+    mouse-wheel: true                ## yes enables mouse
+    preview-links: false             ## true brings up iframe window instead of "site"
+    code-annotations: hover 
+    quiz:
+      shuffleKey: "p"
+      defaultCorrect: "Inkblotastic!!"
+      defaultIncorrect: "Inkbloterrible..."
+      includeScore: true
+      disableOnCheck: true
+engine: knitr                        ## not picking up inline codes
+bibliography: bib.bib
+csl: apa7.csl
+#lightbox: true                     ## interferes with .absolute placement
+revealjs-plugins:                  
+  - quiz
+#  - spotlight                      ## cursor disappearing
+---
+
+```{r, warning=FALSE, message=FALSE}
+#devtools::install_github("hadley/emo")        ## if anyone else wants to render
+library(fontawesome)
+```
+
+## `r emo::ji("bathtub")``r emo::ji("soap")` cleaning up `r emo::ji("soap")``r emo::ji("shower")`
+
+:::: {.columns}
+
+::: {.column width="55%"}
+:::
+
+::: {.column width="45%"}
+
+Lectures: 
+
+:::{.ninety}
+
++ next exam 4/15
+  + Chapters 9--16
+  + [YOU]{.underline} will craft items
++ slides better? `r emo::ji("face_with_monocle")`
+
+:::
+
+Project:
+
+::: {.ninety}
+
++ launch TONIGHT!!
++ `r emo::ji("partying_face")``r emo::ji("partying_face")``r emo::ji("partying_face")`
+
+:::
+
+:::
+::::
+
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3VrMmNocmQ4ZDBpdDNsemwwMGQ1eHlmNjE0cXJraHRmcW15cGtxbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LFNwNDv1kkwEg/giphy.gif){.absolute left="-70" top="140" height="400"}
+
+![](https://www.freeiconspng.com/uploads/sweeping-png-15.png){.absolute bottom="330" left="410" height="150" .mirror}  
+
+# The projective hypothesis: 
+
+>`r fontawesome::fa("quote-left", fill="#f9f6ee")` When people attempt to understand an ambiguous or vague stimulus, their [interpretation]{.underline} of that stimulus reflects their **needs**, **feelings**, **experiences**, **prior conditioning**, **thought processes**, and so forth `r fontawesome::fa("quote-right", fill="#f9f6ee")` [*informed* by @frank1939projective]
+
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2lwMHFkdTh1eXo2dmZ6d3Jsc3o0dXp1ejNnYWR3YnIxamlmNHBqMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2H67VmB5UEBmU/giphy.gif){.absolute right="-100" top="60"}
+
+## [The Rorschach Inkblot Test](https://youtu.be/LYi19-Vx6go)
+
+::: {.columns}
+::: {.column width="70%"}
+
++ General idea of using ambiguous inkblots in testing dates to 1800's
++ Rorschach gained notoriety because he leveraged inkblots to identify [psychological disorders]{.definition}
++ 10 "original" stimuli [widely accessible](https://www.rorschach.org/)
++ goal is for subject's response to reflect [only the subject]{.underline} (zero adminstrator expectation influence)
+
+
+:::
+
+::: {.column width="30%"}
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+::: {.callout-note}
+
+Rorschach created the stimuli himself by dropping ink on a card, then folding it `r emo::ji("smiling_face_with_sunglasses")` 
+
+:::
+
+:::
+
+:::
+
+![](https://platform.polygon.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/23060419/jbareham_211202_ecl1142_bestof2021_dc_comics.jpg?quality=90&strip=all&crop=7.8,0,84.4,100){.absolute right="-120" top="10" height="250"}
+
+## Rorschach administration^[note that there are (at least 5) different advocated [administration protocols]{.definition}]
+
+::: {.columns}
+
+::: {.column width="55%"}
+
++ individually administered with no restriction placed on type of response given
++ generally, [ambiguity]{.underline} is favored over communication of [expectations]{.definition}
+  + this is obviously **VERY** different from most test administration contexts
+  
+:::
+
+::: {.column width="45%"}
+
++ each card is administered twice (*free--association* & *inquiry* phases)
++ subject [handles]{.definition} the card, which explains why "rotation/ position" at time of response is recorded 
+
+:::
+
+:::
+
+## Rorschach scoring^[as with administration, the lack of standardization means that different users are likely applying vastly different scoring protocols]
+
+::: {.columns}
+
+::: {.column width="40%"}
+
+### Free--association phase:
+
++ [verbatim responses]{.definition} are typically recorded as well as [duration]{.definition} and [card position]{.definition} 
+
+:::
+
+::: {.column width="60%"}
+
+### [Inquiry phase](http://fourstarbooks.net/portfolio/trade/rose-03.pdf): 
+
+::: {.eighty}
+
+  + [location]{.definition} -- section being used (whole, detail, white space)
+  + [determinant]{.definition} -- features responded to (form, movement, shading)
+  + [form quality]{.definition} -- is answer a "fit" to location of inkblot indicated
+  + [content]{.definition} -- name used in response (human, animal, geography)
+  + [frequency]{.definition} -- common (to other respondents) or unique
+
+:::
+
+:::
+:::
+
+![](https://png.pngtree.com/png-vector/20221102/ourmid/pngtree-black-ink-blot-spot-paint-splash-isolated-on-transparent-background-png-image_6407402.png){.absolute left="200" bottom="90" height="200"}
+
+![](https://hips.hearstapps.com/hmg-prod/images/watchmen1-1561405767.jpg?crop=1xw:0.75xh;center,top&resize=1200:*){.absolute height="200" right="-70" top="-50"}
+
+## The @holtzmaninkblot...
+
+...is an alternative inkblot test that addresses common criticisms of the Rorschach (variable number of [respondent answers]{.definition}, lack of administration protocol [standardization]{.definition}, & no [alternative form]{.definition}) 
+
+::: {.columns}
+
+::: {.column width="65%"}
+
++ subject only allowed [one response]{.definition} per card
++ administration and scoring are [carefully explained]{.definition} and [standardized]{.definition}
++ two forms (A & B) both consisting of 45 cards
+
+:::
+
+::: {.column width="35%"}
+
+::: {.callout-note}
+22 scoring dimensions include direct appraisals of constructs such as [anxiety]{.definition} and [hostility]{.definition}
+
+:::
+
+:::
+:::
+
+## Thematic Apperception Test
+
+Intended to evaluating [normal personality characteristics]{.underline}^[note, however, especially with projective tests, [intended]{.definition} and [eventual]{.definition} uses often diverge -- clinicians may believe to have found additional insight beyond what the test developers initially intended] through the lens of @murrayneeds's model of [28 human needs]{.definition} (same theoretical framework as was retained for the [EPPS](https://bookdown.org/jtkulas/chapter13/Chapter13.html#/edwards-personal-preference-schedule-epps)). 
+
+::: {.columns}
+::: {.column width="60%"}
+
++ [30 pictures](https://www.carepatron.com/files/thematic-apperception-test.pdf) + 1 blank card (gender-- & age--specific)
++ no widely--accepted standardized administration or scoring
+
+:::
+
+::: {.column width="40%"}
+
+::: {.ninety}
+::: {.callout-note}
+the [achievement]{.definition} motive has traditionally been the need most vigorously evaluated with the TAT
+:::
+:::
+
+:::
+:::
+
+## TAT interpretation
+
+[Response latencies]{.definition} (to first uttered response) are interpreted as possible indicators of difficulty with card interpretation -- as with other projective tests, verbatim responses are also recorded
+
+:::: {.columns}
+
+::: {.ninety}
+::: {.column width="50%"}
+
+Common interpretations focus on:
+
++ [hero]{.bluescript} -- character subject identifies with
++ [needs]{.bluescript} -- what motivates the hero
+
+
+:::
+
+::: {.column width="50%"}
+
++ [press]{.bluescript} -- factors interfering with satisfaction of needs
++ [themes]{.bluescript} -- mood or characteristic given (e.g., depression)
++ [outcomes]{.bluescript} -- consequence of story (e.g., success/ failure)
+:::
+:::
+
+::::
+
+## [Nonpictoral]{.underline} projective procedures...
+
+...ask subjects to respond to requests that don't involve visual stimuli
+
+:::: {.columns}
+::: {.column width="65%"}
+
+:::{.eighty}
+[Word Association Test]{.definition} [@jung1910association]
+
++ respond with first word that comes to mind (after a prompt)
+
+[Sentence Completion Tasks]{.definition}^[might help disclose embarassing information that would be withheld in conversation]
+
++ partial statements to be completed (e.g., I feel ________ )
+
+[Figure Drawing Tests]{.definition}
+:::
+
+:::
+
+::: {.column width="30%"}
+
+:::
+::::
+
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDgycDN3Zno2bHVycmliNG9mMjJiYmF5cGNuNHNpazBicG5nc29xeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l4Ep3fCFdqRmmLPjO/giphy.gif){.absolute right="-100" top="200"}
+
+## This projective assessment asks subjects to tell a story from ambiguous pictures {.quiz-question}
+
+- [Thematic Apperception Test]{.correct}
+- Rorschach
+- Holtzman
+- Figure Drawing Test
+
+## [Within the TAT, the character the subject [identifies with]{.definition} is referred to as the ___________]{.ninety} {.quiz-question}
+
+- [hero]{.correct} 
+- subject
+- focus
+- character
+
+## Methodologically, response times are also sometimes referred to as __________ {.quiz-question}
+
+- [latencies]{.correct}
+- durations
+- milliseconds
+- intervals
+
+## Which of the following is considered to have the [greatest degree of standardization]{.underline}? {.quiz-question}
+
+- [Holtzman]{.correct}
+- Rorschach
+- TAT
+- Word Association
+
+## Rorschach was only ______ years old when he died `r emo::ji("crying_face")` {.quiz-question}
+
+- [37]{.correct}
+- 27
+- 57
+- 47
+
+## References
