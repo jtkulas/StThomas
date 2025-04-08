@@ -1,0 +1,388 @@
+---
+title: "Ψlogical<br>Testing" 
+author: "Chapter 15<br>[Computers & Ψ Science]{.workbench}" 
+title-slide-attributes: 
+  data-background-image: https://img.freepik.com/premium-photo/3d-vector-robot-chatbot-ai-science-business-technology-engineering-concept_979520-4494.jpg
+  data-background-opacity: ".7"
+format:
+  revealjs:
+    multiplex: true
+    chalkboard: false
+    slide-tone: false
+    navigation-mode: linear
+    transition: convex
+    transition-speed: slow
+    controls: true
+    controls-layout: edges
+#    controls-tutorial: false
+    slide-number: c
+    mermaid:
+      theme: neutral
+#    output-location: slide           ## column-fragment; inserts blank 2nd slide
+    code-overflow: wrap              ## instead of horizontal scroll
+    theme: [league, tommies.scss]    ## night & league
+    mouse-wheel: true                ## yes enables mouse
+    preview-links: false             ## true brings up iframe window instead of "site"
+    code-annotations: hover 
+    quiz:
+      shuffleKey: "p"
+      defaultCorrect: "The CBT Worked!!!"
+      defaultIncorrect: "oh well, back to the drawing board..."
+      includeScore: true
+      disableOnCheck: true
+engine: knitr                        ## not picking up inline codes
+bibliography: bib.bib
+csl: apa7.csl
+#lightbox: true                     ## interferes with .absolute placement
+revealjs-plugins:                  
+  - quiz
+#  - spotlight                      ## cursor disappearing
+---
+
+```{r, warning=FALSE, message=FALSE}
+#devtools::install_github("hadley/emo")        ## if anyone else wants to render
+library(fontawesome)
+```
+
+## `r emo::ji("broom")``r emo::ji("broom")` Tidying Up `r fontawesome::fa("hand-sparkles", fill="#ebe3b5")``r fontawesome::fa("hand-sparkles", fill="#ebe3b5")`
+
+:::: {.columns}
+
+::: {.column width="50%"}
+:::
+
+::: {.column width="50%"}
+
+Lectures: 
+
+:::{.ninety}
+
++ next exam 4/15
+  + Chapters 9--16
+  + [YOU]{.underline} will craft items
+  
++ [presentation groups]{.underline} start 4/17
+
+:::
+
+Project:
+
+::: {.ninety}
+
++ send to EAs TONIGHT!!
++ `r emo::ji("partying_face")``r emo::ji("partying_face")``r emo::ji("partying_face")`
+
+:::
+
+:::
+::::
+
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmw3YzE4N2t3OHp0NW1wYnlyY3E2dWptcjludGJieTI5MDJvZXUyZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/yRipd9R8vvYWbByTZs/giphy.gif){.absolute left="0" top="140" height="400"}
+
+![](https://www.freeiconspng.com/uploads/sweeping-png-15.png){.absolute bottom="360" left="-130" height="150"}  
+
+## {background-image="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZW1scTVnZXgyb3lyZGJpcGtxaThqd2x6bzkzdjd3M2cxNXo4MWE5eiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ZVtRt9okcKpIh5yCGW/giphy.gif"}
+
+## `r emo::ji("telescope")``r emo::ji("shooting_star")`ASTEROID [YR4]{.greenscript} [PANIC METER](https://nypost.com/2025/04/03/us-news/city-killer-asteroid-now-likely-to-miss-earth-but-may-be-on-crash-course-with-the-moon/)!!!`r emo::ji("milky_way")``r emo::ji("collision")`
+
+::: {.columns}
+::: {.column width="10%"}
+:::
+
+::: {.column width="80%"}
+```{r}
+#| title: Impending Celestial Apocolypse
+#| fig-width: 8
+
+library(dygraphs)
+library(magrittr)
+
+Date <- c("12/27/24",
+          "1/29/25",
+          "02/7/25",
+          "02/11/25", 
+          "02/14/25", 
+          "02/18/25",
+          "02/19/25",
+          "02/20/25",
+          "02/24/25",
+          "02/25/25",
+          "04/3/25")
+earth <- c(1.2, 
+                 1.3,
+                 2.2,
+                 2.4, 
+                 2.6, 
+                 3.1,
+                 1.5,
+                 .28,
+                 .005,
+                 .0027,
+                  .0027)
+
+moon <- c(.0027, 
+          .0027,
+          .0027,
+          1, 
+          1, 
+          1,
+          0.8,
+          .8,
+          .8,
+          1.7,
+          3.8)
+
+responses <- as.data.frame(cbind(Date,earth,moon))
+
+responses$Date <- as.Date(responses$Date, format="%m/%d/%y")
+
+plotresp <- ts(responses)
+dygraph(responses) %>%
+  dySeries("earth", label="Earth") %>%
+  dySeries("moon", label="Moon") %>%
+  dyAxis("y", label="Odds of Doom (%)") %>%
+  dyOptions(fillGraph=TRUE, fillAlpha=0.4) %>%
+  dyRangeSelector()
+```
+:::
+:::
+
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcWd4eXBzcHo1MDExdWp6eTdvY3BxaTF2NzNobXJsaTF1NDk2MjVsdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/HUkOv6BNWc1HO/giphy.gif){.absolute right="-130" bottom="25" height="200"}
+
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTA1YzJheGFnamJ0aGZyODFmbmxkZ2JkcXZrb21jNTU2YTYyNXgzZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l46CvyAn1oBTOZtZK/giphy.gif){.absolute left="-150" top="120" height="200"}
+
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaDlmNWV0OWNtbWoxbXdzbW1iOGk5dXF3OG9ocnR3ZnRqeDUyaHJlMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l3978y5HqiEtqupiM/giphy.gif){.absolute right="-110" top="125" height="200"}
+
+# Cognitive--Behavioral Assessment: 
+
+...how to treat [disordered behavior]{.definition}
+
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2R2NjVvY3U4djk3ajhzbHRzYnd1bnYxZG8xcGxkN2R0cjY3aG9rMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l4EpgzkiwfFJKADLy/giphy.gif){.absolute right="-120" bottom="-100" height="300"}
+
+## Rationale for Cognitive--Behavioral Assessment
+
+::: {.columns}
+::: {.column width="70%"}
+
++ the [behaviors]{.definition}, [thought processes]{.definition}, or [physiological responses]{.definition} that define a [disordered condition]{.underline} are the real problem
+  + [underlying cause]{.underline} itself not of primary concern with regard to the problem [behavior]{.definition}, [thought]{.definition}, or [response]{.definition}
+  + what are preceding and subsequent factors?
+
+
+:::
+
+::: {.column width="30%"}
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+::: {.callout-note}
+
+[treatment]{.bluescript} is focused on the problem behavior, etc -- behavioral [modification]{.underline}
+
+:::
+
+:::
+
+:::
+
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExa3lqdWI4NHFwbm81bzhleTZrN3V5bDJoNzVtbDM0OWZuMnA4MG43MyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT39D90YpL832xChi0/giphy.gif){.absolute right="-120" top="100" height="200"}
+
+## CBA with Operant conditioning
+
+::: {.columns}
+
+::: {.column width="50%"}
+
++ [situations]{.underline} are the primary determinants of behavior
++ attempts are made to either [increase]{.underline} a behavioral [deficit]{.definition} or [decrease]{.underline} a behavioral [excess]{.definition} via treatment intervention
+
+  
+:::
+
+::: {.column width="50%"}
+
++ [baseline]{.definition} = focal behavior's **frequency**, **duration**, or **intensity** prior to treatment
++ The [self--report technique]{.definition} asks subject to record own behavior (thoughts, feelings, etc)
+
+
+
+:::
+
+:::
+
+## The [Fear Survey Schedule](https://arc.psych.wisc.edu/self-report/fear-survey-schedule-fss/)
+
+::: {.columns}
+
+::: {.column width="50%"}
+
++ oldest and most researched cognitive--behavioral self--report procedure
+  + came from a dissertation [@akutagawa1956study]
++ different versions exist for different target populations (e.g., children, adolescents, parents)
+
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="40%"}
+
+<br>
+<br>
+<br>
+<br>
+
+[![](https://cfeci.org/wp-content/uploads/2022/03/Survey_button.png)](https://docs.google.com/spreadsheets/d/1GlGC8_yGYYiqQSzqCTvkBJa0z6b8aO4QSx7bc1AMk04/edit?usp=sharing)
+
+:::
+:::
+
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDVpcnRiOGprcGZzcjByNGpic3U0MDZ3cGpseW80YzB3N3lsNzNmciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7abrH8o4HMgEAV9e/giphy.gif){.absolute right="-100" top="0" height="250"}
+
+## Other self--report [procedures]{.definition}
+
+::: {.columns}
+::: {.column width="50%"}
+
+[Dysfunctional Attitude Scale]{.underline}:
+
++ [beliefs]{.definition} that could interact with a [stressor]{.definition} to produce psychopathology
+
+[Irrational Beliefs Test]{.underline} (IBT):
+
++ 50 items indicate absence of irrationality, 50 indicate presence
+
+:::
+
+::: {.column width="50%"}
+
+[Irrational Beliefs Inventory]{.underline}:
+
++ addresses criticisms of the IBT (tries to separate [irrational beliefs]{.definition} from the [negative consequences]{.definition} of those beliefs)
+
+:::
+:::
+
+## Psychophysiological procedures
+
+heart rate `r emo::ji("beating_heart")`, blood pressure, galvanic skin response, skin temperature $\leftarrow$ indicators of ???
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+[FEAR]{.underline}, for example, is known to typically elicit physiological responses -- can other constructs? 
+
++ sometimes framed as more [distal]{.definition} measures (as opposed to [proximal]{.definition})
+  + ...[consequence]{.underline} of (rather than the construct itself)
+
+:::
+
+::: {.column width="40%"}
+
+:::
+
+::::
+
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdnBsdWcybHBuam4xNGdudHp3ajBjbGRlbWpyNnh1ZXgzNXNtNWVpcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/rbaC8w0QY1vGw/giphy.gif){.absolute right="-120" bottom="120"}
+
+## Computers
+
+:::: {.columns}
+::: {.column width="50%"}
+
+[Computer--assisted interviews]{.underline}:
+
++ respondents more willing to divulge sensitive or embarassing information
+
+[Computer--administered tests]{.underline}:^[again do not confuse with Computerized Adaptive Testing (CAT) `r emo::ji("cat")`]
+
++ currently norm
+
+:::
+
+::: {.column width="50%"}
+
+[Computer scoring]{.underline}:
+
++ has "*always*" been done -- speed of feedback delivery has changed
+
+::: {.callout-note}
+
+Some modern procedures [require]{.underline} computer administration (e.g., virtual reality, response latency)
+
+:::
+
+:::
+
+::::
+
+## Assessment groups:
+
+<br>
+<br>
+<br>
+
+Starting 4/17(??) (Thursdays):
+
+::: {.ninety}
+| Al Pacas`r emo::ji("llama")`  | Belugas`r emo::ji("spouting_whale")` | Camels`r emo::ji("two_hump_camel")` |  Dingos`r emo::ji("fox")`   |  Elephants`r emo::ji("elephant")` |
+|-----------|----------|----------|-----------|------------|
+| Vanessa A | Mae F    | Sarah J  | Sarah M   | Hannah T   |
+| Sabina B  | Alaina G | Thomas J | Raelyn R  | William T  |
+| Nathan B  | Payton H | Grace K  | Ellen R   | Jennifer T |
+| Maritza B | Elly J   | Grace L  | Rachel S  | Lila W     |
+:::
+
+![](present.JPG){.absolute right="-120" top="-30" height="300"}
+
+## Project groups:
+
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2phcnZ3Z2Q1dTlqOHJldW16NGwzZnBrNnFtdm40Y3BmMmRkMG91dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xUA7bbaSmCUfNYjhks/giphy.gif){.absolute left="120"}
+
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2h1dWphM2VranJjcHl3Y252c3JvMnNkcmI5b3Fodmp4NWZjbGJuOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/YHvwPgwojjsFa/giphy.gif){.absolute right="-50" bottom="0"}
+
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeTY1aWY4YThta2NtNGF1Y2I3YXc3NmFhbWkxaWJhb3JsNjAwbDJjaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l1J3o5to1feuXRiuI/giphy.gif){.absolute right="0" top="0"}
+
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExamN1cnQwemU4cGtqb281aXIyOGxzazYxbjY3anFqZWF5dnpyOHppbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Jl4e4EbjO041O/giphy.gif){.absolute left="0" bottom="0"}
+
+## The current odds of YR4 hitting the moon in 2032 are ___________  {.quiz-question}
+
+- [3.8%]{.correct}
+- 0.8%
+- 1.8%
+- 2.8%
+
+## A behavior's frequency, duration, or intensity prior to treatment  {.quiz-question}
+
+- [baseline]{.correct} 
+- stasis
+- equivalence
+- norm
+
+## [The oldest and "most researched" cognitive--behavioral self--report measure is the _________]{.ninety} {.quiz-question}
+
+- [Fear Survey Schedule]{.correct}
+- Dysfunctional Attitude Scale
+- Irrational Beliefs Inventory
+- Irational Beliefs Test
+
+## Measures such as heart rate, blood pressure, and GSR can be labeled as __________ procedures {.quiz-question}
+
+- [psychophysiological]{.correct}
+- psychophysical
+- neuropsychological
+- biopsychological
+
+## [Item administrations that are uniquely tailored to the respondent's ability level occur within __________]{.ninety} {.quiz-question}
+
+- [Computerized Adaptive Tests]{.correct}
+- Computer Administered Tests
+- Controlled Apperceptive Tests
+- Controversial Aggregation Tests
+
+## References
