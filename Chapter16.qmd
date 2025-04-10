@@ -1,0 +1,404 @@
+---
+title: "Ψlogical<br>Testing..." 
+author: "Chapter 16<br>...in [Counseling Psychology]{.counseling .larger}" 
+title-slide-attributes: 
+  data-background-image: https://health.osu.edu/-/media/health/images/stories/2022/03/man-therapy.jpeg
+  data-background-opacity: ".7"
+format:
+  revealjs:
+    multiplex: true
+    chalkboard: false
+    slide-tone: false
+    navigation-mode: linear
+    transition: convex
+    transition-speed: slow
+    controls: true
+    controls-layout: edges
+#    controls-tutorial: false
+    slide-number: c
+    mermaid:
+      theme: neutral
+#    output-location: slide           ## column-fragment; inserts blank 2nd slide
+    code-overflow: wrap              ## instead of horizontal scroll
+    theme: [league, tommies.scss]    ## night & league
+    mouse-wheel: true                ## yes enables mouse
+    preview-links: false             ## true brings up iframe window instead of "site"
+    code-annotations: hover 
+    quiz:
+      shuffleKey: "p"
+      defaultCorrect: "YES!!! INTEREST--ING!!!"
+      defaultIncorrect: "NO, NOT interest--ing..."
+      includeScore: true
+      disableOnCheck: true
+engine: knitr                        ## not picking up inline codes
+bibliography: bib.bib
+csl: apa7.csl
+#lightbox: true                     ## interferes with .absolute placement
+revealjs-plugins:                  
+  - quiz
+#  - spotlight                      ## cursor disappearing
+---
+
+```{r, warning=FALSE, message=FALSE}
+#devtools::install_github("hadley/emo")        ## if anyone else wants to render
+library(fontawesome)
+```
+
+## `r emo::ji("broom")``r emo::ji("wastebasket")` Cleaning Up `r emo::ji("wastebasket")``r emo::ji("broom")`
+
+:::: {.columns}
+
+::: {.column width="50%"}
+:::
+
+::: {.column width="50%"}
+
+Lectures: 
+
+:::{.ninety}
+
++ next exam 4/15
+  + Chapters 9--16
+  + [YOU]{.underline} will craft items (tonight)
+  
++ [presentation groups]{.underline} start 4/24
+
+:::
+
+Project:
+
+::: {.ninety}
+
++ send to EAs TONIGHT!!
++ `r emo::ji("face_with_rolling_eyes")``r emo::ji("face_with_rolling_eyes")``r emo::ji("face_with_rolling_eyes")`
+
+:::
+
+:::
+::::
+
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExN3QwNHYydWp2cGdoMG1hZ2FnOWloZ21kNWd4Nnp0NmY0aDByemQ2dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/cKfVR0FTr3544N551E/giphy.gif){.absolute left="0" top="140" height="400"}
+
+![](https://www.freeiconspng.com/uploads/sweeping-png-15.png){.absolute bottom="135" right="-40" height="150" .mirror}  
+
+## `r emo::ji("telescope")``r emo::ji("shooting_star")`ASTEROID [YR4]{.greenscript} [PANIC METER](https://www.iflscience.com/dangerous-asteroid-has-a-1-in-25-chance-of-hitting-the-moon-if-it-hits-it-will-be-pretty-spectacular-78738)!!!`r emo::ji("milky_way")``r emo::ji("collision")`
+
+::: {.columns}
+::: {.column width="10%"}
+:::
+
+::: {.column width="80%"}
+```{r}
+#| title: Impending Celestial Apocolypse
+#| fig-width: 8
+
+library(dygraphs)
+library(magrittr)
+
+Date <- c("12/27/24",
+          "1/29/25",
+          "02/7/25",
+          "02/11/25", 
+          "02/14/25", 
+          "02/18/25",
+          "02/19/25",
+          "02/20/25",
+          "02/24/25",
+          "02/25/25",
+          "04/3/25")
+earth <- c(1.2, 
+                 1.3,
+                 2.2,
+                 2.4, 
+                 2.6, 
+                 3.1,
+                 1.5,
+                 .28,
+                 .005,
+                 .0027,
+                  .0027)
+
+moon <- c(.0027, 
+          .0027,
+          .0027,
+          1, 
+          1, 
+          1,
+          0.8,
+          .8,
+          .8,
+          1.7,
+          3.8)
+
+responses <- as.data.frame(cbind(Date,earth,moon))
+
+responses$Date <- as.Date(responses$Date, format="%m/%d/%y")
+
+plotresp <- ts(responses)
+dygraph(responses) %>%
+  dySeries("earth", label="Earth") %>%
+  dySeries("moon", label="Moon") %>%
+  dyAxis("y", label="Odds of Doom (%)") %>%
+  dyOptions(fillGraph=TRUE, fillAlpha=0.4) %>%
+  dyRangeSelector()
+```
+:::
+:::
+
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcWd4eXBzcHo1MDExdWp6eTdvY3BxaTF2NzNobXJsaTF1NDk2MjVsdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/HUkOv6BNWc1HO/giphy.gif){.absolute right="-130" bottom="25" height="200"}
+
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTA1YzJheGFnamJ0aGZyODFmbmxkZ2JkcXZrb21jNTU2YTYyNXgzZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l46CvyAn1oBTOZtZK/giphy.gif){.absolute left="-150" top="120" height="200"}
+
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaDlmNWV0OWNtbWoxbXdzbW1iOGk5dXF3OG9ocnR3ZnRqeDUyaHJlMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l3978y5HqiEtqupiM/giphy.gif){.absolute right="-110" top="125" height="200"}
+
+# Career Counseling 
+
+...helping maximize [person--job fit]{.definition}
+
+::: {.columns}
+::: {.column width="20%"}
+:::
+
+::: {.column width="80%"}
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2w5cWU2Y29pcXBzZ2xiNGRjcHVjbHl5cWdtem5udndidzhxeXRmayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8FXf9L8FKpe9VMHFNc/giphy.gif)
+:::
+:::
+
+## Interests
+
+>`r fontawesome::fa("quote-left", fill="#f9f6ee")` if you want to enter an [appropriate career]{.definition}, you must identify your [interests]{.definition} `r fontawesome::fa("quote-right", fill="#f9f6ee")`^[several different Psychological tests exist to help with this] [@kaplan2018saccuzzo, p. 426]
+
+::: {.columns}
+::: {.column width="60%"}
+
++ workers within different [occupational groups]{.underline} tend to enjoy different activities `r emo::ji("thinking_face")`
++ interests are thought to be stable & enduring (@ ~17 yo)
+
+:::
+
+::: {.column width="40%"}
+
+::: {.callout-note}
+
+Some interests are universal (found within occupations across cultures), but there are likely gender differences in interests (controversial)
+:::
+
+:::
+
+:::
+
+## Interest [inventories]{.underline}
+
+::: {.columns}
+
+::: {.column width="50%"}
+
++ first (published) interest inventory was the Carnegie Interest Inventory [@carnegieinterest]
++ [Strong](https://files.eric.ed.gov/fulltext/ED341881.pdf#page=42)'s first publication on interest measurement was in 1926 (Strong Vocational Interest Blank)
+  + empirically--keyed^[aka [criterion keying]{.underline} or [criterion--group approach]{.underline}]
+
+  
+:::
+
+::: {.column width="50%"}
+
++ Strong--Campbell Interest Inventory [@svibscii] aimed to mitigate gender differences
+  + also incorporated @holland1959theory's theory of vocational choice
+
+:::
+
+:::
+
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExOWs0emg4bWE3Nnl5cWxkeTIydHQydTZjZDc2MXZ6c2ZlZGNtdGR5YSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ghHDuqJ1uh9vP2gKdC/giphy.gif){.absolute right="50" bottom="-30" height="200"}
+
+## Holland
+
+:::{.ninety}
+
+>`r fontawesome::fa("quote-left", fill="#f9f6ee")` interests express [personality]{.definition} and people can be classified into one or more of 6 categories according to their interests `r fontawesome::fa("quote-right", fill="#f9f6ee")` [@kaplan2018saccuzzo, p. 428]
+
+::: {.columns}
+
+::: {.column width="50%"}
+
++ vocational choice theory postulates [greater success & satisfaction]{.underline} with occupations that [match your personality](https://www.onetonline.org/find/descriptor/browse/1.B.1/)
++ RIASEC is a [type--based]{.definition} theory of personality that is also used to describe [work environments]{.definition}
+
+:::
+
+::: {.column width="50%"}
+
+::: {.ninety}
+
++ procedurally, [top 3]{.definition} personality dimensions used as [code]{.definition} to identify documented occupations
+
+  + [Questionable but uses<br>Holland's model](https://www.careeronestop.org/Toolkit/Careers/interest-assessment.aspx)
+
+  + [O\*Net's Interest Profiler](https://www.mynextmove.org/explore/ip)
+
++ current version of the "Strong" ([SSI^`r fontawesome::fa("registered")`^](https://www.themyersbriggs.com/en-US/Products-and-Services/Strong)) is fully integrated with Holland's RIASEC model
+
+:::
+
+:::
+:::
+
+:::
+
+![](https://images.squarespace-cdn.com/content/v1/5ea9b3dc4a1d870f88a99f57/465cbc49-3ba8-4fa8-8fb7-282604e1b962/Holland+Hexagon+Career+Key.png?format=1000w){.absolute right="-150" bottom="120" height="225"}
+
+## Kuder Occupational Interest Survey
+
+First published as the Kuder Preference Survey [@kuderocc] by the ***same guy*** who gave us [KR~20~](https://bookdown.org/jtkulas/chapter4/Chapter4.html#/alpha-and-kr20)
+
+::: {.columns}
+::: {.column width="70%"}
+
++ different activities are presented in [triads]{.definition}
+  + test--taker selects [most]{.underline} & [least]{.underline} preferred activity
++ feedback given on 10 general occupational interests as well as several possible [college majors]{.definition}
+
+:::
+
+::: {.column width="30%"}
+
+::: {.eighty}
+
++ Outdoor
++ Mechanical
++ Science
++ Technical Sales
++ Management
++ Arts
++ Communication
++ Social
++ Personal Services
++ Business Operations
+:::
+
+:::
+:::
+
+## Other interest inventories
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+[Jackson Vocational Interest Survey]{.underline}:
+
++ 289 job--related statements aggregate to 34 "basic interest" scales
+  + forced choice between 2 statements
+  + 45 minutes administration time
+
+:::
+
+::: {.column width="50%"}
+
+[Career Assessment Inventory]{.underline}:
+
++ aimed at careers not requiring college or professional training
+
+[Self--Directed Search]{.underline}:
+
++ Holland's own inventory is self--administered & scored
+
+:::
+
+::::
+
+## Gender [differences]{.underline}
+
+Differences do not necessarily indicate [bias]{.definition} -- it is possible that men & women ***[at the group--level]{.underline}*** have meaningfully different interest profiles^[this perspective is the foundation of the "controversy" -- not just with gender interests, but across [groups]{.definition}, [constructs]{.definition}, & [tests]{.definition}]
+
+:::: {.columns}
+::: {.column width="60%"}
+
++ Commission on Sex Bias in Measurement established in 1973 by the Association for Measurement and Evaluation in Guidance (AMEG; now [American Counseling Association](https://www.counseling.org/))
+
+:::
+
+::: {.column width="40%"}
+
++ based on committee recommendations, many inventories stopped using separate norms for men and women
+:::
+
+::::
+
+## Other [placement]{.underline} constructs
+
+[Interest]{.definition} is not the [only]{.underline} useful consideration when helping individuals find satisfying or acceptable work applications
+
+:::: {.columns}
+::: {.column width="60%"}
+
++ [skill]{.definition} & [knowledge]{.definition} both common important considerations for [actual performance]{.definition}
++ [interest]{.definition} has stronger associations with [satisfaction]{.underline} and [tenure]{.underline}
+
+:::
+
+::: {.column width="40%"}
+
+:::
+
+::::
+
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNG9wZHZ0dGVycmFodTN1d2hwdTFleWtsNTR5OTluZWIzNjk1aXZobSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3ohs81rDuEz9ioJzAA/giphy.gif){.absolute right="-100" bottom="70"}
+
+## The surname most closely associated with interest inventories is ___________  {.quiz-question}
+
+- [Strong]{.correct}
+- Fortune
+- Vivid
+- Heavy
+
+## Interests are believed to be fairly stable (as of roughly 17 years old)  {.quiz-question}
+
+- [True]{.correct} 
+- False
+
+
+## [Holland's "Realistic" category is most conceptually distinct from _________]{.eighty} {.quiz-question}
+
+- [Social]{.correct}
+- Enterprising
+- Artistic
+- Investigative
+- Conventional
+
+![](https://images.squarespace-cdn.com/content/v1/5ea9b3dc4a1d870f88a99f57/465cbc49-3ba8-4fa8-8fb7-282604e1b962/Holland+Hexagon+Career+Key.png?format=1000w){.absolute top="-50" right="-120" height="200"}
+
+## F. G. Kuder created an interest inventory as well as an index of __________  {.quiz-question}
+
+- [reliability]{.correct}
+- validity
+- correlation
+- regression
+
+## _________ lists Holland codes for many different US occupations {.quiz-question}
+
+- [O\*Net]{.correct}
+- I\*Net
+- E\*Net
+- U\*Net
+
+## Assessment groups:
+
+<br>
+<br>
+<br>
+
+Starting 4/24 (Thursdays):
+
+::: {.ninety}
+| Al Pacas`r emo::ji("llama")`  | Belugas`r emo::ji("spouting_whale")` | Camels`r emo::ji("two_hump_camel")` |  Dingos`r emo::ji("fox")`   |  Elephants`r emo::ji("elephant")` |
+|-----------|----------|----------|-----------|------------|
+| Vanessa A | Mae F    | Sarah J  | Sarah M   | Hannah T   |
+| Sabina B  | Alaina G | Thomas J | Raelyn R  | William T  |
+| Nathan B  | Payton H | Grace K  | Ellen R   | Jennifer T |
+| Maritza B | Elly J   | Grace L  | Rachel S  | Lila W     |
+:::
+
+![](present.JPG){.absolute right="-120" top="-30" height="300"}
+
+## References

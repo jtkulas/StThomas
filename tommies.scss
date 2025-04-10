@@ -10,6 +10,7 @@
 @import url('https://fonts.googleapis.com/css?family=Boldonse');
 @import url('https://fonts.googleapis.com/css?family=Rubik Burned');
 @import url('https://fonts.googleapis.com/css?family=Geostar Fill');
+@import url('https://fonts.googleapis.com/css?family=Anton');
 
 /*-- scss:defaults --*/
 
@@ -174,5 +175,10 @@ $presentation-title-slide-text-color: black;
     text-shadow: 
     5px 5px 5px #03c6fc,
     -5px -5px 5px #03c6fc !important;
+}
+
+.counseling {
+  font-family: 'Anton';
+  color: #3d9cdb;
 }
 
