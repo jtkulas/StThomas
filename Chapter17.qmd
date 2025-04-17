@@ -1,0 +1,622 @@
+---
+title: "Ψlogical<br>Testing..." 
+author: "Chapter 17<br>...in [Health Psychology]{.health .larger}" 
+title-slide-attributes: 
+  data-background-image: https://media.istockphoto.com/id/177092615/photo/silhouette-of-a-beautiful-yoga-woman-in-the-morning.jpg?s=170667a&w=0&k=20&c=aJDimV91OqLp1BpFu-vXSBV2Ylmigz-3EBqfBo5fHXo= #https://mahasiddhayogarishikesh.wordpress.com/wp-content/uploads/2021/03/meditation-1.jpg
+  data-background-opacity: ".7"
+format:
+  revealjs:
+    multiplex: true
+    chalkboard: false
+    slide-tone: false
+    navigation-mode: linear
+    transition: convex
+    transition-speed: slow
+    controls: true
+    controls-layout: edges
+#    controls-tutorial: false
+    slide-number: c
+    mermaid:
+      theme: neutral
+#    output-location: slide           ## column-fragment; inserts blank 2nd slide
+    code-overflow: wrap              ## instead of horizontal scroll
+    theme: [league, tommies.scss]    ## night & league
+    mouse-wheel: true                ## yes enables mouse
+    preview-links: false             ## true brings up iframe window instead of "site"
+    code-annotations: hover 
+    quiz:
+      shuffleKey: "p"
+      defaultCorrect: "Very Healthy!!!"
+      defaultIncorrect: "Maybe try cutting back on the junk food a little bit!!!"
+      includeScore: true
+      disableOnCheck: true
+engine: knitr                        ## not picking up inline codes
+bibliography: bib.bib
+csl: apa7.csl
+#lightbox: true                     ## interferes with .absolute placement
+revealjs-plugins:                  
+  - quiz
+#  - spotlight                      ## cursor disappearing
+---
+
+```{r, warning=FALSE, message=FALSE}
+#devtools::install_github("hadley/emo")        ## if anyone else wants to render
+library(fontawesome)
+```
+
+## `r emo::ji("broom")``r emo::ji("wastebasket")` House Keeping `r emo::ji("wastebasket")``r emo::ji("broom")`
+
+:::: {.columns}
+
+::: {.column width="50%"}
+:::
+
+::: {.column width="50%"}
+
+:::{.ninety}
+Lectures: 
+
++ [presentation groups]{.underline} start 4/24
+
+Exams:
+
++ see me if you'd like strategy help
+
+Project:
+
++ try to access data in lab tonight & start building paper
+:::
+
+:::
+::::
+
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXQ0d3F0c3VkamZrczVpc2t2azByZHMycnVuaDIzZXhya2oxM2xpayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/GCZA2XPuNY0pPP9PrA/giphy.gif){.absolute left="0" top="140" height="400"}
+
+![](https://www.freeiconspng.com/uploads/sweeping-png-15.png){.absolute bottom="275" right="-40" height="150" .mirror}  
+
+## `r emo::ji("telescope")``r emo::ji("shooting_star")`ASTEROID [YR4]{.greenscript} [PANIC METER](https://www.iflscience.com/dangerous-asteroid-has-a-1-in-25-chance-of-hitting-the-moon-if-it-hits-it-will-be-pretty-spectacular-78738)!!!`r emo::ji("milky_way")``r emo::ji("collision")`
+
+::: {.columns}
+::: {.column width="10%"}
+:::
+
+::: {.column width="80%"}
+```{r}
+#| title: Impending Celestial Apocolypse
+#| fig-width: 8
+
+library(dygraphs)
+library(magrittr)
+
+Date <- c("12/27/24",
+          "1/29/25",
+          "02/7/25",
+          "02/11/25", 
+          "02/14/25", 
+          "02/18/25",
+          "02/19/25",
+          "02/20/25",
+          "02/24/25",
+          "02/25/25",
+          "04/3/25")
+earth <- c(1.2, 
+                 1.3,
+                 2.2,
+                 2.4, 
+                 2.6, 
+                 3.1,
+                 1.5,
+                 .28,
+                 .005,
+                 .0027,
+                  .0027)
+
+moon <- c(.0027, 
+          .0027,
+          .0027,
+          1, 
+          1, 
+          1,
+          0.8,
+          .8,
+          .8,
+          1.7,
+          3.8)
+
+responses <- as.data.frame(cbind(Date,earth,moon))
+
+responses$Date <- as.Date(responses$Date, format="%m/%d/%y")
+
+plotresp <- ts(responses)
+dygraph(responses) %>%
+  dySeries("earth", label="Earth") %>%
+  dySeries("moon", label="Moon") %>%
+  dyAxis("y", label="Odds of Doom (%)") %>%
+  dyOptions(fillGraph=TRUE, fillAlpha=0.4) %>%
+  dyRangeSelector()
+```
+:::
+:::
+
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcWd4eXBzcHo1MDExdWp6eTdvY3BxaTF2NzNobXJsaTF1NDk2MjVsdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/HUkOv6BNWc1HO/giphy.gif){.absolute right="-130" bottom="25" height="200"}
+
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTA1YzJheGFnamJ0aGZyODFmbmxkZ2JkcXZrb21jNTU2YTYyNXgzZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l46CvyAn1oBTOZtZK/giphy.gif){.absolute left="-150" top="120" height="200"}
+
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaDlmNWV0OWNtbWoxbXdzbW1iOGk5dXF3OG9ocnR3ZnRqeDUyaHJlMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l3978y5HqiEtqupiM/giphy.gif){.absolute right="-110" top="125" height="200"}
+
+## Exam #2 [Item Functioning](https://diegofigueiras.shinyapps.io/TestItemCharacteristics/)
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+grades <- read.csv("Exam #2 Quiz Student Analysis Report.csv")
+
+library(ggplot2)
+
+ggplot(grades, aes(score)) + 
+  geom_histogram(aes(y = ..density..), color = "#000000", fill = "#0099F8") +
+  geom_density(color = "#000000", fill = "#F85700", alpha = 0.6)
+
+write.csv(grades[,c(11,13,15,17,19,21,23,25,27,29,
+                    31,33,35,37,39,41,43,45,47,49,
+                    51,53,55,57,59,61,63,65,67,69,
+                    71,73,75,77,79,81,83,85,87,89,
+                    91,93,95,97,99,101,103,105,107,109,
+                    111,113,115,117,119,121,123,125,127,129,
+                    131,133,135,137,139,141,143,145,147,149,
+                    151,153,155,157,159)], "exam2.csv", row.names=FALSE)
+
+```
+Mean = `r round(mean(grades$score),2)`, sd = `r round(sd(grades$score),2)`
+
+# [Health Ψ & Health Care]{.eighty}
+
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTFkM2Z0NGJwaXc1aXdmMGZ0d2M1MGVjZWFxM2JoazgwczU3OGlyaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2bYewTk7K2No1NvcuK/giphy.gif)
+
+::: {.columns}
+::: {.column width="20%"}
+:::
+
+::: {.column width="80%"}
+
+:::
+:::
+
+## Clinical Neuropsychology...
+
+...scientific discipline that studies the relationship between behavior and brain functioning in the realms of [cognitive]{.definition}, [motor]{.definition}, [sensory]{.definition}, and [emotional]{.definition} functioning 
+
+::: {.columns}
+::: {.column width="60%"}
+
++ considered [multisciplinary]{.underline} (biology, psychology, [neurology](https://www.urmc.rochester.edu/highland/departments-centers/neurology/what-is-a-neurologist))
++ attempts to relate [brain dysfunction & damage]{.underline} to behavioral functioning
+
+:::
+
+::: {.column width="40%"}
+
+::: {.callout-note}
+
+***Clinical*** neuropsychology focused on dysfunction whereas [broader field of neuropsychology](https://www.apa.org/topics/neuropsychology) also concerned with [normal]{.underline} functioning
+:::
+
+:::
+
+:::
+
+## Pioneers of Clinical Neuropsych
+
+::: {.columns}
+
+::: {.column width="50%"}
+
++ [Pierre Broca](https://meridian.allenpress.com/aplm/article/126/3/250/453350) 
+  + conducted post--mortem analyses of [aphasic](https://www.mayoclinic.org/diseases-conditions/aphasia/symptoms-causes/syc-20369518) patients' brains
+  + located left--hemisphere morphology associated with [language production]{.underline}
+
+:::
+
+::: {.column width="50%"}
+
+<br>
+
++ Carl Wernicke [@wernicke1874aphasische]
+  + language comprehension abilities localized in left hemisphere of brain 
+  + perhaps also [speech production](https://pmc.ncbi.nlm.nih.gov/articles/PMC4691684/pdf/NEUROLOGY2015667246.pdf)
+
+:::
+
+:::
+
+>`r fontawesome::fa("quote-left", fill="#f9f6ee")` [We speak using the left hemisphere](https://www.bio.psy.ruhr-uni-bochum.de/bpsy/mam/content/papers/2019_fundamental_or_forgotten.pdf) [@broca1865siege] `r fontawesome::fa("quote-right", fill="#f9f6ee")`
+
+![](https://i0.wp.com/biomedguide.com/wp-content/uploads/2019/10/Broca_Wernicke.jpg?fit=487%2C301&ssl=1){.absolute right="-100" top="-30" height="200"}
+
+## Brain [dysfunction location]{.underline} detection (I) `r emo::ji("face_with_head_bandage")`
+
+::: {.columns}
+
+::: {.column width="60%"}
+
++ Halstead--Reitan Neuropsychological Battery
+  + several tests including the WAIS and MMPI
+  + aims to identify location of dysfunction / lesion / injury (hemisphere)
+  + total administration time = 8--12 hours
+
+:::
+
+::: {.column width="40%"}
+
+
+:::
+:::
+
+![](https://www.tandfonline.com/cms/asset/91bcf1ea-06e5-4261-8ebe-73c1d759ebdb/hapn_a_1871615_f0005_b.jpg){.absolute right="-80" bottom="100"}
+
+## Brain [dysfunction location]{.underline} detection (II) `r emo::ji("face_with_head_bandage")`
+
+[Pluripotentiality]{.bluescript}: any one center in the brain can be involved in [several different]{.definition} functional systems [@luria1970functional]
+
+::: {.columns}
+::: {.column width="70%"}
+
++ Luria--Nebraska Neuropsychological Battery
+  + an attempt to standardize the diagnostic procedures of [A. R. Luria](https://www.britannica.com/biography/A-R-Luria) 
+  + 14 scales with 269 total items
+  + 24--hour administration estimate
+
+:::
+
+::: {.column width="30%"}
+
+
+:::
+:::
+
+![](https://upload.wikimedia.org/wikipedia/en/9/98/The_Man_Who_Mistook_His_Wife_for_a_Hat_cover.jpg){.absolute right="-50" height="400" bottom="0"}
+
+## California Verbal Learning Test [@delis1987california]
+
+Intended to determine [how errors are made]{.definition} in learning tasks (e.g., what [strategies]{.underline}, [processes]{.underline} & [errors]{.underline} are associated with different deficits)
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
++ another battery with several [memory--dependent]{.underline} tasks/tests
++ mixture of [[recall]{.definition}](https://www.brainhq.com/brain-connection/word-list-recall/) and [[recognition]{.definition}](https://imps.cdu.edu.au/moocs/memorymooc/pretest/#!/words-intro) tasks
+  + occassionally accompanied by interference prompts
+
+:::
+
+::: {.column width="40%"}
+![](https://www.verywellmind.com/thmb/T69SQwBKF0xckWqbGpfzsqJS3MM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-169945218-56a797af5f9b58b7d0ebf82e.jpg)
+
+
+:::
+
+::::
+
+## "Automated" Neuropsychological Testing
+
+:::: {.columns}
+::: {.column width="60%"}
+
++ Automated Neuropsychological Assessment Metrics ([ANAM](https://camp-lejeune.tricare.mil/Portals/112/documents/ANAMBrochure.pdf?ver=TjFN4bsaXXcjyWFqcSiFZQ%3D%3D))
+  + intended to collect [baseline information]{.underline} on neurological performance ***in the unfortunate circumstance*** that there is an injury affecting attention, memory, or thinking ability
+
+:::
+
+::: {.column width="40%"}
+
++ military test battery that purports to only compare individual scores (after deployment) against their own scores prior to deployment
+:::
+
+::::
+
+![](https://www.freepnglogos.com/uploads/military-logo-png/military-logo-home-carey-junior-high-school-29.png){.absolute right="-20" bottom="-40" height="250"}
+
+# Anxiety & Stress!!
+
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdDNmYjhrdDZyazlzZHNudXhpeG41NWNzbzFhemNieHk2a3gzdWpjeSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1aIDN81XDJuDK/giphy.gif)
+
+## Definitions:
+
+:::: {.columns}
+::: {.column width="60%"}
+
+::: {.ninety}
++ [Psychological stress]{.bluescript} -- response to situations that involve demands, constraints, or opportunities^[be aware -- other presentations would label the response itself, "strain"]
+  + [Frustration]{.definition} -- goal attainment is blocked
+  + [Conflict]{.definition} -- not all goals can be simultaneously met
+  + [Pressure]{.definition} -- weight or importance of attaining goal
+
+:::
+
+:::
+
+::: {.column width="40%"}
+
++ [Anxiety]{.bluescript} -- an emotional state marked by [worry]{.underline}, [apprehension]{.underline}, & [tension]{.underline}
+
+:::
+
+::::
+
+
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2x0eTR2dmtxeWdqdXVwa2VhZm0yeWtjeXhicm45aXpibXl3MDJmZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/29bKyyjDKX1W8/giphy.gif){.absolute right="-120" bottom="70" height="250"}
+
+## State--Trait Anxiety Inventory `r emo::ji("fearful_face")`
+
+:::: {.columns}
+::: {.column width="60%"}
+
++ [State Anxiety]{.bluescript} -- emotional reaction that varies from one situation to another
+  + [20 items](https://www.advancedassessments.co.uk/resources/Mental-Health-Test.pdf)
++ [Trait Anxiety]{.bluescript} -- personality characteristic (e.g., element of [Neuroticism]{.definition}) 
+  + [20 items](https://www.researchgate.net/publication/366478882/figure/fig1/AS:11431281108891469@1671632023762/STAI-T-form-STAI-T-Trait-Anxiety-Inventory.png) 
+
+:::
+
+::: {.column width="40%"}
+
+Let's collect some more data:
+
+[![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXd5bXM5aHdrMDd3aXQwenl4NDJ0anZrNGJjeDh0bDhiZ3YyY2s0byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QwzIZC8MCbBYcL75Ka/giphy.gif)](https://docs.google.com/spreadsheets/d/1LhQ73IuVfYTNK9Xlq3vM85eRNMMEGpQv5iri4qbXI5o/edit?usp=sharing)
+
+:::
+
+::::
+
+## Coping with stress `r emo::ji("anxious_face_with_sweat")`
+
+:::: {.columns}
+::: {.column width="60%"}
+
++ Ways of Coping Scale [@coping88]
+  + what strategies are used?
+  + commercial version owned by vendor
+  + [Revised (research) version](https://prevention.ucsf.edu/sites/prevention.ucsf.edu/files/uploads/tools/surveys/pdf/Ways%20of%20coping.pdf) *k*=66, response options 4--point Likert--type
+  + 8 subscales on revised version
+:::
+
+::: {.column width="40%"}
+
+:::
+
+::::
+
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2hwOWNidTJjeWpmaW52NGl0MGl5b3pqZmU2MzJvbDV0ejg0cWl6eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT1R9R36vqlIndUe4w/giphy.gif){.absolute right="-120" bottom="100" height="350"}
+
+## Ecological Momentary Assessment
+
+Fits within a category of procedures broadly referred<br>to as [Experience Sampling Methods]{.definition} (ESM)^[also sometimes referred to as the [daily diary]{.underline} method]
+
+:::: {.columns}
+::: {.column width="50%"}
+
++ used when constructs are thought to exhibit [dynamism]{.definition}
++ thought to minimize [memory bias]{.underline} and better assess [intra-individual differences]{.underline}
+:::
+
+::: {.column width="50%"}
+
++ can take physiological measures (heart rate, blood pressure)
++ also provide prompts for more traditional samplings (for example, how the respondent is ***feeling***)
+:::
+
+::::
+
+![](https://png.pngtree.com/png-vector/20231023/ourmid/pngtree-black-fitness-tracker-pedometer-png-image_10293957.png){.absolute right="-150" top="-20" height="200"}
+
+## Depression `r emo::ji("pensive_face")`
+
+:::: {.columns}
+::: {.column width="60%"}
+
++ Patient Health Questionnaire
+  + 9 different symptoms -- typically [self--administered](https://med.stanford.edu/fastlab/research/imapp/msrs/_jcr_content/main/accordion/accordion_content3/download_256324296/file.res/PHQ9%20id%20date%2008.03.pdf) in waiting room
++ Edinburgh Postnatal Depression Scale
+  + [10 items/symptoms](https://perinatology.com/calculators/Edinburgh%20Depression%20Scale.htm) **within the past 7 days**
+  + specific instructions for recent mothers
+
+:::
+
+::: {.column width="40%"}
+
++ Beck's Depressive Inventory [@beck1961]
+  + not listed in textbook, but traditionally favored by Psychologists
+  + [21 items](https://www.ismanet.org/doctoryourspirit/pdfs/Beck-Depression-Inventory-BDI.pdf) (self--administered and --scored)
+
+:::
+
+::::
+
+## Quality--of--life `r emo::ji("smiling_face_with_sunglasses")`
+
+>`r fontawesome::fa("quote-left", fill="#f9f6ee")` Health is a complete state of physical, mental, and social [well--being]{.definition} and not merely absence of disease `r fontawesome::fa("quote-right", fill="#f9f6ee")`
+
+:::: {.columns}
+::: {.column width="45%"}
+
+### Psychometric approaches:
+
++ different measures created for different quality--of--life dimensions
+
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="45%"}
+
+### Decision theory approaches:
+
++ aggregate across [differently weighted]{.underline} domains to obtain a single quality--of--life aggregate
+
+:::
+
+::::
+
+## Medical Outcome Study Short Form--36 (SF--36)
+
+:::: {.columns}
+::: {.column width="60%"}
+
+### Eight scaled scores:
+
++ physical functioning
++ role--physical
++ bodily pain
++ general health perceptions
++ vitality
++ social functioning
++ role--emotional
++ mental health
+
+:::
+
+::: {.column width="40%"}
+
+
++ used in medical contexts (like the Patient Health Questionnaire)
++ can be [self--administered](https://www.brandeis.edu/roybal/docs/SF-36_website_PDF.pdf)
++ need assistance with scoring (item $\rightarrow$ scale association)
+
+:::
+
+::::
+
+## [Notingham Health Profile](https://www.sralab.org/sites/default/files/2017-07/Nottingham.pdf)
+
+::: {.columns}
+
+::: {.column width="40%"}
+
+### Status assessment:
+
++ energy level
++ [pain]{style="color:red"} `r emo::ji("direct_hit")`
++ emotional reaction
++ sleep
++ social isolation
++ physical abilities
+
+:::
+
+::: {.column width="50%"}
+
+### Life domains affected:
+
++ employment
++ household activities
++ social life
++ home life
++ sex life
++ hobbies & interests
++ holidays
+
+:::
+
+:::
+
+![](https://www.disneyclips.com/images/images/robin-hood.png){.absolute right="-150" bottom="-30" .mirror}
+
+## [m]{.lowercase}H[ealth]{.lowercase}...
+
+...a diverse application of wireless and mobile technologies designed to improve [health research]{.underline}, [health--case services]{.underline}, and [health outcomes]{.underline}
+
+::: {.columns}
+
+::: {.column width="60%"}
+
++ basically [Experience Sampling Methods]{.definition} used within healthcare
+  + implantable miniature sensors
+  + wearable monitors
+  + personal devices (e.g., phones)
+:::
+
+::: {.column width="40%"}
+...portable [real--time]{.underline} systems that provide rich & potentially continuous data streams
+
+:::
+
+:::
+
+## Medical College Admissions Test ([MCAT](https://www.usnews.com/education/best-graduate-schools/top-medical-schools/articles/what-is-the-mcat-test-like-and-how-do-you-prepare-for-it))
+
+::: {.columns}
+
+::: {.column width="50%"}
+
++ traditional entrance exam for [medical school]{.underline}
+  + considered to be categorically similar to the ACT, SAT, GRE, & LSAT
+  + 5.5 hours administration time^[total time commitment closer to 7.5 hours with breaks,instructions, etc]
+
+:::
+
+::: {.column width="50%"}
+
++ developed (and administered) by the [Association of American Medical Colleges](https://students-residents.aamc.org/taking-mcat-exam/take-mcat-exam) (AAMC)
++ Four sections
+  + Psychological, Social, and Biological Foundations of Behavior added in 2015
+:::
+
+:::
+
+![](https://image.similarpng.com/file/similarpng/original-picture/2022/01/Cute-cartoon-cat-on-transparent-background-PNG.png){.absolute top="0" right="-50" height="200"}
+
+## ___________ posits that any one center in the brain can be involved in several different functional systems {.quiz-question}
+
+- [pluripotentiality]{.correct}
+- supercalifragelistic
+- encephelorhinoplasty
+- expialidoscious
+
+## __________ area is a left--hemisphere region associated with language {.quiz-question}
+
+- [Broca's]{.correct} 
+- Bucca's
+- Beppo's
+- Bluto's
+
+
+## Memory of a stimulus absent cues is referred to as ___________ {.quiz-question}
+
+- [recall]{.correct}
+- recognition
+- STM
+- LTM
+
+## Stress and anxiety are distinct Psychological constructs {.quiz-question}
+
+- [True]{.correct}
+- False
+
+## Best ever cinematic portrayl of Robin Hood was given by __________ {.quiz-question}
+
+- [Cartoon Fox]{.correct}
+- Errol Flynn
+- Kevin Costner
+- Douglas Fairbanks
+
+## Assessment groups:
+
+<br>
+<br>
+<br>
+
+Starting 4/24 (Thursdays):
+
+::: {.ninety}
+| Al Pacas`r emo::ji("llama")`  | Belugas`r emo::ji("spouting_whale")` | Camels`r emo::ji("two_hump_camel")` |  Dingos`r emo::ji("fox")`   |  Elephants`r emo::ji("elephant")` |
+|-----------|----------|----------|-----------|------------|
+| Vanessa A | Mae F    | Sarah J  | Sarah M   | Hannah T   |
+| Sabina B  | Alaina G | Thomas J | Raelyn R  | William T  |
+| Nathan B  | Payton H | Grace K  | Ellen R   | Jennifer T |
+| Maritza B | Elly J   | Grace L  | Rachel S  | Lila W     |
+:::
+
+![](present.JPG){.absolute right="-120" top="-30" height="300"}
+
+## References
